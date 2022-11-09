@@ -2,8 +2,10 @@
  <html>
  <head>
  	<meta charset="utf-8">
+  
  	<meta name="viewport" content="width=device-width, initial-scale=1">
  	 <script src="../js/autocompleta.js"></script>
+
  	<title>busca</title>
  </head>
  <body>
@@ -12,8 +14,8 @@
       <legend>Buscar Caso</legend>
 <form   action="" autocomplete="off" method="post" >
  
-  <input  type="text" name="Nombre" id="dName"><br><br>
- <input type="hidden"name="idPersona" id="dTel" value="xxxx"><br><br>
+  <input  type="text" name="Nombres" id="dName"><br><br>
+ <input type="hidden"name="id_datos_benef" id="dTel" value="xxxx"><br><br>
 
   <input type="submit" value="Buscar">
 </form> 
@@ -21,26 +23,26 @@
 </fieldset>
 </div>
 <div>
-
+<!--
 <?php
 
-if ((isset($_POST['Nombre'])) && ($_POST['idPersona'])=='xxxx') { ?>  
+//if ((isset($_POST['Nombres'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  
 
-<button class="w3-btn w3-yellow"> 
-<a href="../includes/cargaDatos.php">No existe, cargar los datos</a>
+<button > 
+<a href="../include/carga_benef.php">No existe, cargar los datos</a>
 </button>
 
- <?php } 
+ <?php// } 
 
-elseif (isset($_POST['idPersona'])) { ?> 
+//elseif (isset($_POST['id_datos_benef'])) { ?> 
  
  <button class="w3-btn w3-green"> 
-<a href="../includes/nuevoControl.php?id=<?=$_POST['idPersona']; ?>">Tiene registrados los datos, cargar control</a>
+<a href="../includes/nuevoControl.php?id=<?=$_POST['id_datos_benef']; ?>">Tiene registrados los datos, cargar control</a>
 </button>
 
- <?php } ?>
+ <?php //} ?>
 
- 
+ -->
 </div>
 
 <script>
@@ -57,6 +59,8 @@ elseif (isset($_POST['idPersona'])) { ?>
       });
     });
     </script>
+
+    <script src="../js/autocompleta.js"></script>
  </body>
  </html>
 

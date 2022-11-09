@@ -7,7 +7,7 @@ try {
 
 $sql='call lista_simple;';
 
-$casos = $pdo->query($sql);
+$benef = $pdo->query($sql);
  $title = 'Buscar caso';
 
 
@@ -21,12 +21,7 @@ $casos = $pdo->query($sql);
   
 
 
+ include  __DIR__ . '/../templates/busca_benef.html.php';
 
 
-
-//
-
-    include  __DIR__ . '/../templates/busca_benef.html.php';
-
-//header('Location: vercontrol.php')  ; 
 

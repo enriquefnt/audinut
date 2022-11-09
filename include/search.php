@@ -1,33 +1,18 @@
 <?php
 include __DIR__ . '/conect.php';
-session_start();
-// realiza la búsqueda
-$areaoperativa=$_SESSION['AOP'] ;
 $data = [];
 
-if($_SESSION['tipo']== 0){
+$stmt = $pdo->prepare("SELECT CONCAT(Nombres,' ',Apellidos) as nomApe, id_datos_benef FROM datos_benef
+WHERE  CONCAT(Nombres,' ',Apellidos) LIKE ? " );
 
-
-
-  //  $stmt = $pdo->prepare("SELECT CONCAT(Nombre,' ',Apellido) as nomApe, idPersona FROM persona WHERE CONCAT(Nombre,' ',Apellido) LIKE ? ");
-  $stmt = $pdo->prepare("SELECT CONCAT(Nombre,' ',Apellido) as nomApe, idPersona, AOP FROM persona 
-inner join aopzonas on AOP=idaop
-WHERE AOP = $areaoperativa  AND CONCAT(Nombre,' ',Apellido) LIKE ? " );
-}
-
-else {
-$stmt = $pdo->prepare("SELECT CONCAT(Nombre,' ',Apellido) as nomApe, idPersona, AOP FROM persona 
-inner join aopzonas on AOP=idaop
-WHERE  CONCAT(Nombre,' ',Apellido) LIKE ? " );
-
-}
 
 
     $stmt->execute(["%" . $_POST['search'] . "%"]);
+ //$stmt->execute(["%" .'hec'. "%"]);
     while ($row = $stmt->fetch(PDO::FETCH_NAMED)) { 
       $data[] = [
         "D" => $row['nomApe'],
-        "dTel" => $row['idPersona']
+        "dTel" => $row['id_datos_benef']
           ]; 
     }
     ;
@@ -38,4 +23,6 @@ if (count($data)==0) { $data = null; }
 echo json_encode($data);
 $stmt = null;
 $pdo = null;
+
+
 
