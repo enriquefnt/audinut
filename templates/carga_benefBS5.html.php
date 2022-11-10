@@ -14,58 +14,59 @@
 <form class="row g-3"  action="" method="post" >
 <div class="col-md-6">
 
-		<label class="form-label" for="Nombres">Nombres</label>
+		<label class="form-label-sm" for="Nombres">Nombres</label>
 		<input class="form-control" type="text"  name="Nombres" id="Nombres" required="required">
 </div>
 <div class="col-md-6">	
-		<label class="form-label" for="Apellidos">Apellidos</label>
+		<label class="form-label-sm" for="Apellidos">Apellidos</label>
 		<input class="form-control" type="text" name="Apellidos" id="Apellidos" required="required">
 </div>
 <div class="col-md-4">
-		<label class="form-label" for="FechaNac">Fecha de Nacimiento</label>
+		<label class="form-label-sm" for="FechaNac">Fecha de Nacimiento</label>
 		<input class="form-control" type="date" name="FechaNac" id="FechaNac" required="required">
 </div>
 <div class="col-md-4">
-		<label class="form-label" for="DNI">DNI</label>
+		<label class="form-label-sm" for="DNI">DNI</label>
 		<input class="form-control" type="number" name="DNI" id="DNI" required="required">
 </div>
 <div class="col-md-4">		
-		<label class="form-label" for="Celular">Celular</label>
+		<label class="form-label-sm" for="Celular">Celular</label>
 		<input class="form-control" type="number" name="Celular" id="Celular" required="required">
 </div>
 <div class="col-md-6">
-		<label class="form-label" for="Domicilio">Domicilio</label>
+		<label class="form-label-sm" for="Domicilio">Domicilio</label>
 		<input class="form-control" type="text" name="Domicilio" id="Domicilio" required="required">
 </div>
 <div class="col-md-6">
-		<label class="form-label" for="Localidad">Localidad</label>
+		<label class="form-label-sm" for="Localidad">Localidad</label>
 		<input class="form-control" type="text" name="Localidad" id="Localidad" required="required">
 </div>
 <div class="col-md-6">
-		<label class="form-label" for="NombresResp">Nombres-Responsable</label>
+		<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
 		<input class="form-control" type="text" name="NombresResp" id="NombresResp" required="required">
 </div>
 <div class="col-md-6">
-		<label class="form-label" for="ApellidosResp">Apellidos-Responsable</label>
+		<label class="form-label-sm" for="ApellidosResp">Apellidos-Responsable</label>
 		<input class="form-control" type="text" name="ApellidosResp" id="ApellidosResp" required="required">
 </div>
 <div class="col-md-6">
-		<label class="form-label" for="DNIResp">DNI-Responsable</label>
+		<label class="form-label-sm" for="DNIResp">DNI-Responsable</label>
 		<input class="form-control" type="number" name="DNIResp" id="DNIResp" required="required">
 </div>
 
 <div class="col-md-6">
-		<label class="form-label" for="CelularResp">Celular-Responsable</label>
+		<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
 		<input class="form-control" type="number" name="CelularResp" id="CelularResp" required="required">
 </div>
 
+<div class="col-11">
+</div>
 
 
-
-
-
+<div class="col-1">
 
 		<button class="btn btn-primary" type="submit" name="submit">Enviar</button>
+</div>
 	</form>
 </div>
 
