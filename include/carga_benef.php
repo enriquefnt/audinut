@@ -10,14 +10,25 @@ $record = [
 							 	'Nombres' => $_POST['Nombres'],
 							 	'Apellidos' =>$_POST['Apellidos'],
 							 	'DNI' => $_POST['DNI'],
-	 							
+							 	'FechaNac' => $_POST['FechaNac'],
+							 	'Celular' => $_POST['Celular'],
+	 							'Domicilio' => $_POST['Domicilio'],
+							 	'Localidad' => $_POST['Localidad'],
+							 	'NombresResp' => $_POST['NombresResp'],
+							 	'ApellidosResp' => $_POST['ApellidosResp'],
+							 	'CelularResp' => $_POST['CelularResp'],
+							 	'DNIResp' => $_POST['DNIResp'],
+
 					];
 			//		print_r($record);
 					
 
 insert($pdo, 'datos_benef', $record);
+header('Location: carga_benef.php');
 					
 								}
+
+
 	}
 
 catch (PDOException $e) {
@@ -25,4 +36,4 @@ catch (PDOException $e) {
       $e->getFile() . ':' . $e->getLine();
     }
 	
-	include  __DIR__ . '/../templates/carga_benef.html.php';
+	include  __DIR__ . '/../templates/carga_benefBS5.html.php';

@@ -10,39 +10,21 @@
  </head>
  <body>
  <div>
-    <fieldset >
+   
       <legend>Buscar Caso</legend>
 <form   action="" autocomplete="off" method="post" >
  
-  <input  type="text" name="Nombres" id="dName"><br><br>
- <input type="hidden"name="id_datos_benef" id="dTel" value="xxxx"><br><br>
+  <input  type="text" name="Nombres" id="dName">
+ <input type="hidden"name="id_datos_benef" id="dTel" value="">
 
   <input type="submit" value="Buscar">
 </form> 
 
-</fieldset>
+
 </div>
 <div>
-<!--
-<?php
 
-//if ((isset($_POST['Nombres'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  
 
-<button > 
-<a href="../include/carga_benef.php">No existe, cargar los datos</a>
-</button>
-
- <?php// } 
-
-//elseif (isset($_POST['id_datos_benef'])) { ?> 
- 
- <button class="w3-btn w3-green"> 
-<a href="../includes/nuevoControl.php?id=<?=$_POST['id_datos_benef']; ?>">Tiene registrados los datos, cargar control</a>
-</button>
-
- <?php //} ?>
-
- -->
 </div>
 
 <script>
@@ -54,7 +36,7 @@
         data: "search.php",
         
         // OPTIONAL
-        delay : 500,
+        delay : 300,
         min : 3
       });
     });

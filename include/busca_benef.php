@@ -1,13 +1,13 @@
 <?php
 include __DIR__ . '/conect.php';
-include __DIR__ . '/funciones.php';
+//include __DIR__ . '/funciones.php';
 try {
 
 
 
-$sql='call lista_simple;';
+//$sql='call lista_simple;';
 
-$benef = $pdo->query($sql);
+//$benef = $pdo->query($sql);
  $title = 'Buscar caso';
 
 
