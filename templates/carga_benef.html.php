@@ -7,7 +7,7 @@
 	<title>Carga</title>
 </head>
 <body>
-	<div class="w3-container w3-orange">
+	<div class="container orange">
   <h2>Datos personales</h2>
 </div>
 <div class="w3-container">
