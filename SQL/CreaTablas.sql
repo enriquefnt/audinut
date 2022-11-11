@@ -1,4 +1,4 @@
-SELECT concat(Nombres," ",Apellidos) AS Nombre, DNI FROM datos_benef;CREATE TABLE `datos_benef` (
+CREATE TABLE `datos_benef` (
   `id_datos_benef` int(11) NOT NULL AUTO_INCREMENT,
   `Nombres` tinytext NOT NULL,
   `Apellidos` tinytext NOT NULL,
