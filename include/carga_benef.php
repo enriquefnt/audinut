@@ -28,11 +28,40 @@ header('Location: carga_benef.php');
 								}
 
 
-	}
+elseif (isset($_POST['id_datos_benef'])) {
+
+		 
+		 		$datosCaso = findById($pdo, 'datos_benef', 'id_datos_benef', $_POST['id_datos_benef']);
+			}
+
+
+
+
+
+
+
+
+
+$title = 'Carga Datos';
+
+
+ 
+
+ob_start();
+include __DIR__ . '/../templates/carga_benefBS5.html.php';
+$output = ob_get_clean() ;
+	
+}
+
 
 catch (PDOException $e) {
       $error = 'Error en la base:' . $e->getMessage() . ' en la linea ' .
       $e->getFile() . ':' . $e->getLine();
     }
+
+include  __DIR__ . '/../templates/layaut.html.php';
+
+
+?>
+
 	
-	include  __DIR__ . '/../templates/carga_benefBS5.html.php';

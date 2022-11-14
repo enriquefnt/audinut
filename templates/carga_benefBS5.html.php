@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	<title>Carga</title>
-</head>
-<body>
+
  
-  <div class="container">
+  <div class="container-fluid">
      
 	<form class="row g-3"  action="" autocomplete="off" method="post" >
 		 <div class="col-sm-3">
@@ -26,13 +18,15 @@
 $id_benef=0;
 
 if (isset($_POST['id_datos_benef'])){
- $id_benef=['id_datos_benef'];}
+ $id_benef=$_POST['id_datos_benef'];}
 // else {$id_benef=0;} ;
 
 
 
- if ($_POST['id_datos_benef'] == "0") {
+// if ($_POST['id_datos_benef'] == "0") {
+ if ($id_benef == "0") {
 
+//alert("Mi primer alert");
 
  echo 'No existe en la base, puede ingresar los datos';
 ?>
@@ -101,35 +95,80 @@ if (isset($_POST['id_datos_benef'])){
 
 
 
-<?php	} elseif ($_POST['id_datos_benef'] =! "xxx"	) 
-	 {echo "ya está	";} ?>
+<?php	} 
+
+elseif (($_POST['id_datos_benef'] > "0")) {
+	echo 'Existe, puede editar ';
+?>
+
+<div class="container">
+	<form class="row g-3"  action="edita_benef.php" method="post" autocomplete="off" >
+		<h4>Datos personales</h4>
+	<div class="col-sm-6">
+
+			<label class="form-label-sm" for="Nombres">Nombres</label>
+			<input class="form-control" type="text"  name="Nombres" id="Nombres" required="required" value="<?=$datosCaso['Nombres'] ?? ''?>">
+	</div>
+	<div class="col-sm-6">	
+			<label class="form-label-sm" for="Apellidos">Apellidos</label>
+			<input class="form-control" type="text" name="Apellidos" id="Apellidos" required="required" value="<?=$datosCaso['Apellidos'] ?? ''?>">
+	</div>
+	<div class="col-sm-4">
+			<label class="form-label-sm" for="FechaNac">Fecha de Nacimiento</label>
+			<input class="form-control" type="date" name="FechaNac" id="FechaNac" value="<?=$datosCaso['FechaNac'] ?? ''?>">
+	</div>
+	<div class="col-sm-4">
+			<label class="form-label-sm" for="DNI">DNI</label>
+			<input class="form-control" type="number" name="DNI" id="DNI" required="required" value="<?=$datosCaso['DNI'] ?? ''?>">
+	</div>
+	<div class="col-sm-4">		
+			<label class="form-label-sm" for="Celular">Celular</label>
+			<input class="form-control" type="number" name="Celular" id="Celular" value="<?=$datosCaso['Celular'] ?? ''?>" autocomplete="off"> 
+	</div>
+	<div class="col-sm-6">
+			<label class="form-label-sm" for="Domicilio">Domicilio</label>
+			<input class="form-control" type="text" name="Domicilio" id="Domicilio" required="required" value="<?=$datosCaso['Domicilio'] ?? ''?>" autocomplete="off">
+	</div>
+	<div class="col-sm-6">
+			<label class="form-label-sm" for="Localidad">Localidad</label>
+			<input class="form-control" type="text" name="Localidad" id="Localidad" required="Localidad" autocomplete="off">
+	</div>
+	<div class="col-sm-6">
+			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
+			<input class="form-control" type="text" name="NombresResp" id="NombresResp" value="<?=$datosCaso['NombresResp'] ?? ''?>" autocomplete="off">
+	</div>
+	<div class="col-sm-6">
+			<label class="form-label-sm" for="ApellidosResp">Apellidos-Responsable</label>
+			<input class="form-control" type="text" name="ApellidosResp" id="ApellidosResp" value="<?=$datosCaso['ApellidosResp'] ?? ''?>">
+	</div>
+	<div class="col-sm-6">
+			<label class="form-label-sm" for="DNIResp">DNI-Responsable</label>
+			<input class="form-control" type="number" name="DNIResp" id="DNIResp"value="<?=$datosCaso['DNIResp'] ?? ''?>" autocomplete="off"> 
+	</div>
+
+	<div class="col-sm-6">
+			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
+			<input class="form-control" type="number" name="CelularResp" id="CelularResp" value="<?=$datosCaso['CelularResp'] ?? ''?>" autocomplete="off">
+	</div>
+
+	
 
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	
+		
+		<div class="container">
 
-	<script>
-    // (C) ATTACH AUTOCOMPLETE TO INPUT FIELDS
-    window.addEventListener("DOMContentLoaded", function(){
-          
-      ac.attach({
-        target: "dName",
-        data: "search.php",
-        
-        // OPTIONAL
-        delay : 300,
-        min : 3
-      });
-    });
-    </script>
+			<button class="btn btn-primary" type="submit" name="submit">Grabar cambios</button>
 
-    <script src="../js/autocompleta.js"></script>
+			<button class="btn btn-primary" type="button" name="otra">ir a otra parte</button>
+	
+			<a href="carga_benef.php"  class="btn btn-primary" role="button">Volver sin cambiar</a>
+
+	</div>
+	</form>
+</div>
 
 
 
+<?php } ?>
 
-
-
-
-
-</body>
-</html>

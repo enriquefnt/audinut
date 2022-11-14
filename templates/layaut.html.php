@@ -16,17 +16,17 @@
 <h3>Gestión solicitudes de nutroterápicos</h3>
 <h4>Area Fórmulas</h4>
 </div>
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
 	<div class="container-fluid">
 		
-	<a class="navbar-brand mb-0 " href="../include/carga_benef.php">Carga Actividades</a>
+	<a class="navbar-brand mb-0 " href="../include/carga_benef.php">Carga Beneficiarios</a>
 
 
-	<a class="navbar-brand mb-0 " href="../include/registro_usuarios.php">Registar Usuario</a></li>
-	<a class="navbar-brand mb-0 " href="../include/tabla_aop.php">Ver por AOP</a></li>
+	<a class="navbar-brand mb-0 " href="../include/registro_usuarios.php">Carga Solicitudes</a></li>
+	<a class="navbar-brand mb-0 " href="../include/tabla_aop.php">Listados</a></li>
 
 	
-	<a  class="navbar-brand mb-0 " href="../include/listado.php"class="w3-bar-item w3-button">Listado</a>
+	<a  class="navbar-brand mb-0 " href="../include/listado.php"class="w3-bar-item w3-button">Salir</a>
 	
 
 </div>
@@ -37,9 +37,9 @@
 
 
 
-<main class="table-container">	
+<main class="w3-row-padding table-container">	
 	<div class="w3-container" >
-		<!--	<?=$output?> -->
+	<?=$output?> 
 	</div>
 
 
@@ -49,17 +49,33 @@
 
 
 
-
 </main>
-
-<div class="w3-row-padding footer"  id="footer">
+<footer class="p-3 mb-2 bg-primary text-white ">
+<div class="container-fluid">
 	
-	<div class="w3-container w3-blue-grey  w3-center">
 
 
-<h5 > DNyAS - Programa: Auditoría Nutroterápicos.</h5>
+<h5 align="center"> DNyAS - Programa: Auditoría Nutroterápicos.</h5>
+
 </div>
-</div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<script>
+    // (C) ATTACH AUTOCOMPLETE TO INPUT FIELDS
+    window.addEventListener("DOMContentLoaded", function(){
+          
+      ac.attach({
+        target: "dName",
+        data: "search.php",
+        
+        // OPTIONAL
+        delay : 300,
+        min : 3
+      });
+    });
+    </script>
+
+    <script src="../js/autocompleta.js"></script>
 </body>
 </html>
