@@ -30,6 +30,8 @@ elseif (isset($_POST['id_datos_benef'])) { ?>
 
 <a type="button" class="btn btn-primary" href="../include/nuevoControl.php?id=<?=$_POST['id_datos_benef']; ?>">Tiene registrados los datos, cargar control</a>
 
+<a type="button" class="btn btn-primary" href="edita_benef.php?id=<?=$_POST['id_datos_benef']; ?>">Editar datos</a>
+
 </div>
 
  <?php } ?>

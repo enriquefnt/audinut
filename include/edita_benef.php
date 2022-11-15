@@ -4,9 +4,7 @@ include __DIR__ . '/../include/funciones.php';
 
 try {
 
-
-
- $title = 'Editar';
+ 
 
 if (isset($_POST['Apellidos'])) {
 
@@ -24,23 +22,33 @@ $benef_editar = [ 		'id_datos_benef'=> $_POST['id_datos_benef'],
 						'DNIResp' => $_POST['DNIResp']
 			
 							 	
-					]; }
-				
+					]; 
+				update($pdo, 'datos_benef', 'id_datos_benef', $benef_editar);
 
-update($pdo, 'datos_benef', 'id_datos_benef', $benef_editar);
-
-
-
-session_unset();
-header('Location: /../audinut/include/carga_benef.php')	;	 
-
-
+				//header('Location: /../audinut/include/carga_benef.php');	
 }
+				
+else {
+
+		if (isset($_GET['id'])) {
+		$datosCaso = findById($pdo, 'datos_benef', 'id_datos_benef', $_GET['id']);
+			}
 
 
 
+ $title = 'Editar';
+
+ob_start();
+
+		include  __DIR__ . '/../templates/edita_benef.html.php';
+
+		$output = ob_get_clean();
+}
+   
+}
     catch (PDOException $e) {
       $error = 'Error en la base:' . $e->getMessage() . ' en la linea ' .
       $e->getFile() . ':' . $e->getLine();
     }
 
+include  __DIR__ . '/../templates/layout.html.php';
