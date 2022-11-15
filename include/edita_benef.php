@@ -4,22 +4,20 @@ include __DIR__ . '/../include/funciones.php';
 
 try {
 
- 
+ if (isset($_POST['Apellidos'])) {
 
-if (isset($_POST['Apellidos'])) {
-
-$benef_editar = [ 		'id_datos_benef'=> $_POST['id_datos_benef'],
-						'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
-						'Apellidos' =>ucwords(strtolower($_POST['Apellidos'])),
-						'DNI' => $_POST['DNI'],
-						'FechaNac' => $_POST['FechaNac'],
-						'Celular' => $_POST['Celular'],
-	 					'Domicilio' => $_POST['Domicilio'],
-						'Localidad' => $_POST['Localidad'],
-						'NombresResp' => ucwords(strtolower($_POST['NombresResp'])),
-						'ApellidosResp' => ucwords(strtolower($_POST['ApellidosResp'])),
-						'CelularResp' => $_POST['CelularResp'],
-						'DNIResp' => $_POST['DNIResp']
+$benef_editar = [ 'id_datos_benef'=> $_POST['id_datos_benef'],
+									'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
+									'Apellidos' =>ucwords(strtolower($_POST['Apellidos'])),
+									'DNI' => $_POST['DNI'],
+									'FechaNac' => $_POST['FechaNac'],
+									'Celular' => $_POST['Celular'],
+				 					'Domicilio' => $_POST['Domicilio'],
+									'Localidad' => $_POST['Localidad'],
+									'NombresResp' => ucwords(strtolower($_POST['NombresResp'])),
+									'ApellidosResp' => ucwords(strtolower($_POST['ApellidosResp'])),
+									'CelularResp' => $_POST['CelularResp'],
+									'DNIResp' => $_POST['DNIResp']
 			
 							 	
 					]; 
@@ -41,8 +39,7 @@ else {
 ob_start();
 
 		include  __DIR__ . '/../templates/edita_benef.html.php';
-
-		$output = ob_get_clean();
+$output = ob_get_clean();
 }
    
 }

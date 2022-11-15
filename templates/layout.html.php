@@ -34,26 +34,14 @@
 
 </header >
 
-
-
-
 <main class="w3-row-padding table-container">	
 	<div class="w3-container" >
 	<?=$output?> 
 	</div>
 
-
-
-
-
-
-
-
 </main>
 <footer class="p-3 mb-2 bg-primary text-white ">
 <div class="container-fluid">
-	
-
 
 <h5 align="center"> DNyAS - Programa: Auditoría Nutroterápicos.</h5>
 

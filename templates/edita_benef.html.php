@@ -50,7 +50,7 @@
 
 		
 <div class="container">
-	<a href="../include/busca_benef.php"  class="btn btn-primary" role="button">Volver sin cambiar</a>
+	<a href="../include/busca_benef.php"  class="btn btn-primary btn-sm" role="button">Volver sin cambiar</a>
 
-	<a href="../include/edita_benef.php?id=<?=$datosCaso['id_datos_benef'] ?? ''?>"  class="btn btn-primary" role="button">Guardar cambios</a>
+	<a href="../include/edita_benef.php?id=<?=$datosCaso['id_datos_benef'] ?? ''?>"  class="btn btn-primary btn-sm" role="button">Guardar cambios</a>
 </div>
