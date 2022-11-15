@@ -4,7 +4,7 @@
  
 
 <div class="container">
-	<form class="row g-3"  action="" method="post" autocomplete="off" >
+	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
 	<div class="col-sm-6">
 

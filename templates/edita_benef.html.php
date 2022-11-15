@@ -1,5 +1,5 @@
 <div class="container">
-	<form class="row g-3"  action="edita_benef.php" method="post" autocomplete="off" >
+	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="edita_benef.php" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
 	<div class="col-sm-6">
 
@@ -48,4 +48,9 @@
 			<input class="form-control" type="number" name="CelularResp" id="CelularResp" value="<?=$datosCaso['CelularResp'] ?? ''?>" autocomplete="off">
 	</div>
 
-	<a type="button" class="btn btn-primary" href="../include/nuevoControl.php?id=<?=$datosCaso['id_datos_benef'] ?? ''?>Guardar cambi</a>
+		
+<div class="container">
+	<a href="../include/busca_benef.php"  class="btn btn-primary" role="button">Volver sin cambiar</a>
+
+	<a href="../include/edita_benef.php?id=<?=$datosCaso['id_datos_benef'] ?? ''?>"  class="btn btn-primary" role="button">Guardar cambios</a>
+</div>
