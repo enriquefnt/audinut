@@ -48,7 +48,7 @@ $title = 'Carga Datos';
  
 
 ob_start();
-include __DIR__ . '/../templates/carga_benefBS5.html.php';
+include __DIR__ . '/../templates/carga_benef.html.php';
 $output = ob_get_clean() ;
 	
 }
@@ -59,7 +59,7 @@ catch (PDOException $e) {
       $e->getFile() . ':' . $e->getLine();
     }
 
-include  __DIR__ . '/../templates/layaut.html.php';
+include  __DIR__ . '/../templates/layout.html.php';
 
 
 ?>

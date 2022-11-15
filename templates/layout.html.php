@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
 	<div class="container-fluid">
 		
-	<a class="navbar-brand mb-0 " href="../include/carga_benef.php">Carga Beneficiarios</a>
+	<a class="navbar-brand mb-0 " href="../include/busca_benef.php">Carga datos</a>
 
 
 	<a class="navbar-brand mb-0 " href="../include/registro_usuarios.php">Carga Solicitudes</a></li>

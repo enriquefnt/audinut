@@ -8,9 +8,16 @@ try {
 //$sql='call lista_simple;';
 
 //$benef = $pdo->query($sql);
- $title = 'Buscar caso';
 
 
+$title = 'Busca Beneficiario';
+
+
+ 
+
+ob_start();
+include __DIR__ . '/../templates/busca_benef.html.php';
+$output = ob_get_clean() ;
 
 }
 
@@ -21,7 +28,7 @@ try {
   
 
 
- include  __DIR__ . '/../templates/busca_benef.html.php';
+ include  __DIR__ . '/../templates/layout.html.php';
 
 
 
