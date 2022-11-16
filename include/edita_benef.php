@@ -4,7 +4,7 @@ include __DIR__ . '/../include/funciones.php';
 
 try {
 
- if (isset($_POST['Apellidos'])) {
+ if (isset($_POST['id_datos_benef'])) {
 
 $benef_editar = [ 'id_datos_benef'=> $_POST['id_datos_benef'],
 									'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
@@ -21,9 +21,9 @@ $benef_editar = [ 'id_datos_benef'=> $_POST['id_datos_benef'],
 			
 							 	
 					]; 
-				update($pdo, 'datos_benef', 'id_datos_benef', $benef_editar);
+				save($pdo, 'datos_benef', 'id_datos_benef', $benef_editar);
 
-				//header('Location: /../audinut/include/carga_benef.php');	
+				header('Location: /../audinut/include/busca_benef.php');	
 }
 				
 else {

@@ -20,7 +20,7 @@
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  
 <div class="container">
 
-<a type="button" class="btn btn-primary" href="../include/carga_benef.php">No existe, cargar los datos</a>
+<a type="button" class="btn btn-primary" href="../include/carga_benef.php">Cargar los datos</a>
 
 </div>
  <?php } 
@@ -28,7 +28,7 @@ if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>
 elseif (isset($_POST['id_datos_benef'])) { ?> 
  <div class="container">
 
-<a type="button" class="btn btn-primary" href="../include/nuevoControl.php?id=<?=$_POST['id_datos_benef']; ?>">Tiene registrados los datos, cargar control</a>
+<a type="button" class="btn btn-primary" href="../include/carga_pedi.php?id=<?=$_POST['id_datos_benef']; ?>">Cargar pedido</a>
 
 <a type="button" class="btn btn-primary" href="edita_benef.php?id=<?=$_POST['id_datos_benef']; ?>">Editar datos</a>
 

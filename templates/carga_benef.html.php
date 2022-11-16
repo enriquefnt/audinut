@@ -17,15 +17,15 @@
 	</div>
 	<div class="col-sm-4">
 			<label class="form-label-sm" for="FechaNac">Fecha de Nacimiento</label>
-			<input class="form-control form-control-sm" type="date" name="FechaNac" id="FechaNac" required="required">
+			<input class="form-control form-control-sm" type="date" min="1920-01-01"  max="<?=date('Y-m-d');?>" name="FechaNac" id="FechaNac" required="required">
 	</div>
 	<div class="col-sm-4">
 			<label class="form-label-sm" for="DNI">DNI</label>
-			<input class="form-control form-control-sm" type="number" name="DNI" id="DNI" required="required">
+			<input class="form-control form-control-sm" type="number" step="1" min="1000000" max="99000000"  name="DNI" id="DNI" required="required">
 	</div>
 	<div class="col-sm-4">		
 			<label class="form-label-sm" for="Celular">Celular</label>
-			<input class="form-control form-control-sm" type="number" name="Celular" id="Celular" >
+			<input class="form-control form-control-sm" type="number" step="1" min="100000000" max="99000000000"  name="Celular" id="Celular" >
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>

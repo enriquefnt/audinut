@@ -1,7 +1,21 @@
+
+
+
+
+
 <div class="container">
+
+	<fieldset class="border p-2">
+   <legend class="w-auto">Solicitud</legend>
+
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
-		<h4>Solicitud</h4>
+		
 	
+
+<input type="hidden"name="id_datos_benef" id="id_datos_benef" value=""
+>
+
+
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="diag_med">Diagnóstico médico</label>
 			<input class="form-control form-control-sm" type="text"  name="diag_med" id="diag_med" required="required">
@@ -12,23 +26,23 @@
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="peso">Peso</label>
-			<input class="form-control form-control-sm" type="number"  name="peso" id="peso" required="required">
+			<input class="form-control form-control-sm" type="number" step="0.1" min="1" max="150" name="peso" id="peso" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="talla">Talla</label>
-			<input class="form-control form-control-sm" type="number"  name="talla" id="talla" required="required">
+			<input class="form-control form-control-sm" type="number" step="0.1" min="40" max="210" name="talla" id="talla" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="variacion">Variación</label>
-			<input class="form-control form-control-sm" type="number"  name="variacion" id="variacion" required="required">
+			<input class="form-control form-control-sm" type="number" step="0.1" min="-20" max="20"  name="variacion" id="variacion" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="requ_calorias">Requerimiento calórico</label>
-			<input class="form-control form-control-sm" type="number"  name="requ_calorias" id="requ_calorias" required="required">
+			<input class="form-control form-control-sm" type="number" step="50" min="100" max="7000" name="requ_calorias" id="requ_calorias" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="porc_aporte">Porcentaje del total a cubrir</label>
-			<input class="form-control form-control-sm" type="number"  name="porc_aporte" id="porc_aporte" required="required">
+			<input class="form-control form-control-sm" type="number" step="1" min="5" max="100" name="porc_aporte" id="porc_aporte" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="nutro_ter">Nutroterápico</label>
@@ -38,57 +52,31 @@
 			<label class="form-label-sm" for="suger_tm">Producto sugerido</label>
 			<input class="form-control form-control-sm" type="text"  name="suger_tm" id="suger_tm" required="required">
 	</div>
-	<div class="col-sm-6">
-			<label class="form-label-sm" for="presenta">Presentación</label>
-			<input class="form-control form-control-sm" type="text"  name="presenta" id="presenta" required="required">
-	</div>
+	
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="presenta">Presentación</label>
 			<input class="form-control form-control-sm" type="text"  name="presenta" id="presenta" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="gramos_dia">Gramos por día</label>
-			<input class="form-control form-control-sm" type="number"  name="gramos_dia" id="gramos_dia" required="required">
+			<input class="form-control form-control-sm" type="number" step="10" min="10" max="500" name="gramos_dia" id="gramos_dia" required="required">
 	</div>
 	<div class="col-sm-6">
-			<label class="form-label-sm" for="env_pormes">Presentación</label>
-			<input class="form-control form-control-sm" type="number"  name="env_pormes" id="env_pormes" required="required">
+			<label class="form-label-sm" for="env_pormes">Envases por mes</label>
+			<input class="form-control form-control-sm" type="number" step="1" min="1" max="100"  name="env_pormes" id="env_pormes" required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="prof_solicita">Profesional solicitante</label>
 			<input class="form-control form-control-sm" type="text"  name="prof_solicita" id="prof_solicita" required="required">
 	</div>
 
+	<div class="col-sm-1">
+			<button class="btn btn-primary" type="submit" name="submit">Enviar</button>
+	</div>
+
 </form>
+</fieldset>
+
 </div>
 
 
-<!-- 
-
-`diag_med` 
-  `diag_nutri` 
-  `peso` 
-  `talla` 
-  `variacion` 
-  `requ_calorias` 
-  `porc_aporte` 
-  `nutro_ter` 
-  `via` 
-  `suger_tm` 
-  `presenta` 
-  `gramos_dia` 
-  `env_pormes` 
-  `prof_solicita` 
-  `servicio` 
-  `hospital` 
-  `email` 
-  `celular` 
-  `suspencion` 
-  `Estado` 
-  `fecha_ped` 
-  `fecha_reg` 
-  `usuari_id` 
-
-
-
-	-->

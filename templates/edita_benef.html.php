@@ -28,7 +28,7 @@
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Localidad">Localidad</label>
-			<input class="form-control" type="text" name="Localidad" id="Localidad" required="Localidad" autocomplete="off">
+			<input class="form-control" type="text" name="Localidad" id="Localidad" value="<?=$datosCaso['Localidad'] ?? ''?>" autocomplete="off">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
@@ -53,4 +53,7 @@
 	<a href="../include/busca_benef.php"  class="btn btn-primary btn-sm" role="button">Volver sin cambiar</a>
 
 	<a href="../include/edita_benef.php?id=<?=$datosCaso['id_datos_benef'] ?? ''?>"  class="btn btn-primary btn-sm" role="button">Guardar cambios</a>
+
+	
+
 </div>
