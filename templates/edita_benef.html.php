@@ -1,6 +1,9 @@
 <div class="container">
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="edita_benef.php" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
+	
+	<input type="hidden" name="id_datos_benef" id="id_datos_benef" value=<?=$datosCaso['id_datos_benef'] ?? ''?> >
+
 	<div class="col-sm-6">
 
 			<label class="form-label-sm" for="Nombres">Nombres</label>
@@ -12,11 +15,11 @@
 	</div>
 	<div class="col-sm-4">
 			<label class="form-label-sm" for="FechaNac">Fecha de Nacimiento</label>
-			<input class="form-control" type="date" name="FechaNac" id="FechaNac" value="<?=$datosCaso['FechaNac'] ?? ''?>">
+			<input class="form-control" type="date" name="FechaNac" id="FechaNac" min="1920-01-01"  max="<?=date('Y-m-d');?>" value="<?=$datosCaso['FechaNac'] ?? ''?>">
 	</div>
 	<div class="col-sm-4">
 			<label class="form-label-sm" for="DNI">DNI</label>
-			<input class="form-control" type="number" name="DNI" id="DNI" required="required" value="<?=$datosCaso['DNI'] ?? ''?>">
+			<input class="form-control" type="number" step="1" min="1000000" max="99000000" name="DNI" id="DNI" required="required" value="<?=$datosCaso['DNI'] ?? ''?>">
 	</div>
 	<div class="col-sm-4">		
 			<label class="form-label-sm" for="Celular">Celular</label>
@@ -45,15 +48,16 @@
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
-			<input class="form-control" type="number" name="CelularResp" id="CelularResp" value="<?=$datosCaso['CelularResp'] ?? ''?>" autocomplete="off">
+			<input class="form-control" type="number" step="1" min="1000000" max="99000000" name="CelularResp" id="CelularResp" value="<?=$datosCaso['CelularResp'] ?? ''?>" autocomplete="off">
 	</div>
 
 		
 <div class="container">
 	<a href="../include/busca_benef.php"  class="btn btn-primary btn-sm" role="button">Volver sin cambiar</a>
 
-	<a href="../include/edita_benef.php?id=<?=$datosCaso['id_datos_benef'] ?? ''?>"  class="btn btn-primary btn-sm" role="button">Guardar cambios</a>
+<input type="submit"  name="submit"  class="btn btn-primary btn-sm" value="Guardar Cambios">
 
-	
+</div>
+</form>	
 
 </div>

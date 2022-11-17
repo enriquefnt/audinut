@@ -45,12 +45,12 @@
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="DNIResp">DNI-Responsable</label>
-			<input class="form-control form-control-sm" type="number" name="DNIResp" id="DNIResp" >
+			<input class="form-control form-control-sm" type="number" step="1" min="1000000" max="99000000" name="DNIResp" id="DNIResp" >
 	</div>
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
-			<input class="form-control form-control-sm" type="number" name="CelularResp" id="CelularResp" >
+			<input class="form-control form-control-sm" type="tel" pattern="[0-9]{3}-[0-9]{7}" name="CelularResp" id="CelularResp" >
 	</div>
 
 	<div class="col-sm-11">

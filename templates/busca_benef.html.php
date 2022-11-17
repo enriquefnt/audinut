@@ -18,6 +18,13 @@
    <?php
 
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  
+
+
+<div class="container">
+<h4>No está registrado </h4>
+</div>
+
+
 <div class="container">
 
 <a type="button" class="btn btn-primary" href="../include/carga_benef.php">Cargar los datos</a>
@@ -26,6 +33,12 @@ if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>
  <?php } 
 
 elseif (isset($_POST['id_datos_benef'])) { ?> 
+ 
+<div class="container">
+<h4>Está registrado </h4>
+</div>
+
+
  <div class="container">
 
 <a type="button" class="btn btn-primary" href="../include/carga_pedi.php?id=<?=$_POST['id_datos_benef']; ?>">Cargar pedido</a>

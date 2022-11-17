@@ -23,7 +23,7 @@ $record = [ 				'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
 			
 
 insert($pdo, 'datos_benef', $record);
-header('Location: carga_benef.php');
+header('Location: busca_benef.php');
 					
 								}
 
