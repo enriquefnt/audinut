@@ -2,6 +2,26 @@
 include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
 try {
+
+
+$query = "
+SELECT nombre_geo FROM datos_localidad
+ORDER BY nombre_geo ASC
+";
+
+$result = $pdo->query($query);
+
+$data = array();
+
+foreach($result as $row)
+{
+    $data[] = array(
+        'label'     =>  $row['nombre_geo'],
+        'value'     =>  $row['nombre_geo']
+    );
+}
+
+	
 $title = 'Carga Beneficiario';
 
 if (isset($_POST['Apellidos'])) {
@@ -33,7 +53,6 @@ elseif (isset($_POST['id_datos_benef'])) {
 		 
 		 		$datosCaso = findById($pdo, 'datos_benef', 'id_datos_benef', $_POST['id_datos_benef']);
 			}
-
 
 
 
