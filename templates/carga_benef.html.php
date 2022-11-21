@@ -25,7 +25,7 @@
 	</div>
 	<div class="col-sm-4">		
 			<label class="form-label-sm" for="Celular">Celular</label>
-			<input class="form-control form-control-sm" type="number" step="1" min="100000000" max="99000000000"  name="Celular" id="Celular" >
+			<input class="form-control form-control-sm" type="number" step="1" min="100000000" max="99000000000"  name="Celular" id="Celular" pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>
@@ -55,7 +55,7 @@
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
-			<input class="form-control form-control-sm" type="tel" pattern="[0-9]{3}-[0-9]{7}" name="CelularResp" id="CelularResp" placeholder="###-#######">
+			<input class="form-control form-control-sm" type="tel"  name="CelularResp" id="CelularResp" pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######">
 	</div>
 
 	<div class="col-sm-11">

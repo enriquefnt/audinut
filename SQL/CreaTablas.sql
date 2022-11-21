@@ -45,3 +45,21 @@ CREATE TABLE `datos_pedido` (
   PRIMARY KEY (`id_datos_pedido`,`id_datos_benef`),
   UNIQUE KEY `id_datos_pedido_UNIQUE` (`id_datos_pedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `datos_usuarios` (
+  `id_usuario` int(3) NOT NULL,
+  `nombre` varchar(45) NOT NULL,
+  `apellido` varchar(45) NOT NULL,
+  `profesion` int(1) NOT NULL,
+  `tipo` int(1) NOT NULL,
+  `codloc` int(5) NOT NULL,
+  `celular` int(10) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `usuario` varchar(45) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `id_UNIQUE` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+

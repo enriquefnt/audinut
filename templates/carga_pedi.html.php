@@ -12,7 +12,7 @@
 		
 	
 
-<input type="hidden"name="id_datos_benef" id="id_datos_benef" value=""
+<input type="hidden"name="id_datos_benef" id="id_datos_benef" value=<?=$_POST['id_datos_benef'] ?? ''?> 
 >
 
 
@@ -52,6 +52,10 @@
 			<label class="form-label-sm" for="suger_tm">Producto sugerido</label>
 			<input class="form-control form-control-sm" type="text"  name="suger_tm" id="suger_tm" required="required">
 	</div>
+	<div class="col-sm-3">
+			<label class="form-label-sm" for="suger_tm">Via</label>
+			<input class="form-control form-control-sm" type="text"  name="via" id="via" required="required">
+	</div>
 	
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="presenta">Presentación</label>
@@ -59,7 +63,7 @@
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="gramos_dia">Gramos por día</label>
-			<input class="form-control form-control-sm" type="number" step="10" min="10" max="500" name="gramos_dia" id="gramos_dia" required="required">
+			<input class="form-control form-control-sm" type="number" step="1" min="10" max="500" name="gramos_dia" id="gramos_dia" required="required">
 	</div>
 	<div class="col-sm-4">
 			<label class="form-label-sm" for="env_pormes">Envases por mes</label>
@@ -70,8 +74,8 @@
 			<input class="form-control form-control-sm" type="text"  name="prof_solicita" id="prof_solicita" required="required">
 	</div>
 	<div class="col-sm-4">
-			<label class="form-label-sm" for="fecha_ped">Fecha</label>
-			<input class="form-control form-control-sm" type="date" min="2015-01-01"  max="<?=date('Y-m-d');?>" name="fecha_ped" id="fecha_ped" required="required">
+			
+			<input  type="hidden" name="fecha_ped" value="<?=$cargadate ?? ''?> ">
 	</div>
 
 	<div class="col-sm-1">

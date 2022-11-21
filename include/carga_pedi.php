@@ -7,13 +7,12 @@ $title = 'Carga pedido';
 if (isset($_POST['id_datos_benef'])) {
 
 $record = [ 				
-						'id_datos_benef' =>($_POST['id_datos_benef']),
-						'diag_med' =>($_POST['diag_med']),
+						'id_datos_benef' =>$_POST['id_datos_benef'],
+						'diag_med' =>$_POST['diag_med'],
 						'diag_nutri' => $_POST['diag_nutri'],
 						'peso' => $_POST['peso'],
 	 					'talla' => $_POST['talla'],
 						'variacion' => $_POST['variacion'],
-						'requ_calorias' =>($_POST['requ_calorias']),
 						'porc_aporte' => $_POST['porc_aporte'],
 						'nutro_ter' => $_POST['nutro_ter'],
 	 					'via' => $_POST['via'],
@@ -21,8 +20,8 @@ $record = [
 						'presenta' =>($_POST['presenta']),
 						'gramos_dia' => $_POST['gramos_dia'],
 						'env_pormes' => $_POST['env_pormes'],
-	 					'prof_solicita' => $_POST['prof_solicita']
-						
+	 					'prof_solicita' => $_POST['prof_solicita'],
+						'fecha_ped' => $_POST['fecha_ped']
 							 	
 					];
 			
@@ -45,6 +44,7 @@ elseif (isset($_POST['id_datos_benef'])) {
 
 
 $title = 'Carga Pedido';
+$cargadate=date('Y-m-d');
 
 
  

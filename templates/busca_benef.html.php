@@ -17,6 +17,10 @@
 
    <?php
 
+
+
+
+
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  
 
 
