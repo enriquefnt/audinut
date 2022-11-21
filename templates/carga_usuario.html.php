@@ -1,8 +1,4 @@
 
- 
- 
- 
-
 <div class="container">
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
@@ -55,7 +51,7 @@
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
-			<input class="form-control form-control-sm" type="tel" pattern="[0-9]{3}-[0-9]{7}" name="CelularResp" id="CelularResp" placeholder="###-#######">
+			<input class="form-control form-control-sm" type="tel" pattern="[0-9]{3}-[0-9]{7}" name="CelularResp" id="CelularResp" >
 	</div>
 
 	<div class="col-sm-11">
@@ -79,4 +75,3 @@ var auto_complete = new Autocomplete(document.getElementById('nombre_geo'), {
 }); 
 
 </script>
-

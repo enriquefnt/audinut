@@ -26,13 +26,13 @@ $title = 'Carga Beneficiario';
 
 if (isset($_POST['Apellidos'])) {
 
-$record = [ 				'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
+$record = [ 			'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
 						'Apellidos' =>ucwords(strtolower($_POST['Apellidos'])),
 						'DNI' => $_POST['DNI'],
 						'FechaNac' => $_POST['FechaNac'],
 						'Celular' => $_POST['Celular'],
 	 					'Domicilio' => $_POST['Domicilio'],
-						'Localidad' => $_POST['Localidad'],
+						'Localidad' => $_POST['nombre_geo'],
 						'NombresResp' => ucwords(strtolower($_POST['NombresResp'])),
 						'ApellidosResp' => ucwords(strtolower($_POST['ApellidosResp'])),
 						'CelularResp' => $_POST['CelularResp'],

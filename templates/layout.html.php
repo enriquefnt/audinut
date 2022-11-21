@@ -6,7 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<title><?=$title?></title>
-	
+	<script src="../js/autocomplete.js"></script>
+
+ <!-- Bootstrap CSS -->
+ 				 <link href="../library/bootstrap-5/bootstrap.min.css" rel="stylesheet" />
+        <script src="../library/bootstrap-5/bootstrap.bundle.min.js"></script>
+        <script src="../library/autocomplete.js"></script>
+
+
 </head>
 
 

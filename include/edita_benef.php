@@ -4,6 +4,25 @@ include __DIR__ . '/../include/funciones.php';
 
 try {
 
+
+$query = "
+SELECT nombre_geo FROM datos_localidad
+ORDER BY nombre_geo ASC
+";
+
+$result = $pdo->query($query);
+
+$data = array();
+
+foreach($result as $row)
+{
+    $data[] = array(
+        'label'     =>  $row['nombre_geo'],
+        'value'     =>  $row['nombre_geo']
+    );
+}
+
+$title = 'Editar';
  if (isset($_POST['id_datos_benef'])) {
 /*
 $benef_editar = [ 'id_datos_benef'=> $_POST['id_datos_benef'],
@@ -13,7 +32,7 @@ $benef_editar = [ 'id_datos_benef'=> $_POST['id_datos_benef'],
 									'FechaNac' => $_POST['FechaNac'],
 									'Celular' => $_POST['Celular'],
 				 					'Domicilio' => $_POST['Domicilio'],
-									'Localidad' => $_POST['Localidad'],
+									'Localidad' =>$_POST['nombre_geo'];,
 									'NombresResp' => ucwords(strtolower($_POST['NombresResp'])),
 									'ApellidosResp' => ucwords(strtolower($_POST['ApellidosResp'])),
 									'CelularResp' => $_POST['CelularResp'],
@@ -31,7 +50,7 @@ $benef_editar = [ 'id_datos_benef'=> $_POST['id_datos_benef'],
 									$FechaNac = $_POST['FechaNac'];
 									$Celular = $_POST['Celular'];
 				 					$Domicilio = $_POST['Domicilio'];
-									$Localidad = $_POST['Localidad'];
+									$Localidad = $_POST['nombre_geo'];
 									$NombresResp = ucwords(strtolower($_POST['NombresResp']));
 									$ApellidosResp = ucwords(strtolower($_POST['ApellidosResp']));
 									$CelularResp = $_POST['CelularResp'];
@@ -63,7 +82,7 @@ else {
 
 
 
- $title = 'Editar';
+ 
 
 ob_start();
 

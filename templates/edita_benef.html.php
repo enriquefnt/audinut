@@ -29,10 +29,18 @@
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>
 			<input class="form-control" type="text" name="Domicilio" id="Domicilio" required="required" value="<?=$datosCaso['Domicilio'] ?? ''?>" autocomplete="off">
 	</div>
+	
+
 	<div class="col-sm-6">
-			<label class="form-label-sm" for="Localidad">Localidad</label>
-			<input class="form-control" type="text" name="Localidad" id="Localidad" value="<?=$datosCaso['Localidad'] ?? ''?>" autocomplete="off">
-	</div>
+    	<label class="form-label-sm" for="Localidad">Localidad</label>
+    	<input type="text" name="nombre_geo" id="nombre_geo" class="form-control form-control-lg" value="<?=$datosCaso['Localidad'] ?? ''?>"autocomplete="off" />
+		
+    </div>
+
+
+
+
+
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
 			<input class="form-control" type="text" name="NombresResp" id="NombresResp" value="<?=$datosCaso['NombresResp'] ?? ''?>" autocomplete="off">
@@ -61,3 +69,15 @@
 </form>	
 
 </div>
+
+
+<script>
+
+var auto_complete = new Autocomplete(document.getElementById('nombre_geo'), {
+    data:<?php echo json_encode($data); ?>,
+    maximumItems:10,
+    highlightTyped:true,
+    highlightClass : 'fw-bold text-primary'
+}); 
+
+</script>
