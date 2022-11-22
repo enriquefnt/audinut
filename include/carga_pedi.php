@@ -31,15 +31,15 @@ header('Location: busca_benef.php');
 					
 								}
 
-/*
-elseif (isset($_POST['id_datos_benef'])) {
 
+elseif (isset($_GET['id'])) {
 		 
-		 		$datosCaso = findById($pdo, 'datos_benef', 'id_datos_benef', $_POST['id_datos_benef']);
+		 $beneficiario = findById($pdo, 'datos_benef', 'id_datos_benef', $_GET['id']);
+		
 			}
 
 
-*/
+
 
 
 

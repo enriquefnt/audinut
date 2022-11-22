@@ -1,6 +1,6 @@
-
-
-
+<p>
+Id <?=$beneficiario['id_datos_benef'] ?? ''?>
+</p>
 
 
 <div class="container">
@@ -12,7 +12,7 @@
 		
 	
 
-<input type="hidden"name="id_datos_benef" id="id_datos_benef" value=<?=$_POST['id_datos_benef'] ?? ''?> 
+<input type="hidden"name="id_datos_benef" id="id_datos_benef" value=<?=$beneficiario['id_datos_benef'] ?? ''?> 
 >
 
 
