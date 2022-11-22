@@ -52,9 +52,9 @@ CREATE TABLE `datos_usuarios` (
   `id_usuario` int(3) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,
-  `profesion` int(1) NOT NULL,
+  `profesion` varchar(15) NOT NULL,
   `tipo` int(1) NOT NULL,
-  `codloc` int(5) NOT NULL,
+  `cod_ser` int(5) NOT NULL,
   `celular` int(10) NOT NULL,
   `email` varchar(255) NOT NULL,
   `usuario` varchar(45) NOT NULL,
@@ -62,4 +62,3 @@ CREATE TABLE `datos_usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_UNIQUE` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-

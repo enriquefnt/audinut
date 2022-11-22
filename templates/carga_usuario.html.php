@@ -11,51 +11,55 @@
 			<label class="form-label-sm" for="Apellidos">Apellidos</label>
 			<input class="form-control form-control-sm" type="text" name="Apellidos" id="Apellidos" autocomplete="off"  required="required">
 	</div>
-	<div class="col-sm-4">
-			<label class="form-label-sm" for="FechaNac">Fecha de Nacimiento</label>
-			<input class="form-control form-control-sm" type="date" min="1920-01-01"  max="<?=date('Y-m-d');?>" name="FechaNac" id="FechaNac" required="required">
-	</div>
-	<div class="col-sm-4">
-			<label class="form-label-sm" for="DNI">DNI</label>
-			<input class="form-control form-control-sm" type="number" step="1" min="1000000" max="99000000"  name="DNI" id="DNI" required="required">
-	</div>
-	<div class="col-sm-4">		
-			<label class="form-label-sm" for="Celular">Celular</label>
-			<input class="form-control form-control-sm" type="number" step="1" min="100000000" max="99000000000"  name="Celular" id="Celular" >
-	</div>
-	<div class="col-sm-6">
-			<label class="form-label-sm" for="Domicilio">Domicilio</label>
-			<input class="form-control form-control-sm" type="text" name="Domicilio" id="Domicilio" required="required">
-	</div>
-<!--	<div class="col-sm-6">
-			<label class="form-label-sm" for="Localidad">Localidad</label>
-			<input class="form-control form-control-sm" type="text" name="Localidad" id="Localidad" required="required">
-	</div>-->
+	<div class="col-sm-2">
+  <label class="form-label-sm" for="profesion">Profesion</label>
+  <select name="profesion" id="profesion" class="w3-input">
+    <option value='1'>Enfermería</option>
+    <option value='2'>Nutrición</option>
+    <option value='3'>Medicina</option>
+    <option value='4'>Agente Sanitario</option>
+    <option value='5'>Administrativo</option>
+    <option value='6'>Otros</option>
+    </select>
+ </div>
+
+ <div class="col-sm-2">
+  <label class="form-label-sm" for="tipo">Funcion</label>
+  <select name="tipo" id="tipo" class="w3-input">
+    <option value='1'>Administrador</option>
+    <option value='2'>Auditor</option>
+    <option value='3'>Profesional</option>
+    <option value='5'>Administrativo</option>
+    <option value='6'>Otros</option>
+    </select>
+ </div>
+	
+	
+	
     <div class="col-sm-6">
-    	<label class="form-label-sm" for="Localidad">Localidad</label>
-    	<input type="text" name="nombre_geo" id="nombre_geo" class="form-control form-control-lg" autocomplete="off" />
-		
-    </div>
+    	<label class="form-label-sm" for="establecimiento_nombre">Institución</label>
+    	<input type="text" name="establecimiento_nombre" id="establecimiento_nombre" class="form-control form-control-lg" autocomplete="off" />
+		    </div>
+
+<div class="col-sm-4">		
+			<label class="form-label-sm" for="Celular">Celular</label>
+			<input class="form-control form-control-sm" type="tel"   name="Celular" id="Celular"pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######">
+	</div>
+
+<div class="col-sm-4">		
+			<label class="form-label-sm" for="email">Correo electrónico</label>
+			<input class="form-control form-control-sm" type="email"   name="Celular" id="email">
+	</div>
+
     	<div class="col-sm-6">
-			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
-			<input class="form-control form-control-sm" type="text" name="NombresResp" id="NombresResp" >
+			<label class="form-label-sm" for="usuario">Usuario</label>
+			<input class="form-control form-control-sm" type="text" name="usuario" id="usuario" >
 	</div>
 	<div class="col-sm-6">
-			<label class="form-label-sm" for="ApellidosResp">Apellidos-Responsable</label>
-			<input class="form-control form-control-sm" type="text" name="ApellidosResp" id="ApellidosResp" >
+			<label class="form-label-sm" for="password">Contraseña</label>
+			<input class="form-control form-control-sm" type="text" name="password" id="password" >
 	</div>
-	<div class="col-sm-6">
-			<label class="form-label-sm" for="DNIResp">DNI-Responsable</label>
-			<input class="form-control form-control-sm" type="number" step="1" min="1000000" max="99000000" name="DNIResp" id="DNIResp" >
-	</div>
-
-	<div class="col-sm-6">
-			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
-			<input class="form-control form-control-sm" type="tel" pattern="[0-9]{3}-[0-9]{7}" name="CelularResp" id="CelularResp" >
-	</div>
-
-	<div class="col-sm-11">
-	</div>
+	
 
 
 	<div class="col-sm-1">
@@ -67,11 +71,12 @@
 
 <script>
 
-var auto_complete = new Autocomplete(document.getElementById('nombre_geo'), {
-    data:<?php echo json_encode($data); ?>,
+var auto_complete = new Autocomplete(document.getElementById('establecimiento_nombre'), {
+    data:<?php echo json_encode($data_esta); ?>,
     maximumItems:10,
     highlightTyped:true,
     highlightClass : 'fw-bold text-primary'
 }); 
 
 </script>
+

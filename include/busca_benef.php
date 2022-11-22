@@ -5,9 +5,6 @@ try {
 
 
 
-//$sql='call lista_simple;';
-
-//$benef = $pdo->query($sql);
 
 
 $title = 'Busca Beneficiario';
