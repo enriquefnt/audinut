@@ -11,13 +11,7 @@
 	<title><?=$title?></title>
 	<script src="../js/autocomplete.js"></script>
 
- <!-- Bootstrap CSS -->
- 			 <!--  	 <link href="../library/bootstrap-5/bootstrap.min.css" rel="stylesheet" />
-       
-
-       <script src="../library/bootstrap-5/bootstrap.bundle.min.js"></script>
-       <script src="../library/autocomplete.js"></script> -->
-
+ 
 
 </head>
 
@@ -25,7 +19,7 @@
 <body class="w3-light-grey">
 <header class="p-3 mb-2 bg-primary text-white">
 	<div class="container-fluid">
-<h3>Gestión solicitudes de nutroterápicos</h3>
+<h4>Gestión solicitudes de nutroterápicos</h4>
 <h4>Area Fórmulas</h4>
 </div>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
@@ -34,7 +28,8 @@
 	<a class="navbar-brand mb-0 " href="../include/busca_benef.php">Carga datos</a>
 
 
-	<a class="navbar-brand mb-0 " href="../include/registro_usuarios.php">Carga Solicitudes</a></li>
+	<a class="navbar-brand mb-0 " href="../include/carga_usuarios.php">Registro de usuarios</a></li>
+	
 	<a class="navbar-brand mb-0 " href="../include/tabla_aop.php">Listados</a></li>
 
 	

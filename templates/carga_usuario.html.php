@@ -14,6 +14,7 @@
 	<div class="col-sm-2">
   <label class="form-label-sm" for="profesion">Profesion</label>
   <select name="profesion" id="profesion" class="w3-input">
+  	<option hidden selected>Profesion</option>
     <option value='1'>Enfermería</option>
     <option value='2'>Nutrición</option>
     <option value='3'>Medicina</option>
@@ -24,8 +25,9 @@
  </div>
 
  <div class="col-sm-2">
-  <label class="form-label-sm" for="tipo">Funcion</label>
+  <label class="form-label-sm" for="tipo">Función</label>
   <select name="tipo" id="tipo" class="w3-input">
+  	<option hidden selected>Función</option>
     <option value='1'>Administrador</option>
     <option value='2'>Auditor</option>
     <option value='3'>Profesional</option>
@@ -64,7 +66,7 @@
 
 	<div class="col-sm-1">
 
-			<button class="btn btn-primary" type="submit" name="submit">Enviar</button>
+			<button class="btn btn-primary" type="submit" name="submit">Guardar</button>
 	</div>
 		</form>
 </div>
