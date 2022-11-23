@@ -28,7 +28,7 @@
 	<a class="navbar-brand mb-0 " href="../include/busca_benef.php">Carga datos</a>
 
 
-	<a class="navbar-brand mb-0 " href="../include/carga_usuarios.php">Registro de usuarios</a></li>
+	<a class="navbar-brand mb-0 " href="../include/carga_user.php">Registro de usuarios</a></li>
 	
 	<a class="navbar-brand mb-0 " href="../include/tabla_aop.php">Listados</a></li>
 
