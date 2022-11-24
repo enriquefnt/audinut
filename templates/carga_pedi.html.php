@@ -99,7 +99,7 @@
 <script type="text/javascript">
 
 var auto_complete = new Autocomplete(document.getElementById('prof_solicita'), {
-    data:<?php echo json_encode($data_pedi); ?>,
+    data:<?php echo json_encode($data); ?>,
     maximumItems:10,
     highlightTyped:true,
     highlightClass : 'fw-bold text-primary'

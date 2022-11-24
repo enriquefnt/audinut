@@ -7,27 +7,22 @@ include __DIR__ . '/funciones.php';
 
 try {
 
-
-
 $query = "
 SELECT id_usuario,nombre FROM datos_usuarios
-ORDER BY nombre ASC
+ORDER BY nombre  ASC
 ";
 
 $result = $pdo->query($query);
 
-$data_pedi = array();
+$data = array();
 
 foreach($result as $row)
 {
-    $data_pedi[] = array(
+    $data[] = array(
         'label'     =>  $row['nombre'],
         'value'     =>  $row['id_usuario']
     );
 }
-
-
-
 
 $title = 'Carga pedido';
 
