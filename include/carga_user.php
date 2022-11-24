@@ -50,7 +50,7 @@ insert ($pdo, 'datos_usuarios', $registro);
 //echo $row['codi_esta'] . "__" ;
 
 
-// header('Location: /../audinut/include/carga_user.php') ;
+header('Location: /../audinut/include/carga_user.php') ;
 
 
 

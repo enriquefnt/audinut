@@ -1,7 +1,34 @@
 <?php
 include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
+
+
+
+
 try {
+
+
+
+$query = "
+SELECT id_usuario,nombre FROM datos_usuarios
+ORDER BY nombre ASC
+";
+
+$result = $pdo->query($query);
+
+$data_pedi = array();
+
+foreach($result as $row)
+{
+    $data_pedi[] = array(
+        'label'     =>  $row['nombre'],
+        'value'     =>  $row['id_usuario']
+    );
+}
+
+
+
+
 $title = 'Carga pedido';
 
 if (isset($_POST['id_datos_benef'])) {

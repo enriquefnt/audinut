@@ -3,6 +3,22 @@ include __DIR__ . '/conect.php';
 //include __DIR__ . '/funciones.php';
 try {
 
+$query = "
+SELECT nombre_geo FROM datos_localidad
+ORDER BY nombre_geo ASC
+";
+
+$result = $pdo->query($query);
+
+$data = array();
+
+foreach($result as $row)
+{
+    $data[] = array(
+        'label'     =>  $row['nombre_geo'],
+        'value'     =>  $row['nombre_geo']
+    );
+}
 
 
 

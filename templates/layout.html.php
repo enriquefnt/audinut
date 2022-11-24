@@ -21,6 +21,56 @@
 	<div class="container-fluid">
 <h4>Gestión solicitudes de nutroterápicos</h4>
 <h4>Area Fórmulas</h4>
+
+<p>
+		<?php 
+		session_start();
+		switch ($_SESSION['tipo']) {
+    case 1:
+        echo "Administrador: ";
+        break;
+    case 2:
+        echo "Auditor: ";
+        break;
+    case 3:
+        echo "Profesional: ";
+        break;
+    case 4:
+        echo "Administrativo: ";
+        break;
+    case 5:
+        echo "Usuario: ";
+        break;    
+																} ?>
+		<b><?php 
+		if(isset($_SESSION['nombre'])) {
+			echo $_SESSION['nombre'] .' '. $_SESSION['apellido'];
+		}
+		?></b>
+		
+		<b><?php 
+		if ($_SESSION['tipo'] > 2) {
+			echo "&nbsp&nbsp	&nbsp	Institucion: ";
+		echo $_SESSION['establecimiento_nombre'];
+		}
+		else {
+			echo " &nbsp&nbsp	&nbsp Nivel Central";
+		}
+		?></b>
+
+	</p>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
 	<div class="container-fluid">
@@ -33,7 +83,7 @@
 	<a class="navbar-brand mb-0 " href="../include/tabla_aop.php">Listados</a></li>
 
 	
-	<a  class="navbar-brand mb-0 " href="../include/listado.php"class="w3-bar-item w3-button">Salir</a>
+	<a  class="navbar-brand mb-0 " href="../include/logout.php"class="w3-bar-item w3-button">Salir</a>
 	
 
 </div>
@@ -43,7 +93,12 @@
 
 <main class="w3-row-padding table-container">	
 	<div class="w3-container" >
-	<?=$output?> 
+
+	<?php
+//session_start();
+echo $output;
+
+?> 
 	</div>
 
 </main>

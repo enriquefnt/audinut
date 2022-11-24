@@ -1,7 +1,6 @@
 
  
  
- 
 
 <div class="container">
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
@@ -25,7 +24,7 @@
 	</div>
 	<div class="col-sm-4">		
 			<label class="form-label-sm" for="Celular">Celular</label>
-			<input class="form-control form-control-sm" type="number" step="1" min="100000000" max="99000000000"  name="Celular" id="Celular" pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######">
+			<input class="form-control form-control-sm" type="tel" step="1" min="100000000" max="99000000000"  name="Celular" id="Celular" pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>
