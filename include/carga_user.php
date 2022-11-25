@@ -37,6 +37,7 @@ $registro = [
                     'profesion' => $_POST['profesion'],
       				'tipo' => $_POST['tipo'],
       				'establecimiento_nombre' => $_POST['establecimiento_nombre'],
+                    'id_establecimiento' => $_POST['id_establecimiento'],
       				'email' => strtolower($_POST['email']),
 					'celular' => $_POST['celular'],
       				'usuario' => $_POST['usuario'],

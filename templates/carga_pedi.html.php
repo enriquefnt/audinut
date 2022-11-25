@@ -70,15 +70,11 @@
 			<input class="form-control form-control-sm" type="number" step="1" min="1" max="100"  name="env_pormes" id="env_pormes" required="required">
 	</div>
 	
-<!--
-	<div class="col-sm-4">
-			<label class="form-label-sm" for="prof_solicita">Profesional solicitante</label>
-			<input class="form-control form-control-sm" type="text"  name="prof_solicita" id="prof_solicita" required="required">
-	</div>
--->
+
 	<div class="col-sm-4">
     	<label class="form-label-sm" for="prof_solicita">Profesional solicitante</label>
     	<input type="text" name="prof_solicita" id="prof_solicita" class="form-control form-control-sm" autocomplete="off" />
+    	<input type="hidden" name="usuari_id" id="usuari_id" class="form-control form-control-sm" value="" autocomplete="off" />
 		    </div>
 
 

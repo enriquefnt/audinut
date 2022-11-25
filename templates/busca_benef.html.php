@@ -4,7 +4,7 @@
      
 	<form class="row g-3"  action="" autocomplete="off" method="post" >
 		 <div class="col-sm-3">
-		 	<!-- <label class="form-label-sm">Buscar Caso</label> -->
+		 	
 		  <input  type="text" name="Nombre" id="dName" placeholder="Buscar ...">
 		</div>
 		 <input type="hidden" name="id_datos_benef" id="dTel" value="xxxx">
@@ -54,3 +54,20 @@ elseif (isset($_POST['id_datos_benef'])) { ?>
 </div>
 
  <?php } ?>
+
+ <script>
+    // (C) ATTACH AUTOCOMPLETE TO INPUT FIELDS
+    window.addEventListener("DOMContentLoaded", function(){
+          
+      ac.attach({
+        target: "dName",
+        data: "search.php",
+        
+        // OPTIONAL
+        delay : 300,
+        min : 3
+      });
+    });
+    </script>
+
+    <script src="../js/autocompleta.js"></script>

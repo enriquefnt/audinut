@@ -44,6 +44,10 @@
     	<input type="text" name="establecimiento_nombre" id="establecimiento_nombre" class="form-control form-control-sm" autocomplete="off" />
 		    </div>
 
+   <div class="col-sm-6">
+            <input type="hidden" name="id_establecimiento" id="id_establecimiento" class="id_establecimiento" value="<?=$row['codi_esta'] ?? ''?>" />
+        </div>     
+
 
 <div class="col-sm-4">		
 			<label class="form-label-sm" for="celular">Celular</label>
@@ -75,7 +79,7 @@
 
 <script>
 
-var auto_complete = new Autocomplete(document.getElementById('establecimiento_nombre'), {
+var complete_establecimiento_nombre = new Autocomplete(document.getElementById('establecimiento_nombre'), {
     data:<?php echo json_encode($data_esta); ?>,
     maximumItems:10,
     highlightTyped:true,
