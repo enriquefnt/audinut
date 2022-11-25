@@ -36,7 +36,7 @@
 	</div>-->
     <div class="col-sm-6">
     	<label class="form-label-sm" for="Localidad">Localidad</label>
-    	<input type="text" name="nombre_geo" id="nombre_geo" class="form-control form-control-lg" autocomplete="off" />
+    	<input type="text" name="nombre_geo" id="nombre_geo" class="form-control form-control-sm" autocomplete="off" />
 		
     </div>
     	<div class="col-sm-6">

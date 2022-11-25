@@ -38,7 +38,7 @@
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="requ_calorias">Requerimiento calórico</label>
-			<input class="form-control form-control-sm" type="number" step="50" min="100" max="7000" name="requ_calorias" id="requ_calorias" required="required">
+			<input class="form-control form-control-sm" type="number" step="5" min="50" max="7000" name="requ_calorias" id="requ_calorias" required="required">
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="porc_aporte">Porcentaje del total a cubrir</label>

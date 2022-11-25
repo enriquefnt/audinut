@@ -8,7 +8,7 @@ include __DIR__ . '/funciones.php';
 try {
 
 $query = "
-SELECT id_usuario,nombre FROM datos_usuarios
+SELECT id_usuario,nombre, concat(nombre,' ',apellido) as profesional FROM datos_usuarios
 ORDER BY nombre  ASC
 ";
 
@@ -19,7 +19,7 @@ $data = array();
 foreach($result as $row)
 {
     $data[] = array(
-        'label'     =>  $row['nombre'],
+        'label'     =>  $row['profesional'],
         'value'     =>  $row['id_usuario']
     );
 }
@@ -35,6 +35,7 @@ $record = [
 						'peso' => $_POST['peso'],
 	 					'talla' => $_POST['talla'],
 						'variacion' => $_POST['variacion'],
+						'requ_calorias' => $_POST['requ_calorias'],
 						'porc_aporte' => $_POST['porc_aporte'],
 						'nutro_ter' => $_POST['nutro_ter'],
 	 					'via' => $_POST['via'],
@@ -43,6 +44,7 @@ $record = [
 						'gramos_dia' => $_POST['gramos_dia'],
 						'env_pormes' => $_POST['env_pormes'],
 	 					'prof_solicita' => $_POST['prof_solicita'],
+	 					'usuari_id' => $_POST['id_usuario'],
 						'fecha_ped' => $_POST['fecha_ped']
 							 	
 					];

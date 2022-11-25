@@ -40,9 +40,7 @@ $registro = [
       				'email' => strtolower($_POST['email']),
 					'celular' => $_POST['celular'],
       				'usuario' => $_POST['usuario'],
-      				'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)];
-
-
+                    'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)];
 
 insert ($pdo, 'datos_usuarios', $registro);
 //session_unset();

@@ -1,6 +1,5 @@
-<?php 
-session_start();
-?>
+
+
 <div class="container">
       
 <form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off">
