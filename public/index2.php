@@ -2,8 +2,8 @@
 	
 include __DIR__ . '/../include/conect.php';
 
-
-session_start();
+$title="Login";
+//session_start();
 
 	if(isset($_POST['login'])) {
 		$errMsg = '';
@@ -50,6 +50,7 @@ session_start();
 					else
 						$errMsg = 'Contraseña erronea';
 				}
+				
 			}
 			catch(PDOException $e) {
 				$errMsg = $e->getMessage();
@@ -57,7 +58,7 @@ session_start();
 		}
 	}
 ?>
-
+<!--
 <html>
 <head>
 	<title>Login</title>
@@ -76,25 +77,24 @@ Ingreso a listados
   <h2 class="login-header">Ingresar Usuario y contraseña</h2>
 
   <form class="login-container" action="" method="post">
-    <p><input type="text" name="usuario" id="usuario" value="" placeholder="Usuario" autocomplete="off"></p>
-    <p><input type="password" name="password" value="" autocomplete="off" placeholder="Contraseña"></p>
+    <p><input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario'] ?>"placeholder="Usuario" autocomplete="on"></p>
+    <p><input type="password" name="password" value="<?php if(isset($_POST['password'])) echo $_POST['password'] ?>" placeholder="Contraseña"></p>
     <p><input type="submit" name='login' value="Ingreso"></p>
   </form>
 
 
 </div>
+
+-->
 <?php
 				if(isset($errMsg)){
 					echo '<div class="error-msg">' .$errMsg .'</div>';
 				}
-			?>
+			
 
-<script type="text/javascript">
-(function() {
-    var some_id = document.getElementById('usuario');
-    some_id.type = 'text';
-    some_id.removeAttribute('autocomplete');
-})();
-</script>
-</body>
-</html>
+
+ob_start();
+include __DIR__ . '/../templates/login.html.php';
+$output = ob_get_clean();
+include __DIR__ . '/../templates/layout.html.php';
+?>
