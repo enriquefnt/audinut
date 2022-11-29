@@ -49,7 +49,7 @@ elseif (isset($_POST['id_datos_benef'])) { ?>
 
 <a type="button" class="btn btn-primary" href="../include/carga_pedi.php?id=<?=$_POST['id_datos_benef']; ?>">Cargar pedido</a>
 
-<a type="button" class="btn btn-primary" href="edita_benefcc.php?id=<?=$_POST['id_datos_benef']; ?>">Editar datos</a>
+<a type="button" class="btn btn-primary" href="edita_benef.php?id=<?=$_POST['id_datos_benef']; ?>">Editar datos</a>
 
 </div>
 
