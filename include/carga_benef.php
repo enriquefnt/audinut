@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/conect.php';
-include __DIR__ . '/funciones.php';
+//include __DIR__ . '/funciones.php';
 include __DIR__ . '/../classes/dataTables.php';
 
 $tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
@@ -53,11 +53,24 @@ header('Location: busca_benef.php');
 								}
 
 
-elseif (isset($_POST['id_datos_benef'])) {
+elseif (isset($_GET['id'])) {
 
 		 
-		 		$datosCaso = findById($pdo, 'datos_benef', 'id_datos_benef', $_POST['id_datos_benef']);
+		 		$datosCaso = $tablaBenef->findById($_GET['id']);
 			}
+
+/*
+} else {
+if (isset($_GET['id'])) {
+$joke = $jokesTable->findById($_GET['id']);
+}
+*/
+
+
+
+
+
+
 
 
 $title = 'Carga Datos';
