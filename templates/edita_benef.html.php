@@ -1,7 +1,7 @@
 
 
 <div class="container">
-	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="edita_benef.php" method="post" autocomplete="off" >
+	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
 	
 	<input type="hidden" name="id_datos_benef" id="id_datos_benef" value=<?=$datosCaso['id_datos_benef'] ?? ''?> >

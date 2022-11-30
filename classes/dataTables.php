@@ -1,5 +1,5 @@
 <?php
-class DatabaseTable
+class DataTables
 {
 	private $pdo;
 	private $table;

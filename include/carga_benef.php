@@ -1,11 +1,15 @@
 <?php
 include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
+include __DIR__ . '/../classes/dataTables.php';
+
+$tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
+
 try {
 
 
 $query = "
-SELECT nombre_geo FROM datos_localidad
+SELECT nombre_geo, gid FROM datos_localidad
 ORDER BY nombre_geo ASC
 ";
 
@@ -17,7 +21,7 @@ foreach($result as $row)
 {
     $data[] = array(
         'label'     =>  $row['nombre_geo'],
-        'value'     =>  $row['nombre_geo']
+        'value'     =>  $row['gid']
     );
 }
 
@@ -42,7 +46,8 @@ $record = [ 			'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
 					];
 			
 
-insert($pdo, 'datos_benef', $record);
+// insert($pdo, 'datos_benef', $record);
+	$tablaBenef->save($record)		;		
 header('Location: busca_benef.php');
 					
 								}
@@ -55,19 +60,13 @@ elseif (isset($_POST['id_datos_benef'])) {
 			}
 
 
-
-
-
-
-
-
 $title = 'Carga Datos';
 
 
  
 
 ob_start();
-include __DIR__ . '/../templates/carga_benef.html.php';
+include __DIR__ . '/../templates/edita_benef.html.php';
 $output = ob_get_clean() ;
 	
 }
