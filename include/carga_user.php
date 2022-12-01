@@ -1,6 +1,9 @@
 <?php
 include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
+include __DIR__ . '/../classes/dataTables.php';
+$tablaUser = new dataTables($pdo,'datos_usuarios','id_usuario');
+
 
 try {
 
@@ -43,7 +46,10 @@ $registro = [
       				'usuario' => $_POST['usuario'],
                     'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)];
 
-insert ($pdo, 'datos_usuarios', $registro);
+
+$tablaUser->update($registro);
+
+//insert ($pdo, 'datos_usuarios', $registro);
 //session_unset();
 //	 
 //echo $row['codi_esta'] . "__" ;

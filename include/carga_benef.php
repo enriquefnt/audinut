@@ -4,18 +4,11 @@ include __DIR__ . '/conect.php';
 include __DIR__ . '/../classes/dataTables.php';
 
 $tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
-
+$tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
 try {
 
+$result = $tablaLoc->findAll();
 
-$query = "
-SELECT nombre_geo, gid FROM datos_localidad
-ORDER BY nombre_geo ASC
-";
-
-$result = $pdo->query($query);
-
-$data = array();
 
 foreach($result as $row)
 {
@@ -25,12 +18,14 @@ foreach($result as $row)
     );
 }
 
-	
 $title = 'Carga Beneficiario';
 
-if (isset($_POST['Apellidos'])) {
-
-$record = [ 			'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
+if (isset($_POST['id_datos_benef'])) {
+/*
+$record = [], 			
+						
+				/*		//'id_datos_benef'=> $_POST['id_datos_benef'],
+						'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
 						'Apellidos' =>ucwords(strtolower($_POST['Apellidos'])),
 						'DNI' => $_POST['DNI'],
 						'FechaNac' => $_POST['FechaNac'],
@@ -44,27 +39,44 @@ $record = [ 			'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
 			
 							 	
 					];
-			
+			*/
+$Beneficiario=[];
+						$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
+						$Beneficiario['Apellidos'] =ucwords(strtolower($_POST['Apellidos']));
+						$Beneficiario['DNI'] = $_POST['DNI'];
+						$Beneficiario['FechaNac'] = $_POST['FechaNac'];
+						$Beneficiario['Celular'] = $_POST['Celular'];
+	 					$Beneficiario['Domicilio'] = $_POST['Domicilio'];
+						$Beneficiario['Localidad'] = $_POST['nombre_geo'];
+						$Beneficiario['NombresResp'] = ucwords(strtolower($_POST['NombresResp']));
+						$Beneficiario['ApellidosResp'] = ucwords(strtolower($_POST['ApellidosResp']));
+						$Beneficiario['CelularResp'] = $_POST['CelularResp'];
+						$Beneficiario['DNIResp'] = $_POST['DNIResp'];
+
+
+
+
+
+
 
 // insert($pdo, 'datos_benef', $record);
-	$tablaBenef->save($record)		;		
-header('Location: busca_benef.php');
+	$tablaBenef->save($Beneficiario)		;		
+header('Location: inicio.php');
 					
 								}
 
 
-elseif (isset($_GET['id'])) {
+else { if (isset($_GET['id'])) {
 
 		 
 		 		$datosCaso = $tablaBenef->findById($_GET['id']);
+			
+//echo $datosCaso['id_datos_benef'];
+
+			}
 			}
 
-/*
-} else {
-if (isset($_GET['id'])) {
-$joke = $jokesTable->findById($_GET['id']);
-}
-*/
+
 
 
 
