@@ -3,17 +3,12 @@ include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
 include __DIR__ . '/../classes/dataTables.php';
 $tablaUser = new dataTables($pdo,'datos_usuarios','id_usuario');
-
+$tablaInst = new dataTables($pdo,'datos_institucion','codi_esta');
 
 try {
 
 
-$query = "
-SELECT * FROM datos_institucion
-ORDER BY codi_esta ASC
-";
-
-$result = $pdo->query($query);
+$result = $tablaInst->findAll();
 
 $data_esta = array();
 
@@ -49,10 +44,7 @@ $registro = [
 
 $tablaUser->update($registro);
 
-//insert ($pdo, 'datos_usuarios', $registro);
-//session_unset();
-//	 
-//echo $row['codi_esta'] . "__" ;
+
 
 
 header('Location: /../audinut/include/carga_user.php') ;
