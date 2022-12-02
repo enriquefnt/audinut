@@ -45,7 +45,7 @@
 		    </div>
 
    <div class="col-sm-6">
-            <input type="hidden" name="id_establecimiento" id="id_establecimiento" class="id_establecimiento" value="<?=$row['codi_esta'] ?? ''?>" />
+            <input type="hidden" name="id_establecimiento" id="id_establecimiento"  value="<?=$row['codi_esta'] ?? ''?>" />
         </div>     
 
 

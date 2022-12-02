@@ -22,9 +22,9 @@ $title = 'Carga Beneficiario';
 
 if (isset($_POST['id_datos_benef'])) {
 /*
-$record = [], 			
+$record = [ 			
 						
-				/*		//'id_datos_benef'=> $_POST['id_datos_benef'],
+					'id_datos_benef'=> $_POST['id_datos_benef'],
 						'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
 						'Apellidos' =>ucwords(strtolower($_POST['Apellidos'])),
 						'DNI' => $_POST['DNI'],
@@ -71,15 +71,10 @@ else { if (isset($_GET['id'])) {
 		 
 		 		$datosCaso = $tablaBenef->findById($_GET['id']);
 			
-//echo $datosCaso['id_datos_benef'];
+
 
 			}
 			}
-
-
-
-
-
 
 
 

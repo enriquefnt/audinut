@@ -2,13 +2,13 @@
 
  <div class="container">
      
-	<form class="row g-3"  action="" autocomplete="off" method="post" >
-		 <div class="col-sm-3">
+	<form class="row g-4"  action="" autocomplete="off" method="post" >
+		 <div class=col-sm-3">
 		 	
-		  <input  type="text" name="Nombre" id="dName" placeholder="Buscar ...">
+		  <input  type="text" class="form-control form-control-sm" name="Nombre" id="dName" placeholder="Buscar ...">
 		</div>
 		 <input type="hidden" name="id_datos_benef" id="dTel" value="xxxx">
-		<div class="col-sm-1">
+		<div class="col-sm-2">
 				<button class="btn btn-primary" type="submit" name="submit">Buscar</button>
 		</div>
 	</form> 

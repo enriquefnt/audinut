@@ -50,7 +50,7 @@ private function insert($fields)
 	$fields = $this->processDates($fields);
 	$this->query($query, $fields);
 	}
-public function update($fields)
+private function update($fields)
 	{
 	$query = ' UPDATE `' . $this->table .'` SET ';
 	foreach ($fields as $key => $value) {
@@ -96,5 +96,4 @@ public function save($record)
 }
 }
 }
-
 

@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/conect.php';
-include __DIR__ . '/funciones.php';
+//include __DIR__ . '/funciones.php';
 include __DIR__ . '/../classes/dataTables.php';
 $tablaUser = new dataTables($pdo,'datos_usuarios','id_usuario');
 $tablaInst = new dataTables($pdo,'datos_institucion','codi_esta');

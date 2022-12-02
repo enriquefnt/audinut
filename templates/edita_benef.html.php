@@ -60,7 +60,8 @@
 	</div>
 
 	<div class="col-sm-6">
-			<label class="form-label-sm" for="CelularResp">Celular-Responsable</label>
+			<label class="form-label-sm" for="CelularResp"
+			title="Codigo de área (sin 0) - nùmero (sin 15)">Celular-Responsable</label>
 			<input class="form-control form-control-sm form-control form-control-sm-sm" type="tel"  name="CelularResp" id="CelularResp" pattern="[0-9]{3}-[0-9]{7}" value="<?=$datosCaso['CelularResp'] ?? ''?>" placeholder="###-#######" autocomplete="off">
 	</div>
 
