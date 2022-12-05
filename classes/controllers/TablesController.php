@@ -44,6 +44,33 @@ $record = [
 					];
 
 $this->benefTable->save($record);
+header('Location: inicio.php');
+
+else {
+
+			if (isset($_GET['id'])) {
+				$datosCaso = $this->benefTable->findById($_GET['id']);
+			
+			}
+
+			$title = 'Carga Beneficiario';
+
+			ob_start();
+
+			include  __DIR__ . '/../../templates/edita_benef.html.php';
+
+			$output = ob_get_clean();
+
+			return ['output' => $output, 'title' => $title];
+
+
+
+
+
+
+}
+
+
 
 
 

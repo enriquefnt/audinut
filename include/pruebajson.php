@@ -1,22 +1,42 @@
 <?php
-include __DIR__ . '/conect.php';
-include __DIR__ . '/funciones.php';
+try {
+include __DIR__ . '/../include/conect.php';
+include __DIR__ . '/../classes/DataTables.php';
+
+$tablaBenef = new DataTables($pdo, 'datos_benef', 'id_datos_benef');
+if (isset($_POST['Nombres'])) {
+				
+					$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
+					$Beneficiario['Apellidos'] =ucwords(strtolower($_POST['Apellidos']));
+					$Beneficiario['DNI'] = $_POST['DNI'];
+					$Beneficiario['FechaNac'] = $_POST['FechaNac'];
+					$Beneficiario['Celular'] = $_POST['Celular'];
+	 				$Beneficiario['Domicilio'] = $_POST['Domicilio'];
+					$Beneficiario['Localidad'] = $_POST['nombre_geo'];
+					$Beneficiario['NombresResp'] = ucwords(strtolower($_POST['NombresResp']));
+					$Beneficiario['ApellidosResp'] = ucwords(strtolower($_POST['ApellidosResp']));
+					$Beneficiario['CelularResp'] = $_POST['CelularResp'];
+					$Beneficiario['DNIResp'] = $_POST['DNIResp'];
+
+//	$joke = $_POST['joke'];
+//	$joke['jokedate'] = new DateTime();
+//	$joke['authorId'] = 1;
 
 
-$lista =findAll($pdo,'datos_institucion','codi_esta');
-
-foreach ($lista as $fila){
- 
- $data[]= array(
-        'label'=>$fila['establecimiento_nombre'],
-        'value'=>$fila['codi_esta'] );
-return $data;
+	$tablaBenef->save($Beneficiario);
+header('Location: inicio.php');
+} else {
+if (isset($_GET['id'])) {
+$Beneficiario = $tablaBenef->findById($_GET['id']);
 }
-
-
-if (1===1) {
-	// code...
-echo "______________";
-
+$title = 'Edita beneficiario';
+ob_start();
+include __DIR__ . '/../templates/edita_benef.html.php';
+$output = ob_get_clean();
 }
-?>
+} catch (PDOException $e) {
+$title = 'An error has occurred';
+$output = 'Database error: ' . $e->getMessage() . ' in '
+. $e->getFile() . ':' . $e->getLine();
+}
+include __DIR__ . '/../templates/layout.html.php';

@@ -20,86 +20,36 @@ foreach($result as $row)
 
 $title = 'Carga Beneficiario';
 
-if (isset($_POST['id_datos_benef'])) {
-/*
-$record = [ 			
-						
-					'id_datos_benef'=> $_POST['id_datos_benef'],
-						'Nombres' =>ucwords(strtolower($_POST['Nombres'])),
-						'Apellidos' =>ucwords(strtolower($_POST['Apellidos'])),
-						'DNI' => $_POST['DNI'],
-						'FechaNac' => $_POST['FechaNac'],
-						'Celular' => $_POST['Celular'],
-	 					'Domicilio' => $_POST['Domicilio'],
-						'Localidad' => $_POST['nombre_geo'],
-						'NombresResp' => ucwords(strtolower($_POST['NombresResp'])),
-						'ApellidosResp' => ucwords(strtolower($_POST['ApellidosResp'])),
-						'CelularResp' => $_POST['CelularResp'],
-						'DNIResp' => $_POST['DNIResp'],
-			
-							 	
-					];
-			*/
-$Beneficiario=[];
-						$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
-						$Beneficiario['Apellidos'] =ucwords(strtolower($_POST['Apellidos']));
-						$Beneficiario['DNI'] = $_POST['DNI'];
-						$Beneficiario['FechaNac'] = $_POST['FechaNac'];
-						$Beneficiario['Celular'] = $_POST['Celular'];
-	 					$Beneficiario['Domicilio'] = $_POST['Domicilio'];
-						$Beneficiario['Localidad'] = $_POST['nombre_geo'];
-						$Beneficiario['NombresResp'] = ucwords(strtolower($_POST['NombresResp']));
-						$Beneficiario['ApellidosResp'] = ucwords(strtolower($_POST['ApellidosResp']));
-						$Beneficiario['CelularResp'] = $_POST['CelularResp'];
-						$Beneficiario['DNIResp'] = $_POST['DNIResp'];
+$tablaBenef = new DataTables($pdo, 'datos_benef', 'id_datos_benef');
+if (isset($_POST['Nombres'])) {
+				
+					$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
+					$Beneficiario['Apellidos'] =ucwords(strtolower($_POST['Apellidos']));
+					$Beneficiario['DNI'] = $_POST['DNI'];
+					$Beneficiario['FechaNac'] = $_POST['FechaNac'];
+					$Beneficiario['Celular'] = $_POST['Celular'];
+	 				$Beneficiario['Domicilio'] = $_POST['Domicilio'];
+					$Beneficiario['Localidad'] = $_POST['nombre_geo'];
+					$Beneficiario['NombresResp'] = ucwords(strtolower($_POST['NombresResp']));
+					$Beneficiario['ApellidosResp'] = ucwords(strtolower($_POST['ApellidosResp']));
+					$Beneficiario['CelularResp'] = $_POST['CelularResp'];
+					$Beneficiario['DNIResp'] = $_POST['DNIResp'];
 
 
-
-
-
-
-
-// insert($pdo, 'datos_benef', $record);
-	$tablaBenef->save($Beneficiario)		;		
-header('Location: inicio.php');
-					
-								}
-
-
-else { if (isset($_GET['id'])) {
-
-		 
-		 		$datosCaso = $tablaBenef->findById($_GET['id']);
-			
-
-
-			}
-			}
-
-
-
-
-
-$title = 'Carga Datos';
-
-
- 
-
-ob_start();
-include __DIR__ . '/../templates/edita_benef.html.php';
-$output = ob_get_clean() ;
-	
+$tablaBenef->save($Beneficiario);
+	header('Location: inicio.php');
+} else {
+	if (isset($_GET['id'])) {
+	$Beneficiario = $tablaBenef->findById($_GET['id']);
 }
-
-
-catch (PDOException $e) {
-      $error = 'Error en la base:' . $e->getMessage() . ' en la linea ' .
-      $e->getFile() . ':' . $e->getLine();
-    }
-
-include  __DIR__ . '/../templates/layout.html.php';
-
-
-?>
-
 	
+		ob_start();
+		include __DIR__ . '/../templates/edita_benef.html.php';
+		$output = ob_get_clean();
+}
+} catch (PDOException $e) {
+		$title = 'An error has occurred';
+		$output = 'Database error: ' . $e->getMessage() . ' in '
+		. $e->getFile() . ':' . $e->getLine();
+}
+		include __DIR__ . '/../templates/layout.html.php';

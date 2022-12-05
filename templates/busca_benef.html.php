@@ -33,7 +33,7 @@ if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>
 
 <div class="container">
 
-<a type="button" class="btn btn-primary" href="../include/carga_benef.php">Cargar los datos</a>
+<a type="button" class="btn btn-primary" href="../include/pruebajson.php.php">Cargar los datos</a>
 
 </div>
  <?php } 
@@ -49,7 +49,7 @@ elseif (isset($_POST['id_datos_benef'])) { ?>
 
 <a type="button" class="btn btn-primary" href="../include/carga_pedi.php?id=<?=$_POST['id_datos_benef']; ?>">Cargar pedido</a>
 
-<a type="button" class="btn btn-primary" href="carga_benef.php?id=<?=$_POST['id_datos_benef']; ?>">Editar datos</a>
+<a type="button" class="btn btn-primary" href="pruebajson.php?id=<?=$_POST['id_datos_benef']; ?>">Editar datos</a>
 
 </div>
 
