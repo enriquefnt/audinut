@@ -42,14 +42,9 @@ $registro = [
                     'password' => password_hash($_POST['password'], PASSWORD_DEFAULT)];
 
 
-$tablaUser->update($registro);
+$tablaUser->save($registro);
 
-
-
-
-header('Location: /../audinut/include/carga_user.php') ;
-
-
+header('Location: /../audinut/include/inicio.php') ;
 
 }
 
@@ -59,6 +54,8 @@ header('Location: /../audinut/include/carga_user.php') ;
 
 // $result = findAll($pdo, 'act_aop' ,'areaoperativa');
  $title = 'Carga Usuarios';
+ 
+
  
 
 ob_start();

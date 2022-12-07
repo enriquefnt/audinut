@@ -6,6 +6,7 @@ include __DIR__ . '/../classes/DataTables.php';
 $tablaBenef = new DataTables($pdo, 'datos_benef', 'id_datos_benef');
 if (isset($_POST['Nombres'])) {
 				
+					$Beneficiario['id_datos_benef'] = $_GET['id'];
 					$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
 					$Beneficiario['Apellidos'] =ucwords(strtolower($_POST['Apellidos']));
 					$Beneficiario['DNI'] = $_POST['DNI'];
@@ -18,25 +19,21 @@ if (isset($_POST['Nombres'])) {
 					$Beneficiario['CelularResp'] = $_POST['CelularResp'];
 					$Beneficiario['DNIResp'] = $_POST['DNIResp'];
 
-//	$joke = $_POST['joke'];
-//	$joke['jokedate'] = new DateTime();
-//	$joke['authorId'] = 1;
 
-
-	$tablaBenef->save($Beneficiario);
-header('Location: inicio.php');
+$tablaBenef->save($Beneficiario);
+	header('Location: inicio.php');
 } else {
-if (isset($_GET['id'])) {
-$Beneficiario = $tablaBenef->findById($_GET['id']);
+	if (isset($_GET['id'])) {
+	$Beneficiario = $tablaBenef->findById($_GET['id']);
 }
-$title = 'Edita beneficiario';
-ob_start();
-include __DIR__ . '/../templates/edita_benef.html.php';
-$output = ob_get_clean();
+	$title = 'Edita beneficiario';
+		ob_start();
+		include __DIR__ . '/../templates/edita_benef.html.php';
+		$output = ob_get_clean();
 }
 } catch (PDOException $e) {
-$title = 'An error has occurred';
-$output = 'Database error: ' . $e->getMessage() . ' in '
-. $e->getFile() . ':' . $e->getLine();
+		$title = 'An error has occurred';
+		$output = 'Database error: ' . $e->getMessage() . ' in '
+		. $e->getFile() . ':' . $e->getLine();
 }
-include __DIR__ . '/../templates/layout.html.php';
+		include __DIR__ . '/../templates/layout.html.php';

@@ -11,8 +11,6 @@
 	<title><?=$title?></title>
 	<script src="../js/autocomplete.js"></script>
 
- 
-
 </head>
 
 

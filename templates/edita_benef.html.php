@@ -4,7 +4,7 @@
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
 	
-
+	<input type="hidden" name="id_datos_benef" value="<?=$Beneficiario['id_datos_benef'] ?? ''?>">
 
 	<div class="col-sm-6">
 
@@ -27,8 +27,6 @@
 			<label class="form-label-sm" for="Celular">Celular</label>
 			<input class="form-control form-control-sm" type="tel" name="Celular" id="Celular" pattern="[0-9]{3}-[0-9]{7}" value="<?=$Beneficiario['Celular'] ?? ''?>" placeholder="###-#######" autocomplete="off"> 
 
-
-
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>
@@ -41,9 +39,6 @@
     	<input type="text" name="nombre_geo" id="nombre_geo" class="form-control form-control-sm" value="<?=$Beneficiario['Localidad'] ?? ''?>"autocomplete="off" />
 		
     </div>
-
-
-
 
 
 	<div class="col-sm-6">
