@@ -21,9 +21,14 @@ foreach($result as $row)
 $title = 'Carga';
 
 $tablaBenef = new DataTables($pdo, 'datos_benef', 'id_datos_benef');
-if (isset($_POST['Nombres'])) {
+if (isset($_POST['Beneficiario'])) {
+
+$Beneficiario = $_POST['Beneficiario'];
+$Beneficiario['fechaCarga'] = new DateTime();
+
+
 				
-					$Beneficiario['id_datos_benef'] =$_POST['id_datos_benef'];
+				/*	$Beneficiario['id_datos_benef'] =$_POST['id_datos_benef'];
 					$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
 					$Beneficiario['Apellidos'] =ucwords(strtolower($_POST['Apellidos']));
 					$Beneficiario['DNI'] = $_POST['DNI'];
@@ -34,7 +39,7 @@ if (isset($_POST['Nombres'])) {
 					$Beneficiario['NombresResp'] = ucwords(strtolower($_POST['NombresResp']));
 					$Beneficiario['ApellidosResp'] = ucwords(strtolower($_POST['ApellidosResp']));
 					$Beneficiario['CelularResp'] = $_POST['CelularResp'];
-					$Beneficiario['DNIResp'] = $_POST['DNIResp'];
+					$Beneficiario['DNIResp'] = $_POST['DNIResp']; */
 					
 $tablaBenef->save($Beneficiario);
 	header('Location: inicio.php');
