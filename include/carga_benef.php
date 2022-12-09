@@ -25,8 +25,9 @@ if (isset($_POST['Beneficiario'])) {
 
 $Beneficiario = $_POST['Beneficiario'];
 $Beneficiario['fechaCarga'] = new DateTime();
-
-
+$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
+$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
+$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
 				
 				/*	$Beneficiario['id_datos_benef'] =$_POST['id_datos_benef'];
 					$Beneficiario['Nombres'] =ucwords(strtolower($_POST['Nombres']));
