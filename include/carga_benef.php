@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/conect.php';
-//include __DIR__ . '/funciones.php';
 include __DIR__ . '/../classes/dataTables.php';
+
 session_start();
 
 $tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
@@ -25,23 +25,29 @@ $title = 'Carga';
 $tablaBenef = new DataTables($pdo, 'datos_benef', 'id_datos_benef');
 
 if (isset($_POST['Beneficiario'])) {
+	
+	print_r($_POST['Beneficiario']);
+//sleep(30);
+	$Beneficiario = $_POST['Beneficiario'];
 
-$Beneficiario = $_POST['Beneficiario'];
 
-$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
-$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
-$Beneficiario['fechaCarga'] = new DateTime();
-$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
+	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
+	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
+
+	$Beneficiario['fechaCarga'] = new DateTime();
+	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
 				
-								
+//print_r($Beneficiario);
 $tablaBenef->save($Beneficiario);
 
-	header('Location: inicio.php');
+	 header('Location: inicio.php');
 
 } else {
 	if (isset($_GET['id'])) {
 	$Beneficiario = $tablaBenef->findById($_GET['id']);
+	//echo $Beneficiario['id_datos_benef'] ;
+	//print_r($Beneficiario);
 }
 	
 		ob_start();
