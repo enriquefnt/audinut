@@ -27,18 +27,16 @@ $tablaBenef = new DataTables($pdo, 'datos_benef', 'id_datos_benef');
 if (isset($_POST['Beneficiario'])) {
 	
 	print_r($_POST['Beneficiario']);
-//sleep(30);
+
 	$Beneficiario = $_POST['Beneficiario'];
-
-
 
 	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
 	$Beneficiario['fechaCarga'] = new DateTime();
 	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
-				
-//print_r($Beneficiario);
+		
+
 $tablaBenef->save($Beneficiario);
 
 	 header('Location: inicio.php');
