@@ -5,12 +5,14 @@ class TablesController {
 private $benefTable;
 private $pediTable;
 private $userTable;
+private $locTable;
 
 public function __construct($benefTable,
- $pediTable, $userTable) {
+ $pediTable, $userTable,$locTable) {
 $this->benefTable = $benefTable;
 $this->pediTable = $pediTable;
 $this->userTable = $userTable;
+$this->locTable = $locTable;
 }
 
 
@@ -18,7 +20,7 @@ $this->userTable = $userTable;
 
 public function edit() {
 
-$result = $tablaLoc->findAll();
+$result = $this->locTable->findAll();
 
 
 foreach($result as $row)
@@ -67,6 +69,40 @@ else {
 
 
 
+public function listar(){
+
+	
+		$result = $this->benefTable->findAll();
+
+		$benefs = [];
+		foreach ($result as $benef) {
+			
+
+			$benefs[] = [
+				'id' => $benef['id'],
+				'Nombres' => $benef['Nombres'],
+				'Apellidos' => $benef['Apellidos']
+			];
+
+		}
+
+
+		$title = 'Listado';
+
+		$totalBenef = $this->benefTable->total();
+
+		ob_start();
+
+		include  __DIR__ . '/../../templates/listado.html.php';
+
+		$output = ob_get_clean();
+
+		return ['output' => $output, 'title' => $title];
+	}
+
+
+
+
 public function home() {
 		$title = 'Auditoria Fórmulas';
 ob_start();
@@ -75,4 +111,7 @@ $output = ob_get_clean();
 
 		return ['output' => $output, 'title' => $title];
 	}
+
+
 }
+

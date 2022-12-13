@@ -14,6 +14,7 @@
       <li><a href="index.php">Home</a></li>
       
       <li><a href="index.php?action=edit">Cargar</a></li>
+      <li><a href="index.php?action=listar">Listar</a></li>
     </ul>
   </nav>
 

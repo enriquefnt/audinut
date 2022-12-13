@@ -6,25 +6,20 @@ try {
 	include __DIR__ . '/../classes/controllers/TablesController.php';
 
 	$tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
+	$tablaPedi =new DataTables($pdo,'datos_benef', 'id_datos_benef');
 	$tablaUser = new DataTables($pdo, 'datos_usuarios','id_usuario' );
   $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
 
-	$tablesController = new TablesController($tablaBenef, $tablaUser, $tablaLoc);
-
-	$page=[];
+	$tablesController = new TablesController($tablaBenef, $tablaBenef, $tablaUser, $tablaLoc);
 
 
 	if (isset($_GET['edit'])) {
 		$page = $tablesController->edit();
 	}
 
-	/*else if (isset($_GET['delete'])) {
-		$page = $jokeController->delete();
-	}
-
 	else if (isset($_GET['list'])) {
-		 $page = $jokeController->list();
-	} */
+		 $page = $tablesController->listar();
+	} 
 
 	else {
 		$page = $tablesController->home();
