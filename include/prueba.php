@@ -1,4 +1,8 @@
 <?php 
+
+
+print_r($_GET);
+
 try {
 include __DIR__ . '/../include/conect.php';
 	include __DIR__ . '/../classes/dataTables.php';
@@ -10,6 +14,7 @@ include __DIR__ . '/../include/conect.php';
   $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
 
 	$TablesController = new TablesController($tablaBenef, $tablaBenef, $tablaUser, $tablaLoc);
+
 
 
 $page=$TablesController->edit();
