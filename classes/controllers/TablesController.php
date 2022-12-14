@@ -79,7 +79,7 @@ public function listar(){
 			
 
 			$benefs[] = [
-				'id' => $benef['id'],
+				'id' => $benef['id_datos_benef'],
 				'Nombres' => $benef['Nombres'],
 				'Apellidos' => $benef['Apellidos']
 			];
@@ -114,4 +114,5 @@ $output = ob_get_clean();
 
 
 }
+
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="jokes.css">
-    <title><?=$title?></title>
+    <title><?=$page['title'];?></title>
   </head>
   <body>
   <nav>
@@ -19,7 +19,7 @@
   </nav>
 
   <main>
-  <?=$output?>
+  <?=$page['output'];?>
   </main>
 
   <footer>

@@ -10,19 +10,19 @@ try {
 	$tablaUser = new DataTables($pdo, 'datos_usuarios','id_usuario' );
   $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
 
-	$tablesController = new TablesController($tablaBenef, $tablaBenef, $tablaUser, $tablaLoc);
+	$TablesController = new TablesController($tablaBenef, $tablaBenef, $tablaUser, $tablaLoc);
 
 
 	if (isset($_GET['edit'])) {
-		$page = $tablesController->edit();
+		$page = $TablesController->edit();
 	}
 
 	else if (isset($_GET['list'])) {
-		 $page = $tablesController->listar();
+		 $page = $TablesController->listar();
 	} 
 
 	else {
-		$page = $tablesController->home();
+		$page = $TablesController->home();
 	}
 
 	$title = $page['title'];
@@ -30,9 +30,9 @@ try {
 
 }
 catch (PDOException $e) {
-	$title = 'An error has occurred';
+	$title = 'Ocurrio un error';
 
-	$output = 'Database error: ' . $e->getMessage() . ' in ' .
+	$output = 'Error en la base: ' . $e->getMessage() . ' en ' .
 	$e->getFile() . ':' . $e->getLine();
 }
 
