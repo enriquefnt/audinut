@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="jokes.css">
-    <title><?=$page['title'];?></title>
+    <title><?=$title;?></title>
   </head>
   <body>
   <nav>
@@ -11,15 +11,15 @@
       <h1>AUDINUT</h1>
     </header>
     <ul>
-      <li><a href="index.php">Home</a></li>
+      <li><a href="prueba.php">Home</a></li>
       
-      <li><a href="index.php?action=edit">Cargar</a></li>
-      <li><a href="index.php?action=listar">Listar</a></li>
+      <li><a href="prueba.php?action=edit">Cargar</a></li>
+      <li><a href="prueba.php?action=listar">Listar</a></li>
     </ul>
   </nav>
 
   <main>
-  <?=$page['output'];?>
+  <?=$output;?>
   </main>
 
   <footer>

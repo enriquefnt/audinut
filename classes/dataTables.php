@@ -4,7 +4,7 @@ class DataTables
 	private $pdo;
 	private $table;
 	private $primaryKey;
-	public function __construct(PDO $pdo, string $table,
+public function __construct(PDO $pdo, string $table,
 	string $primaryKey)
 {
 	$this->pdo = $pdo;
