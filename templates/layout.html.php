@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="jokes.css">
+    
     <title><?=$title;?></title>
   </head>
   <body>
@@ -11,15 +11,16 @@
       <h1>AUDINUT</h1>
     </header>
     <ul>
-      <li><a href="prueba.php">Home</a></li>
-      
-      <li><a href="prueba.php?action=edit">Cargar</a></li>
-      <li><a href="prueba.php?action=listar">Listar</a></li>
+      <li><a href="index.php?action=home">Home</a></li>
+      <li><a href="index.php?action=edit">Cargar</a></li>
+      <li><a href="index.php?action=listar">Listar</a></li>
     </ul>
   </nav>
 
   <main>
-  <?=$output;?>
+  <?=$output ?? ''?>
+
+  
   </main>
 
   <footer>

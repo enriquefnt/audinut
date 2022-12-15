@@ -1,7 +1,8 @@
 <?php 
 
 
-print_r($_GET);
+
+
 
 try {
 include __DIR__ . '/../include/conect.php';
@@ -9,38 +10,39 @@ include __DIR__ . '/../include/conect.php';
 	include __DIR__ . '/../classes/controllers/TablesController.php';
 
 	$tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
-	$tablaPedi =new DataTables($pdo,'datos_benef', 'id_datos_benef');
+	$tablaPedi =new DataTables($pdo,'datos_pedido', 'id_datos_pedido');
 	$tablaUser = new DataTables($pdo, 'datos_usuarios','id_usuario' );
-  $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
+    $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
 
-	$TablesController = new TablesController($tablaBenef, $tablaBenef, $tablaUser, $tablaLoc);
+	$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
+
+if (isset($_GET['action'])) {
+	// code...
 
 
 
-$page=$TablesController->edit();
-/*
-if (isset($_GET['edit'])) {
-		$page = $TablesController->edit();
-	}
 
-	else if (isset($_GET['list'])) {
-		 $page = $TablesController->listar();
-	} 
 
-	else {
+	$valoraction=$_GET['action'];
+
+switch ($valoraction) {
+	case 'edit':
+		$page=$TablesController->edit();
+		break;
+	case 'listar':
+		$page=$TablesController->listar();
+		break;	
+	
+	default:
 		$page = $TablesController->home();
-	}
+		break;
+}
 
-
-*/
-
-
-
-
-//print_r($page)
 
 $title=$page['title'];
 $output=$page['output'];
+
+}
 }
 catch (PDOException $e) {
 $title = 'Ocurrio un erro';
