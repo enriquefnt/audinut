@@ -20,7 +20,7 @@ public function busca() {
 
 try {
 
-
+/*
 $result = $this->locTable->findAll();
 $data = array();
 
@@ -31,13 +31,9 @@ foreach($result as $row)
         'value'     =>  $row['nombre_geo']
     );
 }
-
-
-
+*/
 
 $title = 'Busca Beneficiario';
-
-
  
 
 ob_start();
