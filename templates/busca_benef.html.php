@@ -33,7 +33,7 @@ if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>
 
 <div class="container">
 
-<a type="button" class="btn btn-primary" href="../include/carga_benef.php">Cargar los datos</a>
+<a type="button" class="btn btn-primary" href="index.php?action=edit">Cargar los datos</a>
 
 </div>
  <?php } 

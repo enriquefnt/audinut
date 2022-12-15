@@ -1,4 +1,3 @@
-
 <?php
 
 class TablesController {
@@ -14,6 +13,46 @@ $this->pediTable = $pediTable;
 $this->userTable = $userTable;
 $this->locTable = $locTable;
 }
+
+
+
+public function busca() {
+
+try {
+
+
+$result = $this->locTable->findAll();
+$data = array();
+
+foreach($result as $row)
+{
+    $data[] = array(
+        'label'     =>  $row['nombre_geo'],
+        'value'     =>  $row['nombre_geo']
+    );
+}
+
+
+
+
+$title = 'Busca Beneficiario';
+
+
+ 
+
+ob_start();
+include __DIR__ . '/../../templates/busca_benef.html.php';
+$output = ob_get_clean() ;
+return ['output' => $output, 'title' => $title];
+}
+
+    catch (PDOException $e) {
+      $error = 'Error en la base:' . $e->getMessage() . ' en la linea ' .
+      $e->getFile() . ':' . $e->getLine();
+    }
+
+}
+
 
 
 
@@ -34,8 +73,6 @@ foreach($result as $row)
 
 if (isset($_POST['Beneficiario'])) {
 	
-	print_r($_POST['Beneficiario']);
-
 	$Beneficiario = $_POST['Beneficiario'];
 
 	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
@@ -45,8 +82,8 @@ if (isset($_POST['Beneficiario'])) {
 	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
 		
 
-$this->benefTable->save($record);
-header('Location: inicio.php');
+$this->benefTable->save($Beneficiario);
+header('Location: index.php');
 }
 else {
 
