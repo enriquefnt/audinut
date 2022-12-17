@@ -14,10 +14,11 @@ include __DIR__ . '/../include/conect.php';
 
 	$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
 
-if (isset($_GET['action'])) {
+// (isset($_GET['action'])) {
 	
-	$valoraction=$_GET['action'];
-
+	$action=$_GET['action'] ?? 'home';
+		$page=$TablesController->$action();
+/*
 switch ($valoraction) {
 	case 'busca':
 		$page=$TablesController->busca();
@@ -33,13 +34,13 @@ switch ($valoraction) {
 		$page = $TablesController->home();
 		break;
 }
-
+*/
 
 $title=$page['title'];
 $output=$page['output'];
 
 }
-}
+
 catch (PDOException $e) {
 $title = 'Ocurrio un error';
 $output = 'Database error: ' . $e->getMessage() . ' in '

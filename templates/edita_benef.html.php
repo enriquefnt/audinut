@@ -64,7 +64,7 @@
 
 		
 <div class="container">
-	<a href="../include/inicio.php"  class="btn btn-primary btn-sm" role="button">Volver sin cambiar</a>
+	<a href="../public/index.php"  class="btn btn-primary btn-sm" role="button">Volver sin cambiar</a>
 
 <input type="submit"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 

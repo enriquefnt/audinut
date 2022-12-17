@@ -2,7 +2,7 @@
 include __DIR__ . '/conect.php';
 //include __DIR__ . '/funciones.php';
 try {
-
+/*
 $query = "
 SELECT nombre_geo FROM datos_localidad
 ORDER BY nombre_geo ASC
@@ -20,7 +20,7 @@ foreach($result as $row)
     );
 }
 
-
+*/
 
 
 $title = 'Busca Beneficiario';

@@ -6,8 +6,7 @@ private $pediTable;
 private $userTable;
 private $locTable;
 
-public function __construct($benefTable,
- $pediTable, $userTable,$locTable) {
+public function __construct($benefTable,$pediTable, $userTable,$locTable) {
 $this->benefTable = $benefTable;
 $this->pediTable = $pediTable;
 $this->userTable = $userTable;
@@ -18,36 +17,26 @@ $this->locTable = $locTable;
 
 public function busca() {
 
-try {
+$result = $this->benefTable->findAll();
 
-/*
-$result = $this->locTable->findAll();
-$data = array();
-
-foreach($result as $row)
+foreach($result as $beneficiario)
 {
     $data[] = array(
-        'label'     =>  $row['nombre_geo'],
-        'value'     =>  $row['nombre_geo']
+        'label'     =>   $beneficiario['Nombres'] . ' ' .$beneficiario['Apellidos']   ,
+        'value'     =>  $beneficiario['id_datos_benef']
     );
 }
-*/
-
 $title = 'Busca Beneficiario';
- 
 
-ob_start();
-include __DIR__ . '/../../templates/busca_benef.html.php';
-$output = ob_get_clean() ;
+			ob_start();
+			include __DIR__ . '/../../templates/busca_benefx.html.php';
+			$output = ob_get_clean() ;
+
 return ['output' => $output, 'title' => $title];
 }
 
-    catch (PDOException $e) {
-      $error = 'Error en la base:' . $e->getMessage() . ' en la linea ' .
-      $e->getFile() . ':' . $e->getLine();
-    }
+    
 
-}
 
 
 
@@ -55,14 +44,14 @@ return ['output' => $output, 'title' => $title];
 
 public function edit() {
 
-$result = $this->locTable->findAll();
+$localidades = $this->locTable->findAll();
 
 
-foreach($result as $row)
+foreach($localidades as $localidad)
 {
     $data[] = array(
-        'label'     =>  $row['nombre_geo'],
-        'value'     =>  $row['gid']
+        'label'     =>  $localidad['nombre_geo'],
+        'value'     =>  $localidad['gid']
     );
 }
 
