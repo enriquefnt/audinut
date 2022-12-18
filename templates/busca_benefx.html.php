@@ -1,4 +1,4 @@
-<?php print_r ($data); ?>
+<?php  print_r ($data); ?>
 
  <div class="container">
      
@@ -7,19 +7,19 @@
 		 	
 		  <input  type="text" class="form-control form-control-sm" name="Nombre" id="dName" placeholder="Buscar ...">
 		</div>
-		 <input type="hidden" name="id_datos_benef"  value="<?=$data['value'] ?? 'xxxx'; ?>">
+		 <input type="hidden" name="id_datos_benef"  value="<?=$beneficiario['id_datos_benef'] ?? 'xxxx'; ?>">
 		<div class="col-sm-2">
 				<button class="btn btn-primary" type="submit" name="submit">Buscar</button>
 		</div>
 	</form> 
   </div>	
 
- 
+
 
 
    <?php
 
-echo  $_POST['Nombre'] . ' ' .$_POST['id_datos_benef'] . ' ' . $data['value'];
+echo  $beneficiario['Nombres'] . ' ' . $beneficiario['id_datos_benef'] .' '. $_GET['id_datos_benef'];
 
 
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  

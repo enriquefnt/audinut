@@ -7,7 +7,7 @@
 		 	
 		  <input  type="text" class="form-control form-control-sm" name="Nombre" id="dName" placeholder="Buscar ...">
 		</div>
-		 <input type="hidden" name="id_datos_benef" id="dTel" value="xxxx">
+		 <input type="hidden" name="id_datos_benef" id="dTel" value="<?=$row['codi_esta'] ?? 'xxxx'?>">
 		<div class="col-sm-2">
 				<button class="btn btn-primary" type="submit" name="submit">Buscar</button>
 		</div>
