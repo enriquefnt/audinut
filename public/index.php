@@ -25,12 +25,7 @@ $title=$page['title'];
 
 extract($page['variables']);
 
-// $output=$page['output'];
-/*
-if (isset($page['variables'])) {
-extract($page['variables']);
-}
-*/
+
 
 ob_start();
 include __DIR__ . '/../templates/' . $page['template'];
