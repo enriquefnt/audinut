@@ -1,6 +1,8 @@
-<p><?=$totalBenef?> beneficiarios cargados.</p>
 
-<?php foreach($benefs as $benef): ?>
+
+<p><?=$variables['totalBenef']?> beneficiarios cargados.</p>
+
+<?php foreach($variables['benefs'] as $benef): ?>
 <blockquote>
   <p>
   <?=htmlspecialchars($benef['Nombres'], ENT_QUOTES, 'UTF-8') . ' '.

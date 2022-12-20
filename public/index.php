@@ -14,44 +14,23 @@ include __DIR__ . '/../include/conect.php';
 
 	$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
 
-
-// (isset($_GET['action'])) {
-	
-	$action=$_GET['action'] ?? 'home';
-		$page=$TablesController->$action();
-/*
-switch ($valoraction) {
-	case 'busca':
-		$page=$TablesController->busca();
-		break;
-	case 'edit':
-		$page=$TablesController->edit();
-		break;
-	case 'listar':
-		$page=$TablesController->listar();
-		break;	
-	
-	default:
-		$page = $TablesController->home();
-		break;
-}
-*/
-
-
 $action =  $_GET['action'] ?? 'home';
-
-
-
 
 $page = $TablesController->$action();
 
+
+$variables = $page['variables'];
+
 $title=$page['title'];
+
+extract($page['variables']);
+
 // $output=$page['output'];
-
-$totalBenef = $page['totalBenef'];
-$benefs = $page['benefs'];
-
-
+/*
+if (isset($page['variables'])) {
+extract($page['variables']);
+}
+*/
 
 ob_start();
 include __DIR__ . '/../templates/' . $page['template'];

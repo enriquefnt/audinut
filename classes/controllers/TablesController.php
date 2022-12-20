@@ -115,13 +115,15 @@ public function listar(){
 
 		$totalBenef = $this->benefTable->total();
 
-		//return ['template' => 'listado.html.php', 'title' =>$title];
+		
 
 		return ['template' => 'listado.html.php',
 				'title' => $title,
-				'totalBenef' => $totalBenef,
-				'benefs' => $benefs];
+				'variables' => ['totalBenef' => $totalBenef,
+				'benefs' => $benefs ]
+			];
 	}
+
 
 
 
