@@ -6,7 +6,12 @@ private $pediTable;
 private $userTable;
 private $locTable;
 
-public function __construct($benefTable,$pediTable, $userTable,$locTable) {
+
+public function  __construct(DataTables $benefTable,DataTables $pediTable,
+DataTables $userTable, DataTables $locTable) {
+
+
+
 $this->benefTable = $benefTable;
 $this->pediTable = $pediTable;
 $this->userTable = $userTable;
@@ -19,6 +24,7 @@ public function busca() {
 
 $result = $this->benefTable->findAll();
 
+
 foreach($result as $beneficiario)
 {
     $data[] = array(
@@ -26,6 +32,7 @@ foreach($result as $beneficiario)
         'value'     =>  $beneficiario['id_datos_benef']
     );
 }
+
 $title = 'Busca Beneficiario';
 
 			ob_start();
@@ -35,12 +42,7 @@ $title = 'Busca Beneficiario';
 return ['output' => $output, 'title' => $title];
 }
 
-    
-
-
-
-
-
+   
 
 public function edit() {
 
@@ -113,13 +115,12 @@ public function listar(){
 
 		$totalBenef = $this->benefTable->total();
 
-		ob_start();
+		//return ['template' => 'listado.html.php', 'title' =>$title];
 
-		include  __DIR__ . '/../../templates/listado.html.php';
-
-		$output = ob_get_clean();
-
-		return ['output' => $output, 'title' => $title];
+		return ['template' => 'listado.html.php',
+				'title' => $title,
+				'totalBenef' => $totalBenef,
+				'benefs' => $benefs];
 	}
 
 
@@ -127,11 +128,9 @@ public function listar(){
 
 public function home() {
 		$title = 'Auditoria Fórmulas';
-ob_start();
-include __DIR__ . '/../../templates/home.html.php';
-$output = ob_get_clean();
 
-		return ['output' => $output, 'title' => $title];
+return ['template' => 'home.html.php', 'title' =>$title];
+		
 	}
 
 

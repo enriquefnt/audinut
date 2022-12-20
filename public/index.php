@@ -14,6 +14,7 @@ include __DIR__ . '/../include/conect.php';
 
 	$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
 
+
 // (isset($_GET['action'])) {
 	
 	$action=$_GET['action'] ?? 'home';
@@ -36,10 +37,28 @@ switch ($valoraction) {
 }
 */
 
-$title=$page['title'];
-$output=$page['output'];
 
-}
+$action =  $_GET['action'] ?? 'home';
+
+
+
+
+$page = $TablesController->$action();
+
+$title=$page['title'];
+// $output=$page['output'];
+
+$totalBenef = $page['totalBenef'];
+$benefs = $page['benefs'];
+
+
+
+ob_start();
+include __DIR__ . '/../templates/' . $page['template'];
+$output = ob_get_clean();
+} 
+
+
 
 catch (PDOException $e) {
 $title = 'Ocurrio un error';

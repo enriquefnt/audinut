@@ -10,7 +10,7 @@
 
   <title><?=$title?></title>
   <script src="../js/autocomplete.js"></script>
-
+  <script src="../js/autocompleta.js"></script>
 </head>
   <body class="w3-light-grey">
 <header class="p-2 mb-2 bg-primary text-white">
