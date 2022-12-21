@@ -81,15 +81,24 @@ else {
 
 			$title = 'Carga Beneficiario';
 
-			ob_start();
+		}	
 
-			include  __DIR__ . '/../../templates/edita_benef.html.php';
+			return ['template' => 'edita_benef.html.php',
+					 'title' => $title ,
+					 'variables' => [
+				// 'localidades' => $localidades,
+					      'data'  =>   $data,
+					 'datosCaso' => $datosCaso ?? ' '
+									 ]
 
-			$output = ob_get_clean();
-
-			return ['output' => $output, 'title' => $title];
-	}		
+					];
+			
 }
+
+
+
+
+
 
 
 
@@ -131,7 +140,7 @@ public function listar(){
 public function home() {
 		$title = 'Auditoria Fórmulas';
 
-return ['template' => 'home.html.php', 'title' =>$title];
+return ['template' => 'home.html.php', 'title' =>$title,'variables' => [] ];
 		
 	}
 
