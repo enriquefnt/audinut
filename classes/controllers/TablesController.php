@@ -76,7 +76,8 @@ else {
 
 			if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
-			
+				 print_r($datosCaso);
+				// var_dump($data);
 			}
 
 			$title = 'Carga Beneficiario';
@@ -88,18 +89,12 @@ else {
 					 'variables' => [
 				// 'localidades' => $localidades,
 					      'data'  =>   $data,
-					 'datosCaso' => $datosCaso ?? ' '
+					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
 
 					];
 			
 }
-
-
-
-
-
-
 
 
 public function listar(){
