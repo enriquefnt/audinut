@@ -4,10 +4,12 @@
 <blockquote>
   <p>
     <?=htmlspecialchars($benef['Nombres'], ENT_QUOTES, 'UTF-8') . ' '.
-   htmlspecialchars($benef['Apellidos'], ENT_QUOTES, 'UTF-8');?>
+   htmlspecialchars($benef['Apellidos'], ENT_QUOTES, 'UTF-8') . ' '.
+   $benef['id_datos_benef']
+   ;?>
   </p>
 
-<a href="index.php?action=edit&id=<?=$datoscaso['id_datos_benef']?>">Editar</a>
+<a href="index.php?action=edit&id=<?=$benef['id_datos_benef']?>">Editar</a>
 <a href="index.php?action=edit&id=121">Edita</a>
     </p>
 

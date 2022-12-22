@@ -107,7 +107,7 @@ public function listar(){
 			
 
 			$benefs[] = [
-				'id' => $benef['id_datos_benef'],
+				'id_datos_benef' => $benef['id_datos_benef'],
 				'Nombres' => $benef['Nombres'],
 				'Apellidos' => $benef['Apellidos']
 			];
