@@ -35,11 +35,17 @@ foreach($result as $beneficiario)
 
 $title = 'Busca Beneficiario';
 
-			ob_start();
-			include __DIR__ . '/../../templates/busca_benefx.html.php';
-			$output = ob_get_clean() ;
+	
 
-return ['output' => $output, 'title' => $title];
+return ['template' => 'busca_benefx.html.php',
+					 'title' => $title ,
+					 'variables' => [
+				// 'localidades' => $localidades,
+					      'data'  =>   $data,
+					 'result' => $result  ?? ' '
+									 ]
+
+					];
 }
 
    
@@ -76,25 +82,73 @@ else {
 
 			if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
-				 print_r($datosCaso);
-				// var_dump($data);
-			}
+									}
 
 			$title = 'Carga Beneficiario';
 
-		}	
+	}	
 
-			return ['template' => 'edita_benef.html.php',
-					 'title' => $title ,
+			  return ['template' => 'edita_benef.html.php',
+					     'title' => $title ,
 					 'variables' => [
-				// 'localidades' => $localidades,
-					      'data'  =>   $data,
+			             'data'  =>   $data,
 					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
 
 					];
 			
 }
+
+
+public function pedido(){
+
+$usuarios = $this->userTable->findAll();
+
+
+foreach($usuarios as $usuario)
+{
+    $data[] = array(
+        'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
+        'value'     =>  $usuario['id_usuario']
+    );
+}
+
+if (isset($_POST['Pedido'])) {
+	
+	$Pedido = $_POST['Pedido'];
+
+	
+//	$Pedido['fechaCarga'] = new DateTime();
+//	$Pedido['id_usuario'] =$_SESSION['id_usuario'];
+		
+
+$this->pediTable->save($Pedido);
+header('Location: index.php');
+}
+else {
+
+			if (isset($_GET['id'])) {
+				$datosCaso = $this->benefTable->findById($_GET['id']);
+								}
+
+	$title = 'Carga Beneficiario';
+
+}
+	          return ['template' => 'carga_pedi.html.php',
+					     'title' => $title ,
+					 'variables' => [
+				         'data'  => $data,
+					 'datosCaso' => $datosCaso  ?? ' '
+									 ]
+
+					];
+
+
+
+}
+
+
+
 
 
 public function listar(){

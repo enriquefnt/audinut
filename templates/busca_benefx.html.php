@@ -1,4 +1,5 @@
-<?php  print_r ($data); ?>
+<?php // print_r ($data); 
+echo count($data);?>
 
  <div class="container">
      
@@ -19,7 +20,7 @@
 
    <?php
 
-echo  $beneficiario['Nombres'] . ' ' . $beneficiario['id_datos_benef'] .' '. $_GET['id_datos_benef'];
+// echo  $data['value'] . ' ' . $data['label'] .' '. $_GET['id'];
 
 
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  

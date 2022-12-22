@@ -1,6 +1,11 @@
+<?php
 
-<?php 
-
+function loadTemplate($templateFileName, $variables) {
+	extract($variables);
+	ob_start();
+	include __DIR__ . '/../templates/' . $templateFileName;
+	return ob_get_clean();
+}
 
 try {
 include __DIR__ . '/../include/conect.php';
@@ -12,26 +17,21 @@ include __DIR__ . '/../include/conect.php';
 	$tablaUser = new DataTables($pdo, 'datos_usuarios','id_usuario' );
     $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
 
-	$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
+$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
 
 $action =  $_GET['action'] ?? 'home';
 
 $page = $TablesController->$action();
 
 
-$variables = $page['variables'];
-
-$title=$page['title'];
 
 
-if (isset($page['variables'])) {
-extract($page['variables']);
-}
+
+$title = $page['title'];
+$variables = $page['variables'] ?? [];
+$output = loadTemplate($page['template'], $variables);
 
 
-ob_start();
-include __DIR__ . '/../templates/' . $page['template'];
-$output = ob_get_clean();
 } 
 
 
