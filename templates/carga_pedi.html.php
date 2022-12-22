@@ -1,12 +1,14 @@
 
-<?=$datosCaso['id_datos_benef'].''.$datosCaso['Nombres'];?>
+
 
 
 
 <div class="container">
 
 	<fieldset class="border p-2">
-   <legend class="w-50 p-0 h-25 ">Solicitud de nutroterápico</legend>
+   <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
+    <?=$datosCaso['Nombres'] .' '. $datosCaso['Apellidos']?>
+    </legend>
 
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
 		
