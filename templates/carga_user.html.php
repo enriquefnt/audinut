@@ -69,10 +69,14 @@
   <input type="text" required="required" class="form-control form-control-sm" name="Usuario[password]"  autocomplete="off" value="">
 </div>
 
-  <div class="col-sm-2"> 
-    <button type="submit" class="w3-btn w3-round-large">Cargar</button>
- </div>
+  <div class="col-sm-2">
+      <button class="btn btn-primary" type="submit" name="submit">Enviar</button>
+  </div>
   </form>
+
+
+
+
 
 
 </div>
