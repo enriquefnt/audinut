@@ -14,7 +14,7 @@
 		
 	
 
-<input type="hidden"name="Pedido[id_datos_benef]]" id="id_datos_benef" value=<?=$datosCaso['id_datos_benef'] ?? ''?> 
+<input type="hidden"name="Pedido[id_datos_benef]" id="id_datos_benef" value=<?=$datosCaso['id_datos_benef'] ?? ''?> 
 >
 
 

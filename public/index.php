@@ -11,17 +11,31 @@ try {
 include __DIR__ . '/../include/conect.php';
 	include __DIR__ . '/../classes/dataTables.php';
 	include __DIR__ . '/../classes/controllers/TablesController.php';
+	include __DIR__ . '/../classes/controllers/UserController.php';
 
 	$tablaBenef = new DataTables($pdo,'datos_benef', 'id_datos_benef');
 	$tablaPedi =new DataTables($pdo,'datos_pedido', 'id_datos_pedido');
 	$tablaUser = new DataTables($pdo, 'datos_usuarios','id_usuario' );
     $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
+    $tablaInsti = new DataTables($pdo,'datos_institucion', 'codi_esta');
 
-$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
+//$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
 
 $action =  $_GET['action'] ?? 'home';
+$controllerName = $_GET['controller'] ?? 'tablas';
 
-$page = $TablesController->$action();
+
+
+
+if ($controllerName === 'user') {
+$controller = new UserController($tablaUser,$tablaInsti);
+}
+else if ($controllerName === 'tablas') {
+$controller = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
+}
+
+
+$page = $controller->$action();
 
 
 
