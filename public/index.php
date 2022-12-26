@@ -19,9 +19,9 @@ include __DIR__ . '/../include/conect.php';
     $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
     $tablaInsti = new DataTables($pdo,'datos_institucion', 'codi_esta');
 
-//$TablesController = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLoc);
 
 $action =  $_GET['action'] ?? 'home';
+
 $controllerName = $_GET['controller'] ?? 'tablas';
 
 
@@ -35,9 +35,18 @@ $controller = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLo
 }
 
 
+//pone en minusculas todo (ninidea para que)....
+
+
+
+if ($action == strtolower($action) && $controllerName ==strtolower($controllerName)) {
 $page = $controller->$action();
+} else {
+http_response_code(301);
+header('location: index.php?controller=' . strtolower($controllerName) .'&action=' . strtolower($action));
+}
 
-
+//////////////////////////////////////
 
 
 

@@ -24,7 +24,7 @@
   <div class="container-fluid"> 
   
      <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=home">Home</a>
-      <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;=busca">Buscar</a>
+      <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=busca">Buscar</a>
       <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=edit">Cargar</a>
       <a class="navbar-brand mb-0 " href="index.php?controller=user&amp;action=carga_user">Cargar Usuario</a>
      <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=listar">Listar</a>
