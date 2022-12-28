@@ -26,7 +26,7 @@ $controllerName = $_GET['controller'] ?? 'tablas';
 
 $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
 if ($uri == '') {
-$uri = 'joke/home';
+$uri = 'tablas/home';
 }
 $route = explode('/', $uri);
 $controllerName = array_shift($route);
@@ -47,7 +47,7 @@ $controller = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLo
 
 //pone en minusculas todo (ninidea para que)....
 
-
+/*
 
 if ($action == strtolower($action) && $controllerName ==strtolower($controllerName)) {
 $page = $controller->$action();
@@ -55,6 +55,19 @@ $page = $controller->$action();
 http_response_code(301);
 header('location: index.php?controller=' . strtolower($controllerName) .'&action=' . strtolower($action));
 }
+
+
+
+if ($uri == strtolower($uri)) {
+$page = $controller->$action();
+} else {
+http_response_code(301);
+header('location: /' . strtolower($uri));
+}
+
+*/
+
+
 
 
 

@@ -13,6 +13,10 @@
   <script src="../js/autocompleta.js"></script>
 </head>
   <body class="w3-light-grey">
+<p><?php
+echo $_SERVER['REQUEST_URI'].'---'.$uri.'---';
+print_r($route); ?></p>
+
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">
 <h4>Gestión solicitudes de nutroterápicos</h4>
