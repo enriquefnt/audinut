@@ -6,7 +6,6 @@ function loadTemplate($templateFileName, $variables) {
 	include __DIR__ . '/../templates/' . $templateFileName;
 	return ob_get_clean();
 }
-
 try {
 include __DIR__ . '/../include/conect.php';
 	include __DIR__ . '/../classes/dataTables.php';
@@ -32,7 +31,7 @@ $route = explode('/', $uri);
 $controllerName = array_shift($route);
 $action = array_shift($route);
 
-//echo $_SERVER['REQUEST_URI'];
+echo $_SERVER['REQUEST_URI'];
 $action =  $_GET['action'] ?? 'home';
 $controllerName = $_GET['controller'] ?? 'tablas';
 
