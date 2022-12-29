@@ -7,18 +7,17 @@
 		 	
 		  <input  type="text" class="form-control form-control-sm" name="Nombre" id="dName" placeholder="Buscar ...">
 		</div>
-		 <input type="hidden" name="id_datos_benef" id="dTel" value="<?=$row['codi_esta'] ?? 'xxxx'?>">
+		 <input type="hidden" name="id_datos_benef"  value="<?=$beneficiario['id_datos_benef'] ?? 'xxxx'; ?>">
 		<div class="col-sm-2">
 				<button class="btn btn-primary" type="submit" name="submit">Buscar</button>
 		</div>
 	</form> 
   </div>	
 
- 
+
 
 
    <?php
-
 
 
 
@@ -56,18 +55,13 @@ elseif (isset($_POST['id_datos_benef'])) { ?>
  <?php } ?>
 
  <script>
-    // (C) ATTACH AUTOCOMPLETE TO INPUT FIELDS
-    window.addEventListener("DOMContentLoaded", function(){
-          
-      ac.attach({
-        target: "dName",
-        data: "search.php",
-        
-        // OPTIONAL
-        delay : 300,
-        min : 3
-      });
-    });
-    </script>
 
-    <script src="../js/autocompleta.js"></script>
+var auto_complete = new Autocomplete(document.getElementById('dName'), {
+    data:<?php echo json_encode($data); ?>,
+    maximumItems:10,
+    highlightTyped:true,
+    highlightClass : 'fw-bold text-primary'
+}); 
+
+</script>
+    <script src="../js/autocomplete.js"></script>

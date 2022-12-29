@@ -22,7 +22,7 @@ include __DIR__ . '/../include/conect.php';
 
 
  
-/*
+
 
 $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
 if ($uri == '') {
@@ -31,10 +31,11 @@ $uri = 'tablas/home';
 $route = explode('/', $uri);
 $controllerName = array_shift($route);
 $action = array_shift($route);
-*/
+
 //echo $_SERVER['REQUEST_URI'];
 $action =  $_GET['action'] ?? 'home';
 $controllerName = $_GET['controller'] ?? 'tablas';
+
 
 
 if ($controllerName === 'user') {

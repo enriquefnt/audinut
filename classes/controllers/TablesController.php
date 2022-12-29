@@ -37,7 +37,7 @@ $title = 'Busca Beneficiario';
 
 	
 
-		  return ['template' => 'busca_benefx.html.php',
+		  return ['template' => 'busca_benef.html.php',
 					 'title' => $title ,
 				 'variables' => [
 				     'data'  =>   $data,
