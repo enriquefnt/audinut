@@ -17,7 +17,7 @@
   <div class="container-fluid">
 <h4>Gestión solicitudes de nutroterápicos</h4>
 <h4>Area Fórmulas</h4>
-  <p><?=$controllerName ?></p>
+  <p><?=$controllerName .'---' . $action ?></p>
 
 
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">

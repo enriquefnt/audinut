@@ -19,19 +19,19 @@ include __DIR__ . '/../include/conect.php';
     $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
     $tablaInsti = new DataTables($pdo,'datos_institucion', 'codi_esta');
 
+
+
+ 
 /*
-$action =  $_GET['action'] ?? 'home';
-$controllerName = $_GET['controller'] ?? 'tablas';
-*/
 
 $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
 if ($uri == '') {
-$uri = 'joke/home';
+$uri = 'tablas/home';
 }
 $route = explode('/', $uri);
 $controllerName = array_shift($route);
 $action = array_shift($route);
-
+*/
 //echo $_SERVER['REQUEST_URI'];
 $action =  $_GET['action'] ?? 'home';
 $controllerName = $_GET['controller'] ?? 'tablas';
