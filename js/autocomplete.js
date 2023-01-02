@@ -5,8 +5,8 @@ const DEFAULTS = {
   highlightClass: 'text-primary',
   label: 'label',
   value: 'value',
-  showValue: false,
-  showValueBeforeLabel: false,
+  showValue: true,
+  showValueBeforeLabel: true,
 };
 
 class Autocomplete {
@@ -87,7 +87,7 @@ class Autocomplete {
       }
     }
 
-    return ce(`<button type="button" class="dropdown-item" data-label="${item.label}" data-value="${item.value}">${label}</button>`);
+    return ce(`<button type="submit" class="dropdown-item" data-label="${item.label}" data-value="${item.value}" value="${item.value}">${label}</button>`);
   }
 
   createItems() {

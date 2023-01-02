@@ -32,9 +32,8 @@ $route = explode('/', $uri);
 $controllerName = array_shift($route);
 $action = array_shift($route);
 
-//echo $_SERVER['REQUEST_URI'];
-$action =  $_GET['action'] ?? 'home';
-$controllerName = $_GET['controller'] ?? 'tablas';
+echo "URI:"; print_r($uri); echo  '-----' ; echo "Route:"; print_r($route);
+echo "Action: " . $action . '   ' ; echo "Controllername: " . $controllerName;
 
 
 
@@ -49,6 +48,14 @@ $controller = new TablesController($tablaBenef, $tablaPedi, $tablaUser, $tablaLo
 //pone en minusculas todo (ninidea para que)....
 
 
+if ($uri == strtolower($uri)) {
+$page = $controller->$action();
+} else {
+http_response_code(301);
+header('location: /' . strtolower($uri));
+}
+
+/*
 
 if ($action == strtolower($action) && $controllerName ==strtolower($controllerName)) {
 $page = $controller->$action();
@@ -58,7 +65,7 @@ header('location: index.php?controller=' . strtolower($controllerName) .'&action
 }
 
 
-
+*/
 
 
 $title = $page['title'];

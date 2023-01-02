@@ -1,7 +1,10 @@
 
 
  <div class="container">
-     
+    <form class="row g-6"  action="" autocomplete="off" method="post" >
+<input type="text" name="label" id="dName" class="form-control form-control-lg" placeholder="Busca" />
+	</form>
+     <!--
 	<form class="row g-6"  action="" autocomplete="off" method="post" >
 		 <div class="col-sm-3">
 		 	
@@ -9,9 +12,14 @@
 		</div>
 		 <input type="hidden" name="id_datos_benef"  value="<?=$beneficiario['id_datos_benef'] ?? 'xxxx'; ?>">
 		<div class="col-sm-2">
-				<button class="btn btn-primary" type="submit" name="submit">Buscar</button>
+				<button class="btn btn-primary" type="submit" name="submit">Buscar</button> 
+
 		</div>
-	</form> 
+	</form> -->
+   <?php
+print_r($data);
+
+?>
   </div>	
 
 
@@ -19,8 +27,8 @@
 
    <?php
 
-
-
+echo $_POST['label'];
+//print_r($data);
 
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  
 

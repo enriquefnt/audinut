@@ -17,18 +17,16 @@
   <div class="container-fluid">
 <h4>Gestión solicitudes de nutroterápicos</h4>
 <h4>Area Fórmulas</h4>
-<!--  <p><?=$controllerName .'---' . $action . '---' . $_SERVER['REQUEST_URI'] ?></p> -->
-
 
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
   
-     <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=home ">Home</a>
-      <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=busca">Buscar</a>
-      <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=edit">Cargar</a>
-      <a class="navbar-brand mb-0 " href="index.php?controller=user&amp;action=carga_user">Cargar Usuario</a>
-     <a class="navbar-brand mb-0 " href="index.php?controller=tablas&amp;action=listar">Listar</a>
-
+     <a class="navbar-brand mb-0 " href="/tablas/home ">Home</a>
+      <a class="navbar-brand mb-0 " href="/tablas/busca">Buscar</a>
+      <a class="navbar-brand mb-0 " href="/tablas/edit">Cargar</a>
+      <a class="navbar-brand mb-0 " href="/user/carga_user">Cargar Usuario</a>
+     <a class="navbar-brand mb-0 " href="/tablas/listar">Listar</a>
+     
 
 
 
