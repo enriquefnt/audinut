@@ -8,8 +8,8 @@
    ;?>
   </p>
 
-<a href="/tablas/edit &id=<?=$benef['id_datos_benef']?>">Editar</a>
-<a href="index.php?action=pedido&id=<?=$benef['id_datos_benef']?>">Cargar Pedido</a>
+<a href="/tablas/edit?id=<?=$benef['id_datos_benef']?>">Editar</a>
+<a href="/tablas/pedido?id=<?=$benef['id_datos_benef']?>">Cargar Pedido</a>
     </p>
 
 </blockquote>

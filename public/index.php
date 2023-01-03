@@ -32,8 +32,8 @@ $route = explode('/', $uri);
 $controllerName = array_shift($route);
 $action = array_shift($route);
 
-echo "URI:"; print_r($uri); echo  '-----' ; echo "Route:"; print_r($route);
-echo "Action: " . $action . '   ' ; echo "Controllername: " . $controllerName;
+//echo "URI:"; print_r($uri); echo  '-----' ; echo "Route:"; print_r($route);
+//echo "Action: " . $action . '   ' ; echo "Controllername: " . $controllerName;
 
 
 
@@ -55,7 +55,7 @@ http_response_code(301);
 header('location: /' . strtolower($uri));
 }
 
-/*
+
 
 if ($action == strtolower($action) && $controllerName ==strtolower($controllerName)) {
 $page = $controller->$action();
@@ -65,7 +65,7 @@ header('location: index.php?controller=' . strtolower($controllerName) .'&action
 }
 
 
-*/
+
 
 
 $title = $page['title'];
@@ -82,5 +82,15 @@ $title = 'Ocurrio un error';
 $output = 'Database error: ' . $e->getMessage() . ' in '
 . $e->getFile() . ':' . $e->getLine();
 }
-include  __DIR__ . '/../templates/layout.html.php';
+include  __DIR__ . '/../templates/layout.html.php'; 
+/*
+include_once '../classes/EntryPoint.php';
+	$uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
+	$entryPoint = new EntryPoint();
+	$entryPoint->run($uri);
+
+*/
+
+
+
  ?>

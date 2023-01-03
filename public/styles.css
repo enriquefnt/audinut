@@ -1,0 +1,43 @@
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: orangered;
+  
+  height: 100vh;
+}
+
+
+input[type="submit"] {
+    font-family: FontAwesome sans-serif;
+    display: inline-block;
+  position: relative;
+}
+
+
+.header, .footer {
+  flex: none;
+}
+
+.header > .w3-col {
+  width: 50%;
+}
+
+.table-container {
+  flex: auto;
+  min-height: 0;
+}
+
+.table-container > .w3-col, .table-container .w3-container {
+  height: 100%;
+}
+
+.table-container .w3-container {
+  overflow-y: scroll;
+}
+
+#dataTable {
+  border: 0;
+}
+
