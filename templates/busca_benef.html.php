@@ -17,7 +17,7 @@
 		</div>
 	</form> -->
    <?php
-print_r($data);
+//print_r($data);
 
 ?>
   </div>	
@@ -27,7 +27,8 @@ print_r($data);
 
    <?php
 
-echo $_POST['label'];
+echo $_POST['label'].'   '.$_POST['value'];
+print_r($_POST);
 //print_r($data);
 
 if ((isset($_POST['Nombre'])) && ($_POST['id_datos_benef'])=='xxxx') { ?>  

@@ -33,7 +33,7 @@ try {
     $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
     $tablaInsti = new DataTables($pdo,'datos_institucion', 'codi_esta');
 
-    //$this->checkUri($uri);
+    $this->checkUri($uri);
 
     if ($uri == '') {
 		$uri = 'tablas/home';
