@@ -5,8 +5,8 @@ const DEFAULTS = {
   highlightClass: 'text-primary',
   label: 'label',
   value: 'value',
-  showValue: true,
-  showValueBeforeLabel: true,
+  showValue: false,
+  showValueBeforeLabel: false,
 };
 
 class Autocomplete {

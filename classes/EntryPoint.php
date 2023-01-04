@@ -36,7 +36,7 @@ try {
     //$this->checkUri($uri);
 
     if ($uri == '') {
-		$uri = 'tables/home';
+		$uri = 'tablas/home';
 		}
 
 	
