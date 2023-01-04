@@ -75,6 +75,7 @@ if (isset($_POST['Beneficiario'])) {
 		
 
 $this->benefTable->save($Beneficiario);
+
 header('Location: /tablas/home');
 }
 else {
@@ -122,7 +123,7 @@ if (isset($_POST['Pedido'])) {
 		
 
 $this->pediTable->save($Pedido);
-header('Location: index.php');
+header('Location: /tablas/home');
 }
 else {
 

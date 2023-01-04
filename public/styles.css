@@ -28,6 +28,10 @@ input[type="submit"] {
   flex: auto;
   min-height: 0;
 }
+
+
+
+
 /*
 .table-container > .w3-col, .table-container .w3-container {
   height: 100%;

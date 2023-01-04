@@ -45,7 +45,7 @@ try {
 	$controllerName = array_shift($route);
 	$action = array_shift($route);	
 
-	//echo $controllerName . '---'.   $action ;
+	
 
 
 	if ($controllerName === 'user') {
