@@ -1,43 +1,37 @@
-<p><?=$variables['totalBenef']?> beneficiarios cargados.</p>
 
-<div>
-  <table id="example" class="w3-table-all w3-tiny" > 
+<div class="container mt-4">
+  <table id="example" class="table table-bordered display compact" > 
 
 <thead >
-  <tr class="w3-blue-grey">
+  <tr >
 
     <th>Nombre</th>
       <th>Editar</th>
-    <th>Cargar Pedido</th>
+      <th>Cargar Pedido</th>
   </tr>
 </thead>
-  <tbody class="table-hover">
+  <tbody >
   <tr >
   <?php foreach($variables['benefs'] as $benef): ?>
    <td><?= htmlspecialchars($benef['Nombres'] . ' ' .$benef['Apellidos'] , ENT_QUOTES, 'UTF-8'); ?></td>
    <td align="center">
 
         <div>
-        <form action="/tablas/edit" method="post">
-        <input type="hidden" name="id_datos_benef" value=<?= htmlspecialchars($benef['id_datos_benef'], ENT_QUOTES, 'UTF-8'); ?>>
-                        <button  type="submit"><i class="far fa-eye  fa-lg"></i></button>
-        </form>
+        <a href="/tablas/edit?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-file-pen"></i>
+</a>
       </div>
     </td>
     <td align="center">
         </div>
         <div>
-        <form action="/tablas/pedido" method="post">
-        <input type="hidden" name="id_datos_benef" value=<?= htmlspecialchars($benef['id_datos_benef'], ENT_QUOTES, 'UTF-8'); ?>>
-                        <button class="btn btn-default" type="submit"><i class="far fa-eye  fa-lg"></i></button>
-        </form>
+        <a href="/tablas/pedido?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-clipboard"></i></i></a>
         </div>
     </td>
+ </tr>
 
-
-  </tr>
   <?php endforeach; ?>
-    
+ </tbody>
+ </table>   
 
 
 <!--
@@ -59,8 +53,3 @@
 <?php endforeach; ?>
 -->
 
- <script type="text/javascript">
-$(document).ready(function () {
-    $('#example').DataTable();
-});
-</script>
