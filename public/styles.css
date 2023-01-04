@@ -5,7 +5,7 @@ body {
   flex-direction: column;
   background-color: orangered;
   
-  height: 100vh;
+  height: 100vh
 }
 
 
@@ -28,7 +28,7 @@ input[type="submit"] {
   flex: auto;
   min-height: 0;
 }
-
+/*
 .table-container > .w3-col, .table-container .w3-container {
   height: 100%;
 }
@@ -41,3 +41,4 @@ input[type="submit"] {
   border: 0;
 }
 
+*/

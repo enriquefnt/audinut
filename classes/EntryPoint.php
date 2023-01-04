@@ -33,7 +33,7 @@ try {
     $tablaLoc = new DataTables($pdo,'datos_localidad', 'gid');
     $tablaInsti = new DataTables($pdo,'datos_institucion', 'codi_esta');
 
-    $this->checkUri($uri);
+    //$this->checkUri($uri);
 
     if ($uri == '') {
 		$uri = 'tables/home';
@@ -41,8 +41,11 @@ try {
 
 	
 	$route = explode('/', $uri);
+
 	$controllerName = array_shift($route);
 	$action = array_shift($route);	
+
+	//echo $controllerName . '---'.   $action ;
 
 
 	if ($controllerName === 'user') {
@@ -74,7 +77,7 @@ include  __DIR__ . '/../templates/layout.html.php';
 }
 
 
- 
+ }
 
 
 

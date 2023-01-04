@@ -38,7 +38,7 @@ public function carga_user () {
 			
 
 	$this->userTable->save($Usuario);
-	header('Location: index.php');
+	header('Location: /tablas/home');
 	}
 	else {
 

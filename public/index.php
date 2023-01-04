@@ -83,14 +83,21 @@ $output = 'Database error: ' . $e->getMessage() . ' in '
 . $e->getFile() . ':' . $e->getLine();
 }
 include  __DIR__ . '/../templates/layout.html.php'; 
+
 /*
+
 include_once '../classes/EntryPoint.php';
 	$uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
+if ($uri == '') {
+$uri = 'tablas/home';
+}
+
+
 	$entryPoint = new EntryPoint();
 	$entryPoint->run($uri);
 
-*/
 
+*/
 
 
  ?>
