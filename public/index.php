@@ -1,8 +1,11 @@
 <?php
-include_once '../classes/EntryPoint.php';
 
-	$uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
+ include_once '../classes/EntryPoint.php';
+ include_once '../classes/Audinwebsite.php';
 
-	$entryPoint = new EntryPoint();
-	$entryPoint->run($uri);
- 
+
+$uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
+
+$audinwebsite = new Audinwebsite();
+$entryPoint = new EntryPoint($audinwebsite);
+$entryPoint->run($uri);

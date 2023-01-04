@@ -118,8 +118,7 @@ if (isset($_POST['Pedido'])) {
 	$Pedido = $_POST['Pedido'];
 
 	
-//	$Pedido['fechaCarga'] = new DateTime();
-//	$Pedido['id_usuario'] =$_SESSION['id_usuario'];
+
 		
 
 $this->pediTable->save($Pedido);
