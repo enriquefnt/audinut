@@ -32,16 +32,16 @@ if ($uri == '') {
 	$uri = $this->website->getDefaultRoute();
 				}
 
-$route = explode('/', $uri);
+	$route = explode('/', $uri);
 
-$controllerName = array_shift($route);
-$action = array_shift($route);
-$controller = $this->website->getController($controllerName);
-$page = $controller->$action(...$route);
-$title = $page['title'];
-$variables = $page['variables'] ?? [];
+	$controllerName = array_shift($route);
+	$action = array_shift($route);
+	$controller = $this->website->getController($controllerName);
+	$page = $controller->$action(...$route);
+	$title = $page['title'];
+	$variables = $page['variables'] ?? [];
 
-$output = $this->loadTemplate($page['template'], $variables);
+	$output = $this->loadTemplate($page['template'], $variables);
 } 
 
 
