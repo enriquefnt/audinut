@@ -1,4 +1,5 @@
 <?php
+namespace ClassGrl;
 class EntryPoint {
 	private $route;
 

@@ -6,6 +6,8 @@ include __DIR__ . '/../include/autoload.php';
 
 $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
 
-$audinwebsite = new Audinwebsite();
-$entryPoint = new EntryPoint($audinwebsite);
+//$audinwebsite = new Audinwebsite();
+//$entryPoint = new EntryPoint($audinwebsite);
+$audinwebsite = new \ClassPart\Audinwebsite();
+$entryPoint = new \ClassGrl\EntryPoint($audinwebsite);
 $entryPoint->run($uri);

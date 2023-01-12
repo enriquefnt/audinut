@@ -1,5 +1,6 @@
 <?php
-class DataTables
+namespace ClassGrl;
+class dataTables
 {
 	private $pdo;
 	private $table;
