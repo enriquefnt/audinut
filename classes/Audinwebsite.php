@@ -8,7 +8,7 @@ public function getDefaultRoute() {
 
 public function getController(string $controllerName) {
 	include __DIR__ . '/../include/conect.php';
-	include __DIR__ . '/../classes/dataTables.php';
+	//include __DIR__ . '/../classes/dataTables.php';
 	include __DIR__ . '/../classes/controllers/TablesController.php';
 	include __DIR__ . '/../classes/controllers/UserController.php';
 

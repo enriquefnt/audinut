@@ -21,7 +21,8 @@ private function loadTemplate($templateFileName, $variables) {
 private function checkUri($uri) {
 		if ($uri != strtolower($uri)) {
 		http_response_code(301);
-		header('location: ' . strtolower($uri));
+		//$uri = strtolower($uri);
+		//header('location: ' . strtolower($uri));
 		}
 	}
 
