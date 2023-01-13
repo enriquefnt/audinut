@@ -10,6 +10,7 @@ spl_autoload_register('autoloader');
 
 
 function autoloader($className) {
+echo 'Clasnamme:' . $className . '---';
 $fileName = str_replace('\\', '/', $className) . '.php';
 $file = __DIR__ . '/../' . $fileName;
 include $file;
@@ -20,10 +21,4 @@ echo 'File:' . $file . '---';
 
 }
 spl_autoload_register('autoloader');
-/*
 
-include __DIR__ . '/../include/conect.php';
-
-
-Filename:ClassPart/Audinwebsite.php---File:C:\xampp\htdocs\audinut\include/../ClassPart/Audinwebsite.php---Filename:ClassGrl/EntryPoint.php---File:C:\xampp\htdocs\audinut\include/../ClassGrl/EntryPoint.php---
-*/

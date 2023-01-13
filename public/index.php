@@ -8,6 +8,6 @@ $uri = strtok(ltrim($_SERVER['REQUEST_URI'], '/'), '?');
 
 //$audinwebsite = new Audinwebsite();
 //$entryPoint = new EntryPoint($audinwebsite);
-$audinwebsite = new \ClassPart\Audinwebsite();
+$audinwebsite = new \ClassPart\AudinWebsite();
 $entryPoint = new \ClassGrl\EntryPoint($audinwebsite);
 $entryPoint->run($uri);

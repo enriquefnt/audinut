@@ -1,4 +1,5 @@
 <?php
+namespace ClassPart\Controllers;
 
 class TablesController {
 private $benefTable;
@@ -70,7 +71,7 @@ if (isset($_POST['Beneficiario'])) {
 	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
-	$Beneficiario['fechaCarga'] = new DateTime();
+	$Beneficiario['fechaCarga'] = new \DateTime();
 	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
 		
 

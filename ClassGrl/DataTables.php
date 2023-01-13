@@ -1,11 +1,11 @@
 <?php
 namespace ClassGrl;
-class dataTables
+class DataTables
 {
 	private $pdo;
 	private $table;
 	private $primaryKey;
-public function __construct(PDO $pdo, string $table,
+public function __construct(\PDO $pdo, string $table,
 	string $primaryKey)
 {
 	$this->pdo = $pdo;
@@ -65,6 +65,8 @@ private function update($fields)
 	$fields = $this->processDates($fields);
 	$this->query($query, $fields);
 	}
+
+
 public function delete($id)
 	{
 	$parameters = [':id' => $id];
@@ -79,7 +81,7 @@ public function findAll()
 	}
 private function processDates($fields)
 	{foreach ($fields as $key => $value) {
-	if ($value instanceof DateTime) {
+	if ($value instanceof \DateTime) {
 	$fields[$key] = $value->format('Y-m-d');
 	}
 	}
@@ -92,7 +94,7 @@ public function save($record)
 	$record[$this->primaryKey] = null;
 	}
 	$this->insert($record);
-	} catch (PDOException $e) {
+	} catch (\PDOException $e) {
 	$this->update($record);
 }
 }
