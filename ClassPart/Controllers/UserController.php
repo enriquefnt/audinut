@@ -1,5 +1,6 @@
 <?php 
-namespace Classes\Controllers ;
+namespace ClassPart\Controllers ;
+use \ClassGrl\DataTables;
 
 class UserController {
 
