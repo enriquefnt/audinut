@@ -1,5 +1,5 @@
 <?php 
-
+namespace Classes\Controllers ;
 
 class UserController {
 
@@ -33,7 +33,7 @@ public function carga_user () {
 		$Usuario['nombre'] =ucwords(strtolower($Usuario['nombre']));
 		$Usuario['apellido'] =ucwords(strtolower($Usuario['apellido']));
 		$Usuario['password'] = password_hash($Usuario['password'], PASSWORD_DEFAULT);
-		$Usuario['fechaCarga'] = new DateTime();
+		$Usuario['fechaCarga'] = new \DateTime();
 		
 			
 

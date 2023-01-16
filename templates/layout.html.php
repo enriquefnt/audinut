@@ -87,7 +87,7 @@ $('#myTable').DataTable( {
 } );
 </script>
 -->
-<script src="/datatable.js"> </script>
+<script src="\datatable.js"> </script>
 
 </body>
 </html>
