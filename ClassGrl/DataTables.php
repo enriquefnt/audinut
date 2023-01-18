@@ -2,11 +2,12 @@
 namespace ClassGrl ;
 class DataTables
 {
-	private $pdo;
-	private $table;
-	private $primaryKey;
-public function __construct(\PDO $pdo, string $table,
-	string $primaryKey)
+//	private $pdo;
+//	private $table;
+//	private $primaryKey;
+// public function __construct(\PDO $pdo, string $table,string $primaryKey)
+public function __construct(private \PDO $pdo, private string $table, private string $primaryKey)
+
 {
 	$this->pdo = $pdo;
 	$this->table = $table;
@@ -35,6 +36,21 @@ public function findById($value)
 	$query = $this->query($query, $parameters);
 	return $query->fetch();
 	}
+
+public function find($field, $value) {
+        $query = 'SELECT * FROM `' . $this->table . '` WHERE `' . $field . '` = :value';
+
+        $values = [
+            'value' => $value
+        ];
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute($values);
+     
+        return $stmt->fetchAll();
+    }
+
+
 private function insert($fields)
 	{
 	$query = 'INSERT INTO `' . $this->table . '` (';

@@ -41,6 +41,7 @@ public function carga_user () {
 	$this->userTable->save($Usuario);
 	
 	header('Location: /tablas/home');
+	//header('location: ' . strtolower($uri));
 	}
 	else {
 
@@ -67,20 +68,3 @@ public function carga_user () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ?>
