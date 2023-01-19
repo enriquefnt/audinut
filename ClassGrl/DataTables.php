@@ -35,6 +35,21 @@ public function findById($value)
 	$query = $this->query($query, $parameters);
 	return $query->fetch();
 	}
+
+public function find($field, $value) {
+        $query = 'SELECT * FROM `' . $this->table . '` WHERE `' . $field . '` = :value';
+
+        $values = [
+            'value' => $value
+        ];
+
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute($values);
+     
+        return $stmt->fetchAll();
+    }
+
+
 private function insert($fields)
 	{
 	$query = 'INSERT INTO `' . $this->table . '` (';

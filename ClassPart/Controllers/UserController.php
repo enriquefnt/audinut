@@ -1,5 +1,6 @@
 <?php 
 namespace ClassPart\Controllers;
+use \ClassGrl\DataTables;
 class UserController {
 
 private $userTable;
@@ -32,13 +33,14 @@ public function carga_user () {
 		$Usuario['nombre'] =ucwords(strtolower($Usuario['nombre']));
 		$Usuario['apellido'] =ucwords(strtolower($Usuario['apellido']));
 		$Usuario['password'] = password_hash($Usuario['password'], PASSWORD_DEFAULT);
-		$Usuario['fechaCarga'] = new DateTime();
+		$Usuario['fechaCarga'] = new \DateTime();
 		
 			
 
 	$this->userTable->save($Usuario);
 	
 	header('Location: /tablas/home');
+	//header('location: ' . strtolower($uri));
 	}
 	else {
 
@@ -65,20 +67,3 @@ public function carga_user () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ?>

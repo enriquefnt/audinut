@@ -1,6 +1,6 @@
 <?php
 namespace ClassPart\Controllers;
-
+use \ClassGrl\DataTables;
 class TablesController {
 private $benefTable;
 private $pediTable;
