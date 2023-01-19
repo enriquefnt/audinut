@@ -37,6 +37,11 @@ if ($uri == '') {
 
 	$controllerName = array_shift($route);
 	$action = array_shift($route);
+
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$action .= 'Submit';
+	}
+	
 	$controller = $this->website->getController($controllerName);
 	$page = $controller->$action(...$route);
 	$title = $page['title'];

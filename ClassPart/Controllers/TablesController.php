@@ -50,7 +50,7 @@ $title = 'Busca Beneficiario';
 
    
 
-public function edit() {
+public function editSubmit() {
 
 $localidades = $this->locTable->findAll();
 
@@ -62,9 +62,6 @@ foreach($localidades as $localidad)
         'value'     =>  $localidad['gid']
     );
 }
-
-
-if (isset($_POST['Beneficiario'])) {
 	
 	$Beneficiario = $_POST['Beneficiario'];
 
@@ -79,15 +76,35 @@ $this->benefTable->save($Beneficiario);
 
 header('Location: /tablas/home');
 }
-else {
 
-			if (isset($_GET['id'])) {
+
+public function edit($id=null) {
+
+		
+$localidades = $this->locTable->findAll();
+
+
+foreach($localidades as $localidad)
+{
+    $data[] = array(
+        'label'     =>  $localidad['nombre_geo'],
+        'value'     =>  $localidad['gid']
+    );
+}
+
+
+
+
+
+
+
+		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
 									}
 
 			$title = 'Carga Beneficiario';
 
-	}	
+		
 
 			  return ['template' => 'edita_benef.html.php',
 					     'title' => $title ,
@@ -101,7 +118,7 @@ else {
 }
 
 
-public function pedido(){
+public function pedidoSubmit(){
 
 $usuarios = $this->userTable->findAll();
 
@@ -114,41 +131,47 @@ foreach($usuarios as $usuario)
     );
 }
 
-if (isset($_POST['Pedido'])) {
-	
-	$Pedido = $_POST['Pedido'];
-
-	
-
-		
+$pedido=$_POST['Pedido'];
 
 $this->pediTable->save($Pedido);
 header('Location: /tablas/home');
 }
-else {
 
-			if (isset($_GET['id'])) {
-				$datosCaso = $this->benefTable->findById($_GET['id']);
-								}
 
-	$title = 'Carga Beneficiario';
 
+public function pedido($id=null){
+
+$usuarios = $this->userTable->findAll();
+
+
+foreach($usuarios as $usuario)
+{
+    $data[] = array(
+        'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
+        'value'     =>  $usuario['id_usuario']
+    );
 }
-	          return ['template' => 'carga_pedi.html.php',
+
+
+
+if (isset($_GET['id'])) {
+				$datosCaso = $this->benefTable->findById($_GET['id']);
+									}
+
+			$title = 'Carga Beneficiario';
+
+		
+
+			  return ['template' => 'edita_benef.html.php',
 					     'title' => $title ,
 					 'variables' => [
-				         'data'  => $data,
+			             'data'  =>   $data,
 					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
 
 					];
-
-
-
+			
 }
-
-
-
 
 
 public function listar(){
