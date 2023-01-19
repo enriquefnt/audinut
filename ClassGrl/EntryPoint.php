@@ -1,7 +1,7 @@
 <?php
 namespace ClassGrl;
 class EntryPoint {
-	private $route;
+//	private $route;
 
 
 public function __construct(private $website) {

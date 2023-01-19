@@ -72,7 +72,7 @@ if (isset($_POST['Beneficiario'])) {
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
-	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
+//	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
 		
 
 $this->benefTable->save($Beneficiario);
