@@ -21,8 +21,7 @@ private function loadTemplate($templateFileName, $variables) {
 private function checkUri($uri) {
 		if ($uri != strtolower($uri)) {
 		http_response_code(301);
-		//$uri = strtolower($uri);
-		//header('location: ' . strtolower($uri));
+	
 		}
 	}
 
@@ -40,7 +39,7 @@ if ($uri == '') {
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$action .= 'Submit';
-	}
+}
 	
 	$controller = $this->website->getController($controllerName);
 	$page = $controller->$action(...$route);
