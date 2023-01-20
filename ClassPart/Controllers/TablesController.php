@@ -162,7 +162,7 @@ if (isset($_GET['id'])) {
 
 		
 
-			  return ['template' => 'edita_benef.html.php',
+			  return ['template' => 'carga_pedi.html.php',
 					     'title' => $title ,
 					 'variables' => [
 			             'data'  =>   $data,
