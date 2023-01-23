@@ -48,21 +48,10 @@ $title = 'Busca Beneficiario';
 					];
 }
 
-   
+/// Metodo si es con post para beneficiario//////   
 
 public function editSubmit() {
 
-$localidades = $this->locTable->findAll();
-
-
-foreach($localidades as $localidad)
-{
-    $data[] = array(
-        'label'     =>  $localidad['nombre_geo'],
-        'value'     =>  $localidad['gid']
-    );
-}
-	
 	$Beneficiario = $_POST['Beneficiario'];
 
 	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
@@ -78,6 +67,8 @@ header('Location: /tablas/home');
 }
 
 
+/// Metodo si es GET para beneficiario//////  
+
 public function edit($id=null) {
 
 		
@@ -91,12 +82,6 @@ foreach($localidades as $localidad)
         'value'     =>  $localidad['gid']
     );
 }
-
-
-
-
-
-
 
 		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
@@ -117,19 +102,11 @@ foreach($localidades as $localidad)
 			
 }
 
+/// Metodo si es con post para pedido//////   
 
 public function pedidoSubmit(){
 
 $usuarios = $this->userTable->findAll();
-
-
-foreach($usuarios as $usuario)
-{
-    $data[] = array(
-        'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
-        'value'     =>  $usuario['id_usuario']
-    );
-}
 
 $pedido=$_POST['Pedido'];
 
@@ -137,7 +114,7 @@ $this->pediTable->save($Pedido);
 header('Location: /tablas/home');
 }
 
-
+/// Metodo si es con GET para pedido//////   
 
 public function pedido($id=null){
 
@@ -155,10 +132,10 @@ foreach($usuarios as $usuario)
 
 
 if (isset($_GET['id'])) {
-				$datosCaso = $this->benefTable->findById($_GET['id']);
+				$datosPedido = $this->benefTable->findById($_GET['id']);
 									}
 
-			$title = 'Carga Beneficiario';
+			$title = 'Carga Pedido';
 
 		
 
@@ -166,7 +143,7 @@ if (isset($_GET['id'])) {
 					     'title' => $title ,
 					 'variables' => [
 			             'data'  =>   $data,
-					 'datosCaso' => $datosCaso  ?? ' '
+					 'datosCaso' => $datosPedido  ?? ' '
 									 ]
 
 					];

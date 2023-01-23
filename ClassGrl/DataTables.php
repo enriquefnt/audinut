@@ -5,8 +5,7 @@ class DataTables
 	private $pdo;
 	private $table;
 	private $primaryKey;
-public function __construct(\PDO $pdo, string $table,
-	string $primaryKey)
+public function __construct(\PDO $pdo, string $table, string $primaryKey)
 {
 	$this->pdo = $pdo;
 	$this->table = $table;
