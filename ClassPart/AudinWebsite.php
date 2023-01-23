@@ -1,13 +1,16 @@
 <?php
 namespace ClassPart;
-class AudinWebsite {
+class AudinWebsite 
+implements \ClassGrl\Website
+ {
 
-public function getDefaultRoute() {
+
+public function getDefaultRoute(): string {
 	return 'tablas/home';
 	}
 
-public function getController(string $controllerName) {
-	
+
+public function getController(string $controllerName): ?object {	
 	$pdo = new \PDO('mysql:host=212.1.210.51;dbname=saltaped_audinut;
 	charset=utf8', 'saltaped_audinut', 'audinut7625');
 	
@@ -25,11 +28,14 @@ public function getController(string $controllerName) {
 	else if ($controllerName === 'tablas') {
 		$controller = new  \ClassPart\Controllers\TablesController($tablaBenef, $tablaPedi, $tablaUser,  $tablaLoc);
 		}
+
+ else {
+            $controller = null;
+        }
+		
 	return $controller;
 
-}
-
-
+  }
 }
 
 

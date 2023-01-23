@@ -7,7 +7,7 @@ private $pediTable;
 private $userTable;
 private $locTable;
 
-
+/*
 public function  __construct(DataTables $benefTable,DataTables $pediTable,
 DataTables $userTable, DataTables $locTable) {
 
@@ -17,7 +17,21 @@ $this->benefTable = $benefTable;
 $this->pediTable = $pediTable;
 $this->userTable = $userTable;
 $this->locTable = $locTable;
-}
+
+*/
+
+
+public function __construct(\ClassGrl\DataTables $benefTable,
+							\ClassGrl\DataTables $pediTable,
+							\ClassGrl\DataTables $userTable,
+							\ClassGrl\DataTables $locTable) {
+
+        $this->benefTable = $benefTable;
+		$this->pediTable = $pediTable;
+		$this->userTable = $userTable;
+		$this->locTable = $locTable;
+    }
+
 
 
 
@@ -106,13 +120,12 @@ foreach($localidades as $localidad)
 
 public function pedidoSubmit(){
 
-$usuarios = $this->userTable->findAll();
+	$pedido=$_POST['Pedido'];
 
-$pedido=$_POST['Pedido'];
+	$this->pediTable->save($Pedido);
 
-$this->pediTable->save($Pedido);
-header('Location: /tablas/home');
-}
+	header('Location: /tablas/home');
+	}
 
 /// Metodo si es con GET para pedido//////   
 
@@ -153,13 +166,11 @@ if (isset($_GET['id'])) {
 
 public function listar(){
 
-	
-		$result = $this->benefTable->findAll();
+	$result = $this->benefTable->findAll();
 
 		$benefs = [];
 		foreach ($result as $benef) {
 			
-
 			$benefs[] = [
 				'id_datos_benef' => $benef['id_datos_benef'],
 				'Nombres' => $benef['Nombres'],
@@ -168,12 +179,10 @@ public function listar(){
 
 		}
 
-
 		$title = 'Listado';
 
 		$totalBenef = $this->benefTable->total();
 
-		
 
 		return ['template' => 'listado.html.php',
 				'title' => $title,
@@ -181,9 +190,6 @@ public function listar(){
 				'benefs' => $benefs ]
 			];
 	}
-
-
-
 
 
 public function home() {
