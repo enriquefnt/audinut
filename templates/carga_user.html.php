@@ -7,7 +7,7 @@
 
   <div class="col-sm-6">
   	<label class="form-label-sm" for="nombre">Nombres</label>
-    <input type="text" required="required" class="form-control form-control-sm" name="Usuario[nombre]"  autocomplete="off" value="">
+    <input type="text" required="required" class="form-control form-control-sm" name="Usuario[nombre]"  autocomplete="off" value="<?=$datosUser['nombre'] ?? ''?>">
 </div>
   <div class="col-sm-6">
   <label class="form-label-sm" for="apellido">Apellidos</label>
@@ -84,7 +84,7 @@
 <script>
 
 var complete_establecimiento_nombre = new Autocomplete(document.getElementById('establecimiento_nombre'), {
-    data:<?php echo json_encode($data_esta); ?>,
+    data:<?php echo json_encode($data_insti); ?>,
     maximumItems:10,
     highlightTyped:true,
     highlightClass : 'fw-bold text-primary'

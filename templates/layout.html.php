@@ -45,7 +45,7 @@
      <a class="navbar-brand mb-0 " href="/tablas/home ">Home</a>
       <a class="navbar-brand mb-0 " href="/tablas/busca">Buscar</a>
       <a class="navbar-brand mb-0 " href="/tablas/edit">Cargar</a>
-      <a class="navbar-brand mb-0 " href="/user/carga_user">Cargar Usuario</a>
+      <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
      <a class="navbar-brand mb-0 " href="/tablas/listar">Listar</a>
      
 

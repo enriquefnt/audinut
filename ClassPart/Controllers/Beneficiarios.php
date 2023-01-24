@@ -1,21 +1,15 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
-class TablesController {
+class Beneficiarios {
 private $benefTable;
-private $pediTable;
-private $userTable;
 private $locTable;
 
 
 public function __construct(\ClassGrl\DataTables $benefTable,
-							\ClassGrl\DataTables $pediTable,
-							\ClassGrl\DataTables $userTable,
 							\ClassGrl\DataTables $locTable) {
 
         $this->benefTable = $benefTable;
-		$this->pediTable = $pediTable;
-		$this->userTable = $userTable;
 		$this->locTable = $locTable;
     }
 
@@ -64,19 +58,10 @@ public function editSubmit() {
 
 $this->benefTable->save($Beneficiario);
 
-header('Location: /tablas/home');
+ header('Location: /tablas/home');
+// header('location: /tablas/listar');
 }
 
-/// Metodo si es con post para pedido//////   
-
-public function pedidoSubmit(){
-
-	$pedido=$_POST['Pedido'];
-
-	$this->pediTable->save($Pedido);
-
-	header('Location: /tablas/home');
-	}
 
 /// Metodo si es GET para beneficiario//////  
 
@@ -114,41 +99,7 @@ foreach($localidades as $localidad)
 }
 
 
-/// Metodo si es con GET para pedido//////   
 
-public function pedido($id=null){
-
-$usuarios = $this->userTable->findAll();
-
-
-foreach($usuarios as $usuario)
-{
-    $data[] = array(
-        'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
-        'value'     =>  $usuario['id_usuario']
-    );
-}
-
-
-
-if (isset($_GET['id'])) {
-				$datosPedido = $this->benefTable->findById($_GET['id']);
-									}
-
-			$title = 'Carga Pedido';
-
-		
-
-			  return ['template' => 'carga_pedi.html.php',
-					     'title' => $title ,
-					 'variables' => [
-			             'data'  =>   $data,
-					 'datosCaso' => $datosPedido  ?? ' '
-									 ]
-
-					];
-			
-}
 
 
 public function listar(){
@@ -177,6 +128,9 @@ public function listar(){
 				'benefs' => $benefs ]
 			];
 	}
+
+
+
 
 
 public function home() {

@@ -23,10 +23,10 @@ public function getController(string $controllerName): ?object {
 
 
     if ($controllerName === 'user') {
-		$controller = new \ClassPart\Controllers\UserController($tablaUser,$tablaInsti);
+		$controller = new \ClassPart\Controllers\Usuarios($tablaUser,$tablaInsti);
 		}
 	else if ($controllerName === 'tablas') {
-		$controller = new  \ClassPart\Controllers\TablesController($tablaBenef, $tablaPedi, $tablaUser,  $tablaLoc);
+		$controller = new  \ClassPart\Controllers\Beneficiarios($tablaBenef, $tablaLoc);
 		}
 
  else {
