@@ -1,8 +1,3 @@
-
-
-
-
-
 <div class="container">
 
 	<fieldset class="border p-2">
@@ -10,7 +5,8 @@
     <?=$datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
     </legend>
 
-	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
+	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" 
+	autocomplete="off" >
 		
 	
 

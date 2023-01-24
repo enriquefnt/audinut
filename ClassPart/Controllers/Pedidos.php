@@ -59,7 +59,11 @@ public function pedidoSubmit() {
 
 	$pedido=$_POST['Pedido'];
 
-	$this->pediTable->save($Pedido);
+	$this->pediTable->save($pedido);
+
+
+
+
 
 	header('Location: /tablas/home');
 }
