@@ -7,14 +7,14 @@
 
 	<fieldset class="border p-2">
    <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
-    <?=$datosCaso['Nombres'] .' '. $datosCaso['Apellidos']?>
+    <?=$datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
     </legend>
 
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
 		
 	
 
-<input type="hidden"name="Pedido[id_datos_benef]" id="id_datos_benef" value=<?=$datosCaso['id_datos_benef'] ?? ''?> 
+<input type="hidden"name="Pedido[id_datos_benef]" id="id_datos_benef" value=<?=$datosBenef['id_datos_benef'] ?? ''?> 
 >
 
 
@@ -97,7 +97,7 @@
 <script type="text/javascript">
 
 var auto_complete = new Autocomplete(document.getElementById('prof_solicita'), {
-    data:<?php echo json_encode($data); ?>,
+    data:<?php echo json_encode($data_usuario); ?>,
     maximumItems:10,
     highlightTyped:true,
     highlightClass : 'fw-bold text-primary'

@@ -24,7 +24,7 @@
     <td align="center">
         </div>
         <div>
-        <a href="/tablas/pedido?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-clipboard"></i></i></a>
+        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-clipboard"></i></i></a>
         </div>
     </td>
  </tr>

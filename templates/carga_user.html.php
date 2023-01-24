@@ -74,11 +74,6 @@
   </div>
   </form>
 
-
-
-
-
-
 </div>
 
 <script>

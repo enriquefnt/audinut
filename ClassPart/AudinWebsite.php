@@ -28,6 +28,9 @@ public function getController(string $controllerName): ?object {
 	else if ($controllerName === 'tablas') {
 		$controller = new  \ClassPart\Controllers\Beneficiarios($tablaBenef, $tablaLoc);
 		}
+		else if ($controllerName === 'pedido') {
+		$controller = new  \ClassPart\Controllers\Pedidos($tablaPedi,$tablaBenef,$tablaUser);
+		}
 
  else {
             $controller = null;
