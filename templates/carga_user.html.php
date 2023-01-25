@@ -1,3 +1,20 @@
+<?php
+if (!empty($errors)) :
+?>
+  <div class="errors">
+    <p>No se puede crear el usuario, revise:</p>
+  <ul>
+    <?php
+    foreach ($errors as $error) :
+    ?>
+    <li><?= $error ?></li>
+    <?php
+    endforeach; ?>
+  </ul>
+  </div>
+<?php
+endif;
+?>
 
 
 <div class="container">
@@ -7,11 +24,11 @@
 
   <div class="col-sm-6">
   	<label class="form-label-sm" for="nombre">Nombres</label>
-    <input type="text" required="required" class="form-control form-control-sm" name="Usuario[nombre]"  autocomplete="off" value="<?=$datosUser['nombre'] ?? ''?>">
+    <input type="text"  class="form-control form-control-sm" name="Usuario[nombre]"  autocomplete="off" value="<?=$datosUser['nombre'] ?? ''?>">
 </div>
   <div class="col-sm-6">
   <label class="form-label-sm" for="apellido">Apellidos</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[apellido]"  autocomplete="off" value="">
+  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[apellido]"  autocomplete="off" value="<?=$datosUser['apellido'] ?? ''?>">
 </div>
 
 <div class="col-sm-3">
@@ -51,17 +68,18 @@
 
 <div class="col-sm-4">		
 			<label class="form-label-sm" for="celular">Celular</label>
-			<input class="form-control form-control-sm" type="tel"  name="Usuario[celular]" id="celular"pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######">
+			<input class="form-control form-control-sm" type="tel"  name="Usuario[celular]" id="celular"pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######" value="<?=$datosUser['celular'] ?? ''?>">
 	</div>
 
 <div class="col-sm-4">		
 			<label class="form-label-sm" for="email">Correo electrónico</label>
-			<input class="form-control form-control-sm" type="email"   name="Usuario[email]" id="email">
+			<input class="form-control form-control-sm" type="email"   name="Usuario[email]" id="email"  value="<?=$datosUser['email'] ?? ''?>">
+
 	</div>
 
 <div class="col-sm-2">
 	<label class="form-label-sm" for="usuario">Nombre de usuario</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[user]"  autocomplete="off" value="">
+  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[user]"  autocomplete="off" value="<?=$datosUser['usuario'] ?? ''?>">
 </div>
 
 <div class="col-sm-2">

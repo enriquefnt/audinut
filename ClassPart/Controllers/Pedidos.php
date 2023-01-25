@@ -61,10 +61,6 @@ public function pedidoSubmit() {
 
 	$this->pediTable->save($pedido);
 
-
-
-
-
 	header('Location: /tablas/home');
 }
 

@@ -43,24 +43,6 @@ $title = 'Busca Beneficiario';
 					];
 }
 
-/// Metodo si es con post para beneficiario//////   
-
-public function editSubmit() {
-
-	$Beneficiario = $_POST['Beneficiario'];
-
-	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
-	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
-
-	$Beneficiario['fechaCarga'] = new \DateTime();
-//	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
-		
-
-$this->benefTable->save($Beneficiario);
-
- header('Location: /tablas/home');
-// header('location: /tablas/listar');
-}
 
 
 /// Metodo si es GET para beneficiario//////  
@@ -97,6 +79,28 @@ foreach($localidades as $localidad)
 					];
 			
 }
+
+/// Metodo si es con post para beneficiario//////   
+
+public function editSubmit() {
+
+	$Beneficiario = $_POST['Beneficiario'];
+
+	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
+	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
+
+	$Beneficiario['fechaCarga'] = new \DateTime();
+//	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
+		
+
+$this->benefTable->save($Beneficiario);
+
+ header('Location: /tablas/home');
+// header('location: /tablas/listar');
+}
+
+
+
 
 
 

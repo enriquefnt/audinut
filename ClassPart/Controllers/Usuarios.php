@@ -60,9 +60,38 @@ public function userSubmit() {
 	$Usuario['password'] = password_hash($Usuario['password'], PASSWORD_DEFAULT);
 	$Usuario['fechaCarga'] = new \DateTime();
 
+	$errors = [];
+
+	if (empty($Usuario['nombre'])) {
+	$errors[] = 'Debe indicar el nombre';
+	}
+
+	if (empty($Usuario['apellido'])) {
+	$errors[] = 'Debe indicar el Apellido';
+	}
+
+if  (empty($errors)) {
+
 $this->userTable->save($Usuario);
 
-header('Location: /tablas/home');
+header('Location: /user/success');
+}
+
+
+else {
+
+ return ['template' => 'carga_user.html.php',
+					     'title' => $title ,
+					 'variables' => [
+					 	'errors' => $errors,
+			       'data_insti'  =>   $data_insti,
+					 'datosUser' => $datosUser  ?? ' '
+									 ]
+
+					];
+}
+
+
 
 }
 
