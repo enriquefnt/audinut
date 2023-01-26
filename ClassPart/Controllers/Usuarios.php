@@ -54,11 +54,27 @@ $title = 'Carga Usuarios';
 
 public function userSubmit() {
 
+$instituciones = $this->instiTable->findAll();
+
+
+	foreach($instituciones as $institucion)
+	{
+	    $data_insti[] = array(
+	        'label'     =>  $institucion['establecimiento_nombre'],
+	        'value'     =>  $institucion['codi_esta']
+	    );
+	}
+
+	
+
 	$Usuario=$_POST['Usuario'];
 	$Usuario['nombre'] =ucwords(strtolower($Usuario['nombre']));
 	$Usuario['apellido'] =ucwords(strtolower($Usuario['apellido']));
+	$usuario['email'] = strtolower($Usuario['email']);
 	$Usuario['password'] = password_hash($Usuario['password'], PASSWORD_DEFAULT);
 	$Usuario['fechaCarga'] = new \DateTime();
+	$title = 'Carga Usuarios';
+
 
 	$errors = [];
 
@@ -70,13 +86,25 @@ public function userSubmit() {
 	$errors[] = 'Debe indicar el Apellido';
 	}
 
+	if (filter_var($Usuario['email']) == false) {
+	
+	$errors[] = 'El formato del correo no es válido';
+	}
+
+	if (count($this->userTable->find('email', $Usuario['email'])) > 0) {
+	$errors[] = 'Un usuario con este e-mail ya está registrado';
+	}
+
+	if (count($this->userTable->find('user', $Usuario['user'])) > 0) {
+	$errors[] = 'Un usuario con este nombre de usuario ya está registrado';
+	} 
+
 if  (empty($errors)) {
 
 $this->userTable->save($Usuario);
 
 header('Location: /user/success');
 }
-
 
 else {
 
@@ -85,7 +113,7 @@ else {
 					 'variables' => [
 					 	'errors' => $errors,
 			       'data_insti'  =>   $data_insti,
-					 'datosUser' => $datosUser  ?? ' '
+					 'datosUser' => $Usuario  ?? ' '
 									 ]
 
 					];

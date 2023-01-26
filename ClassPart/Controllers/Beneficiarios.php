@@ -83,6 +83,17 @@ foreach($localidades as $localidad)
 /// Metodo si es con post para beneficiario//////   
 
 public function editSubmit() {
+	
+$localidades = $this->locTable->findAll();
+foreach($localidades as $localidad)
+{
+    $data[] = array(
+        'label'     =>  $localidad['nombre_geo'],
+        'value'     =>  $localidad['gid']
+    );
+}
+
+
 
 	$Beneficiario = $_POST['Beneficiario'];
 
@@ -92,11 +103,36 @@ public function editSubmit() {
 	$Beneficiario['fechaCarga'] = new \DateTime();
 //	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
 		
+	$errors = [];
+
+if (($Beneficiario['id_datos_benef'] == '') && (count($this->benefTable->find('DNI', $Beneficiario['DNI'])) > 0)) {
+$errors[] = 'Un beneficiario con este DNI ya está registrado';
+}
+
+
+
+
+if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
+header('Location: /user/success');
+ 	}
 
- header('Location: /tablas/home');
-// header('location: /tablas/listar');
+
+else {
+
+ return ['template' => 'edita_benef.html.php',
+					     'title' => 'Revisar' ,
+					 'variables' => [
+					 	  'errors'=> $errors,
+			             'data'  =>   $data,
+					 'datosCaso' => $Beneficiario  ?? ' '
+									 ]
+
+					];
+}
+
+
 }
 
 

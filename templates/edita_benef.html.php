@@ -1,4 +1,22 @@
+<?php
+	if (!empty($errors)) :
+?>
+	<div class="alert alert-warning" role="alert">
 
+		
+		<p>Controle los siguiente:</p>
+		<ul>
+	<?php
+	foreach ($errors as $error) :
+	?>
+			<li><?= $error ?></li>
+	<?php
+	endforeach; ?>
+		</ul>
+	</div>
+<?php
+endif;
+?>
 
 <div class="container">
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >

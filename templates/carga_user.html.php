@@ -1,7 +1,7 @@
 <?php
 if (!empty($errors)) :
 ?>
-  <div class="errors">
+ <div class="alert alert-warning" role="alert">
     <p>No se puede crear el usuario, revise:</p>
   <ul>
     <?php
