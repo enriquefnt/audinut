@@ -68,7 +68,21 @@ catch (PDOException $e) {
 	$output = 'Error en la base de datos: ' . $e->getMessage() . ' en ' .
 	$e->getFile() . ':' . $e->getLine();
 }
-	include __DIR__ . '/../templates/layout.html.php';
+
+	
+
+
+
+	$layoutVariables = $this->website->getLayoutVariables();
+    $layoutVariables['title'] = $title;
+    $layoutVariables['output'] = $output;
+
+        echo $this->loadTemplate('layout.html.php', $layoutVariables);
+
+
+
+
+	
 }
 
  }

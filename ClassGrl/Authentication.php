@@ -2,8 +2,7 @@
 namespace ClassGrl;
 class Authentication {
 
-public function __construct(private DatabaseTable $users, private string $usernameColumn,
-	 private string $passwordColumn) {
+public function __construct(private DataTables $users, private string $usernameColumn, private string $passwordColumn) {
 	session_start();
 }
 
