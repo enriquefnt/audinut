@@ -48,9 +48,9 @@
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
      <a class="navbar-brand mb-0 " href="/tablas/listar">Listar</a>
      <?php if ($loggedIn): ?>
-      <a href="/login/logout">Ingresar</a>
+      <a href ="/login/logout">Salir</a>
 <?php else: ?>
-      <a href="/login/login">Salir</a>
+      <a href="/login/login">Ingresar</a>
 <?php endif; ?>
 
 

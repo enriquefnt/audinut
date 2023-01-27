@@ -8,8 +8,8 @@ endif;
     <h1 class="text-center">Ingresar Usuario y contraseña</h1>
     <form  action="" method="post">
         <div >
-            <label for="usuario" class="form-label">Usuario</label>
-            <input type="text" name="usuario" id="usuario" value=""  autocomplete="off">
+            <label for="user" class="form-label">Usuario</label>
+            <input type="text" name="user" id="user" value=""  autocomplete="off">
         </div>
         <div >
             <label for="password" class="form-label">contraseña</label>

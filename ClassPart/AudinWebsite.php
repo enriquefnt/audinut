@@ -53,13 +53,14 @@ public function getController(string $controllerName): ?object {
 
 
     if ($controllerName === 'user') {
-		$controller = new \ClassPart\Controllers\Usuarios($this->$tablaUser,$this->$tablaInsti);
+		$controller = new \ClassPart\Controllers\Usuarios($this->tablaUser,$this->tablaInsti);
 		}
 	else if ($controllerName === 'tablas') {
-		$controller = new  \ClassPart\Controllers\Beneficiarios($this->$tablaBenef, $this->$tablaLoc);
+		$controller = new  \ClassPart\Controllers\Beneficiarios($this->tablaBenef, $this->tablaLoc);
 		}
 		else if ($controllerName === 'pedido') {
-		$controller = new  \ClassPart\Controllers\Pedidos($this->$tablaPedi,$this->$tablaBenef,$this->$tablaUser);
+		$controller = new  \ClassPart\Controllers\Pedidos($this->tablaPedi,$this->tablaBenef,
+			$this->tablaUser);
 		}
 	else if ($controllerName == 'login') {
 		$controller = new \ClassPart\Controllers\Login($this->authentication);
