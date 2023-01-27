@@ -26,14 +26,7 @@ public function __construct() {
 	];
 }
 
-public function checkLogin(string $uri): ?string {
-		$restrictedPages = ['tablas/edit', 'user/user'];
-		if (in_array($uri, $restrictedPages) && !$this->authentication->isLoggedIn()) {
-		header('location: /login/login');
-		exit();
-	}
-		return $uri;
-	}
+
 
 
 public function getDefaultRoute(): string {
@@ -73,11 +66,18 @@ public function getController(string $controllerName): ?object {
 
   }
 
-public function getSecurePages(): array {
-	return ['tablas/edit', 'user/user'];
- }
 
 
+public function checkLogin(string $uri): ?string {
+        $restrictedPages = ['tablas/edit', 'user/user', 'tablas/listar'];
+
+        if (in_array($uri, $restrictedPages) && !$this->authentication->isLoggedIn()) {
+            header('location: /login/login');
+            exit();
+        }
+
+        return $uri;
+    }
 
 }
 
