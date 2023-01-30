@@ -28,9 +28,8 @@ public function __construct() {
 
 
 
-
 public function getDefaultRoute(): string {
-	return 'tablas/home';
+	return 'benef/home';
 	}
 
 
@@ -48,7 +47,7 @@ public function getController(string $controllerName): ?object {
     if ($controllerName === 'user') {
 		$controller = new \ClassPart\Controllers\Usuarios($this->tablaUser,$this->tablaInsti);
 		}
-	else if ($controllerName === 'tablas') {
+	else if ($controllerName === 'benef') {
 		$controller = new  \ClassPart\Controllers\Beneficiarios($this->tablaBenef, $this->tablaLoc);
 		}
 		else if ($controllerName === 'pedido') {
@@ -69,7 +68,7 @@ public function getController(string $controllerName): ?object {
 
 
 public function checkLogin(string $uri): ?string {
-        $restrictedPages = ['tablas/edit', 'user/user', 'tablas/listar'];
+        $restrictedPages = ['benef/edit', 'user/user', 'benef/listar'];
 
         if (in_array($uri, $restrictedPages) && !$this->authentication->isLoggedIn()) {
             header('location: /login/login');

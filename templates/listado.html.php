@@ -17,7 +17,7 @@
    <td align="center">
 
         <div>
-        <a href="/tablas/edit?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-file-pen"></i>
+        <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-file-pen"></i>
 </a>
       </div>
     </td>

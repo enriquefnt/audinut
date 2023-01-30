@@ -37,6 +37,19 @@ public function isLoggedIn(): bool {
 	}
 	}
 
+
+public function getUser(): ?array {
+if ($this->isLoggedIn()) {
+return $this->users->find($this->usernameColumn, strtolower($_SESSION['username']))[0];
+}
+else {
+return false;
+}
+}
+
+
+
+
 public function logout() {
 	unset($_SESSION['username']);
 	unset($_SESSION['password']);

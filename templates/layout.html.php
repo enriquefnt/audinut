@@ -42,11 +42,11 @@
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
   
-     <a class="navbar-brand mb-0 " href="/tablas/home ">Home</a>
-      <a class="navbar-brand mb-0 " href="/tablas/busca">Buscar</a>
-      <a class="navbar-brand mb-0 " href="/tablas/edit">Cargar</a>
+     <a class="navbar-brand mb-0 " href="/benef/home ">Home</a>
+      <a class="navbar-brand mb-0 " href="/benef/busca">Buscar</a>
+      <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
-     <a class="navbar-brand mb-0 " href="/tablas/listar">Listar</a>
+     <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
      <?php if ($loggedIn): ?>
       <a href ="/login/logout">Salir</a>
 <?php else: ?>

@@ -7,7 +7,8 @@ private $locTable;
 
 
 public function __construct(\ClassGrl\DataTables $benefTable,
-							\ClassGrl\DataTables $locTable) {
+							\ClassGrl\DataTables $locTable) 
+{
 
         $this->benefTable = $benefTable;
 		$this->locTable = $locTable;
