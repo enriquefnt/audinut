@@ -4,14 +4,17 @@ use \ClassGrl\DataTables;
 class Beneficiarios {
 private $benefTable;
 private $locTable;
+private $authentication;
 
 
 public function __construct(\ClassGrl\DataTables $benefTable,
-							\ClassGrl\DataTables $locTable) 
+							\ClassGrl\DataTables $locTable,
+							\ClassGrl\Authentication $authentication) 
 {
 
         $this->benefTable = $benefTable;
 		$this->locTable = $locTable;
+		$this->authentication = $authentication;
     }
 
 
@@ -102,20 +105,18 @@ foreach($localidades as $localidad)
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
-//	$Beneficiario['id_usuario'] =$_SESSION['id_usuario'];
+	$Beneficiario['id_usuario'] = $user['id_usuario'] ?? '99';
 		
 	$errors = [];
 
-if (($Beneficiario['id_datos_benef'] == '') && (count($this->benefTable->find('DNI', $Beneficiario['DNI'])) > 0)) {
+if (!isset($Beneficiario['id_usuario']) && (count($this->benefTable->find('DNI', $Beneficiario['DNI'])) > 0)) {
 $errors[] = 'Un beneficiario con este DNI ya está registrado';
 }
-
-
-
 
 if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
+
 header('Location: /user/success');
  	}
 

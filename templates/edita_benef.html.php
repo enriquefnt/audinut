@@ -84,7 +84,7 @@ endif;
 
 		
 <div class="container">
-	<a href="/tablas/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
+	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
 <input type="submit"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 

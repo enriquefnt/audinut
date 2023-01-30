@@ -48,7 +48,7 @@ public function getController(string $controllerName): ?object {
 		$controller = new \ClassPart\Controllers\Usuarios($this->tablaUser,$this->tablaInsti);
 		}
 	else if ($controllerName === 'benef') {
-		$controller = new  \ClassPart\Controllers\Beneficiarios($this->tablaBenef, $this->tablaLoc);
+		$controller = new  \ClassPart\Controllers\Beneficiarios($this->tablaBenef, $this->tablaLoc, $this->authentication);
 		}
 		else if ($controllerName === 'pedido') {
 		$controller = new  \ClassPart\Controllers\Pedidos($this->tablaPedi,$this->tablaBenef,
