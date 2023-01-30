@@ -36,9 +36,9 @@
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">
 <h4>Area Fórmulas</h4>
-<h5>Gestión solicitudes de nutroterápicos</h5>
-
-
+<h5>Gestión solicitudes de nutroterápicos -  
+<?php if (isset($_SESSION['username'])) {echo "Usuario: " . $_SESSION['username'] ;} ?>
+</h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
   

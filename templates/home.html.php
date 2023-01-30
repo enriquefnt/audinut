@@ -4,6 +4,6 @@
 
 <div class="container">
 <h3>Inicio</h3>
-<img src="/../img/latas.png">
+<h5>Usuario: <?= $_SESSION['user'] ??' '?> </h5>
 </div>
 
