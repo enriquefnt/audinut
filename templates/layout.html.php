@@ -29,7 +29,7 @@
 
 
   <title><?=$title?></title>
-  <script src="/autocomplete.js"></script>
+  <script src="/autocom.js"></script>
   <script src="../js/autocompleta.js"></script>
 </head>
   <body class="w3-light-grey" >

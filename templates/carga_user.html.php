@@ -18,9 +18,8 @@ endif;
 
 
 <div class="container">
-      
-<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off">
-
+  <form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
+    <h4>Datos personales</h4>
 
   <div class="col-sm-6">
   	<label class="form-label-sm" for="nombre">Nombres</label>
@@ -96,7 +95,7 @@ endif;
 
 <script>
 
-var complete_establecimiento_nombre = new Autocomplete(document.getElementById('establecimiento_nombre'), {
+var complete_establecimiento_nombre = new Autocom(document.getElementById('establecimiento_nombre'), {
     data:<?php echo json_encode($data_insti); ?>,
     maximumItems:10,
     highlightTyped:true,

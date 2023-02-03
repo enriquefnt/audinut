@@ -1,6 +1,6 @@
 const DEFAULTS = {
   threshold: 2,
-  maximumItems: 7,
+  maximumItems: 5,
   highlightTyped: true,
   highlightClass: 'text-primary',
   label: 'label',
@@ -9,7 +9,7 @@ const DEFAULTS = {
   showValueBeforeLabel: false,
 };
 
-class Autocomplete {
+class Autocom {
   constructor(field, options) {
     this.field = field;
     this.options = Object.assign({}, DEFAULTS, options);
@@ -87,7 +87,7 @@ class Autocomplete {
       }
     }
 
-    return ce(`<button  class="dropdown-item" data-label="${item.label}" data-value="${item.value}" value="${item.value}">${label}</button>`);
+    return ce(`<button type="button" class="dropdown-item" data-label="${item.label}" data-value="${item.value}">${label}</button>`);
   }
 
   createItems() {

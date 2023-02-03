@@ -109,7 +109,10 @@ foreach($localidades as $localidad)
 		
 	$errors = [];
 
-if (!isset($Beneficiario['id_usuario']) && (count($this->benefTable->find('DNI', $Beneficiario['DNI'])) > 0)) {
+//if (!isset($Beneficiario['id_usuario']) && (count($this->benefTable->find('DNI', $Beneficiario['DNI'])) > 0)) {
+
+if (count($this->benefTable->find('DNI', $Beneficiario['DNI'])) > 0) {
+
 $errors[] = 'Un beneficiario con este DNI ya está registrado';
 }
 
@@ -118,6 +121,8 @@ if  (empty($errors)) {
 $this->benefTable->save($Beneficiario);
 
 header('Location: /user/success');
+
+die() ;
  	}
 
 

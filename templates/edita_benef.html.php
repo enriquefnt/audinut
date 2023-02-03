@@ -19,7 +19,7 @@ endif;
 ?>
 
 <div class="container">
-	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
+	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action=""  onsubmit="myButton.disabled = true; return true;" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
 	
 
@@ -60,6 +60,9 @@ endif;
 		
     </div>
 
+   <div class="col-sm-0">
+            <input type="hidden" name="Beneficiario[id_localidad]" id="id_localidad"  value="<?=$data['value'] ?? ''?>" />
+        </div>  
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
@@ -86,7 +89,7 @@ endif;
 <div class="container">
 	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
-<input type="submit"  name=submit class="btn btn-primary btn-sm" value="Guardar">
+<input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 
 </div>
 </form>	
@@ -96,7 +99,7 @@ endif;
 
 <script>
 
-var auto_complete = new Autocomplete(document.getElementById('nombre_geo'), {
+var auto_complete = new Autocom(document.getElementById('nombre_geo'), {
     data:<?php echo json_encode($data); ?>,
     maximumItems:10,
     highlightTyped:true,
