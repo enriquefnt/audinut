@@ -67,6 +67,7 @@ foreach($localidades as $localidad)
         'value'     =>  $localidad['gid']
     );
 }
+$usuario = $this->authentication->getUser();
 
 		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
@@ -100,7 +101,7 @@ foreach($localidades as $localidad)
     );
 }
 
-
+	$usuario = $this->authentication->getUser();
 
 	$Beneficiario = $_POST['Beneficiario'];
 
@@ -108,7 +109,7 @@ foreach($localidades as $localidad)
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
-	$Beneficiario['id_usuario'] = $tablaUser['id_usuario'] ?? '11';
+	$Beneficiario['id_usuario'] = $usuario['id_usuario'] ?? '11';
 
 		
 	$errors = [];
