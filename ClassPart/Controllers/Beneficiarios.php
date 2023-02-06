@@ -4,16 +4,19 @@ use \ClassGrl\DataTables;
 class Beneficiarios {
 private $benefTable;
 private $locTable;
+private $userTable;
 private $authentication;
 
 
 public function __construct(\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $locTable,
+							\ClassGrl\DataTables $userTable,
 							\ClassGrl\Authentication $authentication) 
 {
 
         $this->benefTable = $benefTable;
 		$this->locTable = $locTable;
+		$this->userTable = $userTable;
 		$this->authentication = $authentication;
     }
 
@@ -105,7 +108,8 @@ foreach($localidades as $localidad)
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
-	$Beneficiario['id_usuario'] = $user['id_usuario'] ?? '99';
+	$Beneficiario['id_usuario'] = $tablaUser['id_usuario'] ?? '11';
+
 		
 	$errors = [];
 

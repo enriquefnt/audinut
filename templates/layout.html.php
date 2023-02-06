@@ -38,7 +38,7 @@
 <h4>Area Fórmulas</h4>
 <h5>Gestión solicitudes de nutroterápicos -  
 <?php if (isset($_SESSION['username'])) {echo "Usuario: " . $_SESSION['username'] ;}
-else {echo 'Ingrese por favor con su usuario y contraseña';} ?>
+else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
