@@ -17,14 +17,14 @@
    <td align="center">
 
         <div>
-        <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-file-pen"></i>
+        <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-pen"></i>
 </a>
       </div>
     </td>
     <td align="center">
         </div>
         <div>
-        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="fa-light fa-clipboard"></i></i></a>
+        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></a>
         </div>
     </td>
  </tr>

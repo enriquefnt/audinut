@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
-<script src="https://kit.fontawesome.com/f6cbba0704.js" crossorigin="anonymous"></script>
 
+<!-- <script src="https://kit.fontawesome.com/f6cbba0704.js" crossorigin="anonymous"></script>-->
+<script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
 
  <!-- jquery -->
  <script
@@ -20,6 +21,7 @@
 <!-- bootstrap -->
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 <!-- datatables -->
