@@ -14,10 +14,6 @@ public function __construct(\ClassGrl\DataTables $userTable,
     }
 
 
-
-
-
-
 public function user($id=null){
 
 	$instituciones = $this->instiTable->findAll();

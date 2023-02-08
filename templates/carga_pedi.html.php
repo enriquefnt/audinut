@@ -69,19 +69,6 @@
 	</div>
 	
 
-	<div class="col-sm-4">
-    	<label class="form-label-sm" for="prof_solicita">Profesional solicitante</label>
-    	<input type="text" name="Pedido[prof_solicita]" id="prof_solicita" class="form-control form-control-sm" autocomplete="off" />
-    	<input type="hidden" name="Pedido[usuari_id]" id="usuari_id" class="form-control form-control-sm" value="" autocomplete="off" />
-		    </div>
-
-
-	<div class="col-sm-4">
-			
-			<input  type="hidden" name="Pedido[fecha_ped]" value="<?=date('Y-m-d') ?? ''?> ">
-		
-	</div>
-
 	<div class="col-sm-1">
 			<button class="btn btn-primary" type="submit" name="submit">Enviar</button>
 	</div>
@@ -90,14 +77,4 @@
 </fieldset>
 
 </div>
-<script type="text/javascript">
 
-var auto_complete = new Autocomplete(document.getElementById('prof_solicita'), {
-    data:<?php echo json_encode($data_usuario); ?>,
-    maximumItems:10,
-    highlightTyped:true,
-    highlightClass : 'fw-bold text-primary'
-}); 
-
-
-</script>

@@ -109,7 +109,7 @@ foreach($localidades as $localidad)
 	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
-	$Beneficiario['id_usuario'] = $usuario['id_usuario'] ?? '11';
+	$Beneficiario['id_usuario'] = $usuario['id_usuario'] ?? '00';
 
 		
 	$errors = [];

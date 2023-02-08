@@ -9,11 +9,13 @@ private $benefTable;
 
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
-							\ClassGrl\DataTables $userTable) {
+							\ClassGrl\DataTables $userTable,
+							\ClassGrl\Authentication $authentication) {
 
         $this->pediTable = $pediTable;
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
+		$this->authentication = $authentication;		
     }
 
 
@@ -57,11 +59,16 @@ if (isset($_GET['id'])) {
 
 public function pedidoSubmit() {
 
-	$pedido=$_POST['Pedido'];
+		$usuario = $this->authentication->getUser();
+
+		$pedido=$_POST['Pedido'];
+		$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
+		$pedido['fecha_ped']= new \DateTime();
 
 	$this->pediTable->save($pedido);
 
-	header('Location: /benef/home');
+	
+	header('Location: /user/success');
 }
 
 
