@@ -16,12 +16,14 @@ public function login(string $username, string $password): bool {
 	
 	$_SESSION['username'] = $username;
 	$_SESSION['password'] = $user[0][$this->passwordColumn];
+
 	
 	return true;
 	
 	} else {
 	return false;
 }
+	$_SESSION['nombre'] = $user['nombre'];
 }
 
 public function isLoggedIn(): bool {

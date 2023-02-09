@@ -56,7 +56,7 @@ if ($uri == '') {
 
 	else {
 		http_response_code(404);
-		$title = 'Not found';
+		$title = 'No encontrado';
 
 		$output = 'La página que usted busca no existe';
 	}

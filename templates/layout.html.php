@@ -65,7 +65,9 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
 </header>
  <main class="w3-row-padding table-container">  
   <div class="w3-container" >
-
+    <?php 
+      $usuario = $this->authentication->getUser();
+    //ssss print_r($usuario);?>
   <?=$output ?? ''?>
 
   </div>  
