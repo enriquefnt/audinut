@@ -1,11 +1,24 @@
 <?php
 namespace ClassGrl;
-class Authentication {
-
+/* class Authentication {
 public function __construct(private DataTables $users, private string $usernameColumn, private string $passwordColumn) {
 	session_start();
 }
+*/
+class Authentication {
 
+	private $users;
+	private $usernameColumn;
+	private $passwordColumn;
+
+public function __construct( DataTables $users,  string $usernameColumn, string $passwordColumn) {
+	session_start();
+	$this->users = $users;
+	$this->usernameColumn = $usernameColumn;
+	$this->passwordColumn = $passwordColumn;
+
+
+}
 
 public function login(string $username, string $password): bool {
 	

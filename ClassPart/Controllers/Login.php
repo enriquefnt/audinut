@@ -1,10 +1,17 @@
 <?php
 namespace ClassPart\Controllers;
-
+/*
 class Login {
 public function __construct(private \ClassGrl\Authentication $authentication) {
 }
+*/
+class Login {
 
+	private $authentication;
+public function __construct( \ClassGrl\Authentication $authentication) {
+
+	$this->authentication = $authentication;
+}
 public function login() {
 return ['template' => 'login.html.php',
 'title' => 'Ingreso'

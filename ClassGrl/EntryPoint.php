@@ -1,11 +1,16 @@
 <?php
 namespace ClassGrl;
-
+/*
 class EntryPoint {
 public function __construct(private \ClassPart\AudinWebsite $website) {
 }
 
-
+*/
+class EntryPoint {
+	private $website;
+public function __construct( \ClassPart\AudinWebsite $website) {
+$this->website = $website;
+}
 
 private function loadTemplate($templateFileName, $variables) {
 	extract($variables);
