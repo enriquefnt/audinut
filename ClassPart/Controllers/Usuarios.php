@@ -73,6 +73,10 @@ $instituciones = $this->instiTable->findAll();
 
 
 	$errors = [];
+	if ($_SESSION['tipo'] > 2) {
+	$errors[] = 'Ud no está habilitado para crear usuarios';
+	}
+
 
 	if (empty($Usuario['nombre'])) {
 	$errors[] = 'Debe indicar el nombre';
@@ -125,3 +129,5 @@ return ['template' => 'registersuccess.html.php',
 }
 
 }
+
+

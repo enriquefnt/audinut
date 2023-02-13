@@ -66,11 +66,31 @@ public function pedidoSubmit() {
 		$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
 		$pedido['fecha_ped']= new \DateTime();
 
-	$this->pediTable->save($pedido);
+$errors = [];
+	if ($_SESSION['tipo'] > 2) {
+	$errors[] = 'Ud no está habilitado para cargar pedidos';
+	}
+if  (empty($errors)) {
 
+
+	$this->pediTable->save($pedido);
+}
 	
 	header('Location: /user/success');
 }
+
+else {
+
+ return ['template' => 'carga_pedi.html.php',
+					     'title' => $title ,
+					 'variables' => [
+			     'data_usuario'  =>   $data_usuario ?? ' ',
+				    'datosBenef' => $datosBenef  ?? ' '
+									 ]
+
+					];
+}
+
 
 
 public function success() {

@@ -1,3 +1,22 @@
+<?php
+if (!empty($errors)) :
+?>
+ <div class="alert alert-warning" role="alert">
+    <p>No se puede cargar pedido:</p>
+  <ul>
+    <?php
+    foreach ($errors as $error) :
+    ?>
+    <li><?= $error ?></li>
+    <?php
+    endforeach; ?>
+  </ul>
+  </div>
+<?php
+endif;
+?>
+
+
 <div class="container">
 
 	<fieldset class="border p-2">

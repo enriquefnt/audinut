@@ -41,7 +41,7 @@
 
 <?php if (isset($_SESSION['username'])) 
 {echo "Usuario: " . $_SESSION['nombre'] .' '.$_SESSION['apellido'].' - ' . 
-$_SESSION['establecimiento_nombre'].$_SESSION['tipo'];}
+$_SESSION['establecimiento_nombre'];}
 else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
@@ -51,7 +51,8 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
       <a class="navbar-brand mb-0 " href="/benef/busca">Buscar <i class="bi bi-search"></i></a>
       <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
       
-      <?php if ($_SESSION['tipo'] == '1' || $_SESSION['tipo'] == '2'|| $_SESSION['tipo'] == '0') { ?>
+      <?php if (isset($_SESSION) &&( $_SESSION['tipo'] == '1' 
+      || $_SESSION['tipo'] == '2'|| $_SESSION['tipo'] == '0')) { ?>
 
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
 
@@ -72,9 +73,8 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
 </header>
  <main class="w3-row-padding table-container">  
   <div class="w3-container" >
-    <?php 
-    //  $usuario = $this->authentication->getUser();
-    //ssss print_r($usuario);?>
+   
+   
   <?=$output ?? ''?>
 
   </div>  
