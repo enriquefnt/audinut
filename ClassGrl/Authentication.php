@@ -36,7 +36,7 @@ public function login(string $username, string $password): bool {
 	} else {
 	return false;
 }
-	$_SESSION['nombre'] = $user['nombre'];
+	
 }
 
 public function isLoggedIn(): bool {

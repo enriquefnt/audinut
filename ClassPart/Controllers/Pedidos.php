@@ -27,7 +27,7 @@ public function pedido($id=null){
 
 	$usuarios = $this->userTable->findAll();
 
-
+/*
 	foreach($usuarios as $usuario)
 	{
 	    $data_usuario[] = array(
@@ -35,6 +35,7 @@ public function pedido($id=null){
            'value'     =>  $usuario['id_usuario']
 	    );
 	}
+	*/
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);

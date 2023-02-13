@@ -37,18 +37,25 @@
   <body class="w3-light-grey" >
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">
-<h4>Area Fórmulas</h4>
-<h5>Gestión solicitudes de nutroterápicos -  
-<?php if (isset($_SESSION['username'])) {echo "Usuario: " . $_SESSION['username'] ;}
+<h4>Area Fórmulas - Gestión solicitudes de nutroterápicos</h4>
+
+<?php if (isset($_SESSION['username'])) 
+{echo "Usuario: " . $_SESSION['nombre'] .' '.$_SESSION['apellido'].' - ' . 
+$_SESSION['establecimiento_nombre'].$_SESSION['tipo'];}
 else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
   
-     <a class="navbar-brand mb-0 " href="/benef/home ">Home</a>
-      <a class="navbar-brand mb-0 " href="/benef/busca">Buscar</a>
+     <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
+      <a class="navbar-brand mb-0 " href="/benef/busca">Buscar <i class="bi bi-search"></i></a>
       <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
+      
+      <?php if ($_SESSION['tipo'] == '1' || $_SESSION['tipo'] == '2'|| $_SESSION['tipo'] == '0') { ?>
+
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
+
+      <?php } ?>
      <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
      <?php if ($loggedIn): ?>
       <a href ="/login/logout">Salir</a>
