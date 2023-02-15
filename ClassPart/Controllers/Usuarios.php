@@ -75,6 +75,7 @@ $instituciones = $this->instiTable->findAll();
 	$errors = [];
 	if ($_SESSION['tipo'] > 2) {
 	$errors[] = 'Ud no está habilitado para crear usuarios';
+	header('Location:  /benef/home');
 	}
 
 

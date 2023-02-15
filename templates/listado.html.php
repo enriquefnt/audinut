@@ -6,12 +6,11 @@
   <tr >
 
     <th>Nombre</th>
-      <th>Editar</th>
+    <th>Editar Beneficiario</th>
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
-      <th>Cargar Pedido</th>
+    <th>Cargar Pedido</th>
       <?php } ?>
-
-      
+    
   </tr>
 </thead>
   <tbody >
@@ -33,6 +32,8 @@
         </div>
     </td>
       <?php } ?>
+
+     
  </tr>
 
   <?php endforeach; ?>

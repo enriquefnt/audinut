@@ -48,11 +48,11 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
   <div class="container-fluid"> 
   
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
-      <a class="navbar-brand mb-0 " href="/benef/busca">Buscar <i class="bi bi-search"></i></a>
+      <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a>
       <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
       
-      <?php if (isset($_SESSION) &&( $_SESSION['tipo'] == '1' 
-      || $_SESSION['tipo'] == '2'|| $_SESSION['tipo'] == '0')) { ?>
+      <?php if( !is_null($_SESSION['tipo'])&& ( $_SESSION['tipo'] < '3' 
+      )) { ?>
 
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
 
