@@ -47,11 +47,11 @@ endif;
   <label class="form-label-sm" for="tipo">Función</label>
   <select name="Usuario[tipo]" id="tipo" class="form-control form-control-sm">
   	<option hidden selected>...</option>
-    <option value='1'>Administrador</option>
+  <!--  <option value='1'>Administrador</option> -->
     <option value='2'>Auditor</option>
     <option value='3'>Profesional</option>
-    <option value='5'>Administrativo</option>
-    <option value='6'>Otros</option>
+    <option value='4'>Administrativo</option>
+    <option value='5'>Otros</option>
     </select>
  </div>
 

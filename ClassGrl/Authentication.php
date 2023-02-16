@@ -70,5 +70,8 @@ public function logout() {
 	unset($_SESSION['username']);
 	unset($_SESSION['password']);
 	session_regenerate_id();
+	session_write_close();
+	session_destroy();
 	}
 }
+
