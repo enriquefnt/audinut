@@ -41,31 +41,26 @@
 
 <?php if (isset($_SESSION['username'])) 
 {echo "Usuario: " . $_SESSION['nombre'] .' '.$_SESSION['apellido'].' - ' . 
-$_SESSION['establecimiento_nombre'];}
-else {echo 'Ud no está conectado, ingrese con su usuario y contraseña';} ?>
+$_SESSION['establecimiento_nombre'].$_SESSION['tipo'];}
+else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
   
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
       <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a>
-      <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>          
-     <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
+      <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
+      
+      <?php if ($_SESSION['tipo'] <3) { ?>
 
-     <?php if ($loggedIn &&  $_SESSION['tipo'] < '3' 
-      ) { ?>
-
-        <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
+      <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
 
       <?php } ?>
-
-
-
-
+     <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
      <?php if ($loggedIn): ?>
-      <a href ="/login/logout">Salir</a>
+      <a href ="/login/logout">Ingresar</a>
 <?php else: ?>
-      <a href="/login/login">Ingresar</a>
+      <a href="/login/login">Salir</a>
 <?php endif; ?>
 
 
@@ -77,8 +72,7 @@ else {echo 'Ud no está conectado, ingrese con su usuario y contraseña';} ?>
 </header>
  <main class="w3-row-padding table-container">  
   <div class="w3-container" >
-   
-   
+    
   <?=$output ?? ''?>
 
   </div>  
