@@ -22,7 +22,7 @@
         <div>
         <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i>
     </a>
-=======</div>
+</div>
     </td>
     <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
      <td align="center">

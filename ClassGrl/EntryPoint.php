@@ -1,12 +1,10 @@
 <?php
 namespace ClassGrl;
+
 class EntryPoint {
-//	private $route;
-
-
-public function __construct(private $website) {
-
+public function __construct(private \ClassPart\AudinWebsite $website) {
 }
+
 
 
 private function loadTemplate($templateFileName, $variables) {
@@ -18,14 +16,14 @@ private function loadTemplate($templateFileName, $variables) {
 
 
 
-private function checkUri($uri) {
+private function checkUri(string $uri) {
 		if ($uri != strtolower($uri)) {
 		http_response_code(301);
 	
 		}
 	}
 
-public function run($uri) {
+public function run(string $uri, string $method) {
 try {
 	$this->checkUri($uri);
 if ($uri == '') {
@@ -37,29 +35,57 @@ if ($uri == '') {
 	$controllerName = array_shift($route);
 	$action = array_shift($route);
 
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$this->website->checkLogin($controllerName . '/' . $action);
+
+	if ($method === 'POST') {
 	$action .= 'Submit';
 }
 	
 	$controller = $this->website->getController($controllerName);
-	$page = $controller->$action(...$route);
-	$title = $page['title'];
-	$variables = $page['variables'] ?? [];
+	
+	if (is_callable([$controller, $action])) {
 
-	$output = $this->loadTemplate($page['template'], $variables);
+
+		$page = $controller->$action(...$route);
+		$title = $page['title'];
+		$variables = $page['variables'] ?? [];
+
+		$output = $this->loadTemplate($page['template'], $variables);
+
+     }
+
+	else {
+		http_response_code(404);
+		$title = 'No encontrado';
+
+		$output = 'La página que usted busca no existe';
+	}
+
+
 } 
 
 
 catch (PDOException $e) {
-	$title = 'An error has occurred';
-	$output = 'Database error: ' . $e->getMessage() . ' in ' .
+	$title = 'Error';
+	$output = 'Error en la base de datos: ' . $e->getMessage() . ' en ' .
 	$e->getFile() . ':' . $e->getLine();
 }
-	include __DIR__ . '/../templates/layout.html.php';
+
+	
+
+
+
+	$layoutVariables = $this->website->getLayoutVariables();
+    $layoutVariables['title'] = $title;
+    $layoutVariables['output'] = $output;
+
+        echo $this->loadTemplate('layout.html.php', $layoutVariables);
+
+
+	
 }
+
 
  }
 
-
-
-
+ 
