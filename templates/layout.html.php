@@ -9,22 +9,22 @@
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
 
-<!-- <script src="https://kit.fontawesome.com/f6cbba0704.js" crossorigin="anonymous"></script>-->
+
 <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
 
- <!-- jquery -->
+ <!-- -----------------jquery----------------- -->
  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<!-- bootstrap -->
+<!-- --------------bootstrap--------------------- -->
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
-<!-- datatables -->
+<!-- -------------------datatables-------------------- -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/cr-1.5.6/date-1.1.2/fc-4.1.0/fh-3.2.3/kt-2.7.0/r-2.3.0/rg-1.2.0/rr-1.2.8/sc-2.0.6/sb-1.3.3/sp-2.0.1/sl-1.4.0/sr-1.1.1/datatables.min.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/cr-1.5.6/date-1.1.2/fc-4.1.0/fh-3.2.3/kt-2.7.0/r-2.3.0/rg-1.2.0/rr-1.2.8/sc-2.0.6/sb-1.3.3/sp-2.0.1/sl-1.4.0/sr-1.1.1/datatables.min.js"></script>
@@ -41,22 +41,27 @@
 
 <?php if (isset($_SESSION['username'])) 
 {echo "Usuario: " . $_SESSION['nombre'] .' '.$_SESSION['apellido'].' - ' . 
-$_SESSION['establecimiento_nombre'];}
+
+$_SESSION['establecimiento_nombre'].$_SESSION['tipo'];}
+
 else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
   
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
+
       <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a>
       <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
+      <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
       
       <?php if ($_SESSION['tipo']<3 ) { ?>
-
+        
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
 
       <?php } ?>
-     <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
+    
+
      <?php if ($loggedIn): ?>
       <a href ="/login/logout">Salir</a>
 <?php else: ?>
