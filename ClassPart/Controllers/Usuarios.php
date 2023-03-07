@@ -120,7 +120,14 @@ else {
 					];
 }
 
+/*
+public function addPedido($pedido) {
+	$pedido['id_usuario']= $this -> id;
 
+	return $this -> 
+}
+
+*/
 
 }
 

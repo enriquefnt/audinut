@@ -27,15 +27,7 @@ public function pedido($id=null){
 
 	$usuarios = $this->userTable->findAll();
 
-/*
-	foreach($usuarios as $usuario)
-	{
-	    $data_usuario[] = array(
-	       'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
-           'value'     =>  $usuario['id_usuario']
-	    );
-	}
-	*/
+
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
@@ -56,7 +48,7 @@ if (isset($_GET['id'])) {
 			
 }
 
-
+/*
 
 public function pedidoSubmit() {
 
@@ -91,8 +83,36 @@ else {
 					];
 					*/
 
+public function pedidoSubmit($id = null) {
 
+		$usuario = $this->authentication->getUser();
 
+if (!empty($id)) {
+					$pedido= $this->pediTable->find('id_datos_pedido', $id)[0];
+if ($pedido['usuari_id']  !=  $usuario['id_usuario']) {
+
+	
+	return;
+	}
+}
+
+		$pedido=$_POST['Pedido'];
+	//	$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
+		$pedido['fecha_ped']= new \DateTime();
+
+$errors = [];
+	if ($_SESSION['tipo'] > 2) {
+	$errors[] = 'Ud no está habilitado para cargar pedidos';
+	}
+if  (empty($errors)) {
+
+	$usuario->addJoke($joke);
+//	$this->pediTable->save($pedido);
+}
+	
+	header('Location: /user/success');
+
+}
 
 public function success() {
 return ['template' => 'registersuccess.html.php',
