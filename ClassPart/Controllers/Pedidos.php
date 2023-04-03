@@ -78,18 +78,7 @@ if  (empty($errors)) {
 	
 	header('Location: /user/success');
 }
-/*
-else {
 
- return ['template' => 'carga_pedi.html.php',
-					     'title' => $title ,
-					 'variables' => [
-			     'data_usuario'  =>   $data_usuario ?? ' ',
-				    'datosBenef' => $datosBenef  ?? ' '
-									 ]
-
-					];
-					*/
 
 
 
