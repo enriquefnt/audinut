@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
 			
 }
 
-/*
+
 
 public function pedidoSubmit() {
 
