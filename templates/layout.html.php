@@ -51,7 +51,7 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
   
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
 
-      <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a>
+   <!--   <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a> -->
       <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
       <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
       
