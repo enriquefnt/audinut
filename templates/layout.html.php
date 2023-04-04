@@ -69,9 +69,6 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
 <?php endif; ?>
 
 
-
-
-
   </nav>
 </div>
 
