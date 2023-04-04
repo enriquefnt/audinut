@@ -1,5 +1,7 @@
 <?php
 namespace ClassPart;
+use \AllowDynamicProperties;
+#[AllowDynamicProperties]
 class AudinWebsite implements \ClassGrl\Website  {
  
  	private \ClassGrl\DataTables $tablaBenef;
@@ -16,7 +18,11 @@ public function __construct() {
 	$this->tablaUser = new \ClassGrl\DataTables($pdo, 'datos_usuarios','id_usuario' );
     $this->tablaLoc = new \ClassGrl\DataTables($pdo,'datos_localidad', 'gid');
     $this->tablaInsti = new \ClassGrl\DataTables($pdo,'datos_institucion', 'codi_esta');
-    $this->authentication = new \ClassGrl\Authentication($this->tablaUser,'user', 'password'); 
+  $this->authentication = new \ClassGrl\Authentication($this->tablaUser,'user', 'password'); 
+ //  $this->authentication = new \ClassGrl\Authentication($pdo,'user', 'password'); 
+// $this->authentication = new \Ninja\Authentication($this->authorsTable, 'email', 'password');
+
+
 }
 
 
