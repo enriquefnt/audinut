@@ -55,7 +55,7 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
       <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
       <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
       
-      <?php if ($_SESSION['tipo']<3 ) { ?>
+      <?php if ($_SESSION['tipo']<3 && isset($_SESSION['tipo'])  ) { ?>
         
       <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
 
