@@ -56,6 +56,7 @@ return false;
 public function logout() {
 	unset($_SESSION['username']);
 	unset($_SESSION['password']);
+	unset($_SESSION['tipo']);
 	session_regenerate_id();
 	}
 }
