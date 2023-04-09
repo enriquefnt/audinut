@@ -63,9 +63,9 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
     
 
      <?php if ($loggedIn): ?>
-      <a href ="/login/logout">Salir</a>
+      <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
 <?php else: ?>
-      <a href="/login/login">Ingresar</a>
+      <a class="nav-link active" aria-current="page" href="/login/login">Ingresar</a>
 <?php endif; ?>
 
 

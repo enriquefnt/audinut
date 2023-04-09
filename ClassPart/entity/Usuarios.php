@@ -1,5 +1,5 @@
 <?php
-namespace classpart\entity;
+namespace ClassPart\Entity;
 
 class Usuarios {
     public $id_usuario;
