@@ -42,7 +42,7 @@
 <?php if (isset($_SESSION['username'])) 
 {echo "Usuario: " . $_SESSION['nombre'] .' '.$_SESSION['apellido'].' - ' . 
 
-$_SESSION['establecimiento_nombre'].$_SESSION['tipo'];}
+$_SESSION['establecimiento_nombre'];}
 
 else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
