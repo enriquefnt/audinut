@@ -1,5 +1,7 @@
 <?php
 namespace ClassPart;
+use \AllowDynamicProperties;
+#[AllowDynamicProperties]
 class AudinWebsite implements \ClassGrl\Website  {
  
  	private \ClassGrl\DataTables $tablaBenef;
