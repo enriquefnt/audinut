@@ -67,7 +67,7 @@ public function pedidoSubmit() {
 		$pedido['fecha_ped']= new \DateTime();
 
 	$errors = [];
-	if ($_SESSION['tipo'] > 2) {
+	if ($_SESSION['tipo'] > 3) {
 	$errors[] = 'Ud no está habilitado para cargar pedidos';
 	}
 if  (empty($errors)) {
@@ -78,6 +78,11 @@ if  (empty($errors)) {
 	
 	header('Location: /user/success');
 }
+
+
+
+
+
 
 
 
