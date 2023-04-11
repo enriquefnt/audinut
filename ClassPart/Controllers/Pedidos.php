@@ -1,6 +1,8 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
+use \AllowDynamicProperties;
+#[AllowDynamicProperties]
 class Pedidos {
 private $pediTable;
 private $userTable;

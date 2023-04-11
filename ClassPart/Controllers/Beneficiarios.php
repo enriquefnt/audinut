@@ -1,6 +1,8 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
+use \AllowDynamicProperties;
+#[AllowDynamicProperties]
 class Beneficiarios {
 private $benefTable;
 private $locTable;
@@ -145,11 +147,6 @@ else {
 
 
 }
-
-
-
-
-
 
 
 
