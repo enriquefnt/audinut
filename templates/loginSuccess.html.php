@@ -1,6 +1,6 @@
-
+<div class="container">
 <h4>¡Ingreso exitoso!</h4>
-
+</div>
 
 
 <div class="container">
