@@ -9,7 +9,8 @@
     <th>Editar Beneficiario</th>
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
     <th>Cargar Pedido</th>
-      <?php } ?>
+    <th>Ver/Editar</th>
+            <?php } ?>
     
   </tr>
 </thead>
@@ -38,13 +39,20 @@
     </td>
       <?php } ?>
 
-     
+      <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+     <td align="center">
+        </div>
+        <div>
+        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
+        </div>
+    </td>
+      <?php } ?>
  </tr>
 
   <?php endforeach; ?>
  </tbody>
  </table>   
-
+ </div>
 
 
 

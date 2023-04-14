@@ -7,7 +7,7 @@
 	<h5>
 
 <?php
-// date_default_timezone_set('America/Mexico_City');
+ date_default_timezone_set('America/Argentina/Salta');
 $hora = date('H');
 
 if($hora >= 5 && $hora < 13) {

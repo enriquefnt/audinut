@@ -82,6 +82,34 @@ if  (empty($errors)) {
 }
 
 
+public function listar(){
+
+	$result = $this->$pediTable->findAll();
+
+		$pedidos = [];
+		foreach ($result as $benef) {
+			
+			$pedidos[] = [
+				'id_datos_benef' => $pedidos['id_datos_benef'],
+				'Nombres' => $pedidos['Nombres'],
+				'Apellidos' => $pedidos['Apellidos']
+			];
+
+		}
+
+		$title = 'Pedidos';
+
+		$totalPedi = $this->pediTable->total();
+
+
+		return ['template' => 'pedidos.html.php',
+				'title' => $title,
+				'variables' => ['totalBenef' => $totalBenef,
+				'benefs' => $benefs ]
+			];
+	}
+
+
 
 
 

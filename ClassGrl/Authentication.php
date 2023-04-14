@@ -16,7 +16,7 @@ public function login(string $username, string $password): bool {
 	
 	$_SESSION['username'] = $username;
 	$_SESSION['password'] = $user[0][$this->passwordColumn];
-
+    $_SESSION['inicio'] = time();
 	
 	return true;
 	

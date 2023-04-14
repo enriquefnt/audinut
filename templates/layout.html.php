@@ -1,3 +1,13 @@
+<?php
+if (isset($_SESSION['inicio']) && (time() - $_SESSION['inicio'] > 1200)) {
+    
+    session_unset();     
+    session_destroy();   
+    header('Location: /login/login');
+}
+$_SESSION['inicio'] = time(); // update last activity time stamp
+?>
+
 <!DOCTYPE html>
 <html style=" height:100%;">
 <head>
@@ -34,7 +44,10 @@
   <script src="/autocom.js"></script>
  
 </head>
-  <body class="w3-light-grey" >
+  <body class="w3-light-grey" > 
+
+  <?= $_SESSION['inicio'] ?? 'nada'; ?>
+
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">
 <h4>Area Fórmulas - Gestión solicitudes de nutroterápicos</h4>
@@ -52,12 +65,12 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
 
    <!--   <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a> -->
-      <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
-      <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
+      <a class="navbar-brand mb-0 " href="/benef/edit">Beneficiarios</a>
+      <a class="navbar-brand mb-0 " href="/benef/listar">Pedidos</a>
       
       <?php   if (isset($_SESSION['tipo'])  && $_SESSION['tipo']<3  )   { ?>
         
-      <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
+      <a class="navbar-brand mb-0 " href="/user/user">Usuarios</a>
 
       <?php } ?>
     
