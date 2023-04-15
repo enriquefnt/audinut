@@ -42,7 +42,7 @@
      <td align="center">
         </div>
         <div>
-        <a href="/pedido/pedido?id=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-sim-fill"></i></i></a>
+        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
         </div>
     </td>
       <?php } ?>
