@@ -5,11 +5,11 @@
 <thead >
   <tr >
 
-    <th>Nombre</th>
-    <th>Editar Beneficiario</th>
+    <th align="center">Nombre</th>
+    <th align="center">Editar Beneficiario</th>
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
-    <th>Cargar Pedido</th>
-    <th>Ver/Editar</th>
+    <th align="center">Cargar Pedido</th>
+    <th align="center">Ver/Editar</th>
             <?php } ?>
     
   </tr>
@@ -20,13 +20,12 @@
        <td><?= htmlspecialchars($benef['Nombres'] . ' ' .$benef['Apellidos'] , ENT_QUOTES, 'UTF-8'); ?></td>
        <td align="center">
 
-        <div>
+       
         <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i>
-
     </a>
-</div>
 
-</a>
+
+
       </div>
 
     </td>
@@ -43,7 +42,7 @@
      <td align="center">
         </div>
         <div>
-        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
+        <a href="/pedido/pedido?id=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-sim-fill"></i></i></a>
         </div>
     </td>
       <?php } ?>

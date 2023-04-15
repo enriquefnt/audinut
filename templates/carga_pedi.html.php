@@ -36,7 +36,8 @@ endif;
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="diag_med">Diagnóstico médico</label>
-			<input class="form-control form-control-sm" type="text"  name="Pedido[diag_med]" id="diag_med" required="required">
+			<input class="form-control form-control-sm" type="text"  name="Pedido[diag_med]" id="diag_med" 
+			value=<?=$datosBenef['id_datos_pedido'] ?? ''?> required="required">
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="diag_nutri">Diagnóstico Nutricional</label>
