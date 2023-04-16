@@ -87,12 +87,14 @@ public function listar(){
 	$result = $this->$pediTable->findAll();
 
 		$pedidos = [];
-		foreach ($result as $benef) {
+		foreach ($result as $pedido) {
 			
 			$pedidos[] = [
-				'id_datos_benef' => $pedidos['id_datos_benef'],
-				'Nombres' => $pedidos['Nombres'],
-				'Apellidos' => $pedidos['Apellidos']
+				'id_datos_pedido' => $pedidos['id_datos_pedido'],
+				'fecha_ped' => $pedidos['fecha_ped'],
+				'nutro_ter' => $pedidos['nutro_ter'],
+				'env_pormes' => $pedidos['env_pormes'],
+				'estado' => $pedidos['estado']
 			];
 
 		}
@@ -102,10 +104,10 @@ public function listar(){
 		$totalPedi = $this->pediTable->total();
 
 
-		return ['template' => 'pedidos.html.php',
+		return ['template' => 'listaped.html.php',
 				'title' => $title,
-				'variables' => ['totalBenef' => $totalBenef,
-				'benefs' => $benefs ]
+				'variables' => ['totalPedi' => $totalPedi,
+				'pedidos' => $pedidos]
 			];
 	}
 
