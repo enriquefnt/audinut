@@ -84,10 +84,10 @@ if  (empty($errors)) {
 
 public function listar(){
 
-	$result = $this->$pediTable->findAll();
+	$result = $this->pediTable->findAll();
 
 		$pedidos = [];
-		foreach ($result as $pedido) {
+		foreach ($result as $pedidos) {
 			
 			$pedidos[] = [
 				'id_datos_pedido' => $pedidos['id_datos_pedido'],
@@ -101,12 +101,12 @@ public function listar(){
 
 		$title = 'Pedidos';
 
-		$totalPedi = $this->pediTable->total();
+		//$totalPedi = $this->pediTable->total();
 
 
 		return ['template' => 'listaped.html.php',
 				'title' => $title,
-				'variables' => ['totalPedi' => $totalPedi,
+				'variables' => [//'totalPedi' => $totalPedi,
 				'pedidos' => $pedidos]
 			];
 	}

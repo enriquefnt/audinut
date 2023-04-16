@@ -2,7 +2,7 @@
   <table id="example" class="table table-bordered display compact" > 
 <div>
 <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
-    <?=$datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
+   
     </legend>
 </div>
 <thead >
@@ -18,14 +18,14 @@
 </thead>
   <tbody >
   <tr >
-      <?php foreach($variables['pedidos'] as $pedido): ?>
-       <td><?= htmlspecialchars($pedido['fecha_ped']  , ENT_QUOTES, 'UTF-8'); ?></td>
-       <td><?= htmlspecialchars($pedido['nutro_ter']  , ENT_QUOTES, 'UTF-8'); ?></td>
-       <td><?= htmlspecialchars($pedido['env_pormes']  , ENT_QUOTES, 'UTF-8'); ?></td>
-       <td> <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i>
+      <?php foreach($variables as $pedido): ?>
+       <td><?=$pedido['fecha_ped'] ; ?></td>
+       <td><?= $pedido[0] ; ?></td>
+       <td><?= $pedido['env_pormes'] ; ?></td>
+       <td> <a href="/pedido/listar?id=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
     </a></td>
 
-          
+  
  </tr>
 
   <?php endforeach; ?>
