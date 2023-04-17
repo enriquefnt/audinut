@@ -29,21 +29,13 @@ public function pedido($id=null){
 
 	$usuarios = $this->userTable->findAll();
 
-/*
-	foreach($usuarios as $usuario)
-	{
-	    $data_usuario[] = array(
-	       'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
-           'value'     =>  $usuario['id_usuario']
-	    );
-	}
-	*/
-
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
-									}
+				if (isset($_GET['id'])) {
+					$datosPedido = $this->pediTable->findById($_GET['id']);
+										}							}
 
-			$title = 'Carga Pedido';
+			$title = 'Edita Pedido';
 
 		
 
@@ -51,7 +43,8 @@ if (isset($_GET['id'])) {
 					     'title' => $title ,
 					 'variables' => [
 			     'data_usuario'  =>   $data_usuario ?? ' ',
-				    'datosBenef' => $datosBenef  ?? ' '
+				    'datosBenef' => $datosBenef  ?? ' ',
+					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 
 					];
@@ -99,7 +92,7 @@ public function listar(){
 		}
 		$result = $this->pediTable->findAll();
 		
-		$title = 'Pedidos';
+		$title = 'Carga Pedidos';
 
 		$totalPedi = $this->pediTable->total();
 
