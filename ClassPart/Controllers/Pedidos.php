@@ -87,14 +87,14 @@ public function listar(){
 	$result = $this->pediTable->findAll();
 
 		$pedidos = [];
-		foreach ($result as $pedidos) {
+		foreach ($result as $pedido) {
 			
 			$pedidos[] = [
-				'id_datos_pedido' => $pedidos['id_datos_pedido'],
-				'fecha_ped' => $pedidos['fecha_ped'],
-				'nutro_ter' => $pedidos['nutro_ter'],
-				'env_pormes' => $pedidos['env_pormes'],
-				'estado' => $pedidos['estado']
+				'id_datos_pedido' => $pedido['id_datos_pedido'],
+				'fecha_ped' => $pedido['fecha_ped'],
+				'nutro_ter' => $pedido['nutro_ter'],
+				'env_pormes' => $pedido['env_pormes'],
+				'estado' => $pedido['estado']
 			];
 
 		}
