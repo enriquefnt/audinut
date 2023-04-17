@@ -83,7 +83,7 @@ if  (empty($errors)) {
 
 
 public function listar(){
-
+	$datosBenef = $this->benefTable->findById($_GET['id']);
 	$result = $this->pediTable->findAll();
 
 		$pedidos = [];
@@ -107,7 +107,8 @@ public function listar(){
 		return ['template' => 'listaped.html.php',
 				'title' => $title,
 				'variables' => [//'totalPedi' => $totalPedi,
-				'pedidos' => $pedidos]
+				'pedidos' => $pedidos,
+				'datosBenef' => $datosBenef  ?? ' ']
 			];
 	}
 
