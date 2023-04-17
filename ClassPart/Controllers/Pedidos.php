@@ -89,7 +89,7 @@ public function listar(){
 			
 			$pedidos[] = [
 				'id_datos_pedido' => $pedido['id_datos_pedido'],
-				'fecha_ped' => $pedido['fecha_ped'],
+				'fecha_ped' =>  date('d/m/Y',strtotime($pedido['fecha_ped'])),
 				'nutro_ter' => $pedido['nutro_ter'],
 				'env_pormes' => $pedido['env_pormes'],
 				'estado' => $pedido['estado'],
