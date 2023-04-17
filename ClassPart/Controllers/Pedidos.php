@@ -58,8 +58,6 @@ if (isset($_GET['id'])) {
 			
 }
 
-
-
 public function pedidoSubmit() {
 
 		$usuario = $this->authentication->getUser();
@@ -81,10 +79,10 @@ if  (empty($errors)) {
 	header('Location: /user/success');
 }
 
-
 public function listar(){
 
-	$result = $this->pediTable->findAll();
+	$result = $this->pediTable->find('id_datos_benef',$_GET['id']);
+	$datosBenef = $this->benefTable->findById($_GET['id']);
 
 		$pedidos = [];
 		foreach ($result as $pedido) {
@@ -94,20 +92,23 @@ public function listar(){
 				'fecha_ped' => $pedido['fecha_ped'],
 				'nutro_ter' => $pedido['nutro_ter'],
 				'env_pormes' => $pedido['env_pormes'],
-				'estado' => $pedido['estado']
+				'estado' => $pedido['estado'],
+				'id_datos_benef'=> $pedido['id_datos_benef']
 			];
 
 		}
-
+		$result = $this->pediTable->findAll();
+		
 		$title = 'Pedidos';
 
-		//$totalPedi = $this->pediTable->total();
+		$totalPedi = $this->pediTable->total();
 
 
 		return ['template' => 'listaped.html.php',
 				'title' => $title,
-				'variables' => [//'totalPedi' => $totalPedi,
-				'pedidos' => $pedidos]
+				'variables' => ['totalPedi' => $totalPedi,
+				'pedidos' => $pedidos,
+				'datosBenef' => $datosBenef  ?? ' ']
 			];
 	}
 

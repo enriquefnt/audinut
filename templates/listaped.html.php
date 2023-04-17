@@ -2,6 +2,7 @@
   <table id="example" class="table table-bordered display compact" > 
 <div>
 <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
+<?= $datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
    
     </legend>
 </div>
@@ -19,7 +20,7 @@
   <tbody >
   <tr >
       <?php 
-      if (isset($pedidos)) {
+      
       foreach($pedidos as $pedido): ?>
        <td><?=$pedido['fecha_ped'] ; ?></td>
        <td><?= $pedido['nutro_ter'] ; ?></td>
@@ -30,7 +31,7 @@
   
  </tr>
 
-  <?php endforeach; }?>
+  <?php endforeach; ?>
  </tbody>
  </table>   
  </div>
