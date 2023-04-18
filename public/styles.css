@@ -14,7 +14,9 @@ input[type="submit"] {
     display: inline-block;
   position: relative;
 }
-
+ th {
+  text-align: center;
+ }
 
 .header, .footer {
   flex: none;

@@ -29,21 +29,13 @@ public function pedido($id=null){
 
 	$usuarios = $this->userTable->findAll();
 
-/*
-	foreach($usuarios as $usuario)
-	{
-	    $data_usuario[] = array(
-	       'label'     =>   $usuario['nombre'] . ' ' .$usuario['apellido'] ,
-           'value'     =>  $usuario['id_usuario']
-	    );
-	}
-	*/
-
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
-									}
+				if (isset($_GET['id'])) {
+					$datosPedido = $this->pediTable->findById($_GET['id']);
+										}							}
 
-			$title = 'Carga Pedido';
+			$title = 'Edita Pedido';
 
 		
 
@@ -51,14 +43,13 @@ if (isset($_GET['id'])) {
 					     'title' => $title ,
 					 'variables' => [
 			     'data_usuario'  =>   $data_usuario ?? ' ',
-				    'datosBenef' => $datosBenef  ?? ' '
+				    'datosBenef' => $datosBenef  ?? ' ',
+					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 
 					];
 			
 }
-
-
 
 public function pedidoSubmit() {
 
@@ -81,32 +72,34 @@ if  (empty($errors)) {
 	header('Location: /user/success');
 }
 
-
 public function listar(){
+
+	$result = $this->pediTable->find('id_datos_benef',$_GET['id']);
 	$datosBenef = $this->benefTable->findById($_GET['id']);
-	$result = $this->pediTable->findAll();
 
 		$pedidos = [];
-		foreach ($result as $pedidos) {
+		foreach ($result as $pedido) {
 			
 			$pedidos[] = [
-				'id_datos_pedido' => $pedidos['id_datos_pedido'],
-				'fecha_ped' => $pedidos['fecha_ped'],
-				'nutro_ter' => $pedidos['nutro_ter'],
-				'env_pormes' => $pedidos['env_pormes'],
-				'estado' => $pedidos['estado']
+				'id_datos_pedido' => $pedido['id_datos_pedido'],
+				'fecha_ped' =>  date('d/m/Y',strtotime($pedido['fecha_ped'])),
+				'nutro_ter' => $pedido['nutro_ter'],
+				'env_pormes' => $pedido['env_pormes'],
+				'estado' => $pedido['estado'],
+				'id_datos_benef'=> $pedido['id_datos_benef']
 			];
 
 		}
+		$result = $this->pediTable->findAll();
+		
+		$title = 'Carga Pedidos';
 
-		$title = 'Pedidos';
-
-		//$totalPedi = $this->pediTable->total();
+		$totalPedi = $this->pediTable->total();
 
 
 		return ['template' => 'listaped.html.php',
 				'title' => $title,
-				'variables' => [//'totalPedi' => $totalPedi,
+				'variables' => ['totalPedi' => $totalPedi,
 				'pedidos' => $pedidos,
 				'datosBenef' => $datosBenef  ?? ' ']
 			];
