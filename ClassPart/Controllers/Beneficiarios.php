@@ -25,32 +25,7 @@ public function __construct(\ClassGrl\DataTables $benefTable,
 
 
 
-public function busca() {
 
-$result = $this->benefTable->findAll();
-
-
-foreach($result as $beneficiario)
-{
-    $data[] = array(
-        'label'     =>   $beneficiario['Nombres'] . ' ' .$beneficiario['Apellidos']   ,
-        'value'     =>  $beneficiario['id_datos_benef']
-    );
-}
-
-$title = 'Busca Beneficiario';
-
-	
-
-		  return ['template' => 'busca_benef.html.php',
-					 'title' => $title ,
-				 'variables' => [
-				     'data'  =>   $data,
-				    'result' => $result  ?? ' '
-									 ]
-
-					];
-}
 
 
 
@@ -178,7 +153,32 @@ public function listar(){
 	}
 
 
+	public function busca() {
 
+		$result = $this->benefTable->findAll();
+		
+		
+		foreach($result as $beneficiario)
+		{
+			$data[] = array(
+				'label'     =>   $beneficiario['Nombres'] . ' ' .$beneficiario['Apellidos']   ,
+				'value'     =>  $beneficiario['id_datos_benef']
+			);
+		}
+		
+		$title = 'Busca Beneficiario';
+		
+			
+		
+				  return ['template' => 'busca_benef.html.php',
+							 'title' => $title ,
+						 'variables' => [
+							 'data'  =>   $data,
+							'result' => $result  ?? ' '
+											 ]
+		
+							];
+		}
 
 
 public function home() {
