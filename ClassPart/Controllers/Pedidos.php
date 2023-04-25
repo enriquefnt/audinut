@@ -22,19 +22,16 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 
 
 
-
-
-
 public function pedido($id=null){
 
 	$usuarios = $this->userTable->findAll();
 
-if (isset($_GET['id'])) {
-				$datosBenef = $this->benefTable->findById($_GET['id']);
+				
 				if (isset($_GET['id'])) {
 					$datosPedido = $this->pediTable->findById($_GET['id']);
-										}							}
+				}											
 
+			$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
 			$title = 'Edita Pedido';
 
 		
@@ -51,6 +48,7 @@ if (isset($_GET['id'])) {
 			
 }
 
+
 public function pedidoSubmit() {
 
 		$usuario = $this->authentication->getUser();
@@ -64,13 +62,14 @@ public function pedidoSubmit() {
 	$errors[] = 'Ud no está habilitado para cargar pedidos';
 	}
 if  (empty($errors)) {
-
-
 	$this->pediTable->save($pedido);
-}
-	
 	header('Location: /user/success');
 }
+
+
+}
+
+
 
 public function listar(){
 
@@ -112,6 +111,6 @@ public function listar(){
 public function success() {
 return ['template' => 'registersuccess.html.php',
 'title' => 'Registro OK'];
-}
+		}
 
-}
+	}

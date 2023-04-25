@@ -46,7 +46,7 @@ $_SESSION['inicio'] = time(); // update last activity time stamp
 </head>
   <body class="w3-light-grey" > 
 
-  <?= $_SESSION['inicio'] ?? 'nada'; ?>
+  <!-- <?= $_SESSION['inicio'] ?? 'nada'; ?> --> 
 
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">

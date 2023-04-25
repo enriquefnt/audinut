@@ -26,7 +26,7 @@ endif;
     </legend>
 
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"   method="post" 	autocomplete="off" >
-	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action=""  onsubmit="myButton.disabled = true; return true;" method="post" autocomplete="off" >
+	<!-- <form onkeydown="return event.key != 'Enter';" class="row g-3"  action=""  onsubmit="myButton.disabled = true; return true;" method="post" autocomplete="off" > -->
 		
 	<input type="hidden"name="Pedido[id_datos_pedido]" id="id_datos_pedido" value=<?=$datosBenef['id_datos_pedido'] ?? ''?> 
 >
