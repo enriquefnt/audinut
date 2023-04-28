@@ -57,11 +57,11 @@ $_SESSION['inicio'] = time(); // update last activity time stamp
 
 $_SESSION['establecimiento_nombre'];}
 
-else {echo 'Ingrese con su usuario y contraseña';} ?>
+//else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
-  
+  <?php if ($loggedIn): ?>
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
 
    <!--   <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a> -->
@@ -75,10 +75,10 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
       <?php } ?>
     
 
-     <?php if ($loggedIn): ?>
+     
       <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
 <?php else: ?>
-      <a class="nav-link active" aria-current="page" href="/login/login">Ingresar</a>
+      <a class="nav-link active" aria-current="page" href="/login/login">Ingresar con contraseña</a>
 <?php endif; ?>
 
 

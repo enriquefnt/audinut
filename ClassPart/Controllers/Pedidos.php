@@ -32,6 +32,8 @@ public function pedido($id=null){
 				}											
 
 			$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
+		//	$datosBenef['id_datos_pedido']= $_GET['id'];
+			
 			$title = 'Edita Pedido';
 
 		
@@ -45,6 +47,7 @@ public function pedido($id=null){
 									 ]
 
 					];
+				//	print_r ($datosPedido);
 			
 }
 
@@ -52,7 +55,7 @@ public function pedido($id=null){
 public function pedidoSubmit() {
 
 		$usuario = $this->authentication->getUser();
-
+	//	print_r ($_POST['Pedido']);
 		$pedido=$_POST['Pedido'];
 		$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
 		$pedido['fecha_ped']= new \DateTime();
@@ -63,6 +66,8 @@ public function pedidoSubmit() {
 	}
 if  (empty($errors)) {
 	$this->pediTable->save($pedido);
+	print_r ($_POST['Pedido']);
+	print_r ($pedido);
 	header('Location: /user/success');
 }
 

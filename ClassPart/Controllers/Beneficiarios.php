@@ -182,7 +182,7 @@ public function listar(){
 
 
 public function home() {
-		$title = 'Auditoria Fórmulas';
+		$title = 'Instructivo';
 
 return ['template' => 'home.html.php', 'title' =>$title,'variables' => [] ];
 		

@@ -28,12 +28,12 @@ endif;
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"   method="post" 	autocomplete="off" >
 	<!-- <form onkeydown="return event.key != 'Enter';" class="row g-3"  action=""  onsubmit="myButton.disabled = true; return true;" method="post" autocomplete="off" > -->
 		
-	<input type="hidden"name="Pedido[id_datos_pedido]" id="id_datos_pedido" value=<?=$datosBenef['id_datos_pedido'] ?? ''?> 
->
+	
+
 
 <input type="hidden"name="Pedido[id_datos_benef]" id="id_datos_benef" value=<?=$datosBenef['id_datos_benef'] ?? ''?> 
 >
-
+<input type="hidden"name="Pedido[id_datos_pedido]" id="id_datos_pedido" value=<?=$datosBenef['id_datos_pedido'] ?? ''?> >
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="diag_med">Diagnóstico médico</label>
