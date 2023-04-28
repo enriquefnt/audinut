@@ -20,8 +20,8 @@ $_SESSION['inicio'] = time(); // update last activity time stamp
 
 
 
-<script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
-
+<!-- <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script> -->
+<script src="https://kit.fontawesome.com/f6cbba0704.js" crossorigin="anonymous"></script>
  <!-- -----------------jquery----------------- -->
  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -78,7 +78,7 @@ $_SESSION['establecimiento_nombre'];}
      
       <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
 <?php else: ?>
-      <a class="nav-link active" aria-current="page" href="/login/login">Ingresar con contraseña</a>
+      <a class="nav-link active " aria-current="page" href="/login/login">Ingresar con contraseña (Usuarios registrados)</a>
 <?php endif; ?>
 
 
@@ -96,7 +96,7 @@ $_SESSION['establecimiento_nombre'];}
 <footer class="p-1 mb-1 bg-primary text-white ">
 <div class="container-fluid">
 
-<h5 align="center"> DNyAS - Programa: Auditoría Nutroterápicos.</h5>
+<h6 align="center"> DNyAS - Programa: Auditoría Nutroterápicos.</h6>
 
 </div>
 </footer>
