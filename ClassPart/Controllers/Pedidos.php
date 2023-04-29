@@ -7,7 +7,7 @@ class Pedidos {
 private $pediTable;
 private $userTable;
 private $benefTable;
-
+private $authentication;
 
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
@@ -22,19 +22,19 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 
 
 
-
-
+/// Metodo si es GET para beneficiario//////  
 
 public function pedido($id=null){
 
-	$usuarios = $this->userTable->findAll();
+	// $usuarios = $this->userTable->findAll();
 
 if (isset($_GET['id'])) {
-				$datosBenef = $this->benefTable->findById($_GET['id']);
+				 
+				
 				if (isset($_GET['id'])) {
 					$datosPedido = $this->pediTable->findById($_GET['id']);
 										}							}
-
+			$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);								
 			$title = 'Edita Pedido';
 
 		
@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
 			  return ['template' => 'carga_pedi.html.php',
 					     'title' => $title ,
 					 'variables' => [
-			     'data_usuario'  =>   $data_usuario ?? ' ',
+			    // 'data_usuario'  =>   $data_usuario ?? ' ',
 				    'datosBenef' => $datosBenef  ?? ' ',
 					'datosPedido' => $datosPedido  ?? ' '
 									 ]
@@ -58,6 +58,7 @@ public function pedidoSubmit() {
 		$pedido=$_POST['Pedido'];
 		$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
 		$pedido['fecha_ped']= new \DateTime();
+		$pedido['modif_ult']= new \DateTime();
 
 	$errors = [];
 	if ($_SESSION['tipo'] > 3) {

@@ -82,7 +82,7 @@ $usuario = $this->authentication->getUser();
 			  return ['template' => 'edita_benef.html.php',
 					     'title' => $title ,
 					 'variables' => [
-			             'data'  =>   $data,
+			           'data'  =>   $data,
 					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
 

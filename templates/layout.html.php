@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['inicio']) && (time() - $_SESSION['inicio'] > 1200)) {
+if (isset($_SESSION['inicio']) && (time() - $_SESSION['inicio'] > 1800)) {
     
     session_unset();     
     session_destroy();   
@@ -45,8 +45,6 @@ $_SESSION['inicio'] = time(); // update last activity time stamp
  
 </head>
   <body class="w3-light-grey" > 
-
-  <?= $_SESSION['inicio'] ?? 'nada'; ?>
 
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">
