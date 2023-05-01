@@ -20,44 +20,46 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 		$this->authentication = $authentication;		
     }
 
-
+/// Metodo si es GET //////  
 
 public function pedido($id=null){
-
-	// $usuarios = $this->userTable->findAll();
-
-				
-				if (isset($_GET['id'])) {
-					$datosPedido = $this->pediTable->findById($_GET['id']);
-				}											
-
-			$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
-		//	$datosBenef['id_datos_pedido']= $_GET['id'];
+	
+		
+	
+	if (isset($_GET['id'])) {
+					$datosPedido = $this->pediTable->findById($_GET['id']);									
+		
+	
+										}
+			$datosBenef = $this->benefTable->findById($_GET['id']) ?? ' ';
+	
+		
+		
+										$title = 'Pedido';
 			
-			$title = 'Edita Pedido';
-
 		
 
 			  return ['template' => 'carga_pedi.html.php',
 					     'title' => $title ,
 					 'variables' => [
-			    // 'data_usuario'  =>   $data_usuario ?? ' ',
 				    'datosBenef' => $datosBenef  ?? ' ',
 					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 
 					];
-				//	print_r ($datosPedido);
+				
 			
 }
 
+/// Metodo si es con post //////   
 
 public function pedidoSubmit() {
 
 		$usuario = $this->authentication->getUser();
-	//	print_r ($_POST['Pedido']);
+	
 		$pedido=$_POST['Pedido'];
 		$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
+		$pedido['id_datos_pedido']= $_GET['id'];
 		$pedido['fecha_ped']= new \DateTime();
 		$pedido['modif_ult']= new \DateTime();
 
@@ -67,9 +69,11 @@ public function pedidoSubmit() {
 	}
 if  (empty($errors)) {
 	$this->pediTable->save($pedido);
-	print_r ($_POST['Pedido']);
-	print_r ($pedido);
+	
+//	print_r ($_POST['Pedido']);
+//	print_r ($pedido);
 	header('Location: /user/success');
+	
 }
 
 

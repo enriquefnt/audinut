@@ -30,10 +30,9 @@ endif;
 		
 	
 
+	<input type="hidden"name="Pedido[id_datos_pedido]" id="id_datos_pedido" value=<?=$datosPedido['id_datos_pedido'] ?? ''?> >
+<input type="hidden"name="Pedido[id_datos_benef]" id="id_datos_benef" value=<?=$datosBenef['id_datos_benef'] ?? ''?> >
 
-<input type="hidden"name="Pedido[id_datos_benef]" id="id_datos_benef" value=<?=$datosBenef['id_datos_benef'] ?? ''?> 
->
-<input type="hidden"name="Pedido[id_datos_pedido]" id="id_datos_pedido" value=<?=$datosBenef['id_datos_pedido'] ?? ''?> >
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="diag_med">Diagnóstico médico</label>
@@ -104,10 +103,12 @@ endif;
 	</div>
 	
 
-	<div class="col-sm-1">
-			<button class="btn btn-primary" type="submit" name="submit">Enviar</button>
-	</div>
+	<div class="container">
+	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
+<input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
+
+</div>
 </form>
 </fieldset>
 

@@ -32,11 +32,8 @@ public function __construct(\ClassGrl\DataTables $benefTable,
 /// Metodo si es GET para beneficiario//////  
 
 public function edit($id=null) {
-
-		
+	
 $localidades = $this->locTable->findAll();
-
-
 foreach($localidades as $localidad)
 {
     $data[] = array(
@@ -44,13 +41,12 @@ foreach($localidades as $localidad)
         'value'     =>  $localidad['gid']
     );
 }
-$usuario = $this->authentication->getUser();
-
+// $usuario = $this->authentication->getUser();
 		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
 									}
 
-			$title = 'Carga Beneficiario';
+			$title = ' Beneficiario';
 
 		
 
@@ -60,7 +56,6 @@ $usuario = $this->authentication->getUser();
 			           'data'  =>   $data,
 					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
-
 					];
 			
 }
