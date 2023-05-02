@@ -61,4 +61,8 @@ input[type="submit"] {
 
 .fa-check{
   color:#0c39cb;
+ }
+
+.fa-exclamation{
+  color:#cb0c39;
 }
