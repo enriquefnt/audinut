@@ -1,11 +1,11 @@
 <?php $title="Instructivo" ;?>
 
-
-<section class="bg-light pt-5 pb-5 shadow-sm">
+<main>
+<section class="bg-light pt-1 pb-1 shadow-sm">
  <div class="conteiner container-sm">
     <div class="row pt-5">
       <div class="col-12">
-        <h3 class="text-uppercase border-bottom mb-1 text-center"><b> Documentación obligatoria </b> </p></h3>
+        <h4 class="text-uppercase  mb-1 text-center"><b> Documentación obligatoria </b> </p></h4>
       </div>
     </div>
     <div class="row">
@@ -25,7 +25,7 @@
            
           </div>
             <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i>Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>cada 6 meses adjuntando certificación médica de cronicidad</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Completar "todos" los datos solicitados en los formularios, el nº de telefono es necesario para contactar al paciente.</p>
             </div>
         </div>
       </div>
@@ -61,10 +61,15 @@
 <ul>
             </div>
             <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i>Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>cada 6 meses adjuntando certificación médica de cronicidad</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Generar un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actural generada por el sistema y con el pase a la mesa nº 361.</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
+
         </div> 
         </div>
       </div>
     </div>
   </div>
 </section>
+</main>
+
