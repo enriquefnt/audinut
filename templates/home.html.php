@@ -3,16 +3,16 @@
 <main>
 <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
  <div class="conteiner container-sm">
-    <div class="row pt-0.5">
+    <div class="row pt-2">
       <div class="col-12">
-        <h4 class="text-uppercase  mb-1 text-center"><b> Documentación obligatoria </b> </p></h4>
+        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria  </p>
       </div>
     </div>
     <div class="row">
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
-      <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+      <div class="col-lg-4 mb-3 d-flex">
         <div class="card">
-        <h5 class="card-header text-center text-white bg-primary">Inicio</h5>
+        <p class="card-header text-center fs-5 bg-primary text-light">Inicio</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -32,7 +32,7 @@
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-          <h5 class="card-header text-center text-white bg-primary">Continuación</h5>
+          <p class="card-header text-center fs-5 bg-primary text-light">Continuación</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
