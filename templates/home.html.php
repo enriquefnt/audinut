@@ -1,9 +1,9 @@
 <?php $title="Instructivo" ;?>
 
 <main>
-<section class="bg-light pt-1 pb-1 shadow-sm">
+<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
  <div class="conteiner container-sm">
-    <div class="row pt-5">
+    <div class="row pt-0.5">
       <div class="col-12">
         <h4 class="text-uppercase  mb-1 text-center"><b> Documentación obligatoria </b> </p></h4>
       </div>
@@ -12,7 +12,7 @@
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-        <h5 class="card-header text-center bg-primary">Inicio</h5>
+        <h5 class="card-header text-center text-white bg-primary">Inicio</h5>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -32,7 +32,7 @@
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-          <h5 class="card-header text-center">Continuación</h5>
+          <h5 class="card-header text-center text-white bg-primary">Continuación</h5>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -45,25 +45,28 @@
     </ul>
           </div>
           <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>cada 6 meses adjuntando certificación médica de cronicidad</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b></p>
   </div>
         </div>
       </div>
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-          <h5 class="card-header text-center">Expediente</h5>
+          <h5 class="card-header text-center text-white bg-primary">Expediente</h5>
           <div class="card-body d-flex flex-column">
-            
+<!--             
             <ul class="list-group list-group-flush lh-1">
-    <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Al iniciar</b> el tramite de solicitud de fórmulas se debe generar un EXPEDIENTE con la documentación completa, mediante el sistema SICE (sistema centralizado de expedientes),generando un número para seguimiento</li>
-    <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Enviar </b>cada expediente generado con la CARATULA correspondiente con los datos del paciente completos</li>
-<ul>
+    <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Al iniciar</b> el tramite se debe confeccionar un EXPEDIENTE con la documentación completa, mediante el sistema SICE (sistema centralizado de expedientes),generando un número para seguimiento</li>
+    <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Enviar </b>cada expediente con la CARATULA correspondiente con los datos del paciente completos</li>
+</ul>
             </div>
-            <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Generar un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actural generada por el sistema y con el pase a la mesa nº 361.</p>
+            <div class="card-footer text-muted"> -->
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa nº 361.</p>
             <p ><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
 
         </div> 
         </div>
@@ -72,4 +75,111 @@
   </div>
 </section>
 </main>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-2 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Nuestras redes sociales:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-twitter"></i>
+      </a>
+         </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3 pt-1">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-sm-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" >
+            <i class="fas fa-gem me-3 text-primary"></i>Institución
+          </h6>
+          <p>
+            Direccion de Nutrición y ALimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"> -->
+          <!-- Links -->
+          <!-- <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div> -->
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> -->
+          <!-- Links -->
+          <!-- <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div> -->
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p><i class="fas fa-home me-3 text-secondary"></i> Belgrano 1340 -1º piso - Salta Capital - CP 4400</p>
+          <p>
+            <i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127</p>
+          <p><i class="fas fa-print me-3 text-secondary"></i> 0387-4320695</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright 
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+   Copyright -->
+</footer>
+<!-- Footer -->
 

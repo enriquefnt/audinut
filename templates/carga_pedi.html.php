@@ -96,10 +96,15 @@ endif;
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="10" max="500" name="Pedido[gramos_dia]" id="gramos_dia" 
 			value=<?=$datosPedido['gramos_dia'] ?? ''?> >
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-3">
 			<label class="form-label-sm" for="env_pormes">Envases por mes</label>
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="1" max="100"  name="Pedido[env_pormes]" id="env_pormes" 
 			value=<?=$datosPedido['env_pormes'] ?? ''?> >
+	</div>
+
+	<div class="col-sm-3">
+			<label class="form-label-sm" for="env_pormes">Estado</label>
+			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[estado]" id="estado" >
 	</div>
 	
 
@@ -113,4 +118,3 @@ endif;
 </fieldset>
 
 </div>
-
