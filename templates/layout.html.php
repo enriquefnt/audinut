@@ -96,7 +96,7 @@ $_SESSION['establecimiento_nombre'];}
 <footer class="p-1 mb-1 bg-primary text-white ">
 <div class="container-fluid">
 
-<h6 align="center"> DNyAS - Programa: Auditoría Nutroterápicos.</h6>
+<h6 align="center"> MSP - DNyAS - Programa: Auditoría Nutroterápicos.</h6>
 
 </div>
 </footer>
