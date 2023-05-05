@@ -3,16 +3,16 @@
 <main>
 <section class="bg-light pt-1 pb-1 shadow-sm">
  <div class="conteiner container-sm">
-    <div class="row pt-5">
+    <div class="row pt-2">
       <div class="col-12">
-        <h4 class="text-uppercase  mb-1 text-center"><b> Documentación obligatoria </b> </p></h4>
+        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria  </p>
       </div>
     </div>
     <div class="row">
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
-      <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+      <div class="col-lg-4 mb-3 d-flex">
         <div class="card">
-        <h5 class="card-header text-center bg-primary">Inicio</h5>
+        <p class="card-header text-center fs-5 bg-primary text-light">Inicio</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -32,7 +32,7 @@
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-          <h5 class="card-header text-center">Continuación</h5>
+          <p class="card-header text-center fs-5 bg-primary text-light">Continuación</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -52,17 +52,17 @@
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-          <h5 class="card-header text-center">Expediente</h5>
+          <p class="card-header text-center fs-5 bg-primary text-light">Expediente</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
-    <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Al iniciar</b> el tramite de solicitud de fórmulas se debe generar un EXPEDIENTE con la documentación completa, mediante el sistema SICE (sistema centralizado de expedientes),generando un número para seguimiento</li>
+    <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Al iniciar</b> el trámite  se debe generar un EXPEDIENTE con la documentación completa, mediante el sistema SICE (sistema centralizado de expedientes),generando un número para seguimiento</li>
     <li class="list-group-item"><i class="fa-solid fa-check"></i><b> Enviar </b>cada expediente generado con la CARATULA correspondiente con los datos del paciente completos</li>
 <ul>
             </div>
             <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Generar un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actural generada por el sistema y con el pase a la mesa nº 361.</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Generar un solo expediente  por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
+            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula del expediente con la fecha actural generada por el sistema y con el pase a la mesa nº 361.</p>
             <p ><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
 
         </div> 
