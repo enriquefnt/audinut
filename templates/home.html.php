@@ -5,7 +5,7 @@
  <div class="conteiner container-sm">
     <div class="row pt-2">
       <div class="col-12">
-        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria  </p>
+        <p  class="text-center fs-4  fw-bold"> Documentación Obligatoria  </p>
       </div>
     </div>
     <div class="row">
@@ -29,7 +29,7 @@
             </div>
         </div>
       </div>
-      <!--ADD CLASSES HERE d-flex align-items-stretch-->
+     
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
           <p class="card-header text-center fs-5 bg-primary text-light">Continuación</p>
@@ -61,12 +61,12 @@
 </ul>
             </div>
             <div class="card-footer text-muted"> -->
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa nº 361.</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
+            <p class="fs-6 lh-1"><span style="font-size: 1.5rem; color: Tomato;"><i class="fa-solid fa-exclamation fa-xl fa-beat"></i></span> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-xl fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-xl fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-xl fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa <b>Nº 361.</b></p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-xl fa-beat"></i> Enviar a la DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-xl fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
 
         </div> 
         </div>
@@ -80,17 +80,17 @@
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-2 border-bottom">
     <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
+    <div class="me-5 d-none d-sm-block">
       <span>Nuestras redes sociales:</span>
     </div>
     <!-- Left -->
 
     <!-- Right -->
     <div>
-      <a href="" class="me-4 link-secondary">
+      <a href="https://www.facebook.com/direcnutyasaludable/?locale=es_LA" target="_blank" class="me-4 link-secondary">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="https://twitter.com/SNyAS3" target="_blank" class="me-4 link-secondary">
         <i class="fab fa-twitter"></i>
       </a>
          </div>
@@ -110,75 +110,24 @@
             <i class="fas fa-gem me-3 text-primary"></i>Institución
           </h6>
           <p >
-            Direccion de Nutrición y ALimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
+            Dirección de Nutrición y Alimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
           </p>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"> -->
-          <!-- Links -->
-          <!-- <h6 class="text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">React</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Laravel</a>
-          </p>
-        </div> -->
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4"> -->
-          <!-- Links -->
-          <!-- <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
-        </div> -->
-        <!-- Grid column -->
-
-        <!-- Grid column -->
+       
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
           <p><i class="fas fa-home me-3 text-secondary"></i> Belgrano 1340 -1º piso - Salta Capital - CP 4400</p>
-          <p><i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
+          <p><i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com</p>
           <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127</p>
           <p><i class="fas fa-print me-3 text-secondary"></i> 0387-4320695</p>
         </div>
-        <!-- Grid column -->
+        
       </div>
-      <!-- Grid row -->
+      
     </div>
   </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright 
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-   Copyright -->
+  
 </footer>
-<!-- Footer -->
+
 

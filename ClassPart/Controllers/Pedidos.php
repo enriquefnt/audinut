@@ -28,12 +28,14 @@ public function pedido($id=null){
 	
 	if (isset($_GET['id'])) {
 					$datosPedido = $this->pediTable->findById($_GET['id']);									
-		
-	
+			//		$datosBenef = $this->benefTable->find('id_datos_benef',$datosPedido['id_datos_benef'])[0]?? null;
+			$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']) ?? ' ';
 										}
-			$datosBenef = $this->benefTable->findById($_GET['id']) ?? ' ';
-	
+		//	$datosBenef = $this->benefTable->findById($_GET['id']) ?? ' ';
 		
+
+		
+		//$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']) ?? ' ';
 		
 										$title = 'Pedido';
 			
