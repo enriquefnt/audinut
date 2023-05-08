@@ -26,30 +26,30 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 
 public function pedido($id=null){
 
-	$usuarios = $this->userTable->findAll();
+
 
 
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
-									}
+				//$datosPedido = $this->pediTable->findById($_GET['id']);
+									
+			
+			}
 
-			$title = 'Carga Pedido';
+			$title = 'Pedido';
 
-		
 
 			  return ['template' => 'carga_pedi.html.php',
 					     'title' => $title ,
 					 'variables' => [
-			     'data_usuario'  =>   $data_usuario ?? ' ',
-				    'datosBenef' => $datosBenef  ?? ' '
+				    'datosBenef' => $datosBenef  ?? ' ',
+					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 
 					];
 			
 }
-
-
 
 
 /// Metodo si es con post //////   
