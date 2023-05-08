@@ -3,16 +3,16 @@
 <main>
 <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
  <div class="conteiner container-sm">
-    <div class="row pt-0.5">
+    <div class="row pt-2">
       <div class="col-12">
-        <h4 class="text-uppercase  mb-1 text-center"><b> Documentación obligatoria </b> </p></h4>
+        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria  </p>
       </div>
     </div>
     <div class="row">
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
-      <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+      <div class="col-lg-4 mb-3 d-flex">
         <div class="card">
-        <h5 class="card-header text-center text-white bg-primary">Inicio</h5>
+        <p class="card-header text-center fs-5 bg-primary text-light">Inicio</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -25,14 +25,14 @@
            
           </div>
             <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Completar "todos" los datos solicitados en los formularios, el nº de telefono es necesario para contactar al paciente.</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Completar "todos" los datos solicitados en los formularios, el nº de telefono es necesario para contactar al paciente.</p>
             </div>
         </div>
       </div>
       <!--ADD CLASSES HERE d-flex align-items-stretch-->
       <div class="col-lg-4 mb-3 d-flex align-items-stretch">
         <div class="card">
-          <h5 class="card-header text-center text-white bg-primary">Continuación</h5>
+          <p class="card-header text-center fs-5 bg-primary text-light">Continuación</p>
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
@@ -45,7 +45,7 @@
     </ul>
           </div>
           <div class="card-footer text-muted">
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b></p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>6 meses</p>
   </div>
         </div>
       </div>
@@ -61,12 +61,12 @@
 </ul>
             </div>
             <div class="card-footer text-muted"> -->
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa nº 361.</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
-            <p ><i class="fa-solid fa-exclamation fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa nº 361.</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
 
         </div> 
         </div>
@@ -109,7 +109,7 @@
           <h6 class="text-uppercase fw-bold mb-4" >
             <i class="fas fa-gem me-3 text-primary"></i>Institución
           </h6>
-          <p>
+          <p >
             Direccion de Nutrición y ALimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
           </p>
         </div>
@@ -162,8 +162,7 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
           <p><i class="fas fa-home me-3 text-secondary"></i> Belgrano 1340 -1º piso - Salta Capital - CP 4400</p>
-          <p>
-            <i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
+          <p><i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
           <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127</p>
           <p><i class="fas fa-print me-3 text-secondary"></i> 0387-4320695</p>
         </div>
