@@ -21,9 +21,9 @@ endif;
 
 	<fieldset class="border p-2">
 		
-   <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
+   <!-- <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
     <?=$datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
-    </legend>
+    </legend> -->
 
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"   method="post" 	autocomplete="off" >
 	<!-- <form onkeydown="return event.key != 'Enter';" class="row g-3"  action=""  onsubmit="myButton.disabled = true; return true;" method="post" autocomplete="off" > -->

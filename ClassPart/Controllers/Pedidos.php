@@ -21,17 +21,17 @@ public function __construct(\ClassGrl\DataTables $pediTable,
     }
 
 /// Metodo si es GET //////  
-/*
+
 public function pedido($id=null){
 	
 		
 	
 	if (isset($_GET['id'])) {
 					$datosPedido = $this->pediTable->findById($_GET['id']);									
-		
+					//$datosBenef = $this->benefTable->findById($_GET['id']) ?? ' ';
 	
 										}
-			$datosBenef = $this->benefTable->findById($_GET['id']) ?? ' ';
+			
 	
 		
 		
@@ -42,38 +42,12 @@ public function pedido($id=null){
 			  return ['template' => 'carga_pedi.html.php',
 					     'title' => $title ,
 					 'variables' => [
-				    'datosBenef' => $datosBenef  ?? ' ',
+				 //   'datosBenef' => $datosBenef  ?? ' '//,
 					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 
 					];
 				
-			
-}
-*/
-
-public function pedido($id=null){
-
-	$usuarios = $this->userTable->findAll();
-
-
-
-if (isset($_GET['id'])) {
-				$datosBenef = $this->benefTable->findById($_GET['id']);
-									}
-
-			$title = 'Carga Pedido';
-
-		
-
-			  return ['template' => 'carga_pedi.html.php',
-					     'title' => $title ,
-					 'variables' => [
-			     'data_usuario'  =>   $data_usuario ?? ' ',
-				    'datosBenef' => $datosBenef  ?? ' '
-									 ]
-
-					];
 			
 }
 
