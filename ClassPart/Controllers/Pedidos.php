@@ -32,15 +32,17 @@ public function pedido($id=null){
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
-				//$datosPedido = $this->pediTable->findById($_GET['id']);
-									
-			
+				// $datosPedido = $this->pediTable->findById($_GET['id']);		
 			}
+elseif (isset($_GET['idx'])){
+	   $datosPedido = $this->pediTable->findById($_GET['idx']);
+	 	   $datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
+}
+
 
 			$title = 'Pedido';
 
-
-			  return ['template' => 'carga_pedi.html.php',
+			return ['template' => 'carga_pedi.html.php',
 					     'title' => $title ,
 					 'variables' => [
 				    'datosBenef' => $datosBenef  ?? ' ',
@@ -64,7 +66,7 @@ public function pedidoSubmit() {
 	$pedido['fecha_ped']= new \DateTime();
 
 $errors = [];
-if ($_SESSION['tipo'] > 3) {
+if ($_SESSION['tipo'] > 4) {
 $errors[] = 'Ud no está habilitado para cargar pedidos';
 }
 if  (empty($errors)) {
