@@ -1,3 +1,13 @@
+<?php
+if (isset($_SESSION['inicio']) && (time() - $_SESSION['inicio'] > 1800)) {
+    
+    session_unset();     
+    session_destroy();   
+    header('Location: /login/login');
+}
+$_SESSION['inicio'] = time(); // update last activity time stamp
+?>
+
 <!DOCTYPE html>
 <html style=" height:100%;">
 <head>
@@ -10,8 +20,8 @@
 
 
 
-<script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
-
+<!-- <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script> -->
+<script src="https://kit.fontawesome.com/f6cbba0704.js" crossorigin="anonymous"></script>
  <!-- -----------------jquery----------------- -->
  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -34,7 +44,10 @@
   <script src="/autocom.js"></script>
  
 </head>
-  <body class="w3-light-grey" >
+  <body class="w3-light-grey" > 
+
+  <!-- <?= $_SESSION['inicio'] ?? 'nada'; ?> --> 
+
 <header class="p-2 mb-2 bg-primary text-white">
   <div class="container-fluid">
 <h4>Area Fórmulas - Gestión solicitudes de nutroterápicos</h4>
@@ -44,28 +57,28 @@
 
 $_SESSION['establecimiento_nombre'];}
 
-else {echo 'Ingrese con su usuario y contraseña';} ?>
+//else {echo 'Ingrese con su usuario y contraseña';} ?>
 </h5>
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
   <div class="container-fluid"> 
-  
+  <?php if ($loggedIn): ?>
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
 
    <!--   <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a> -->
-      <a class="navbar-brand mb-0 " href="/benef/edit">Cargar</a>
-      <a class="navbar-brand mb-0 " href="/benef/listar">Listar</a>
+      <a class="navbar-brand mb-0 " href="/benef/edit">Beneficiarios</a>
+      <a class="navbar-brand mb-0 " href="/benef/listar">Pedidos</a>
       
-      <?php if ( isset($_SESSION['tipo'])&& $_SESSION['tipo']<3 ) { ?>
+      <?php   if (isset($_SESSION['tipo'])  && $_SESSION['tipo']<3  )   { ?>
         
-      <a class="navbar-brand mb-0 " href="/user/user">Cargar Usuario</a>
+      <a class="navbar-brand mb-0 " href="/user/user">Usuarios</a>
 
       <?php } ?>
     
 
-     <?php if ($loggedIn): ?>
+     
       <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
 <?php else: ?>
-      <a class="nav-link active" aria-current="page" href="/login/login">Ingresar</a>
+      <a class="nav-link active " aria-current="page" href="/login/login">Ingresar con contraseña (Usuarios registrados)</a>
 <?php endif; ?>
 
 
@@ -83,7 +96,7 @@ else {echo 'Ingrese con su usuario y contraseña';} ?>
 <footer class="p-1 mb-1 bg-primary text-white ">
 <div class="container-fluid">
 
-<h5 align="center"> DNyAS - Programa: Auditoría Nutroterápicos.</h5>
+<h6 align="center"> MSP - DNyAS - Programa: Auditoría Nutroterápicos.</h6>
 
 </div>
 </footer>

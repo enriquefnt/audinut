@@ -1,6 +1,8 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
+use \AllowDynamicProperties;
+#[AllowDynamicProperties]
 class Beneficiarios {
 private $benefTable;
 private $locTable;
@@ -23,43 +25,15 @@ public function __construct(\ClassGrl\DataTables $benefTable,
 
 
 
-public function busca() {
 
-$result = $this->benefTable->findAll();
-
-
-foreach($result as $beneficiario)
-{
-    $data[] = array(
-        'label'     =>   $beneficiario['Nombres'] . ' ' .$beneficiario['Apellidos']   ,
-        'value'     =>  $beneficiario['id_datos_benef']
-    );
-}
-
-$title = 'Busca Beneficiario';
-
-	
-
-		  return ['template' => 'busca_benef.html.php',
-					 'title' => $title ,
-				 'variables' => [
-				     'data'  =>   $data,
-				    'result' => $result  ?? ' '
-									 ]
-
-					];
-}
 
 
 
 /// Metodo si es GET para beneficiario//////  
 
 public function edit($id=null) {
-
-		
+	
 $localidades = $this->locTable->findAll();
-
-
 foreach($localidades as $localidad)
 {
     $data[] = array(
@@ -67,23 +41,21 @@ foreach($localidades as $localidad)
         'value'     =>  $localidad['gid']
     );
 }
-$usuario = $this->authentication->getUser();
-
+// $usuario = $this->authentication->getUser();
 		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
 									}
 
-			$title = 'Carga Beneficiario';
+			$title = ' Beneficiario';
 
 		
 
 			  return ['template' => 'edita_benef.html.php',
 					     'title' => $title ,
 					 'variables' => [
-			             'data'  =>   $data,
+			           'data'  =>   $data,
 					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
-
 					];
 			
 }
@@ -148,11 +120,6 @@ else {
 
 
 
-
-
-
-
-
 public function listar(){
 
 	$result = $this->benefTable->findAll();
@@ -181,11 +148,36 @@ public function listar(){
 	}
 
 
+	public function busca() {
 
+		$result = $this->benefTable->findAll();
+		
+		
+		foreach($result as $beneficiario)
+		{
+			$data[] = array(
+				'label'     =>   $beneficiario['Nombres'] . ' ' .$beneficiario['Apellidos']   ,
+				'value'     =>  $beneficiario['id_datos_benef']
+			);
+		}
+		
+		$title = 'Busca Beneficiario';
+		
+			
+		
+				  return ['template' => 'busca_benef.html.php',
+							 'title' => $title ,
+						 'variables' => [
+							 'data'  =>   $data,
+							'result' => $result  ?? ' '
+											 ]
+		
+							];
+		}
 
 
 public function home() {
-		$title = 'Auditoria Fórmulas';
+		$title = 'Instructivo';
 
 return ['template' => 'home.html.php', 'title' =>$title,'variables' => [] ];
 		
