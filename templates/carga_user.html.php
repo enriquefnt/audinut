@@ -15,12 +15,15 @@ if (!empty($errors)) :
 <?php
 endif;
 ?>
-
-
 <div class="container">
-  <form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
-    <h4>Datos personales</h4>
 
+<fieldset class="border p-2">
+ <legend class="w-80 p-0 h-0 ">Datos personales para nuevo usuario
+   </legend>
+
+  <form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
+  <input type="hidden" name="Usuario[id_usuario]" id="id_usuario" value=<?=$datosUser['id_usuario'] ?? ''?> >
+       
   <div class="col-sm-6">
   	<label class="form-label-sm" for="nombre">Nombres</label>
     <input type="text"  class="form-control form-control-sm" name="Usuario[nombre]"  autocomplete="off" value="<?=$datosUser['nombre'] ?? ''?>">
@@ -89,10 +92,11 @@ endif;
   <div class="col-sm-2">
       <button class="btn btn-primary" type="submit" name="submit">Enviar</button>
   </div>
+</fieldset>
   </form>
 
 </div>
-
+</div>
 <script>
 
 var complete_establecimiento_nombre = new Autocom(document.getElementById('establecimiento_nombre'), {
