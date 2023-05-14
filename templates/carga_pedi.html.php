@@ -103,10 +103,11 @@ endif;
 	</div>
 
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="env_pormes">Estado</label>
+			<label class="form-label-sm" for="estado">Estado</label>
 			
 			
-			<select class="form-control form-control-sm" name="Pedido[estado]" id="estado">
+			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
+			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? ''?></option>
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>

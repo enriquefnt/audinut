@@ -96,7 +96,7 @@ if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
 
-header('Location: /user/success');
+header('Location: /benef/listar');
 
 
  	}

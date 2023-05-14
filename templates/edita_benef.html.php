@@ -90,6 +90,7 @@ endif;
 	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
+<!-- <a href="/pedido/pedido" class="btn btn-primary btn-sm" role="button">  Cargar pedido</a> -->
 
 </div>
 </form>	

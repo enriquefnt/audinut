@@ -75,7 +75,7 @@ if  (empty($errors)) {
 $this->pediTable->save($pedido);
 }
 
-header('Location: /user/success');
+header('Location: /benef/listar');
 }
 
 

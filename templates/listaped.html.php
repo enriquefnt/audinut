@@ -27,7 +27,6 @@
        <td><?= $pedido['nutro_ter'] ; ?></td>
        <td><?= $pedido['env_pormes'] ; ?></td>
        <td><?= $pedido['estado'] ; ?></td>
-       <!-- <td> <a href="/pedido/pedido?id=<?=$pedido['id_datos_benef']?>"><i class="bi bi-pencil-square"></i> -->
        <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
     </a></td>
 
