@@ -37,8 +37,10 @@ if (isset($_GET['id'])) {
 elseif (isset($_GET['idx'])){
 	   $datosPedido = $this->pediTable->findById($_GET['idx']);
 	 	   $datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
-}
-
+		}
+else {
+	$pedido=null;
+	}
 
 			$title = 'Pedido';
 

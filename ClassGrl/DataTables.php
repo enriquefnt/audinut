@@ -75,7 +75,7 @@ private function update($fields)
 	$query .= ' WHERE `' . $this->primaryKey . '` =
 	:primaryKey';
 	// Set the :primaryKey variable -- modificado para que funcione ?? wfy
-	$fields['primaryKey'] = $fields['id_datos_benef']  ;
+	$fields['primaryKey'] = $fields['id_datos_benef'] ??  $fields['id_datos_pedido'];
 	$fields = $this->processDates($fields);
 	$this->query($query, $fields);
 	}
