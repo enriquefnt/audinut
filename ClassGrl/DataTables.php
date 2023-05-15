@@ -67,15 +67,15 @@ private function insert($fields)
 	}
 private function update($fields)
 	{
-	$query = ' UPDATE `' . $this->table .'` SET ';
+		$query = ' UPDATE `' . $this->table .'` SET ';
 	foreach ($fields as $key => $value) {
 	$query .= '`' . $key . '` = :' . $key . ',';
 	}
 	$query = rtrim($query, ',');
-	$query .= ' WHERE `' . $this->primaryKey . '` =
-	:primaryKey';
-	// Set the :primaryKey variable -- modificado para que funcione ?? wfy
-	$fields['primaryKey'] = $fields['id_datos_benef'] ??  $fields['id_datos_pedido'];
+	$query .= ' WHERE `' . $this->primaryKey . '` = :primaryKey';
+	
+	$fields['primaryKey'] = $fields[$this->primaryKey];
+	
 	$fields = $this->processDates($fields);
 	$this->query($query, $fields);
 	}
