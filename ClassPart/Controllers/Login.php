@@ -1,10 +1,6 @@
 <?php
 namespace ClassPart\Controllers;
-/*
-class Login {
-public function __construct(private \ClassGrl\Authentication $authentication) {
-}
-*/
+
 class Login {
 
 	private $authentication;
@@ -23,7 +19,6 @@ $success = $this->authentication->login($_POST['user'],$_POST['password']);
 	if ($success) {
 	
 $usuario = $this->authentication->getUser();
-//$_SESSION=&$usuario;
 
 
 
@@ -31,12 +26,6 @@ $_SESSION['nombre']=$usuario['nombre'];
 $_SESSION['apellido']=$usuario['apellido'];
 $_SESSION['tipo']=$usuario['tipo'];
 $_SESSION['establecimiento_nombre']=$usuario['establecimiento_nombre'];
-
-
-
-
-
-
 
 
 	return ['template' => 'loginSuccess.html.php',

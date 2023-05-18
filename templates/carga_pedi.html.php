@@ -106,7 +106,8 @@ endif;
 			<label class="form-label-sm" for="env_pormes">Estado</label>
 			
 			
-			<select class="form-control form-control-sm" name="Pedido[estado]" id="estado">
+			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
+			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? ''?></option>
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>
@@ -121,7 +122,7 @@ endif;
 	
 
 	<div class="container">
-	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
+	<a href="/benef/listar"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 

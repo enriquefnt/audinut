@@ -1,6 +1,7 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
+use \ClassGrl\Fpdf;
 use \AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Pedidos {
@@ -12,12 +13,14 @@ private $authentication;
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $userTable,
-							\ClassGrl\Authentication $authentication) {
+							\ClassGrl\Authentication $authentication,
+							\ClassGrl\Fpdf $Fpdf) {
 
         $this->pediTable = $pediTable;
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
-		$this->authentication = $authentication;		
+		$this->authentication = $authentication;
+		$this->Fpdf = $Fpdf;		
     }
 
 /// Metodo si es GET //////  
@@ -113,6 +116,21 @@ public function listar(){
 				'datosBenef' => $datosBenef  ?? ' ']
 			];
 	}
+
+public function print() {
+//	require('\ClassGrl\Fpdf.php');
+
+	$pdf = new Fpdf();
+	$pdf->AddPage();
+//	$pdf->SetFont('Arial','B',16);
+	$pdf->Cell(40,10,'Hello World!');
+	$pdf->Output();
+
+
+
+
+}
+
 
 
 
