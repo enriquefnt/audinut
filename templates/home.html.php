@@ -63,7 +63,7 @@
             <div class="card-footer text-muted"> -->
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula, el DNI en número sin puntos e indique si es internado o ambulatorio.</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa nº 361.</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
@@ -110,7 +110,7 @@
             <i class="fas fa-gem me-3 text-primary"></i>Institución
           </h6>
           <p >
-            Direccion de Nutrición y ALimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
+            Direccion de Nutrición y Alimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
           </p>
         </div>
         

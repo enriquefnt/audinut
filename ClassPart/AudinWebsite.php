@@ -50,6 +50,9 @@ public function getController(string $controllerName): ?object {
 	else if ($controllerName == 'login') {
 		$controller = new \ClassPart\Controllers\Login($this->authentication);
 		}	
+		else if ($controllerName == 'print') {
+			$controller = new \ClassPart\Controllers\Print();
+			}	
  else {
             $controller = null;
         }
