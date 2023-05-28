@@ -3,6 +3,7 @@ namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
 use \ClassGrl\Fpdf;
 use \AllowDynamicProperties;
+use \font;
 #[AllowDynamicProperties]
 class Pedidos {
 private $pediTable;
@@ -14,7 +15,8 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $userTable,
 							\ClassGrl\Authentication $authentication,
-							\ClassGrl\Fpdf $Fpdf) {
+							\ClassGrl\Fpdf $Fpdf)
+							 {
 
         $this->pediTable = $pediTable;
         $this->benefTable = $benefTable;
@@ -122,8 +124,8 @@ public function print() {
 
 	$pdf = new Fpdf();
 	$pdf->AddPage();
-//	$pdf->SetFont('Arial','B',16);
-	$pdf->Cell(40,10,'Hello World!');
+	$pdf->SetFont('Arial','B',36);
+	$pdf->Cell(60,50,'Al fin!!');
 	$pdf->Output();
 
 
