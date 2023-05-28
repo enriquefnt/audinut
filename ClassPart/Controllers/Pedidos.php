@@ -10,6 +10,7 @@ private $pediTable;
 private $userTable;
 private $benefTable;
 private $authentication;
+private $cambiaCodigo;
 
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
@@ -22,17 +23,17 @@ public function __construct(\ClassGrl\DataTables $pediTable,
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
 		$this->authentication = $authentication;
-		$this->Fpdf = $Fpdf;		
+		$this->Fpdf = $Fpdf;	
+	//	$this->cambiaCodigo =$cambiaCodigo;
+		
+
     }
 
-/// Metodo si es GET //////  
 
 
 
+	/// Metodo si es GET //////  
 public function pedido($id=null){
-
-
-
 
 
 if (isset($_GET['id'])) {
@@ -125,31 +126,37 @@ public function print() {
 	$datosPedido = $this->pediTable->findById($_GET['id']);
 	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
 
+
+	$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
+	
 	$usuario = $this->authentication->getUser();
 	
+	$beneficiario = $beneficiariox[1] .''.$beneficiariox[2] ;;
+	$quienImprime = $beneficiariox[1] .''.$beneficiariox[2] ;
 
 	$pdf = new Fpdf('P','mm','A4');
+
+	
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 	$pdf->SetFont('Times','I',8);
-	$pdf->Cell(0,7,'Copia realizada por: ' . $usuario[1] .''.$usuario[2]);
+	$pdf->Cell(0,7,'Copia realizada por: ' . $quienImprime) ;
 	$pdf->Ln();
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,('Beneficiario: '.$datosBenef['Nombres'].' '. $datosBenef['Apellidos'] ),0,0);
+	$pdf->Cell(0,7,('Beneficiario: '.$beneficiario ),0,0);
 	$pdf->Ln();
 	$pdf->Ln();
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,('Beneficiario: '.$datosPedido['nutro_ter'].' '. $datosPedido['fecha_ped'] ),0,0);
+	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].'  Fecha: '. $datosPedido['fecha_ped'] ),0,0);
 	$pdf->Ln();
 	$pdf->Output();
-
-
-
 
 }
 
 
-
+private function cambiaCodigo($value) {
+	return iconv('UTF-8', 'Windows-1252', $value);
+}
 
 
 
