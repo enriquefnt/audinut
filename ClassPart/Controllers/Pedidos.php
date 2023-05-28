@@ -120,12 +120,27 @@ public function listar(){
 	}
 
 public function print() {
-//	require('\ClassGrl\Fpdf.php');
 
-	$pdf = new Fpdf();
+	
+	$datosPedido = $this->pediTable->findById($_GET['id']);
+	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
+
+	$usuario = $this->authentication->getUser();
+	
+
+	$pdf = new Fpdf('P','mm','A4');
+	$pdf->AliasNbPages();
 	$pdf->AddPage();
-	$pdf->SetFont('Arial','B',36);
-	$pdf->Cell(60,50,'Al fin!!');
+	$pdf->SetFont('Times','I',8);
+	$pdf->Cell(0,7,'Copia realizada por: ' . $usuario[1] .''.$usuario[2]);
+	$pdf->Ln();
+	$pdf->SetFont('Arial','',12);
+	$pdf->Cell(0,7,('Beneficiario: '.$datosBenef['Nombres'].' '. $datosBenef['Apellidos'] ),0,0);
+	$pdf->Ln();
+	$pdf->Ln();
+	$pdf->SetFont('Arial','',12);
+	$pdf->Cell(0,7,('Beneficiario: '.$datosPedido['nutro_ter'].' '. $datosPedido['fecha_ped'] ),0,0);
+	$pdf->Ln();
 	$pdf->Output();
 
 

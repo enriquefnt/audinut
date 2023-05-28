@@ -267,13 +267,13 @@ function AliasNbPages($alias='{nb}')
 	// Define an alias for total number of pages
 	$this->AliasNbPages = $alias;
 }
-
+/*
 function Error($msg)
 {
 	// Fatal error
 	throw new Exception('FPDF error: '.$msg);
 }
-
+*/
 function Close()
 {
 	// Terminate document
