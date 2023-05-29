@@ -122,7 +122,7 @@ endif;
 	
 
 	<div class="container">
-	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
+	<a href="/benef/listar"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 

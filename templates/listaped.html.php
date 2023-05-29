@@ -15,6 +15,7 @@
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
         <th align="center">Editar</th>
             <?php } ?>
+     <th align="center">Imprimir</th>
     
   </tr>
 </thead>
@@ -28,6 +29,8 @@
        <td><?= $pedido['env_pormes'] ; ?></td>
        <td><?= $pedido['estado'] ; ?></td>
        <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
+    </a></td>
+    <td> <a href="/pedido/print?id=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
     </a></td>
 
   
