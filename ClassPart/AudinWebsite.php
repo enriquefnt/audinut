@@ -10,7 +10,7 @@ class AudinWebsite implements \ClassGrl\Website  {
  	private \ClassGrl\DataTables $tablaLoc;
  	private \ClassGrl\DataTables $tablaInsti;
  	private \ClassGrl\Authentication $Authentication;
- 	private \ClassGrl\Fpdf $Fpdf;
+ //	private \ClassGrl\Fpdf $Fpdf;
 	private \ClassPart\Controllers\Imprime $Imprime;
 
 public function __construct() {
@@ -21,7 +21,7 @@ public function __construct() {
     $this->tablaLoc = new \ClassGrl\DataTables($pdo,'datos_localidad', 'gid');
     $this->tablaInsti = new \ClassGrl\DataTables($pdo,'datos_institucion', 'codi_esta');
     $this->authentication = new \ClassGrl\Authentication($this->tablaUser,'user', 'password'); 
-	$this->Fpdf = new \ClassGrl\Fpdf();
+//	$this->Fpdf = new \ClassGrl\Fpdf();
 	$this->Imprime = new \ClassPart\Controllers\Imprime();
 	
 }
@@ -50,7 +50,7 @@ public function getController(string $controllerName): ?object {
 		}
 		else if ($controllerName === 'pedido') {
 		$controller = new  \ClassPart\Controllers\Pedidos($this->tablaPedi,$this->tablaBenef,
-			$this->tablaUser, $this->authentication, $this->Fpdf, $this->Imprime);
+			$this->tablaUser, $this->authentication,  $this->Imprime);
 		}
 	else if ($controllerName == 'login') {
 		$controller = new \ClassPart\Controllers\Login($this->authentication);

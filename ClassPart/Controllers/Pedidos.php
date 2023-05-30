@@ -1,7 +1,7 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
-use \ClassGrl\Fpdf;
+//use \ClassGrl\Fpdf;
 use \ClasPart\Imprime;
 use \AllowDynamicProperties;
 use \font;
@@ -17,7 +17,7 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $userTable,
 							\ClassGrl\Authentication $authentication,
-							\ClassGrl\Fpdf $Fpdf,
+							//\ClassGrl\Fpdf $Fpdf,
 							\ClassPart\Controllers\Imprime $Imprime
 							)
 							 {
@@ -26,7 +26,7 @@ public function __construct(\ClassGrl\DataTables $pediTable,
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
 		$this->authentication = $authentication;
-		$this->Fpdf = $Fpdf;	
+		//$this->Fpdf = $Fpdf;	
 		$this->Imprime = $Imprime;	
 		
 
@@ -153,12 +153,16 @@ public function print() {
 	$pdf->Ln();
 	$pdf->Output($beneficiariox[2],'I');
 */
-	$pdf = new \ClassPart\Controllers\Imprime();
+	$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
-	$pdf->SetFont('Times','',12);
-	for($i=1;$i<=40;$i++)
-		$pdf->Cell(0,10,'Printing line number '.$i,0,1);
+	$pdf->SetFont('Arial','',12);
+	$pdf->Cell(0,7,('Beneficiario: '.$beneficiario ),0,0);
+	$pdf->Ln();
+	$pdf->SetFont('Times','I',8);
+	$pdf->Cell(0,7,'Copia realizada por: ' . $quienImprime) ;
+	$pdf->Ln();
+	
 	$pdf->Output();
 
 
