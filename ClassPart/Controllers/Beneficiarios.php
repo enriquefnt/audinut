@@ -77,8 +77,8 @@ foreach($localidades as $localidad)
 
 	$Beneficiario = $_POST['Beneficiario'];
 
-	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
-	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
+	$Beneficiario['Nombres'] =ltrim(ucwords(strtolower($Beneficiario['Nombres'])));
+	$Beneficiario['Apellidos'] =ltrim(ucwords(strtolower($Beneficiario['Apellidos'])));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
 	$Beneficiario['id_usuario'] = $usuario['id_usuario'] ?? '00';
@@ -96,7 +96,7 @@ if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
 
-header('Location: /benef/listar');
+header('Location: /user/success');
 
 
  	}
@@ -185,5 +185,4 @@ return ['template' => 'home.html.php', 'title' =>$title,'variables' => [] ];
 
 
 }
-
 

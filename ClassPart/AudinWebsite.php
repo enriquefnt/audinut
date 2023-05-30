@@ -11,6 +11,7 @@ class AudinWebsite implements \ClassGrl\Website  {
  	private \ClassGrl\DataTables $tablaInsti;
  	private \ClassGrl\Authentication $Authentication;
  	private \ClassGrl\Fpdf $Fpdf;
+	private \ClassPart\Controllers\Imprime $Imprime;
 
 public function __construct() {
 	$pdo = new \PDO('mysql:host=212.1.210.51;dbname=saltaped_audinut; charset=utf8', 'saltaped_audinut', 'audinut7625');
@@ -21,6 +22,8 @@ public function __construct() {
     $this->tablaInsti = new \ClassGrl\DataTables($pdo,'datos_institucion', 'codi_esta');
     $this->authentication = new \ClassGrl\Authentication($this->tablaUser,'user', 'password'); 
 	$this->Fpdf = new \ClassGrl\Fpdf();
+	$this->Imprime = new \ClassPart\Controllers\Imprime();
+	
 }
 
 
@@ -47,14 +50,14 @@ public function getController(string $controllerName): ?object {
 		}
 		else if ($controllerName === 'pedido') {
 		$controller = new  \ClassPart\Controllers\Pedidos($this->tablaPedi,$this->tablaBenef,
-			$this->tablaUser, $this->authentication, $this->Fpdf);
+			$this->tablaUser, $this->authentication, $this->Fpdf, $this->Imprime);
 		}
 	else if ($controllerName == 'login') {
 		$controller = new \ClassPart\Controllers\Login($this->authentication);
 		}	
-		else if ($controllerName == 'print') {
+	/*	else if ($controllerName == 'print') {
 			$controller = new \ClassPart\Controllers\Print();
-			}	
+			}	*/
  else {
             $controller = null;
         }

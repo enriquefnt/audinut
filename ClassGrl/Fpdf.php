@@ -1933,4 +1933,3 @@ protected function _enddoc()
 	$this->CreationDate = time();
 }
 }
-?>
