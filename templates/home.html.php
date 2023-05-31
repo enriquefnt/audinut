@@ -5,7 +5,7 @@
  <div class="conteiner container-sm">
     <div class="row pt-2">
       <div class="col-12">
-        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria  </p>
+        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria - <a href="http://secretariadenutricion.salta.gob.ar/images/varias/Formularios/CIRCULAR123.pdf" target="_blank"> Circular 1/23</a> </p>
       </div>
     </div>
     <div class="row">
@@ -87,10 +87,10 @@
 
     <!-- Right -->
     <div>
-      <a href="" class="me-4 link-secondary">
+      <a href="https://www.facebook.com/direcnutyasaludable/"  target="_blank" class="me-4 link-secondary">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="https://twitter.com/SNyAS3" target="_blank" class="me-4 link-secondary">
         <i class="fab fa-twitter"></i>
       </a>
          </div>
@@ -127,14 +127,7 @@
       <!-- Grid row -->
     </div>
   </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright 
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-   Copyright -->
+  
 </footer>
-<!-- Footer -->
+
 

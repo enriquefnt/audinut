@@ -10,13 +10,13 @@ class  Imprime extends Fpdf
 function Header()
 {
     // Logo
- //   $this->Image('logo.png',10,6,30);
+   $this->Image('../imagenes/logo.png',10,6,30);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right
-    $this->Cell(80);
+    $this->Cell(70);
     // Title
-    $this->Cell(30,10,'Title',1,0,'C');
+    $this->Cell(80,12,iconv('UTF-8', 'Windows-1252', 'Solicitud de nutroterápico'),1,0,'C');
     // Line break
     $this->Ln(20);
 }
@@ -30,6 +30,6 @@ function Footer()
     $this->SetFont('Arial','I',8);
     // Page number
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-}
+    }
 }
 
