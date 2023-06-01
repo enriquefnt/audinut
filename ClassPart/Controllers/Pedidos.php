@@ -12,27 +12,42 @@ private $userTable;
 private $benefTable;
 private $authentication;
 private $cambiaCodigo;
-
+private $calcularEdad;
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $userTable,
 							\ClassGrl\Authentication $authentication,
-							//\ClassGrl\Fpdf $Fpdf,
 							\ClassPart\Controllers\Imprime $Imprime
 							)
 							 {
-
         $this->pediTable = $pediTable;
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
 		$this->authentication = $authentication;
-		//$this->Fpdf = $Fpdf;	
 		$this->Imprime = $Imprime;	
-		
+		    }
 
-    }
+	private function cambiaCodigo($value) {
+		return iconv('UTF-8', 'Windows-1252', $value);
+	}
+	
+	private function calcularEdad($fechaNacimiento, $fechaActual) {
+		$nacimiento = new \DateTime($fechaNacimiento);
+		$actual = new \DateTime($fechaActual);
+		$edad = $nacimiento->diff($actual);
 
-
+	
+		$anios = $edad->y;
+		$meses = $edad->m;
+		$dias = $edad->d;
+	 if($anios>0){
+		return " $anios a $meses m    ";
+	}
+	else {
+		return "  $meses m $dias d   ";
+	}
+	}
+	
 	/// Metodo si es GET //////  
 public function pedido($id=null){
 
@@ -92,7 +107,7 @@ public function listar(){
 
 	$result = $this->pediTable->find('id_datos_benef',$_GET['id']);
 	$datosBenef = $this->benefTable->findById($_GET['id']);
-
+	$edad=$this->calcularEdad($datosBenef['FechaNac'], $result['fecha_ped'][0] ?? ' ');
 		$pedidos = [];
 		foreach ($result as $pedido) {
 			
@@ -115,9 +130,11 @@ public function listar(){
 
 		return ['template' => 'listaped.html.php',
 				'title' => $title,
-				'variables' => ['totalPedi' => $totalPedi,
+				'variables' => [
+				'totalPedi' => $totalPedi,
 				'pedidos' => $pedidos,
-				'datosBenef' => $datosBenef  ?? ' ']
+				'datosBenef' => $datosBenef  ?? ' ',
+				'edad'=> $edad]
 			];
 	}
 
@@ -129,24 +146,30 @@ public function print() {
 	
 
 	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
-
-	
 	$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
+
+	//$solicita = $this->userTable->findById($datosPedido['id_usuario']);
 	
 	$usuario = $this->authentication->getUser();
 	
-	$beneficiario = $beneficiariox[1] .' '.$beneficiariox[2] ;;
+	
+	$beneficiario = $beneficiariox[1] .' '.$beneficiariox[2] ;
+	$edades = $this->calcularEdad($datosBenef['FechaNac'], $datosPedido['fecha_ped']);
 	$quienImprime = $usuario[1] .' '.$usuario[2] ;
-
 
 	$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 	$pdf->Ln(6);
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ),0,0);
+	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'		DNI: ' .$beneficiariox['DNI']. '		Edad: ' . $edades ,0,0);
 	$pdf->Ln();
 	$pdf->SetFont('Arial','',12);
+	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .'	  -	 ' .$beneficiariox['Localidad'] ,0,0);
+	$pdf->Ln();
+	$pdf->SetFont('Arial','',12);
+//	$pdf->Cell(0,7,('Profesionaol solicitante: '.$solicita['apellido']),0,0);
+	$pdf->Ln();
 	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].'  Fecha: '. $fecha ),0,0);
 	$pdf->Ln();
 	$pdf->SetFont('Times','I',8);
@@ -156,10 +179,6 @@ public function print() {
 
 }
 
-
-private function cambiaCodigo($value) {
-	return iconv('UTF-8', 'Windows-1252', $value);
-}
 
 
 

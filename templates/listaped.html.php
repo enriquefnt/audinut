@@ -2,7 +2,7 @@
   <table id="example" class="table table-bordered display compact" > 
 <div>
 <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
-<?= $datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
+<?= $datosBenef['Nombres'] .' '. $datosBenef['Apellidos'] .'  -  '. $edad?>
    
     </legend>
 </div>
