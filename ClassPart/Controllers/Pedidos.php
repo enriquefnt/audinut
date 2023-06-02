@@ -145,10 +145,13 @@ public function print() {
 	$fecha= date('d/m/Y',strtotime($datosPedido['fecha_ped']));
 	
 
+
 	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
 	$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
 
-	//$solicita = $this->userTable->findById($datosPedido['id_usuario']);
+	
+
+	$solicita = $this->userTable->findById($datosPedido['usuari_id']);
 	
 	$usuario = $this->authentication->getUser();
 	
@@ -162,20 +165,26 @@ public function print() {
 	$pdf->AddPage();
 	$pdf->Ln(6);
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'		DNI: ' .$beneficiariox['DNI']. '		Edad: ' . $edades ,0,0);
+	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').   $solicita['establecimiento_nombre'] . '	-	  Fecha: ' . $fecha  ,0,0); 
 	$pdf->Ln();
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .'	  -	 ' .$beneficiariox['Localidad'] ,0,0);
+	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'	-	DNI: ' .$beneficiariox['DNI']. '	-	Edad:' . $edades ,0,0);
 	$pdf->Ln();
-	$pdf->SetFont('Arial','',12);
-//	$pdf->Cell(0,7,('Profesionaol solicitante: '.$solicita['apellido']),0,0);
+	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .' - ' . iconv('UTF-8', 'Windows-1252',$beneficiariox['Localidad']). ' - '. 'Tel/Cel: '. $beneficiariox['Celular'] ,0,0);
 	$pdf->Ln();
-	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].'  Fecha: '. $fecha ),0,0);
+	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').$datosPedido['diag_med']. ' -  '.$datosPedido['diag_nutri']),0,0);
 	$pdf->Ln();
+	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr por'. iconv('UTF-8', 'Windows-1252','día: ') 
+	 .$datosPedido['gramos_dia'] ),0,0);
+	$pdf->Ln();
+	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
+	$pdf->Ln();
+	$pdf->Cell(0,7,'Profesional soicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
 	$pdf->SetFont('Times','I',8);
+	$pdf->Ln();
 	$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime)) ;
 	$pdf->Ln();
 	$pdf->Output($beneficiariox[2],'I');
+	
 
 }
 
