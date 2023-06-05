@@ -79,6 +79,8 @@ foreach($localidades as $localidad)
 
 	$Beneficiario['Nombres'] =ltrim(ucwords(strtolower($Beneficiario['Nombres'])));
 	$Beneficiario['Apellidos'] =ltrim(ucwords(strtolower($Beneficiario['Apellidos'])));
+	$Beneficiario['NombresResp'] =ltrim(ucwords(strtolower($Beneficiario['NombresResp'])));
+	$Beneficiario['ApellidosResp'] =ltrim(ucwords(strtolower($Beneficiario['ApellidosResp'])));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
 	$Beneficiario['id_usuario'] = $usuario['id_usuario'] ?? '00';

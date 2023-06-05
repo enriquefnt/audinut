@@ -157,6 +157,7 @@ public function print() {
 	
 	
 	$beneficiario = $beneficiariox[1] .' '.$beneficiariox[2] ;
+	$responsable =$beneficiariox['NombresResp'] .' '.$beneficiariox['ApellidosResp'] ;
 	$edades = $this->calcularEdad($datosBenef['FechaNac'], $datosPedido['fecha_ped']);
 	$quienImprime = $usuario[1] .' '.$usuario[2] ;
 
@@ -171,21 +172,24 @@ public function print() {
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .' - ' . iconv('UTF-8', 'Windows-1252',$beneficiariox['Localidad']). ' - '. 'Tel/Cel: '. $beneficiariox['Celular'] ,0,0);
 	$pdf->Ln();
+	if (isset($beneficiariox['NombresResp'])){
+	$pdf->Cell(0,7,'Responsable: '.iconv('UTF-8', 'Windows-1252',$responsable ) .'	-	DNI: ' .$beneficiariox['DNIResp'] .  ' - '. 'Tel/Cel: '. $beneficiariox['CelularResp'] ,0,0);
+	$pdf->Ln();
+	}
 	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').$datosPedido['diag_med']. ' -  '.$datosPedido['diag_nutri']),0,0);
 	$pdf->Ln();
 	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr por'. iconv('UTF-8', 'Windows-1252','día: ') 
 	 .$datosPedido['gramos_dia'] ),0,0);
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
-	$pdf->Ln();
-	$pdf->Cell(0,7,'Profesional soicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
+	$pdf->Ln(20);
+	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
 	$pdf->SetFont('Times','I',8);
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime)) ;
 	$pdf->Ln();
 	$pdf->Output($beneficiariox[2],'I');
 	
-
 }
 
 
