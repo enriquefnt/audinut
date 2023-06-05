@@ -15,6 +15,7 @@ class AudinWebsite implements \ClassGrl\Website  {
 
 public function __construct() {
 	$pdo = new \PDO('mysql:host=212.1.210.51;dbname=saltaped_audinut; charset=utf8', 'saltaped_audinut', 'audinut7625');
+//	$pdo = new \PDO('mysql:host=200.45.111.99;dbname=MSP_NUTRICION; charset=utf8', 'SiViNSalta', '@#sivin#@salta!%2020&&');
 	$this->tablaBenef = new \ClassGrl\DataTables($pdo,'datos_benef', 'id_datos_benef');
 	$this->tablaPedi =new \ClassGrl\DataTables($pdo,'datos_pedido', 'id_datos_pedido');
 	$this->tablaUser = new \ClassGrl\DataTables($pdo, 'datos_usuarios','id_usuario' );

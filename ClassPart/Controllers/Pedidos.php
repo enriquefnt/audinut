@@ -49,12 +49,12 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 	}
 	
 	/// Metodo si es GET //////  
-public function pedido($id=null){
+public function pedido($id=null) {
 
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
-				// $datosPedido = $this->pediTable->findById($_GET['id']);		
+					
 			}
 elseif (isset($_GET['idx'])){
 	   $datosPedido = $this->pediTable->findById($_GET['idx']);
@@ -162,6 +162,7 @@ public function print() {
 	$quienImprime = $usuario[1] .' '.$usuario[2] ;
 
 	$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
+	$pdf->AddFont('Medico','','medico.php');
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 	$pdf->Ln(6);
@@ -172,22 +173,24 @@ public function print() {
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .' - ' . iconv('UTF-8', 'Windows-1252',$beneficiariox['Localidad']). ' - '. 'Tel/Cel: '. $beneficiariox['Celular'] ,0,0);
 	$pdf->Ln();
-	if (isset($beneficiariox['NombresResp'])){
+	if (isset($beneficiariox['NombresResp']) && $beneficiariox['DNIResp'] > 1000 ){
 	$pdf->Cell(0,7,'Responsable: '.iconv('UTF-8', 'Windows-1252',$responsable ) .'	-	DNI: ' .$beneficiariox['DNIResp'] .  ' - '. 'Tel/Cel: '. $beneficiariox['CelularResp'] ,0,0);
 	$pdf->Ln();
 	}
 	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').$datosPedido['diag_med']. ' -  '.$datosPedido['diag_nutri']),0,0);
 	$pdf->Ln();
-	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr por'. iconv('UTF-8', 'Windows-1252','día: ') 
+	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
 	 .$datosPedido['gramos_dia'] ),0,0);
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
-	$pdf->Ln(20);
+	$pdf->Ln();
 	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
-	$pdf->SetFont('Times','I',8);
 	$pdf->Ln();
-	$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime)) ;
-	$pdf->Ln();
+	//$pdf->SetFont('Medico','',14);
+	$pdf->SetFont('Arial','I',8);
+	$pdf->SetY(-28);
+	$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime),0,0,'C') ;
+	
 	$pdf->Output($beneficiariox[2],'I');
 	
 }
