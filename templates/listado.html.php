@@ -34,7 +34,7 @@
      <td align="center">
         </div>
         <div>
-        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
+        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="fa-solid fa-keyboard"></i></a>
         </div>
     </td>
       <?php } ?>
@@ -43,7 +43,7 @@
      <td align="center">
         </div>
         <div>
-        <a href="/pedido/listar?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
+        <a href="/pedido/listar?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i></i></a>
         </div>
     </td>
       <?php } ?>
