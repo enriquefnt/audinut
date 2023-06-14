@@ -22,13 +22,6 @@ public function __construct(\ClassGrl\DataTables $benefTable,
 		$this->authentication = $authentication;
     }
 
-
-
-
-
-
-
-
 /// Metodo si es GET para beneficiario//////  
 
 public function edit($id=null) {
@@ -97,12 +90,11 @@ $errors[] = 'Un beneficiario con este DNI ya está registrado';
 if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
+$lastId=$Beneficiario['id_usuario'];
 
 header('Location: /user/success');
 
-
  	}
-
 
 else {
 
