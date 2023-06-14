@@ -99,7 +99,7 @@ if  (empty($errors)) {
 $this->pediTable->save($pedido);
 }
 
-header('Location: /user/success');
+header('Location: /pedido/success');
 }
 
 
@@ -199,7 +199,7 @@ public function print() {
 
 
 public function success() {
-return ['template' => 'registersuccess.html.php',
+return ['template' => 'pedidosucess.html.php',
 'title' => 'Registro OK'];
 		}
 
