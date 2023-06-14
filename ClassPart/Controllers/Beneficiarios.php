@@ -90,14 +90,23 @@ $errors[] = 'Un beneficiario con este DNI ya está registrado';
 if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
-$lastId=$Beneficiario['id_usuario'];
+$datosBenef = $this->benefTable->ultimoReg();
+return ['template' => 'registersuccess.html.php',
+					     'title' => 'Carga' ,
+					 'variables' => [
+					    'datosCaso' => $datosBenef  ?? ' '
+									 ]
+					];
 
-header('Location: /user/success');
 
- 	}
+
+//header('Location: /user/success');
+ 
+}
+
+
 
 else {
-
  return ['template' => 'edita_benef.html.php',
 					     'title' => 'Revisar' ,
 					 'variables' => [
@@ -105,14 +114,10 @@ else {
 			             'data'  =>   $data,
 					 'datosCaso' => $Beneficiario  ?? ' '
 									 ]
-
 					];
 }
 
-
 }
-
-
 
 public function listar(){
 

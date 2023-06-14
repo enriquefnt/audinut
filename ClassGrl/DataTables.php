@@ -25,6 +25,14 @@ public function total()
 	$row = $query->fetch();
 	return $row[0];
 }
+
+public function ultimoReg()
+{
+    $sql = 'SELECT * FROM `' . $this->table . '` ORDER BY `' . $this->primaryKey . '` DESC LIMIT 1';
+    $query = $this->query($sql);
+    return $query->fetch();
+}
+
 public function findById($value)
 {
 	$query = 'SELECT * FROM `' . $this->table . '` WHERE `' .
