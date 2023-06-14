@@ -107,7 +107,7 @@ endif;
 			
 			
 			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
-			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? ''?></option>
+			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? 'Pendiente'?></option>
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>
