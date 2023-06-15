@@ -103,6 +103,14 @@ endif;
 	</div>
 
 	<div class="col-sm-3">
+			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
+			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]" id="fecha_ped" 
+			value=<?=$datosPedido['env_pormes'] ?? ''?> >
+	</div>
+
+	
+
+	<div class="col-sm-3">
 			<label class="form-label-sm" for="estado">Estado</label>
 			
 			
@@ -114,12 +122,13 @@ endif;
 			<option value="Liberado">Liberado</option>
 			<option value="Entregado">Entregado</option>
 			</select>
-
-
-
-			<!-- <input class="form-control form-control-sm" type="text" required="required"  name="Pedido[estado]" id="estado" > -->
+		
 	</div>
-	
+	<div class="col-sm-12">
+			<label class="form-label-sm" for="Observacion">Observaciones</label>
+			<input class="form-control form-control-sm" type="text"  name="Pedido[Observacion]" id="Observacion" 
+			value=<?=$datosPedido['Observacion'] ?? ''?> >
+	</div>
 
 	<div class="container">
 	<a href="/benef/listar"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
