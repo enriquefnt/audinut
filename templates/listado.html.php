@@ -9,7 +9,7 @@
     <!-- <th align="center">Editar Beneficiario</th> -->
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
     <th align="center">Cargar Pedido</th>
-    <th align="center">Ver/Editar</th>
+    <th align="center">Ver/Editar Pedidos</th>
             <?php } ?>
     
   </tr>
