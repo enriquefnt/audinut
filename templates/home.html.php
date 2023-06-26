@@ -5,7 +5,7 @@
  <div class="conteiner container-sm">
     <div class="row pt-2">
       <div class="col-12">
-        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria  </p>
+        <p  class="text-center fs-4 fw-bold"> Documentación Obligatoria - <a href="http://secretariadenutricion.salta.gob.ar/images/varias/Formularios/CIRCULAR123.pdf" target="_blank"> Circular 1/23</a> </p>
       </div>
     </div>
     <div class="row">
@@ -63,7 +63,7 @@
             <div class="card-footer text-muted"> -->
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula y el DNI en número sin puntos</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula, el DNI en número sin puntos e indique si es internado o ambulatorio.</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Imprimir la carátula identificatoria del expediente con la fecha actual generada por el sistema y con el pase a la mesa nº 361.</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Enviar por OCASA a DNyAS - Belgrano 1349 - 1er piso - Salta Capital</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> La duración estimada del trámite es de 40 días, por favor informar al beneficiario</p>
@@ -87,10 +87,10 @@
 
     <!-- Right -->
     <div>
-      <a href="" class="me-4 link-secondary">
+      <a href="https://www.facebook.com/direcnutyasaludable/"  target="_blank" class="me-4 link-secondary">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="https://twitter.com/SNyAS3" target="_blank" class="me-4 link-secondary">
         <i class="fab fa-twitter"></i>
       </a>
          </div>
@@ -110,7 +110,7 @@
             <i class="fas fa-gem me-3 text-primary"></i>Institución
           </h6>
           <p >
-            Direccion de Nutrición y ALimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
+            Direccion de Nutrición y Alimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
           </p>
         </div>
         
@@ -127,14 +127,7 @@
       <!-- Grid row -->
     </div>
   </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright 
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>
-   Copyright -->
+  
 </footer>
-<!-- Footer -->
+
 

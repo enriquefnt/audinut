@@ -3,8 +3,7 @@
 ?>
 	<div class="alert alert-warning" role="alert">
 
-		
-		<p>Controle los siguiente:</p>
+				<p>Controle los siguiente:</p>
 		<ul>
 	<?php
 	foreach ($errors as $error) :
@@ -22,8 +21,6 @@ endif;
 	<form onkeydown="return event.key != 'Enter';" class="row g-3"  action=""  onsubmit="myButton.disabled = true; return true;" method="post" autocomplete="off" >
 		<h4>Datos personales</h4>
 	
-
-
 	<input type="hidden" name="Beneficiario[id_datos_benef]" value="<?=$datosCaso['id_datos_benef'] ?? ''?>">
 
 	<div class="col-sm-6">
@@ -91,6 +88,7 @@ endif;
 
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 
+
 </div>
 </form>	
 
@@ -98,12 +96,10 @@ endif;
 
 
 <script>
-
 var auto_complete = new Autocom(document.getElementById('nombre_geo'), {
     data:<?php echo json_encode($data); ?>,
     maximumItems:10,
     highlightTyped:true,
     highlightClass : 'fw-bold text-primary'
 }); 
-
 </script>

@@ -101,27 +101,41 @@ endif;
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="1" max="100"  name="Pedido[env_pormes]" id="env_pormes" 
 			value=<?=$datosPedido['env_pormes'] ?? ''?> >
 	</div>
-
+	<?php if(isset($datosPedido['fecha_ped'])) { ?>
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="env_pormes">Estado</label>
+			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
+			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]"  
+			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
+	</div>
+	<?php } else {?>
+		<div class="col-sm-3">
+			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
+			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]" id="fecha_ped" 
+			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
+	</div>
+	<?php } ?>	
+	<div class="col-sm-3">
+			<label class="form-label-sm" for="estado">Estado</label>
 			
 			
-			<select class="form-control form-control-sm" name="Pedido[estado]" id="estado">
+			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
+			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? 'Pendiente'?></option>
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>
 			<option value="Liberado">Liberado</option>
 			<option value="Entregado">Entregado</option>
 			</select>
-
-
-
-			<!-- <input class="form-control form-control-sm" type="text" required="required"  name="Pedido[estado]" id="estado" > -->
+		
 	</div>
-	
+	<div class="col-sm-12">
+			<label class="form-label-sm" for="Observacion">Observaciones</label>
+			<input class="form-control form-control-sm" type="text"  name="Pedido[Observacion]" id="Observacion" 
+			value=<?=$datosPedido['Observacion'] ?? ''?> >
+	</div>
 
 	<div class="container">
-	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
+	<a href="/benef/listar"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
 
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
 
@@ -130,3 +144,15 @@ endif;
 </fieldset>
 
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var fechaInput = document.getElementById("fecha_ped");
+
+      var fechaActual = new Date();
+      var dia = ("0" + fechaActual.getDate()).slice(-2);
+      var mes = ("0" + (fechaActual.getMonth() + 1)).slice(-2);
+      var fechaHoy = fechaActual.getFullYear() + "-" + mes + "-" + dia;
+
+      fechaInput.value = fechaHoy;
+    });
+  </script>

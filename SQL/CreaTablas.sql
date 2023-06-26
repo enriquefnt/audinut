@@ -8,16 +8,16 @@ CREATE TABLE `datos_benef` (
   `Celular` varchar(15) NOT NULL,
   `Domicilio` varchar(70) NOT NULL,
   `Localidad` varchar(50) NOT NULL,
+  `id_localidad` int(5) NOT NULL,
   `NombresResp` varchar(25) DEFAULT NULL,
   `ApellidosResp` varchar(25) DEFAULT NULL,
   `CelularResp` varchar(25) DEFAULT NULL,
   `DNIResp` int(8) DEFAULT NULL,
   `fechaCarga` date DEFAULT NULL,
-  `id_usuario` int(3) DEFAULT NULL,
-  PRIMARY KEY (`id_datos_benef`,`Nombres`,`Apellidos`),
+  `id_usuario` int(3) NOT NULL,
+  PRIMARY KEY (`id_datos_benef`),
   UNIQUE KEY `id_datos_benef_UNIQUE` (`id_datos_benef`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
-
+) ENGINE=InnoDB AUTO_INCREMENT=310 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE `datos_pedido` (
   `id_datos_pedido` int(11) NOT NULL AUTO_INCREMENT,
@@ -35,33 +35,44 @@ CREATE TABLE `datos_pedido` (
   `presenta` varchar(45) DEFAULT NULL,
   `gramos_dia` int(4) DEFAULT NULL,
   `env_pormes` int(2) DEFAULT NULL,
-  `prof_solicita` varchar(45) NOT NULL,
-  `servicio` varchar(45) DEFAULT NULL,
-  `hospital` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `celular` int(12) DEFAULT NULL,
-  `suspencion` tinyint(4) DEFAULT NULL,
-  `Estado` int(11) DEFAULT NULL,
+  `estado` varchar(10) DEFAULT NULL,
   `fecha_ped` date DEFAULT NULL,
-  `fecha_reg` date DEFAULT NULL,
-  `usuari_id` int(2) DEFAULT NULL,
-  PRIMARY KEY (`id_datos_pedido`,`id_datos_benef`),
+  `modif_ult` date DEFAULT NULL,
+  `usuari_id` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id_datos_pedido`),
   UNIQUE KEY `id_datos_pedido_UNIQUE` (`id_datos_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+CREATE TABLE `datos_institucion` (
+  `establecimiento_nombre` varchar(92) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `codi_esta` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  PRIMARY KEY (`codi_esta`,`establecimiento_nombre`),
+  UNIQUE KEY `codi_esta_UNIQUE` (`codi_esta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+CREATE TABLE `datos_localidad` (
+  `gid` int(11) NOT NULL,
+  `nombre_geo` varchar(70) NOT NULL,
+  PRIMARY KEY (`gid`,`nombre_geo`),
+  UNIQUE KEY `gid_UNIQUE` (`gid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE `datos_usuarios` (
-  `id_usuario` int(3) NOT NULL,
+  `id_usuario` int(3) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `apellido` varchar(45) NOT NULL,
   `profesion` varchar(15) NOT NULL,
   `tipo` int(1) NOT NULL,
-  `cod_ser` int(5) NOT NULL,
-  `celular` int(10) NOT NULL,
+  `establecimiento_nombre` varchar(70) NOT NULL,
+  `celular` varchar(15) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `usuario` varchar(45) NOT NULL,
+  `user` varchar(45) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `id_establecimiento` varchar(14) NOT NULL,
+  `fechaCarga` datetime DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_UNIQUE` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+

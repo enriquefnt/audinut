@@ -2,7 +2,7 @@
   <table id="example" class="table table-bordered display compact" > 
 <div>
 <legend class="w-80 p-0 h-0 ">Solicitud de nutroterápico - Beneficiario:
-<?= $datosBenef['Nombres'] .' '. $datosBenef['Apellidos']?>
+<?= $datosBenef['Nombres'] .' '. $datosBenef['Apellidos'] .'  -  '. $edad?>
    
     </legend>
 </div>
@@ -15,6 +15,7 @@
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
         <th align="center">Editar</th>
             <?php } ?>
+     <th align="center">Imprimir</th>
     
   </tr>
 </thead>
@@ -27,8 +28,9 @@
        <td><?= $pedido['nutro_ter'] ; ?></td>
        <td><?= $pedido['env_pormes'] ; ?></td>
        <td><?= $pedido['estado'] ; ?></td>
-       <!-- <td> <a href="/pedido/pedido?id=<?=$pedido['id_datos_benef']?>"><i class="bi bi-pencil-square"></i> -->
        <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
+    </a></td>
+    <td> <a href="/pedido/print?id=<?=$pedido['id_datos_pedido']?>" target="_blank"><i class="fa-regular fa-file-pdf"></i>
     </a></td>
 
   

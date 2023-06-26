@@ -1,43 +1,67 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
+//use \ClassGrl\Fpdf;
+use \ClasPart\Imprime;
 use \AllowDynamicProperties;
+use \font;
 #[AllowDynamicProperties]
 class Pedidos {
 private $pediTable;
 private $userTable;
 private $benefTable;
 private $authentication;
-
+private $cambiaCodigo;
+private $calcularEdad;
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $userTable,
-							\ClassGrl\Authentication $authentication) {
-
+							\ClassGrl\Authentication $authentication,
+							\ClassPart\Controllers\Imprime $Imprime
+							)
+							 {
         $this->pediTable = $pediTable;
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
-		$this->authentication = $authentication;		
-    }
+		$this->authentication = $authentication;
+		$this->Imprime = $Imprime;	
+		    }
 
-/// Metodo si es GET //////  
+	private function cambiaCodigo($value) {
+		return iconv('UTF-8', 'Windows-1252', $value);
+	}
+	
+	private function calcularEdad($fechaNacimiento, $fechaActual) {
+		$nacimiento = new \DateTime($fechaNacimiento);
+		$actual = new \DateTime($fechaActual);
+		$edad = $nacimiento->diff($actual);
 
-
-
-public function pedido($id=null){
-
-
-
+	
+		$anios = $edad->y;
+		$meses = $edad->m;
+		$dias = $edad->d;
+	 if($anios>0){
+		return " $anios a $meses m    ";
+	}
+	else {
+		return "  $meses m $dias d   ";
+	}
+	}
+	
+	/// Metodo si es GET //////  
+public function pedido($id=null) {
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
-				// $datosPedido = $this->pediTable->findById($_GET['id']);		
+					
 			}
 elseif (isset($_GET['idx'])){	
 	   $datosPedido = $this->pediTable->findById($_GET['idx']);
- 	   $datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
-}
-
+	 	   $datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
+		}
+else {
+	$pedido=null;
+	}
 
 			$title = 'Pedido';
 
@@ -62,7 +86,7 @@ public function pedidoSubmit() {
 
 	$pedido=$_POST['Pedido'];
 	$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
-	$pedido['fecha_ped']= new \DateTime();
+	// $pedido['fecha_ped']= new \DateTime();
 
 	$errors = [];
 	if ($_SESSION['tipo'] > 3) {
@@ -74,7 +98,7 @@ if  (empty($errors)) {
 $this->pediTable->save($pedido);
 }
 
-header('Location: /user/success');
+header('Location: /pedido/success');
 }
 
 
@@ -82,7 +106,7 @@ public function listar(){
 
 	$result = $this->pediTable->find('id_datos_benef',$_GET['id']);
 	$datosBenef = $this->benefTable->findById($_GET['id']);
-
+	$edad=$this->calcularEdad($datosBenef['FechaNac'], $result['fecha_ped'][0] ?? ' ');
 		$pedidos = [];
 		foreach ($result as $pedido) {
 			
@@ -105,18 +129,81 @@ public function listar(){
 
 		return ['template' => 'listaped.html.php',
 				'title' => $title,
-				'variables' => ['totalPedi' => $totalPedi,
+				'variables' => [
+				'totalPedi' => $totalPedi,
 				'pedidos' => $pedidos,
-				'datosBenef' => $datosBenef  ?? ' ']
+				'datosBenef' => $datosBenef  ?? ' ',
+				'edad'=> $edad]
 			];
 	}
 
+public function print() {
+
+	
+	$datosPedido = $this->pediTable->findById($_GET['id']);
+	$fecha= date('d/m/Y',strtotime($datosPedido['fecha_ped']));
+	
+
+
+	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
+	$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
+
+	
+
+	$solicita = $this->userTable->findById($datosPedido['usuari_id']);
+	
+	$usuario = $this->authentication->getUser();
+	
+	
+	$beneficiario = $beneficiariox[1] .' '.$beneficiariox[2] ;
+	$responsable =$beneficiariox['NombresResp'] .' '.$beneficiariox['ApellidosResp'] ;
+	$edades = $this->calcularEdad($datosBenef['FechaNac'], $datosPedido['fecha_ped']);
+	$quienImprime = $usuario[1] .' '.$usuario[2] ;
+
+	$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
+	$pdf->AddFont('Medico','','medico.php');
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	$pdf->Ln(6);
+	$pdf->SetFont('Arial','',12);
+	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre']) . '	-	  Fecha: ' . $fecha  ,0,0); 
+	$pdf->Ln();
+	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'	-	DNI: ' .$beneficiariox['DNI']. '	-	Edad:' . $edades ,0,0);
+	$pdf->Ln();
+	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .' - ' . iconv('UTF-8', 'Windows-1252',$beneficiariox['Localidad']). ' - '. 'Tel/Cel: '. $beneficiariox['Celular'] ,0,0);
+	$pdf->Ln();
+	if (isset($beneficiariox['NombresResp']) && $beneficiariox['DNIResp'] > 1000 ){
+	$pdf->Cell(0,7,'Responsable: '.iconv('UTF-8', 'Windows-1252',$responsable ) .'	-	DNI: ' .$beneficiariox['DNIResp'] .  ' - '. 'Tel/Cel: '. $beneficiariox['CelularResp'] ,0,0);
+	$pdf->Ln();
+	}
+	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['diag_med'])). ' -  '. (iconv('UTF-8', 'Windows-1252',$datosPedido['diag_nutri']))) ,0,0);
+	$pdf->Ln();
+	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
+	 .$datosPedido['gramos_dia'] ),0,0);
+	$pdf->Ln();
+	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
+	$pdf->Ln();
+	if (isset($datosPedido['Observacion']) ){
+		$pdf->Cell(0,7,'Observaciones: '.iconv('UTF-8', 'Windows-1252',$datosPedido['Observacion']) ,0,0);
+		$pdf->Ln();
+		}
+		$pdf->Ln(20);
+	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
+	$pdf->Ln();
+	//$pdf->SetFont('Medico','',14);
+	$pdf->SetFont('Arial','I',8);
+	$pdf->SetY(-28);
+	$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime),0,0,'C') ;
+	
+	$pdf->Output($beneficiariox[2],'I');
+	
+}
 
 
 
 
 public function success() {
-return ['template' => 'registersuccess.html.php',
+return ['template' => 'pedidosucess.html.php',
 'title' => 'Registro OK'];
 		}
 
