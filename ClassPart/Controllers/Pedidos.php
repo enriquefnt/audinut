@@ -87,7 +87,7 @@ public function pedidoSubmit() {
 
 	$pedido=$_POST['Pedido'];
 	$pedido['usuari_id']= $usuario['id_usuario'] ?? '00';
-	$pedido['fecha_ped']= new \DateTime();
+	// $pedido['fecha_ped']= new \DateTime();
 
 $errors = [];
 if ($_SESSION['tipo'] > 4) {
@@ -167,7 +167,7 @@ public function print() {
 	$pdf->AddPage();
 	$pdf->Ln(6);
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').   $solicita['establecimiento_nombre'] . '	-	  Fecha: ' . $fecha  ,0,0); 
+	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre']) . '	-	  Fecha: ' . $fecha  ,0,0); 
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'	-	DNI: ' .$beneficiariox['DNI']. '	-	Edad:' . $edades ,0,0);
 	$pdf->Ln();
@@ -177,13 +177,18 @@ public function print() {
 	$pdf->Cell(0,7,'Responsable: '.iconv('UTF-8', 'Windows-1252',$responsable ) .'	-	DNI: ' .$beneficiariox['DNIResp'] .  ' - '. 'Tel/Cel: '. $beneficiariox['CelularResp'] ,0,0);
 	$pdf->Ln();
 	}
-	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').$datosPedido['diag_med']. ' -  '.$datosPedido['diag_nutri']),0,0);
+	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['diag_med'])). ' -  '. (iconv('UTF-8', 'Windows-1252',$datosPedido['diag_nutri']))) ,0,0);
 	$pdf->Ln();
 	$pdf->Cell(0,7,('Producto: '.$datosPedido['nutro_ter'].' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
 	 .$datosPedido['gramos_dia'] ),0,0);
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
 	$pdf->Ln();
+	if (isset($datosPedido['Observacion']) ){
+		$pdf->Cell(0,7,'Observaciones: '.iconv('UTF-8', 'Windows-1252',$datosPedido['Observacion']) ,0,0);
+		$pdf->Ln();
+		}
+		$pdf->Ln(20);
 	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
 	$pdf->Ln();
 	//$pdf->SetFont('Medico','',14);
