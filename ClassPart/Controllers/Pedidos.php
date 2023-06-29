@@ -2,7 +2,7 @@
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
 //use \ClassGrl\Fpdf;
-use \ClasPart\Imprime;
+use \ClasPart\Controllers\Imprime;
 use \AllowDynamicProperties;
 use \font;
 #[AllowDynamicProperties]

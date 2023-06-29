@@ -62,7 +62,7 @@ $_SESSION['establecimiento_nombre'];}
   <?php if ($loggedIn): ?>
      <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
 
-   <!--   <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a> -->
+     <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a>
       <a class="navbar-brand mb-0 " href="/benef/edit">Beneficiarios</a>
       <a class="navbar-brand mb-0 " href="/benef/listar">Pedidos</a>
       
