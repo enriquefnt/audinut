@@ -17,7 +17,8 @@ CREATE TABLE `datos_benef` (
   `id_usuario` int(3) NOT NULL,
   PRIMARY KEY (`id_datos_benef`),
   UNIQUE KEY `id_datos_benef_UNIQUE` (`id_datos_benef`)
-) ENGINE=InnoDB AUTO_INCREMENT=310 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=360 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 
 CREATE TABLE `datos_pedido` (
   `id_datos_pedido` int(11) NOT NULL AUTO_INCREMENT,
@@ -39,9 +40,11 @@ CREATE TABLE `datos_pedido` (
   `fecha_ped` date DEFAULT NULL,
   `modif_ult` date DEFAULT NULL,
   `usuari_id` int(3) DEFAULT NULL,
+  `Observacion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_datos_pedido`),
   UNIQUE KEY `id_datos_pedido_UNIQUE` (`id_datos_pedido`)
-) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=359 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 
 CREATE TABLE `datos_institucion` (
   `establecimiento_nombre` varchar(92) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
