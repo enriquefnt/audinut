@@ -119,7 +119,7 @@
           <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
           <p><i class="fas fa-home me-3 text-secondary"></i> Belgrano 1349 -1º piso - Salta Capital - CP 4400</p>
           <p><i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
-          <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127</p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127 <br> &nbsp &nbsp &nbsp &nbsp  0387-152458570</p>
           <p><i class="fas fa-print me-3 text-secondary"></i> 0387-4320695</p>
         </div>
         <!-- Grid column -->

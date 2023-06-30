@@ -123,7 +123,8 @@ endif;
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>
-			<option value="Liberado">Liberado</option>
+			<option value="Pendiente">Entrega parcial</option>
+			<option value="Liberado">Entrega total</option>
 			<option value="Entregado">Entregado</option>
 			</select>
 		

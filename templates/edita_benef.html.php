@@ -42,8 +42,8 @@ endif;
 	</div>
 	<div class="col-sm-4">		
 			<label class="form-label-sm" for="Celular">Celular</label>
-			<input class="form-control form-control-sm" type="tel" name="Beneficiario[Celular]" id="Celular" pattern="[0-9]{3}-[0-9]{7}" value="<?=$datosCaso['Celular'] ?? ''?>" placeholder="###-#######" autocomplete="off"> 
-
+			<!-- <input class="form-control form-control-sm" type="tel" name="Beneficiario[Celular]" id="Celular" pattern="[0-9]{3}-[0-9]{7}" value="<?=$datosCaso['Celular'] ?? ''?>" placeholder="###-#######" autocomplete="off">  -->
+			<input type="text" id="celular" name="Usuario[celular]" placeholder="###-#######" data-llenar-campo="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosCaso['celular'] ?? ''?>" >
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>
@@ -77,7 +77,8 @@ endif;
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="CelularResp"
 			title="Codigo de área (sin 0) - nùmero (sin 15)">Celular-Responsable</label>
-			<input class="form-control form-control-sm form-control form-control-sm-sm" type="tel"  name="Beneficiario[CelularResp]" id="CelularResp" pattern="[0-9]{3}-[0-9]{7}" value="<?=$datosCaso['CelularResp'] ?? ''?>" placeholder="###-#######" autocomplete="off">
+			<!-- <input class="form-control form-control-sm form-control form-control-sm-sm" type="tel"  name="Beneficiario[CelularResp]" id="CelularResp" pattern="[0-9]{3}-[0-9]{7}" value="<?=$datosCaso['CelularResp'] ?? ''?>" placeholder="###-#######" autocomplete="off"> -->
+			<input type="text" id="CelularResp" name="Beneficiario[CelularResp]" placeholder="###-#######" data-llenar-campo="CelularResp" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosCaso['CelularResp'] ?? ''?>" autocomplete="off" />
 	</div>
 
 

@@ -99,7 +99,7 @@ if  (empty($errors)) {
 $this->pediTable->save($pedido);
 }
 
-header('Location: /pedido/success');
+header('Location: /benef/listar');
 }
 
 

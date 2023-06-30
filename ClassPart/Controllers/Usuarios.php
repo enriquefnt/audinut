@@ -104,7 +104,7 @@ if  (empty($errors)) {
 
 $this->userTable->save($Usuario);
 
-header('Location: /user/success');
+header('Location: /benef/home');
 }
 
 else {
