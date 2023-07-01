@@ -16,7 +16,7 @@ class Usuarios {
     }
 
     public function addPedido(array $pedido) {
-      // set the `authorId` in the new joke to the id stored in this instance
+     
       $pedido['id_usuario'] = $this->id;
 
      

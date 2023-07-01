@@ -70,8 +70,11 @@ endif;
 
 <div class="col-sm-4">		
 			<label class="form-label-sm" for="celular">Celular</label>
-			<input class="form-control form-control-sm" type="tel"  name="Usuario[celular]" id="celular"pattern="[0-9]{3}-[0-9]{7}" placeholder="###-#######" value="<?=$datosUser['celular'] ?? ''?>">
-	</div>
+			<!-- <input class="form-control form-control-sm" type="tel"  name="Usuario[celular]" placeholder="###-#######" oninput="llenarCampo('celular')" id="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosUser['celular'] ?? ''?>"> -->
+      <input type="text" id="celular" name="Usuario[celular]" placeholder="###-#######" data-llenar-campo="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosUser['celular'] ?? ''?>" >
+  
+  
+    </div>
 
 <div class="col-sm-4">		
 			<label class="form-label-sm" for="email">Correo electrónico</label>
@@ -107,3 +110,4 @@ var complete_establecimiento_nombre = new Autocom(document.getElementById('estab
 }); 
 
 </script>
+
