@@ -145,15 +145,12 @@ endif;
 </fieldset>
 
 </div>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var fechaInput = document.getElementById("fecha_ped");
-
-      var fechaActual = new Date();
-      var dia = ("0" + fechaActual.getDate()).slice(-2);
-      var mes = ("0" + (fechaActual.getMonth() + 1)).slice(-2);
-      var fechaHoy = fechaActual.getFullYear() + "-" + mes + "-" + dia;
-
-      fechaInput.value = fechaHoy;
-    });
-  </script>
+var auto_complete = new Autocom(document.getElementById('nutro_ter'), {
+    data:<?php echo json_encode($data); ?>,
+    maximumItems:10,
+    highlightTyped:true,
+    highlightClass : 'fw-bold text-primary'
+}); 
+</script>

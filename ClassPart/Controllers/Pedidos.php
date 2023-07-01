@@ -10,12 +10,14 @@ class Pedidos {
 private $pediTable;
 private $userTable;
 private $benefTable;
+private $tablaProdu;
 private $authentication;
 private $cambiaCodigo;
 private $calcularEdad;
 public function __construct(\ClassGrl\DataTables $pediTable,
 							\ClassGrl\DataTables $benefTable,
 							\ClassGrl\DataTables $userTable,
+							\ClassGrl\DataTables $tablaProdu,
 							\ClassGrl\Authentication $authentication,
 							\ClassPart\Controllers\Imprime $Imprime
 							)
@@ -23,6 +25,7 @@ public function __construct(\ClassGrl\DataTables $pediTable,
         $this->pediTable = $pediTable;
         $this->benefTable = $benefTable;
 		$this->userTable = $userTable;
+		$this->tablaProdu = $tablaProdu;
 		$this->authentication = $authentication;
 		$this->Imprime = $Imprime;	
 		    }
@@ -35,11 +38,9 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 		$nacimiento = new \DateTime($fechaNacimiento);
 		$actual = new \DateTime($fechaActual);
 		$edad = $nacimiento->diff($actual);
-
-	
-		$anios = $edad->y;
-		$meses = $edad->m;
-		$dias = $edad->d;
+			$anios = $edad->y;
+			$meses = $edad->m;
+			$dias = $edad->d;
 	 if($anios>0){
 		return " $anios a $meses m    ";
 	}
@@ -50,6 +51,20 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 	
 	/// Metodo si es GET //////  
 public function pedido($id=null) {
+
+	$productos = $this->tablaProdu->findAll();
+	foreach($productos as $nutroter)
+
+
+	{ 
+		$data[] = array(
+			    'label'  =>   $nutroter['producto'],
+			    'value'  =>   $nutroter['id']
+		);
+	}
+
+
+
 
 
 if (isset($_GET['id'])) {
@@ -70,6 +85,7 @@ else {
 					     'title' => $title ,
 					 'variables' => [
 				    'datosBenef' => $datosBenef  ?? ' ',
+					'data'  =>   $data,
 					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 

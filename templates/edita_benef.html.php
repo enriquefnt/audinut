@@ -54,12 +54,12 @@ endif;
 	<div class="col-sm-6">
     	<label class="form-label-sm" for="Localidad">Localidad</label>
     	<input type="text" name="Beneficiario[Localidad]" id="nombre_geo" class="form-control form-control-sm" value="<?=$datosCaso['Localidad'] ?? ''?>"autocomplete="off" />
-		
+		<input type="hidden" name="Beneficiario[id_localidad]" id="id_localidad"  value="<?=$data['value'] ?? ''?>" />
     </div>
 
-   <div class="col-sm-0">
+   <!-- <div class="col-sm-0">
             <input type="hidden" name="Beneficiario[id_localidad]" id="id_localidad"  value="<?=$data['value'] ?? ''?>" />
-        </div>  
+        </div>   -->
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
