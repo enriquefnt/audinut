@@ -1,3 +1,5 @@
+// no me acuerdo :)
+
 function llenarCampo(idCampo) {
     var campo = document.getElementById(idCampo);
     var valor = campo.value;
@@ -13,7 +15,6 @@ function llenarCampo(idCampo) {
 
 window.addEventListener("DOMContentLoaded", function() {
     var camposCarga = document.querySelectorAll("[data-llenar-campo]");
-
     camposCarga.forEach(function(campo) {
         var idCampo = campo.dataset.llenarCampo;
         campo.addEventListener("keydown", function() {
@@ -22,9 +23,11 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+ // pone la fecha del día por defecto en formulario de pedidos
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var fechaInput = document.getElementById("fecha_ped");
-
     var fechaActual = new Date();
     var dia = ("0" + fechaActual.getDate()).slice(-2);
     var mes = ("0" + (fechaActual.getMonth() + 1)).slice(-2);
@@ -33,9 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
     fechaInput.value = fechaHoy;
   });
 
-  var auto_complete = new Autocom(document.getElementById('nombre_geo'), {
-    data:<?php echo json_encode($data); ?>,
-    maximumItems:10,
-    highlightTyped:true,
-    highlightClass : 'fw-bold text-primary'
-}); 
+  // COntrola el switch en cargar producto
+
+  const activoSwitch = document.getElementById('activoSwitch');
+    const activoInput = document.getElementById('activoInput');
+
+    activoSwitch.addEventListener('change', function() {
+      activoInput.value = this.checked ? '1' : '0';
+    });
+  

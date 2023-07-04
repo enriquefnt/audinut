@@ -59,7 +59,7 @@ public function pedido($id=null) {
 	{ 
 		$data[] = array(
 			    'label'  =>   $nutroter['producto'],
-			    'value'  =>   $nutroter['id']
+			    'value'  =>   $nutroter['id_producto']
 		);
 	}
 
