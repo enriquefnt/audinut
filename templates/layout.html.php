@@ -82,12 +82,12 @@ $_SESSION['establecimiento_nombre'];}
           <a class="navbar-brand mb-0 " href="/user/user">Usuarios</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle navbar-brand mb-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="dropdown-toggle navbar-brand mb-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Vademecum
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="navbar-brand mb-0 " href="/nutroter/produ">Cargar Productos</a></li>
-              <li><a class="navbar-brand mb-0 " href="/nutroter/listar">Ver/Editar</a></li>
+              <li><a class="navbar-brand mb-0" href="/nutroter/produ">Cargar Productos</a></li>
+              <li><a class="navbar-brand mb-0" href="/nutroter/listar">Ver/Editar</a></li>
              </ul>
           </li>
           <li> 
