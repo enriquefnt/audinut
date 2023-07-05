@@ -52,9 +52,9 @@ $_SESSION['inicio'] = time(); // update last activity time stamp
 
   <!-- <?= $_SESSION['inicio'] ?? 'nada'; ?> --> 
 
-<header class="p-2 mb-2 bg-primary text-white">
+<header class="p-2 mb-2 bg-primary ">
   <div class="container-fluid">
-<h4>Area Fórmulas - Gestión solicitudes de nutroterápicos</h4>
+<h4 class="text-white">Area Fórmulas - Gestión solicitudes de nutroterápicos</h4>
 
 <?php if (isset($_SESSION['username'])) 
 {echo "Usuario: " . $_SESSION['nombre'] .' '.$_SESSION['apellido'].' - ' . 
@@ -66,7 +66,7 @@ $_SESSION['establecimiento_nombre'];}
 
 <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
     <div class="container">
-      
+  <?php if ($loggedIn): ?>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -78,6 +78,7 @@ $_SESSION['establecimiento_nombre'];}
           <li class="nav-item">
           <a class="navbar-brand mb-0 " href="/benef/listar">Pedidos</a>
           </li>
+   <?php if ( isset($_SESSION['tipo'])&& $_SESSION['tipo']<3 ) { ?>
           <li class="nav-item">
           <a class="navbar-brand mb-0 " href="/user/user">Usuarios</a>
           </li>
@@ -90,12 +91,16 @@ $_SESSION['establecimiento_nombre'];}
               <li><a class="navbar-brand mb-0" href="/nutroter/listar">Ver/Editar</a></li>
              </ul>
           </li>
+  <?php } ?>
           <li> 
           <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
           </li>
         </ul>
       </div>
     </div>
+    <?php else: ?>
+      <a class="nav-link active " aria-current="page" href="/login/login">Ingresar con contraseña (Usuarios registrados)</a>
+    <?php endif; ?>
   </nav>
 
 
