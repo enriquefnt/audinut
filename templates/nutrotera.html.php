@@ -1,15 +1,16 @@
 <div class="container">
-<?php // print_r( $variables )         ;      ?>
+<?php //  echo implode(" ",$datosProdu);     ?>
 <fieldset class="border p-4">
  <legend class="w-80 p-0 h-0 ">Carga de productos
    </legend>
+
 
   <form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
   <input type="hidden" name="Nutroter[id_producto]" value="<?=$datosProdu['id_producto'] ?? ''?>">  
   
   <div class="col-sm-6">
   <label class="form-label-sm" for="producto">Producto</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Nutroter[producto]" id="prducto"  value="<?=$variables['producto'] ?? ''?>">
+  <input type="text" required="required" class="form-control form-control-sm" name="Nutroter[producto]" id="prducto"  value="<?=$datosProdu['producto'] ?? ''?>">
 </div>
 
 <div class="col-sm-6">

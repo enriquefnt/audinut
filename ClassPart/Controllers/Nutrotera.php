@@ -16,25 +16,26 @@ public function __construct(
             public function produ($id=null){       
                 
             
-            if (isset($_GET['id'])) {
-                            $datosProdu = $this->tablaProdu->findById($_GET['id']);
-                                                }
+             if (isset($_GET['id'])) {
+                           $datosProdu = $this->tablaProdu->findById($_GET['id']);
+                                             }
                      
-                                                
-
-            $title = 'Carga Productos';
+             //    print_r($datosProdu) ; 
+                // echo implode(" ",$datosProdu);      
+               //  print_r ($datosProdu)        ;
+                 $title = 'Carga Productos';
             
                     
             
-                          return ['template' => 'nutrotera.html.php',
-                                     'title' => $title ,
-                                 'variables' => [
-                                 '$datosProdu' => $datosProdu  ?? ' '
-                                                 ]
+                           return ['template' => 'nutrotera.html.php',
+                                      'title' => $title ,
+                                  'variables' => [
+                                  'datosProdu' => $datosProdu  ?? ' '
+                                                  ]             
+                                    ];
+
             
-                                ];
-            
-            }
+             }
               
             
             public function produSubmit() {
@@ -42,7 +43,7 @@ public function __construct(
             
                 $Nutroter=$_POST['Nutroter'];
               //  print_r($Nutroter);
-
+             
                 $Nutroter['fechaCarga'] = new \DateTime();
                
                 $errors = [];

@@ -61,24 +61,25 @@ endif;
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="requ_calorias">Requerimiento calórico</label>
-			<input class="form-control form-control-sm" type="number" required="required" step="5" min="50" max="7000" name="Pedido[requ_calorias]" id="requ_calorias" 
+			<input class="form-control form-control-sm" type="number"  step="5" min="50" max="7000" name="Pedido[requ_calorias]" id="requ_calorias" 
 			value=<?=$datosPedido['requ_calorias'] ?? ''?>
 			>
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="porc_aporte">Porcentaje del total a cubrir</label>
-			<input class="form-control form-control-sm" type="number"  required="required" step="1" min="5" max="100" name="Pedido[porc_aporte]" id="porc_aporte" 
+			<input class="form-control form-control-sm" type="number"   step="1" min="5" max="100" name="Pedido[porc_aporte]" id="porc_aporte" 
 			value=<?=$datosPedido['porc_aporte'] ?? ''?>>
 	</div>
+	
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="nutro_ter">Nutroterápico</label>
+			<label class="form-label-sm" for="suger_tm">Nutroterápico</label>
 			<input class="form-control form-control-sm" type="text" required="required" name="Pedido[nutro_ter]" id="nutro_ter" 
-			value=<?=$datosPedido['nutro_ter'] ?? ''?> >
+			value=<?=$datosPedido['nutro_ter'] ?? ''?>>
 	</div>
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="suger_tm">Producto sugerido</label>
-			<input class="form-control form-control-sm" type="text" required="required" name="Pedido[suger_tm]" id="suger_tm" 
-			value=<?=$datosPedido['suger_tm'] ?? ''?> >
+			<label class="form-label-sm" for="nutro_ter">Producto</label>
+			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[suger_tm]" id="suger_tm" 
+			value=<?=$datosPedido['suger_tm'] ?? ''?>>
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="via">Via</label>
@@ -86,11 +87,11 @@ endif;
 			value=<?=$datosPedido['via'] ?? ''?> >
 	</div>
 	
-	<div class="col-sm-3">
+	<!-- <div class="col-sm-3">
 			<label class="form-label-sm" for="presenta">Presentación</label>
 			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[presenta]" id="presenta" 
 			value=<?=$datosPedido['presenta'] ?? ''?> >
-	</div>
+	</div> -->
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="gramos_dia">Gramos por día</label>
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="10" max="500" name="Pedido[gramos_dia]" id="gramos_dia" 
@@ -147,7 +148,7 @@ endif;
 </div>
 
 <script>
-var auto_complete = new Autocom(document.getElementById('nutro_ter'), {
+var auto_complete = new Autocom(document.getElementById('suger_tm'), {
     data:<?php echo json_encode($data); ?>,
     maximumItems:10,
     highlightTyped:true,

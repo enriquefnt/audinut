@@ -79,6 +79,8 @@ else {
 	$pedido=null;
 	}
 
+	
+
 			$title = 'Pedido';
 
 			return ['template' => 'carga_pedi.html.php',
@@ -178,7 +180,7 @@ public function print() {
 	$quienImprime = $usuario[1] .' '.$usuario[2] ;
 
 	$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
-	$pdf->AddFont('Medico','','medico.php');
+	// $pdf->AddFont('Medico','','medico.php');
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 	$pdf->Ln(6);
@@ -197,7 +199,9 @@ public function print() {
 	}
 	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['diag_med'])). ' -  '. (iconv('UTF-8', 'Windows-1252',$datosPedido['diag_nutri']))) ,0,0);
 	$pdf->Ln();
-	$pdf->Cell(0,7,('Producto: '.iconv('UTF-8', 'Windows-1252',$datosPedido['nutro_ter']).' -  Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
+	$pdf->Cell(0,7,('Producto: '.iconv('UTF-8', 'Windows-1252',$datosPedido['nutro_ter'])),0,0);
+	 $pdf->Ln();
+	$pdf->Cell(0,7,('Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
 	 .$datosPedido['gramos_dia'] ),0,0);
 	$pdf->Ln();
 	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
