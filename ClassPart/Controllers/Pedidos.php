@@ -53,8 +53,9 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 public function pedido($id=null) {
 
 	$productos = $this->tablaProdu->findAll();
+	if ($productos['activo']== 1){
 	foreach($productos as $nutroter)
-
+	
 
 	{ 
 		 $data[] = array(
@@ -66,7 +67,7 @@ public function pedido($id=null) {
 			'value'  =>   $nutroter['id_producto']
 	);
 	}
-
+	}
 
 
 
