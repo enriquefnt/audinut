@@ -57,10 +57,14 @@ public function pedido($id=null) {
 
 
 	{ 
-		$data[] = array(
-			    'label'  =>   $nutroter['producto'],
-			    'value'  =>   $nutroter['id_producto']
-		);
+		 $data[] = array(
+		 	    'label'  =>   $nutroter['producto'],
+		 	    'value'  =>   $nutroter['id_producto']
+		 );
+		$data1[] = array(
+			'label'  =>   $nutroter['tipo'] ?? '',
+			'value'  =>   $nutroter['id_producto']
+	);
 	}
 
 
@@ -88,6 +92,7 @@ else {
 					 'variables' => [
 				    'datosBenef' => $datosBenef  ?? ' ',
 					'data'  =>   $data,
+					'data1'  =>   $data1,
 					'datosPedido' => $datosPedido  ?? ' '
 									 ]
 

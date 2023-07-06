@@ -33,4 +33,3 @@
 </div>
 </div>
 
-<!-- <input class="form-control form-control-sm" type="text" name="Beneficiario[Apellidos]" id="Apellidos" required="required" value="<?=$datosCaso['Apellidos'] ?? ''?>"> -->

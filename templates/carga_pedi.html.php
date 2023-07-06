@@ -77,7 +77,7 @@ endif;
 			value=<?=$datosPedido['nutro_ter'] ?? ''?>>
 	</div>
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="nutro_ter">Producto</label>
+			<label class="form-label-sm" for="nutro_ter">Producto sugerido</label>
 			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[suger_tm]" id="suger_tm" 
 			value=<?=$datosPedido['suger_tm'] ?? ''?>>
 	</div>
@@ -147,7 +147,17 @@ endif;
 
 </div>
 
+
+
+
 <script>
+var auto_complete1 = new Autocom(document.getElementById('nutro_ter'), {
+    data:<?php echo json_encode($data1); ?>,
+    maximumItems:10,
+    highlightTyped:true,
+    highlightClass : 'fw-bold text-primary'
+}); 
+
 var auto_complete = new Autocom(document.getElementById('suger_tm'), {
     data:<?php echo json_encode($data); ?>,
     maximumItems:10,

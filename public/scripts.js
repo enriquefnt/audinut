@@ -1,4 +1,4 @@
-// no me acuerdo :)
+// pone el guion en los campos numero del celular :)
 
 function llenarCampo(idCampo) {
     var campo = document.getElementById(idCampo);
