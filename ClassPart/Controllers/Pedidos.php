@@ -53,10 +53,10 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 public function pedido($id=null) {
 
 	$productos = $this->tablaProdu->findAll();
-	if ($productos['activo']== 1){
-	foreach($productos as $nutroter)
 	
-
+	foreach($productos as $nutroter){
+	
+	if($nutroter['activo'] == 1)
 	{ 
 		 $data[] = array(
 		 	    'label'  =>   $nutroter['producto'],
