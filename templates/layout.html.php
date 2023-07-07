@@ -91,9 +91,13 @@ $_SESSION['establecimiento_nombre'];}
               <li><a class="navbar-brand mb-0" href="/nutroter/listar">Ver/Editar</a></li>
              </ul>
           </li>
-  <?php } ?>
+  <?php } elseif ( isset($_SESSION['tipo'])&& $_SESSION['tipo']>=3 ) { ?>
+ 
+           <li><a class="navbar-brand mb-0" href="/nutroter/listar">Vademecum</a></li>
+ 
+    <?php } ?>
           <li> 
-          <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
+          <a class="nav-item active" aria-current="page" href ="/login/logout">Salir</a>
           </li>
         </ul>
       </div>
@@ -104,32 +108,6 @@ $_SESSION['establecimiento_nombre'];}
   </nav>
 
 
-
-
-<!-- <nav class="navbar navbar-expand-sm navbar-light py-0 small bg-light">
-  <div class="container-fluid"> 
-  <?php if ($loggedIn): ?>
-     <a class="navbar-brand mb-0 " href="/benef/home ">Inicio</a>
-
-     <a class="navbar-brand mb-0 " href="/benef/busca">Buscar </a>
-      <a class="navbar-brand mb-0 " href="/benef/edit">Beneficiarios</a>
-      <a class="navbar-brand mb-0 " href="/benef/listar">Pedidos</a>
-      
-      <?php if ( isset($_SESSION['tipo'])&& $_SESSION['tipo']<3 ) { ?>
-        
-      <a class="navbar-brand mb-0 " href="/user/user">Usuarios</a>
-      <a class="navbar-brand mb-0 " href="/nutroter/produ">Vademecum</a>
-      <?php } ?>
-    
-
-     
-      <a class="nav-link active" aria-current="page" href ="/login/logout">Salir</a>
-<?php else: ?>
-      <a class="nav-link active " aria-current="page" href="/login/login">Ingresar con contraseña (Usuarios registrados)</a>
-<?php endif; ?>
-
-
-  </nav> -->
 </div>
 
 </header>

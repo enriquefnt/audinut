@@ -136,12 +136,14 @@ endif;
 			value=<?=$datosPedido['Observacion'] ?? ''?> >
 	</div>
 
-	<div class="container">
+	
+		<div class="col-sm-2">
 	<a href="/benef/listar"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
-
+		</div>
+		<div class="col-sm-2">
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
+	</div>	
 
-</div>
 </form>
 </fieldset>
 

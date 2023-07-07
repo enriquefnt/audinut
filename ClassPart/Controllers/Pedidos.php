@@ -56,41 +56,47 @@ public function pedido($id=null) {
 	
 	$data = array();
     $data1 = array();
-	/*
+
 	foreach($productos as $nutroter){
 	
 	if($nutroter['activo'] == 1)
 	{ 
 		 $data[] = array(
 		 	    'label'  =>   $nutroter['producto'],
-		 	    'value'  =>   $nutroter['id_producto']
+		 	  //  'value'  =>   $nutroter['id_producto']
 		 );
 		$data1[] = array(
 			'label'  =>   $nutroter['tipo'] ?? '',
-			'value'  =>   $nutroter['id_producto']
+			//'value'  =>   $nutroter['id_producto']
 	);
-	} */
-	
+	} 
+
+
+}
+	/*
 	foreach ($productos as $nutroter) {
         if ($nutroter['activo'] == 1) {
             $producto = array(
                 'label' => $nutroter['producto'],
-                'value' => $nutroter['id_producto']
+             //   'value' => $nutroter['id_producto']
             );
             $tipo = array(
                 'label' => $nutroter['tipo'] ?? '',
-                'value' => $nutroter['id_producto']
+            //    'value' => $nutroter['id_producto']
             );
 
             $data[] = $producto;
+			$data1[] =array_unique($tipo);
 
-            if (!in_array($tipo, $data1, true) && !in_array($tipo['value'], array_column($data1, 'value'), true)) {
-                $data1[] = $tipo;
-            }
+          //  if (!in_array($tipo, $data1, true) && !in_array($tipo['value'], array_column($data1, 'value'), true)) {
+          ///      $data1[] = $tipo;
+          //  }
         }
     }
-    $data = array_values($data);
-    $data1 = array_values($data1);
+	*/
+    $data = array_unique($data,SORT_REGULAR);
+	$data1 = array_unique($data1,SORT_REGULAR);
+   
 
 
 	

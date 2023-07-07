@@ -56,7 +56,7 @@ public function __construct(
                 }
                                                      
             
-            header('Location: /benef/home');
+            header('Location: /nutroter/listar');
             
             
            
@@ -88,23 +88,6 @@ public function __construct(
                      ]
                     ];
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             
         }          

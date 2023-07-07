@@ -8,15 +8,18 @@
   <form onkeydown="return event.key != 'Enter';" class="row g-3"  action="" method="post" autocomplete="off" >
   <input type="hidden" name="Nutroter[id_producto]" value="<?=$datosProdu['id_producto'] ?? ''?>">  
   
-  <div class="col-sm-6">
-  <label class="form-label-sm" for="producto">Producto</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Nutroter[producto]" id="prducto"  value="<?=$datosProdu['producto'] ?? ''?>">
-</div>
+ 
 
 <div class="col-sm-6">
   <label class="form-label-sm" for="tipo">Fórmula nutroterápica</label>
   <input type="text" required="required" class="form-control form-control-sm" name="Nutroter[tipo]"  value="<?=$datosProdu['tipo'] ?? ''?>">
 </div>
+
+<div class="col-sm-6">
+  <label class="form-label-sm" for="producto">Producto</label>
+  <input type="text" required="required" class="form-control form-control-sm" name="Nutroter[producto]" id="prducto"  value="<?=$datosProdu['producto'] ?? ''?>">
+</div>
+
 
  <div class="form-check form-check-reverse form-switch col-sm-6"> <!-- Usa script de script.js -->
    <label class="form-check-label" for="activoSwitch"> Visible</label>
