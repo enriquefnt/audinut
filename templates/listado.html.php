@@ -6,10 +6,14 @@
   <tr >
 
     <th align="center">Nombre</th>
-    <th align="center">Editar Beneficiario</th>
-<?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+    <!-- <th align="center">Editar Beneficiario</th> -->
+<?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 5)) { ?>
     <th align="center">Cargar Pedido</th>
-    <th align="center">Ver/Editar</th>
+    <?php } ?>
+
+<?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+
+    <th align="center">Ver/Editar Pedidos</th>
             <?php } ?>
     
   </tr>
@@ -17,23 +21,17 @@
   <tbody >
   <tr >
       <?php foreach($variables['benefs'] as $benef): ?>
-       <td><?= htmlspecialchars($benef['Nombres'] . ' ' .$benef['Apellidos'] , ENT_QUOTES, 'UTF-8'); ?></td>
-       <td align="center">
-
-       
-        <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i>
-    </a>
-
-
-
-      </div>
+       <td>
+       <a href="/benef/edit?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i></a>
+       <?= htmlspecialchars(' '.$benef['Nombres'] . ' ' .$benef['Apellidos'] , ENT_QUOTES, 'UTF-8'); ?></td>
+                        
 
     </td>
-    <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+    <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 5)) { ?>
      <td align="center">
         </div>
         <div>
-        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
+        <a href="/pedido/pedido?id=<?=$benef['id_datos_benef']?>"><i class="fa-solid fa-keyboard"></i></a>
         </div>
     </td>
       <?php } ?>
@@ -42,7 +40,7 @@
      <td align="center">
         </div>
         <div>
-        <a href="/pedido/listar?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-sim-fill"></i></i></a>
+        <a href="/pedido/listar?id=<?=$benef['id_datos_benef']?>"><i class="bi bi-pencil-square"></i></i></a>
         </div>
     </td>
       <?php } ?>
@@ -52,6 +50,5 @@
  </tbody>
  </table>   
  </div>
-
 
 

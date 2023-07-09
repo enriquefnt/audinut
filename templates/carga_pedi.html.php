@@ -61,24 +61,25 @@ endif;
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="requ_calorias">Requerimiento calórico</label>
-			<input class="form-control form-control-sm" type="number" required="required" step="5" min="50" max="7000" name="Pedido[requ_calorias]" id="requ_calorias" 
+			<input class="form-control form-control-sm" type="number"  step="5" min="50" max="7000" name="Pedido[requ_calorias]" id="requ_calorias" 
 			value=<?=$datosPedido['requ_calorias'] ?? ''?>
 			>
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="porc_aporte">Porcentaje del total a cubrir</label>
-			<input class="form-control form-control-sm" type="number"  required="required" step="1" min="5" max="100" name="Pedido[porc_aporte]" id="porc_aporte" 
+			<input class="form-control form-control-sm" type="number"   step="1" min="5" max="100" name="Pedido[porc_aporte]" id="porc_aporte" 
 			value=<?=$datosPedido['porc_aporte'] ?? ''?>>
 	</div>
+	
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="nutro_ter">Nutroterápico</label>
+			<label class="form-label-sm" for="suger_tm">Nutroterápico</label>
 			<input class="form-control form-control-sm" type="text" required="required" name="Pedido[nutro_ter]" id="nutro_ter" 
-			value=<?=$datosPedido['nutro_ter'] ?? ''?> >
+			value=<?=$datosPedido['nutro_ter'] ?? ''?>>
 	</div>
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="suger_tm">Producto sugerido</label>
-			<input class="form-control form-control-sm" type="text" required="required" name="Pedido[suger_tm]" id="suger_tm" 
-			value=<?=$datosPedido['suger_tm'] ?? ''?> >
+			<label class="form-label-sm" for="nutro_ter">Producto sugerido</label>
+			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[suger_tm]" id="suger_tm" 
+			value=<?=$datosPedido['suger_tm'] ?? ''?>>
 	</div>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="via">Via</label>
@@ -86,11 +87,11 @@ endif;
 			value=<?=$datosPedido['via'] ?? ''?> >
 	</div>
 	
-	<div class="col-sm-3">
+	<!-- <div class="col-sm-3">
 			<label class="form-label-sm" for="presenta">Presentación</label>
 			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[presenta]" id="presenta" 
 			value=<?=$datosPedido['presenta'] ?? ''?> >
-	</div>
+	</div> -->
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="gramos_dia">Gramos por día</label>
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="10" max="500" name="Pedido[gramos_dia]" id="gramos_dia" 
@@ -101,32 +102,68 @@ endif;
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="1" max="100"  name="Pedido[env_pormes]" id="env_pormes" 
 			value=<?=$datosPedido['env_pormes'] ?? ''?> >
 	</div>
-
+	<?php if(isset($datosPedido['fecha_ped'])) { ?>
 	<div class="col-sm-3">
-			<label class="form-label-sm" for="env_pormes">Estado</label>
+			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
+			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]"  
+			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
+	</div>
+	<?php } else {?>
+		<div class="col-sm-3">
+			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
+			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]" id="fecha_ped" 
+			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
+	</div>
+	<?php } ?>	
+	<div class="col-sm-3">
+			<label class="form-label-sm" for="estado">Estado</label>
 			
 			
-			<select class="form-control form-control-sm" name="Pedido[estado]" id="estado">
+			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
+			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? 'Pendiente'?></option>
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>
-			<option value="Liberado">Liberado</option>
+			<option value="Pendiente">Entrega parcial</option>
+			<option value="Liberado">Entrega total</option>
 			<option value="Entregado">Entregado</option>
 			</select>
-
-
-
-			<!-- <input class="form-control form-control-sm" type="text" required="required"  name="Pedido[estado]" id="estado" > -->
+		
 	</div>
+	<div class="col-sm-12">
+			<label class="form-label-sm" for="Observacion">Observaciones</label>
+			<input class="form-control form-control-sm" type="text"  name="Pedido[Observacion]" id="Observacion" 
+			value=<?=$datosPedido['Observacion'] ?? ''?> >
+	</div>
+
 	
-
-	<div class="container">
-	<a href="/benef/home"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
-
+		<div class="col-sm-2">
+	<a href="/benef/listar"  class="btn btn-primary btn-sm" role="button">Salir sin cambiar</a>
+		</div>
+		<div class="col-sm-2">
 <input type="submit" id="myButton"  name=submit class="btn btn-primary btn-sm" value="Guardar">
+	</div>	
 
-</div>
 </form>
 </fieldset>
 
 </div>
+
+
+
+
+<script>
+var auto_complete1 = new Autocom(document.getElementById('nutro_ter'), {
+    data:<?php echo json_encode($data1); ?>,
+    maximumItems:10,
+    highlightTyped:true,
+    highlightClass : 'fw-bold text-primary'
+}); 
+
+var auto_complete = new Autocom(document.getElementById('suger_tm'), {
+    data:<?php echo json_encode($data); ?>,
+    maximumItems:10,
+    highlightTyped:true,
+    highlightClass : 'fw-bold text-primary'
+}); 
+</script>

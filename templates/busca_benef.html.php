@@ -1,9 +1,9 @@
 
 
  <div class="container">
-    <form class="row g-6"  action="" autocomplete="off" method="post" >
-<input type="text" name="label" id="dName" class="form-control form-control-lg" placeholder="Busca" />
-<div class="col-sm-2">
+    <form class="row g-6"  action=""   >
+<input type="text" name="label" id="dName" class="form-control form-control-lg" >
+<input type="hidden" name="value" id="dName" value="value">
       <button class="btn btn-primary" type="submit" name="submit">busca</button>
   </div>
 	</form>
@@ -12,12 +12,12 @@
 
 
 
-   <?php
+   <?php /*
 
-echo $_POST['label'] . ' --- ' . $_POST['value'] ;
+echo $_GET['label'] . ' --- ' . $_POST['value'] ;
 //print_r($data);
 echo $data[0];
-
+*/
 ?>
  <script>
 

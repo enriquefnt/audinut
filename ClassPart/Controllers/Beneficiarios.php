@@ -22,13 +22,6 @@ public function __construct(\ClassGrl\DataTables $benefTable,
 		$this->authentication = $authentication;
     }
 
-
-
-
-
-
-
-
 /// Metodo si es GET para beneficiario//////  
 
 public function edit($id=null) {
@@ -77,8 +70,10 @@ foreach($localidades as $localidad)
 
 	$Beneficiario = $_POST['Beneficiario'];
 
-	$Beneficiario['Nombres'] =ucwords(strtolower($Beneficiario['Nombres']));
-	$Beneficiario['Apellidos'] =ucwords(strtolower($Beneficiario['Apellidos']));
+	$Beneficiario['Nombres'] =ltrim(ucwords(strtolower($Beneficiario['Nombres'])));
+	$Beneficiario['Apellidos'] =ltrim(ucwords(strtolower($Beneficiario['Apellidos'])));
+	$Beneficiario['NombresResp'] =ltrim(ucwords(strtolower($Beneficiario['NombresResp'])));
+	$Beneficiario['ApellidosResp'] =ltrim(ucwords(strtolower($Beneficiario['ApellidosResp'])));
 
 	$Beneficiario['fechaCarga'] = new \DateTime();
 	$Beneficiario['id_usuario'] = $usuario['id_usuario'] ?? '00';
@@ -96,14 +91,24 @@ if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
 
-header('Location: /user/success');
+$datosBenef = $this->benefTable->ultimoReg();
+
+return ['template' => 'registersuccess.html.php',
+					     'title' => 'Carga' ,
+					 'variables' => [
+					    'datosCaso' => $datosBenef  ?? ' '
+									 ]
+					];
 
 
- 	}
+
+
+ 
+}
+
 
 
 else {
-
  return ['template' => 'edita_benef.html.php',
 					     'title' => 'Revisar' ,
 					 'variables' => [
@@ -111,14 +116,10 @@ else {
 			             'data'  =>   $data,
 					 'datosCaso' => $Beneficiario  ?? ' '
 									 ]
-
 					];
 }
 
-
 }
-
-
 
 public function listar(){
 
@@ -185,5 +186,4 @@ return ['template' => 'home.html.php', 'title' =>$title,'variables' => [] ];
 
 
 }
-
 

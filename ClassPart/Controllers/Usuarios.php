@@ -64,10 +64,10 @@ $instituciones = $this->instiTable->findAll();
 	
 
 	$Usuario=$_POST['Usuario'];
-	$Usuario['nombre'] =ucwords(strtolower($Usuario['nombre']));
-	$Usuario['apellido'] =ucwords(strtolower($Usuario['apellido']));
-	$usuario['email'] = strtolower($Usuario['email']);
-	$Usuario['password'] = password_hash($Usuario['password'], PASSWORD_DEFAULT);
+	$Usuario['nombre'] =ltrim(ucwords(strtolower($Usuario['nombre'])));
+	$Usuario['apellido'] =ltrim(ucwords(strtolower($Usuario['apellido'])));
+	$usuario['email'] = ltrim(strtolower($Usuario['email']));
+	$Usuario['password'] = ltrim(password_hash($Usuario['password'], PASSWORD_DEFAULT));
 	$Usuario['fechaCarga'] = new \DateTime();
 	$title = 'Carga Usuarios';
 
@@ -104,7 +104,7 @@ if  (empty($errors)) {
 
 $this->userTable->save($Usuario);
 
-header('Location: /user/success');
+header('Location: /benef/home');
 }
 
 else {
