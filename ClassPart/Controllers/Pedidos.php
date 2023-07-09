@@ -73,27 +73,7 @@ public function pedido($id=null) {
 
 
 }
-	/*
-	foreach ($productos as $nutroter) {
-        if ($nutroter['activo'] == 1) {
-            $producto = array(
-                'label' => $nutroter['producto'],
-             //   'value' => $nutroter['id_producto']
-            );
-            $tipo = array(
-                'label' => $nutroter['tipo'] ?? '',
-            //    'value' => $nutroter['id_producto']
-            );
-
-            $data[] = $producto;
-			$data1[] =array_unique($tipo);
-
-          //  if (!in_array($tipo, $data1, true) && !in_array($tipo['value'], array_column($data1, 'value'), true)) {
-          ///      $data1[] = $tipo;
-          //  }
-        }
-    }
-	*/
+	
     $data = array_unique($data,SORT_REGULAR);
 	$data1 = array_unique($data1,SORT_REGULAR);
    
@@ -169,6 +149,7 @@ public function listar(){
 				'id_datos_pedido' => $pedido['id_datos_pedido'],
 				'fecha_ped' =>  date('d/m/Y',strtotime($pedido['fecha_ped'])),
 				'nutro_ter' => $pedido['nutro_ter'],
+				'suger_tm' => $pedido['suger_tm'],
 				'env_pormes' => $pedido['env_pormes'],
 				'estado' => $pedido['estado'],
 				'id_datos_benef'=> $pedido['id_datos_benef']
