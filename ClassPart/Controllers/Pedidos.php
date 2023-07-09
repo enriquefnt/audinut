@@ -93,8 +93,6 @@ else {
 	$pedido=null;
 	}
 
-	
-
 			$title = 'Pedido';
 
 			return ['template' => 'carga_pedi.html.php',
