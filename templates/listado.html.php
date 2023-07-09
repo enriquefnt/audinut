@@ -7,8 +7,10 @@
 
     <th align="center">Nombre</th>
     <!-- <th align="center">Editar Beneficiario</th> -->
-<?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+<?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 5)) { ?>
     <th align="center">Cargar Pedido</th>
+    <?php } elseif (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+
     <th align="center">Ver/Editar Pedidos</th>
             <?php } ?>
     
@@ -30,7 +32,7 @@
       
 
     </td>
-    <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
+    <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 5)) { ?>
      <td align="center">
         </div>
         <div>

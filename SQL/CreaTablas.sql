@@ -78,4 +78,12 @@ CREATE TABLE `datos_usuarios` (
 ) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
+CREATE TABLE `datos_producto` (
+  `id_producto` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `producto` varchar(45) DEFAULT NULL,
+  `tipo` varchar(72) DEFAULT NULL,
+  `fechaCarga` datetime DEFAULT NULL,
+  `activo` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id_producto`)
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
