@@ -9,6 +9,7 @@
 <thead >
   <tr align="center">
     <th align="center">Fecha</th>
+    <th align="center">Nutroterápico</th>
     <th align="center">Producto</th>
     <th align="center">Cantidad</th>
     <th align="center">Estado</th>
@@ -26,6 +27,7 @@
       foreach($pedidos as $pedido): ?>
        <td><?=$pedido['fecha_ped'] ; ?></td>
        <td><?= $pedido['nutro_ter'] ; ?></td>
+       <td><?= $pedido['suger_tm'] ; ?></td>
        <td><?= $pedido['env_pormes'] ; ?></td>
        <td><?= $pedido['estado'] ; ?></td>
        <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
