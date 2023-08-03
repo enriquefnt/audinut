@@ -37,30 +37,30 @@ endif;
   <label class="form-label-sm" for="profesion">Profesión</label>
   <select name="Usuario[profesion]"  class="form-control form-control-sm">
     <option hidden selected>...</option>
-    <option value='1'>Enfermería</option>
-    <option value='2'>Nutrición</option>
-    <option value='3'>Medicina</option>
-    <option value='4'>Agente Sanitario</option>
-    <option value='5'>Administrativo</option>
-    <option value='6'>Otros</option>
+    <option value='Enfermería'>Enfermería</option>
+    <option value='Nutrición'>Nutrición</option>
+    <option value='Medicina'>Medicina</option>
+    <option value='Agente Sanitario'>Agente Sanitario</option>
+    <option value='Administrativo'>Administrativo</option>
+    <option value='Otros'>Otros</option>
     </select>
  </div>
 
 <div class="col-sm-3">
   <label class="form-label-sm" for="tipo">Función</label>
   <select name="Usuario[tipo]" id="tipo" class="form-control form-control-sm">
-  	<option hidden selected>...</option>
+  	<option hidden selected><?=$datosUser['tipo'] ?? '...'?></option>
   <!--  <option value='1'>Administrador</option> -->
-    <option value='2'>Auditor</option>
-    <option value='3'>Profesional</option>
-    <option value='4'>Administrativo</option>
-    <option value='5'>Otros</option>
+    <option value='Auditor'>Auditor</option>
+    <option value=Profesional'>Profesional</option>
+    <option value='Administrativo'>Administrativo</option>
+    <option value='Otros'>Otros</option>
     </select>
  </div>
 
  <div class="col-sm-6">
     	<label class="form-label-sm" for="establecimiento_nombre">Institución</label>
-    	<input type="text" name="Usuario[establecimiento_nombre]" id="establecimiento_nombre" class="form-control form-control-sm" autocomplete="off" />
+    	<input type="text" name="Usuario[establecimiento_nombre]" id="establecimiento_nombre" class="form-control form-control-sm" autocomplete="off" value="<?=$datosUser['establecimiento_nombre'] ?? ''?>">
 		    </div>
 
    <div class="col-sm-6">
@@ -84,12 +84,12 @@ endif;
 
 <div class="col-sm-2">
 	<label class="form-label-sm" for="usuario">Nombre de usuario</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[user]"  autocomplete="off" value="<?=$datosUser['usuario'] ?? ''?>">
+  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[user]"  autocomplete="off" value="<?=$datosUser['user'] ?? ''?>">
 </div>
 
 <div class="col-sm-2">
 	<label class="form-label-sm" for="password">Contraseña</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[password]"  autocomplete="off" value="">
+  <input type="password" required="required" class="form-control form-control-sm" name="Usuario[password]"  autocomplete="off" value="<?=$datosUser['password'] ?? ''?>">
 </div>
 
   <div class="col-sm-2">

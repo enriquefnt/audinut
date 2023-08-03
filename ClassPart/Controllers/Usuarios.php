@@ -119,16 +119,44 @@ else {
 
 					];
 }
-
-
-
 }
+public function listar(){
+          
+	$result = $this->userTable->findAll();
+ 
+		$usuario = [];
+		foreach ($result as $usuario) {
+			
+			$usuarios[] = [
+				'id_usuario' => $usuario['id_usuario'],
+				'nombres' => $usuario['nombre']. ' '.$usuario['apellido'],
+				'establecimiento_nombre' => $usuario['establecimiento_nombre']?? '',
+				'celular' => $usuario['celular'] ?? ''
+									];
+				}
+	  
+		$title = 'Lista Usuarios';
+
+	   
+
+		return ['template' => 'listausuarios.html.php',
+				'title' => $title,
+				'variables' => [
+				'usuarios' => $usuarios,
+			 ]
+			];
+	}
+
+	
+       
+
+
 
 public function success() {
 return ['template' => 'registersuccess.html.php',
 'title' => 'Registro OK'];
 }
 
-}
+}   
 
 
