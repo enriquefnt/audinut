@@ -173,73 +173,72 @@ public function listar(){
 			];
 	}
 
-public function print() {
+	public function print() {
 
 	
-	$datosPedido = $this->pediTable->findById($_GET['id']);
-	$fecha= date('d/m/Y',strtotime($datosPedido['fecha_ped']));
-	
-
-
-	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
-	$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
-
-	
-
-	$solicita = $this->userTable->findById($datosPedido['usuari_id']);
-	
-	$usuario = $this->authentication->getUser();
+		$datosPedido = $this->pediTable->findById($_GET['id']);
+		$fecha= date('d/m/Y',strtotime($datosPedido['fecha_ped']));
+		
 	
 	
-	$beneficiario = $beneficiariox[1] .' '.$beneficiariox[2] ;
-	$responsable =$beneficiariox['NombresResp'] .' '.$beneficiariox['ApellidosResp'] ;
-	$edades = $this->calcularEdad($datosBenef['FechaNac'], $datosPedido['fecha_ped']);
-	$quienImprime = $usuario[1] .' '.$usuario[2] ;
-
-	$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
-	// $pdf->AddFont('Medico','','medico.php');
-	$pdf->AliasNbPages();
-	$pdf->AddPage();
-	$pdf->Ln(6);
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); 
-	$pdf->Ln();
-	$pdf->Cell(0,7, 'Fecha: ' . $fecha  ,0,0); 
-	$pdf->Ln();
-	$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'	-	DNI: ' .$beneficiariox['DNI']. '	-	Edad:' . $edades ,0,0);
-	$pdf->Ln();
-	$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .' - ' . iconv('UTF-8', 'Windows-1252',$beneficiariox['Localidad']). ' - '. 'Tel/Cel: '. $beneficiariox['Celular'] ,0,0);
-	$pdf->Ln();
-	if (isset($beneficiariox['NombresResp']) && $beneficiariox['DNIResp'] > 1000 ){
-	$pdf->Cell(0,7,'Responsable: '.iconv('UTF-8', 'Windows-1252',$responsable ) .'	-	DNI: ' .$beneficiariox['DNIResp'] .  ' - '. 'Tel/Cel: '. $beneficiariox['CelularResp'] ,0,0);
-	$pdf->Ln();
-	}
-	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['diag_med'])). ' -  '. (iconv('UTF-8', 'Windows-1252',$datosPedido['diag_nutri']))) ,0,0);
-	$pdf->Ln();
-	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Nutroterápico: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['nutro_ter'])),0,0);
-	 $pdf->Ln();
-	 $pdf->Cell(0,7,('Producto: '.iconv('UTF-8', 'Windows-1252',$datosPedido['suger_tm'])),0,0);
-	 $pdf->Ln();
-	$pdf->Cell(0,7,('Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
-	 .$datosPedido['gramos_dia'] ),0,0);
-	$pdf->Ln();
-	$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
-	$pdf->Ln();
-	if (isset($datosPedido['Observacion']) ){
-		$pdf->Cell(0,7,'Observaciones: '.iconv('UTF-8', 'Windows-1252',$datosPedido['Observacion']) ,0,0);
+		$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
+		$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
+	
+		
+	
+		$solicita = $this->userTable->findById($datosPedido['usuari_id']);
+		
+		$usuario = $this->authentication->getUser();
+		
+		
+		$beneficiario = $beneficiariox[1] .' '.$beneficiariox[2] ;
+		$responsable =$beneficiariox['NombresResp'] .' '.$beneficiariox['ApellidosResp'] ;
+		$edades = $this->calcularEdad($datosBenef['FechaNac'], $datosPedido['fecha_ped']);
+		$quienImprime = $usuario[1] .' '.$usuario[2] ;
+	
+		$pdf = new \ClassPart\Controllers\Imprime('P','mm','A4');
+		// $pdf->AddFont('Medico','','medico.php');
+		$pdf->AliasNbPages();
+		$pdf->AddPage();
+		$pdf->Ln(6);
+		$pdf->SetFont('Arial','',12);
+		//$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); 
+		$pdf->Ln();
+		$pdf->Cell(0,7, 'Fecha: ' . $fecha  ,0,0); 
+		$pdf->Ln();
+		$pdf->Cell(0,7,'Beneficiario: '.iconv('UTF-8', 'Windows-1252',$beneficiario ) .'	-	DNI: ' .$beneficiariox['DNI']. '	-	Edad:' . $edades ,0,0);
+		$pdf->Ln();
+		$pdf->Cell(0,7,'Domicilio: '.iconv('UTF-8', 'Windows-1252',$beneficiariox['Domicilio'] ) .' - ' . iconv('UTF-8', 'Windows-1252',$beneficiariox['Localidad']). ' - '. 'Tel/Cel: '. $beneficiariox['Celular'] ,0,0);
+		$pdf->Ln();
+		if (isset($beneficiariox['NombresResp']) && $beneficiariox['DNIResp'] > 1000 ){
+		$pdf->Cell(0,7,'Responsable: '.iconv('UTF-8', 'Windows-1252',$responsable ) .'	-	DNI: ' .$beneficiariox['DNIResp'] .  ' - '. 'Tel/Cel: '. $beneficiariox['CelularResp'] ,0,0);
 		$pdf->Ln();
 		}
-		$pdf->Ln(20);
-	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
-	$pdf->Ln();
-	//$pdf->SetFont('Medico','',14);
-	$pdf->SetFont('Arial','I',8);
-	$pdf->SetY(-28);
-	$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime),0,0,'C') ;
+		$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['diag_med'])). ' -  '. (iconv('UTF-8', 'Windows-1252',$datosPedido['diag_nutri']))) ,0,0);
+		$pdf->Ln();
+		$pdf->Cell(0,7,('Producto: '.iconv('UTF-8', 'Windows-1252',$datosPedido['nutro_ter'])),0,0);
+		 $pdf->Ln();
+		$pdf->Cell(0,7,('Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
+		 .$datosPedido['gramos_dia'] ),0,0);
+		$pdf->Ln();
+		$pdf->Cell(0,7,'Envases por mes: '. $datosPedido['env_pormes'],0,0);
+		$pdf->Ln();
+		if (isset($datosPedido['Observacion']) ){
+			$pdf->Cell(0,7,'Observaciones: '.iconv('UTF-8', 'Windows-1252',$datosPedido['Observacion']) ,0,0);
+			$pdf->Ln();
+			}
+			$pdf->Ln(20);
+	//	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
+		$pdf->Ln();
+		//$pdf->SetFont('Medico','',14);
+		$pdf->SetFont('Arial','I',8);
+		$pdf->SetY(-28);
+		$pdf->Cell(0,7,'Copia realizada por: ' . iconv('UTF-8', 'Windows-1252',$quienImprime),0,0,'C') ;
+		
+		$pdf->Output($beneficiariox[2],'I');
+		
+	}
 	
-	$pdf->Output($beneficiariox[2],'I');
-	
-}
 
 
 
