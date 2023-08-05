@@ -179,14 +179,16 @@ public function print() {
 	$datosPedido = $this->pediTable->findById($_GET['id']);
 	$fecha= date('d/m/Y',strtotime($datosPedido['fecha_ped']));
 	
-
+	echo($datosPedido['usuari_id']);
 
 	$datosBenef = $this->benefTable->findById($datosPedido['id_datos_benef']);
 	$beneficiariox =  array_map($this->cambiaCodigo ,$datosBenef );
 
 	
 
-	$solicita = $this->userTable->findById($datosPedido['usuari_id']);
+	$solicita = $this->userTable->findById($datosPedido['usuari_id']); 
+
+	//$solicita = $this->userTable->findById(137);
 	
 	$usuario = $this->authentication->getUser();
 	
@@ -202,7 +204,7 @@ public function print() {
 	$pdf->AddPage();
 	$pdf->Ln(6);
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); 
+	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); //////
 	$pdf->Ln();
 	$pdf->Cell(0,7, 'Fecha: ' . $fecha  ,0,0); 
 	$pdf->Ln();
@@ -228,7 +230,7 @@ public function print() {
 		$pdf->Ln();
 		}
 		$pdf->Ln(20);
-	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
+	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0); ///////
 	$pdf->Ln();
 	//$pdf->SetFont('Medico','',14);
 	$pdf->SetFont('Arial','I',8);
