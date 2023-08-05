@@ -222,7 +222,11 @@ public function print() {
 	$pdf->AddPage();
 	$pdf->Ln(6);
 	$pdf->SetFont('Arial','',12);
-	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); 
+	if (isset($solicita['establecimiento_nmbre'])) {
+	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); }
+	else{
+		$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: N/A')  ,0,0); 
+	}
 	$pdf->Ln();
 	$pdf->Cell(0,7, 'Fecha: ' . $fecha  ,0,0); 
 	$pdf->Ln();
@@ -248,7 +252,11 @@ public function print() {
 		$pdf->Ln();
 		}
 		$pdf->Ln(20);
-	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0);
+		if (isset($solicita['establecimiento_nmbre'])) {
+	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0); }
+	else{
+		$pdf->Cell(0,7, 'Profesional solicitante:  N/A'  ,0,0); 
+		}	
 	$pdf->Ln();
 	//$pdf->SetFont('Medico','',14);
 	$pdf->SetFont('Arial','I',8);
