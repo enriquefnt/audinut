@@ -222,7 +222,7 @@ public function print() {
 	$pdf->AddPage();
 	$pdf->Ln(6);
 	$pdf->SetFont('Arial','',12);
-	if (isset($solicita['establecimiento_nmbre'])) {
+	if (isset($solicita['establecimiento_nombre'])) {
 	$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: ').  iconv('UTF-8', 'Windows-1252', $solicita['establecimiento_nombre'])  ,0,0); }
 	else{
 		$pdf->Cell(0,7,iconv('UTF-8', 'Windows-1252','Institución: N/A')  ,0,0); 
@@ -252,7 +252,7 @@ public function print() {
 		$pdf->Ln();
 		}
 		$pdf->Ln(20);
-		if (isset($solicita['establecimiento_nmbre'])) {
+		if (isset($solicita['establecimiento_nombre'])) {
 	$pdf->Cell(0,7,'Profesional solicitante: '. $solicita['nombre'] .' '.  $solicita['apellido'] ,0,0); }
 	else{
 		$pdf->Cell(0,7, 'Profesional solicitante:  N/A'  ,0,0); 
