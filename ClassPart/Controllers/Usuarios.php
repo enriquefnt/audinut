@@ -29,6 +29,8 @@ public function user($id=null){
 
 if (isset($_GET['id'])) {
 				$datosUser = $this->userTable->findById($_GET['id']);
+				$datosUser['pasword']='xxxxxxx' ;
+
 									}
 			
 $title = 'Carga Usuarios';
@@ -62,12 +64,15 @@ $instituciones = $this->instiTable->findAll();
 	}
 
 	
-
+	
 	$Usuario=$_POST['Usuario'];
 	$Usuario['nombre'] =ltrim(ucwords(strtolower($Usuario['nombre'])));
 	$Usuario['apellido'] =ltrim(ucwords(strtolower($Usuario['apellido'])));
-	$usuario['email'] = ltrim(strtolower($Usuario['email']));
+	$Usuario['email'] = ltrim(strtolower($Usuario['email']));
+	//$pass=$Usuario['password'];
+	//if (strlen($pass) < 10) {
 	$Usuario['password'] = ltrim(password_hash($Usuario['password'], PASSWORD_DEFAULT));
+	//}
 	$Usuario['fechaCarga'] = new \DateTime();
 	$title = 'Carga Usuarios';
 
@@ -92,22 +97,27 @@ $instituciones = $this->instiTable->findAll();
 	$errors[] = 'El formato del correo no es válido';
 	}
 
-	if (count($this->userTable->find('email', $Usuario['email'])) > 0) {
+	if (empty($_GET['id']) && count($this->userTable->find('email', $Usuario['email'])) > 0) {
 	$errors[] = 'Un usuario con este e-mail ya está registrado';
 	}
 
-	if (count($this->userTable->find('user', $Usuario['user'])) > 0) {
+	if (empty($_GET['id']) && count($this->userTable->find('user', $Usuario['user'])) > 0) {
 	$errors[] = 'Un usuario con este nombre de usuario ya está registrado';
 	} 
+
+
+
 
 if  (empty($errors)) {
 
 $this->userTable->save($Usuario);
 
-header('Location: /user/success');
+header('Location: /user/listar');
 }
 
 else {
+	$title = 'Usuarios';
+
 
  return ['template' => 'carga_user.html.php',
 					     'title' => $title ,
@@ -123,6 +133,32 @@ else {
 
 
 }
+public function listar(){
+          
+	$result = $this->userTable->findAll();
+ 
+		$usuario = [];
+		foreach ($result as $usuario) {
+			
+			$usuarios[] = [
+				'id_usuario' => $usuario['id_usuario'],
+				'nombres' => $usuario['nombre']. ' '.$usuario['apellido'],
+				'establecimiento_nombre' => $usuario['establecimiento_nombre']?? '',
+				'celular' => $usuario['celular'] ?? ''
+									];
+				}
+	  
+		$title = 'Lista Usuarios';
+
+	   
+
+		return ['template' => 'listausuarios.html.php',
+				'title' => $title,
+				'variables' => [
+				'usuarios' => $usuarios,
+			 ]
+			];
+	}
 
 public function success() {
 return ['template' => 'registersuccess.html.php',

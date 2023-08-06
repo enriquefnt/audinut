@@ -36,63 +36,69 @@ endif;
 <div class="col-sm-3">
   <label class="form-label-sm" for="profesion">Profesión</label>
   <select name="Usuario[profesion]"  class="form-control form-control-sm">
-    <option hidden selected>...</option>
-    <option value='1'>Enfermería</option>
-    <option value='2'>Nutrición</option>
-    <option value='3'>Medicina</option>
-    <option value='4'>Agente Sanitario</option>
-    <option value='5'>Administrativo</option>
-    <option value='6'>Otros</option>
+    <option hidden selected><?=$datosUser['profesion'] ?? '...'?></option>
+    <option value='Enfermería'>Enfermería</option>
+    <option value='Nutrición'>Nutrición</option>
+    <option value='Medicina'>Medicina</option>
+    <option value='Agente Sanitario'>Agente Sanitario</option>
+    <option value='Administrativo'>Administrativo</option>
+    <option value='Otros'>Otros</option>
     </select>
  </div>
 
 <div class="col-sm-3">
   <label class="form-label-sm" for="tipo">Función</label>
   <select name="Usuario[tipo]" id="tipo" class="form-control form-control-sm">
-  	<option hidden selected>...</option>
+  	<option hidden selected><?=$datosUser['tipo'] ?? '...'?></option>
   <!--  <option value='1'>Administrador</option> -->
-    <option value='2'>Auditor</option>
-    <option value='3'>Profesional</option>
-    <option value='4'>Administrativo</option>
-    <option value='5'>Otros</option>
+    <option value='Auditor'>Auditor</option>
+    <option value=Profesional>Profesional</option>
+    <option value='Administrativo'>Administrativo</option>
+    <option value='Otros'>Otros</option>
     </select>
  </div>
 
  <div class="col-sm-6">
     	<label class="form-label-sm" for="establecimiento_nombre">Institución</label>
-    	<input type="text" name="Usuario[establecimiento_nombre]" id="establecimiento_nombre" class="form-control form-control-sm" autocomplete="off" />
+    	<input type="text" name="Usuario[establecimiento_nombre]" id="establecimiento_nombre" class="form-control form-control-sm" autocomplete="off" value="<?=$datosUser['establecimiento_nombre'] ?? ''?>">
 		    </div>
 
-   <div class="col-sm-6">
+   <div>
             <input type="hidden" name="Usuario[id_establecimiento]" id="id_establecimiento"  value="<?=$row['codi_esta'] ?? ''?>" />
         </div>     
 
 
-<div class="col-sm-4">		
+<div class="col-sm-3">		
 			<label class="form-label-sm" for="celular">Celular</label>
 			<!-- <input class="form-control form-control-sm" type="tel"  name="Usuario[celular]" placeholder="###-#######" oninput="llenarCampo('celular')" id="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosUser['celular'] ?? ''?>"> -->
-      <input type="text" id="celular" name="Usuario[celular]" placeholder="###-#######" data-llenar-campo="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosUser['celular'] ?? ''?>" >
+      <input class="form-control form-control-sm" type="text" id="celular" name="Usuario[celular]" placeholder="###-#######"  data-llenar-campo="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosUser['celular'] ?? ''?>" >
   
   
     </div>
 
-<div class="col-sm-4">		
+<div class="col-sm-3">		
 			<label class="form-label-sm" for="email">Correo electrónico</label>
 			<input class="form-control form-control-sm" type="email"   name="Usuario[email]" id="email"  value="<?=$datosUser['email'] ?? ''?>">
 
 	</div>
 
-<div class="col-sm-2">
+
+<?php 
+if(empty($datosUser['user'])) { ?>
+
+<div class="col-sm-3">
 	<label class="form-label-sm" for="usuario">Nombre de usuario</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[user]"  autocomplete="off" value="<?=$datosUser['usuario'] ?? ''?>">
+  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[user]"  autocomplete="off" value="<?=$datosUser['user'] ?? ''?>">
 </div>
 
-<div class="col-sm-2">
+<div class="col-sm-3">
 	<label class="form-label-sm" for="password">Contraseña</label>
-  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[password]"  autocomplete="off" value="">
+  <input type="text" required="required" class="form-control form-control-sm" name="Usuario[password]"  autocomplete="off" value="<?=$datosUser['password'] ?? ''?>">
 </div>
 
-  <div class="col-sm-2">
+<?php } ?>
+
+  <div class="col-sm-3">
       <button class="btn btn-primary" type="submit" name="submit">Enviar</button>
   </div>
 </fieldset>
@@ -110,4 +116,3 @@ var complete_establecimiento_nombre = new Autocom(document.getElementById('estab
 }); 
 
 </script>
-
