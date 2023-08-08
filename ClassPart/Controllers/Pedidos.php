@@ -73,34 +73,10 @@ public function pedido($id=null) {
 
 
 }
-	/*
-	foreach ($productos as $nutroter) {
-        if ($nutroter['activo'] == 1) {
-            $producto = array(
-                'label' => $nutroter['producto'],
-             //   'value' => $nutroter['id_producto']
-            );
-            $tipo = array(
-                'label' => $nutroter['tipo'] ?? '',
-            //    'value' => $nutroter['id_producto']
-            );
-
-            $data[] = $producto;
-			$data1[] =array_unique($tipo);
-
-          //  if (!in_array($tipo, $data1, true) && !in_array($tipo['value'], array_column($data1, 'value'), true)) {
-          ///      $data1[] = $tipo;
-          //  }
-        }
-    }
-	*/
+	
     $data = array_unique($data,SORT_REGULAR);
 	$data1 = array_unique($data1,SORT_REGULAR);
-   
-
-
-	
-
+  
 
 if (isset($_GET['id'])) {
 				$datosBenef = $this->benefTable->findById($_GET['id']);
@@ -176,11 +152,11 @@ public function listar(){
 			];
 
 		}
-		$result = $this->pediTable->findAll();
+	//	$result = $this->pediTable->findAll();
 		
 		$title = 'Carga Pedidos';
 
-		$totalPedi = $this->pediTable->total();
+	//	$totalPedi = $this->pediTable->total();
 
 
 		return ['template' => 'listaped.html.php',
