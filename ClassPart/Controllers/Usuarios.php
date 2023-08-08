@@ -69,10 +69,10 @@ $instituciones = $this->instiTable->findAll();
 	$Usuario['nombre'] =ltrim(ucwords(strtolower($Usuario['nombre'])));
 	$Usuario['apellido'] =ltrim(ucwords(strtolower($Usuario['apellido'])));
 	$Usuario['email'] = ltrim(strtolower($Usuario['email']));
-	//$pass=$Usuario['password'];
-	//if (strlen($pass) < 10) {
+	$user=$this->userTable->findById($Usuario['id_usuario'])?? '';
+	if (empty($user['password'])) {
 	$Usuario['password'] = ltrim(password_hash($Usuario['password'], PASSWORD_DEFAULT));
-	//}
+	}
 	$Usuario['fechaCarga'] = new \DateTime();
 	$title = 'Carga Usuarios';
 
