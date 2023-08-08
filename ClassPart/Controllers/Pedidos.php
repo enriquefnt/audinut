@@ -1,7 +1,6 @@
 <?php
 namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
-//use \ClassGrl\Fpdf;
 use \ClasPart\Controllers\Imprime;
 use \AllowDynamicProperties;
 use \font;
@@ -30,10 +29,12 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 		$this->Imprime = $Imprime;	
 		    }
 
+
 	private function cambiaCodigo($value) {
 		return iconv('UTF-8', 'Windows-1252', $value);
 	}
 	
+
 	private function calcularEdad($fechaNacimiento, $fechaActual) {
 		$nacimiento = new \DateTime($fechaNacimiento);
 		$actual = new \DateTime($fechaActual);
@@ -49,6 +50,7 @@ public function __construct(\ClassGrl\DataTables $pediTable,
 	}
 	}
 	
+
 	/// Metodo si es GET //////  
 public function pedido($id=null) {
 
@@ -139,6 +141,7 @@ public function listar(){
 	$datosBenef = $this->benefTable->findById($_GET['id']);
 	$edad=$this->calcularEdad($datosBenef['FechaNac'], $result['fecha_ped'][0] ?? ' ');
 		$pedidos = [];
+		$countPedidos = count($result);
 		foreach ($result as $pedido) {
 			
 			$pedidos[] = [
@@ -152,11 +155,10 @@ public function listar(){
 			];
 
 		}
-	//	$result = $this->pediTable->findAll();
-		
+			
 		$title = 'Carga Pedidos';
 
-	//	$totalPedi = $this->pediTable->total();
+		$totalPedi = $countPedidos;
 
 
 		return ['template' => 'listaped.html.php',
@@ -167,6 +169,39 @@ public function listar(){
 				'datosBenef' => $datosBenef  ?? ' ',
 				'edad'=> $edad]
 			];
+	}
+
+
+	public function listartodos(){
+
+		$result = $this->pediTable->findAll();
+		$title = "Lista de pedidos";
+
+
+		foreach ($result as $pedido) {
+			
+			$datosBenef = $this->benefTable->findById($pedido['id_datos_benef']);;
+			$datosUser = $this->userTable->findById($pedido['usuari_id']);
+				
+				$pedidos[] = [
+				'id_datos_pedido' => $pedido['id_datos_pedido'],
+				'fecha_ped' =>  date('d/m/Y',strtotime($pedido['fecha_ped'])),
+				'nutro_ter' => $pedido['nutro_ter'],
+				'suger_tm' => $pedido['suger_tm'],
+				'env_pormes' => $pedido['env_pormes'],
+				'estado' => $pedido['estado'],
+				'Nombres' => isset($datosBenef['Nombres']) ? $datosBenef['Nombres'] : '',
+    			'apellido' => isset($datosUser['apellido']) ? $datosUser['apellido'] : ''
+			];
+		}
+	
+		return [
+			'template' => 'listapedtotal.html.php',
+			'title' => $title,
+			'variables' => [
+				'pedidos' => $pedidos
+			]
+		];
 	}
 
 public function print() {

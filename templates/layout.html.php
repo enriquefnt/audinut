@@ -78,6 +78,8 @@ $_SESSION['establecimiento_nombre'];}
           <li class="nav-item">
           <a class="navbar-brand mb-0 " href="/benef/listar">Pedidos</a>
           </li>
+          <a class="navbar-brand mb-0 " href="/pedido/listartodos">TodosPedidos</a>
+          </li>
    <?php if ( isset($_SESSION['tipo'])&& $_SESSION['tipo']<2 ) { ?>
             <li class="nav-item dropdown">
             <a class="dropdown-toggle navbar-brand mb-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -102,7 +102,7 @@ $instituciones = $this->instiTable->findAll();
 	}
 
 	if (empty($_GET['id']) && count($this->userTable->find('user', $Usuario['user'])) > 0) {
-	$errors[] = 'Un usuario con este nombre de usuario ya está registrado';
+	$errors[] = 'Un usuario con este nombre de usuario ya está registrado, carguelo nuevamente con otro nombre de usuario';
 	} 
 
 
