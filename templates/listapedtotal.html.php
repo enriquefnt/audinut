@@ -29,7 +29,7 @@
       
       foreach($pedidos as $pedido): ?>
        <td><?=$pedido['fecha_ped'] ; ?></td>
-       <td><?=$pedido['Nombres'] ; ?></td>
+       <td><?=$pedido['Nombres'].' '. $pedido['Apellidos']; ?></td>
        <td><?= $pedido['nutro_ter'] ; ?></td>
        <td><?= $pedido['suger_tm'] ; ?></td>
        <td><?= $pedido['env_pormes'] ; ?></td>
