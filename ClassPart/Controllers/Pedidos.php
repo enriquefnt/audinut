@@ -190,7 +190,7 @@ public function listar(){
 				'suger_tm' => $pedido['suger_tm'],
 				'env_pormes' => $pedido['env_pormes'],
 				'estado' => $pedido['estado'],
-				'Nombres' => isset($datosBenef['Nombres']) ? $datosBenef['Nombres'] : '',
+				'Nombres' => isset($datosBenef['Nombres']) ? $datosBenef['Nombres'].' '.$datosBenef['Apellidos'] : '',
     			'apellido' => isset($datosUser['apellido']) ? $datosUser['apellido'] : ''
 			];
 		}
