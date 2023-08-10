@@ -189,7 +189,7 @@ public function listar(){
 				'nutro_ter' => $pedido['nutro_ter'],
 				'suger_tm' => $pedido['suger_tm'],
 				'env_pormes' => $pedido['env_pormes'],
-				'estado' => $pedido['estado'],
+				'estado' => $pedido['estado']?? 'Pendiente',
 				'Nombres' => $datosBenef['Nombres'] ?? '',
 				'Apellidos' => $datosBenef['Apellidos'] ?? '',
     			'apellido' => $datosUser['apellido'] ?? ''

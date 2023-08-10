@@ -90,8 +90,12 @@ $errors[] = 'Un beneficiario con este DNI ya está registrado';
 if  (empty($errors)) {
 
 $this->benefTable->save($Beneficiario);
-
+if (empty($_GET['id'])){
 $datosBenef = $this->benefTable->ultimoReg();
+}
+else{
+	$datosBenef = $this->benefTable->findById($_GET['id']);
+}
 
 return ['template' => 'registersuccess.html.php',
 					     'title' => 'Carga' ,
@@ -100,10 +104,6 @@ return ['template' => 'registersuccess.html.php',
 									 ]
 					];
 
-
-
-
- 
 }
 
 

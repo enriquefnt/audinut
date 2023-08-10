@@ -43,7 +43,7 @@ endif;
 	<div class="col-sm-4">		
 			<label class="form-label-sm" for="Celular">Celular</label>
 			<!-- <input class="form-control form-control-sm" type="tel" name="Beneficiario[Celular]" id="Celular" pattern="[0-9]{3}-[0-9]{7}" value="<?=$datosCaso['Celular'] ?? ''?>" placeholder="###-#######" autocomplete="off">  -->
-			<input class="form-control form-control-sm"  type="text" id="celular" name="Usuario[celular]" placeholder="###-#######" data-llenar-campo="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosCaso['celular'] ?? ''?>" >
+			<input class="form-control form-control-sm"  type="text" id="celular" name="Beneficiario[Celular]" placeholder="###-#######" data-llenar-campo="celular" pattern="[0-9]{3}-[0-9]{7}"  value="<?=$datosCaso['Celular'] ?? ''?>" >
 	</div>
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="Domicilio">Domicilio</label>
@@ -57,9 +57,9 @@ endif;
 		<input type="hidden" name="Beneficiario[id_localidad]" id="id_localidad"  value="<?=$data['value'] ?? ''?>" />
     </div>
 
-   <!-- <div class="col-sm-0">
+  <div class="col-sm-0">
             <input type="hidden" name="Beneficiario[id_localidad]" id="id_localidad"  value="<?=$data['value'] ?? ''?>" />
-        </div>   -->
+        </div>  
 
 	<div class="col-sm-6">
 			<label class="form-label-sm" for="NombresResp">Nombres-Responsable</label>
