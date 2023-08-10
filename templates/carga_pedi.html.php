@@ -87,11 +87,7 @@ endif;
 			value=<?=$datosPedido['via'] ?? ''?> >
 	</div>
 	
-	<!-- <div class="col-sm-3">
-			<label class="form-label-sm" for="presenta">Presentación</label>
-			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[presenta]" id="presenta" 
-			value=<?=$datosPedido['presenta'] ?? ''?> >
-	</div> -->
+	
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="gramos_dia">Gramos por día</label>
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="10" max="500" name="Pedido[gramos_dia]" id="gramos_dia" 
@@ -102,7 +98,7 @@ endif;
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="1" max="100"  name="Pedido[env_pormes]" id="env_pormes" 
 			value=<?=$datosPedido['env_pormes'] ?? ''?> >
 	</div>
-	<?php if(isset($datosPedido['fecha_ped'])) { ?>
+	<!-- <?php if(isset($datosPedido['fecha_ped'])) { ?>
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
 			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]"  
@@ -114,13 +110,20 @@ endif;
 			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]" id="fecha_ped" 
 			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
 	</div>
-	<?php } ?>	
+	<?php } ?>	 -->
+
+	<div class="col-sm-3">
+			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
+			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]" id="fecha_ped" 
+			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
+	</div>
+	<?php if ($_SESSION['tipo'] < 2){ ?>
+
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="estado">Estado</label>
-			
-			
+					
 			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
-			<option value=<?=$datosPedido['estado'] ?? ''?>><?=$datosPedido['estado'] ?? 'Pendiente'?></option>
+			<option value=<?=$datosPedido['estado'] ?? 'Pendiente'?>><?=$datosPedido['estado'] ?? 'Pendiente'?></option>
 			<option value="Pendiente">Pendiente</option>
 			<option value="Rechazado">Rechazado</option>
 			<option value="En Trámite">En Trámite</option>
@@ -130,6 +133,11 @@ endif;
 			</select>
 		
 	</div>
+	<?php } else { ?>
+		<input type="hidden" name="Pedido[estado]" id="estado" value=<?=$datosPedido['id_datos_pedido'] ?? 'Pendiente'?> >
+
+		<?php } ?>
+
 	<div class="col-sm-12">
 			<label class="form-label-sm" for="Observacion">Observaciones</label>
 			<input class="form-control form-control-sm" type="text"  name="Pedido[Observacion]" id="Observacion" 
