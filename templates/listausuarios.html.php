@@ -1,7 +1,9 @@
-<div class="container mt-4">
-  <table id="example" class="table table-bordered display compact" > 
 
-<thead >
+
+
+<<div class="container mt-4">
+  <table id="example" class="table table-bordered display compact">
+    <thead >
   <tr >
       
     <th align="center">Nombre</th>
@@ -27,4 +29,6 @@
    
   </tr>
   <?php endforeach; ?>
-</tbody>
+  </tbody>
+  </table>
+</div>
