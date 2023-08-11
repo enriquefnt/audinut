@@ -34,7 +34,7 @@ foreach($localidades as $localidad)
         'value'     =>  $localidad['gid']
     );
 }
-// $usuario = $this->authentication->getUser();
+
 		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
 									}
