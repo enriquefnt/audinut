@@ -1,7 +1,5 @@
 <div class="container mt-4">
   <table id="example" class="table table-bordered display compact">
-
-     <!-- ... (Encabezados y filas de la tabla) ...  -->
     <thead >
   <tr >
       

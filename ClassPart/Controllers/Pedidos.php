@@ -252,7 +252,9 @@ public function print() {
 	}
 	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Diagnósticos: ').(iconv('UTF-8', 'Windows-1252',$datosPedido['diag_med'])). ' -  '. (iconv('UTF-8', 'Windows-1252',$datosPedido['diag_nutri']))) ,0,0);
 	$pdf->Ln();
-	$pdf->Cell(0,7,('Producto: '.iconv('UTF-8', 'Windows-1252',$datosPedido['nutro_ter'])),0,0);
+	$pdf->Cell(0,7,(iconv('UTF-8', 'Windows-1252','Nutroterápico: ' . $datosPedido['nutro_ter'])),0,0);
+	 $pdf->Ln();
+	 $pdf->Cell(0,7,('Producto: '.iconv('UTF-8', 'Windows-1252',$datosPedido['suger_tm'])),0,0);
 	 $pdf->Ln();
 	$pdf->Cell(0,7,('Calorias requeridas: '.$datosPedido['requ_calorias'].' -  % a cubrir: ' .$datosPedido['porc_aporte'].' -  Gr/'. iconv('UTF-8', 'Windows-1252','día: ') 
 	 .$datosPedido['gramos_dia'] ),0,0);
