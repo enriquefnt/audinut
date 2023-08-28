@@ -17,7 +17,7 @@
     <th align="center">Estado</th>
     <th align="center">Solicita</th>
 <?php if (isset($_SESSION) &&( $_SESSION['tipo'] < 4)) { ?>
-        <th align="center">Ver-Editar-Imprimir</th>
+        <th align="center">Ver-Editar o Imprimir</th>
             <?php } ?>
     
     
@@ -36,8 +36,8 @@
        <td><?= $pedido['estado'] ; ?></td>
        <td><?= $pedido['apellido'] ; ?></td>
        
-       <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i>
-       &nbsp
+       <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i></a>
+       &nbsp &nbsp &nbsp
      <a href="/pedido/print?id=<?=$pedido['id_datos_pedido']?>" target="_blank"><i class="fa-regular fa-file-pdf"></i>
     </a></td>
 

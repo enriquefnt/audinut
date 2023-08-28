@@ -131,7 +131,7 @@ if  (empty($errors)) {
 $this->pediTable->save($pedido);
 }
 
-header('Location: /benef/listar');
+header('Location: /pedido/listartodos');
 }
 
 

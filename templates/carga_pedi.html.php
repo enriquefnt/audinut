@@ -81,10 +81,16 @@ endif;
 			<input class="form-control form-control-sm" type="text" required="required"  name="Pedido[suger_tm]" id="suger_tm" 
 			value=<?=$datosPedido['suger_tm'] ?? ''?>>
 	</div>
+	
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="via">Via</label>
-			<input class="form-control form-control-sm" type="text" required="required" name="Pedido[via]" id="via" 
-			value=<?=$datosPedido['via'] ?? ''?> >
+			<select class="form-control form-control-sm" name="Pedido[estado]"  id="estado">
+			<option value=<?=$datosPedido['via'] ?? ''?>><?=$datosPedido['via'] ?? ''?></option>
+			<option value="Oral">Oral</option>
+			<option value="Sonda Nasogástrica">Sonda Nasogástrica</option>
+			<option value="Gastrostomía">Gastrostomía</option>
+			<option value="Parenteral">Parenteral</option>
+						</select>
 	</div>
 	
 	
@@ -98,19 +104,8 @@ endif;
 			<input class="form-control form-control-sm" type="number" required="required" step="1" min="1" max="100"  name="Pedido[env_pormes]" id="env_pormes" 
 			value=<?=$datosPedido['env_pormes'] ?? ''?> >
 	</div>
-	<!-- <?php if(isset($datosPedido['fecha_ped'])) { ?>
-	<div class="col-sm-3">
-			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
-			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]"  
-			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
-	</div>
-	<?php } else {?>
-		<div class="col-sm-3">
-			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
-			<input class="form-control form-control-sm" type="date" required="required"  name="Pedido[fecha_ped]" id="fecha_ped" 
-			value=<?=$datosPedido['fecha_ped'] ?? ''?> >
-	</div>
-	<?php } ?>	 -->
+	
+
 
 	<div class="col-sm-3">
 			<label class="form-label-sm" for="fecha_ped">Fecha pedido</label>
