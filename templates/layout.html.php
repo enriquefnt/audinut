@@ -125,7 +125,7 @@ $_SESSION['establecimiento_nombre'];}
   </nav>
 
 
-<!-- </div> -->
+
 
 </header>
  <main class="w3-row-padding table-container">  
