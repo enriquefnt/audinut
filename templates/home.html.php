@@ -18,6 +18,7 @@
             <ul class="list-group list-group-flush lh-1">
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Prescripción médica</b>, cuya fecha no supere los 30 días, al momento del ingreso del expediente </li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Negativa de Anses</b> actualizada.</li>
+   <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Incluir Salud</b> constancia de <u>no afiliación</u> actualizada.</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Fotocopia de DNI</b> del paciente y familiar a cargo (en caso de ser menor de edad)</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> <a href="http://secretariadenutricion.salta.gob.ar/images/varias/Formularios/formulario_A1.pdf" target="_blank"> Formulario A1 </a></b>de pedido de fórmulas nutricionales completado por profesional nutricionista</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Informe de Asistente social</b> en caso de contar con un profesional en Trabajo Social</li>

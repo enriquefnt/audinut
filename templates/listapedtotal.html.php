@@ -36,7 +36,7 @@
        <td><?= $pedido['estado'] ; ?></td>
        <td><?= $pedido['apellido'] ; ?></td>
        
-       <td> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i></a>
+       <td class="text-center"> <a href="/pedido/pedido?idx=<?=$pedido['id_datos_pedido']?>"><i class="bi bi-pencil-square"></i></a>
        &nbsp &nbsp &nbsp
      <a href="/pedido/print?id=<?=$pedido['id_datos_pedido']?>" target="_blank"><i class="fa-regular fa-file-pdf"></i>
     </a></td>

@@ -30,20 +30,14 @@ public function __construct(
                                   'variables' => [
                                   'datosProdu' => $datosProdu  ?? ' '
                                                   ]             
-                                    ];
-
-            
+                                   ];           
              }
-              
-            
+                          
             public function produSubmit() {
-                
-            
+                          
                 $Nutroter=$_POST['Nutroter'];
-           
-             
                 $Nutroter['fechaCarga'] = new \DateTime();
-               $Nutroter['activo'] = isset($_POST['Nutroter']['activo']) ? 1 : 0;
+                $Nutroter['activo'] = isset($_POST['Nutroter']['activo']) ? 1 : 0;
 
 
                 $errors = [];
