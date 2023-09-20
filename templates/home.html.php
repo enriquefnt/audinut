@@ -17,7 +17,7 @@
             
             <ul class="list-group list-group-flush lh-1">
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Prescripción médica</b>, cuya fecha no supere los 30 días, al momento del ingreso del expediente </li>
-   <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Negativa de Anses</b> actualizada.</li>
+   <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Negativa de Anses</b> actualizada (no debe tener obra social).</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Incluir Salud</b> constancia de <u>no afiliación</u> actualizada.</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Fotocopia de DNI</b> del paciente y familiar a cargo (en caso de ser menor de edad)</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> <a href="http://secretariadenutricion.salta.gob.ar/images/varias/Formularios/formulario_A1.pdf" target="_blank"> Formulario A1 </a></b>de pedido de fórmulas nutricionales completado por profesional nutricionista</li>
@@ -78,8 +78,48 @@
 </main>
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted">
+  
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3 pt-1">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-sm-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" >
+            <i class="fas fa-gem me-3 text-primary"></i>Institución
+          </h6>
+          <p >
+            Direccion de Nutrición y Alimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-4 col-sm-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" >
+            <i class="fas fa-gem me-3 text-primary"></i>Responsables del area fórmulas:
+          </h6>
+          <p >
+            Lic. Patricia Copa Torres (Jefa)  </p> <p > Lic Lorena Zerpa
+          </p>
+        </div>
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p><i class="fas fa-home me-3 text-secondary"></i> Belgrano 1349 -1º piso - Salta Capital - CP 4400</p>
+          <p><i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127 <br> &nbsp &nbsp &nbsp &nbsp  0387-152458570</p>
+          <p><i class="fas fa-print me-3 text-secondary"></i> 0387-4320695</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
   <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-2 border-bottom">
+  <section class="d-flex justify-content-center justify-content-sm-between p-4 border-bottom">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
       <span>Nuestras redes sociales:</span>
@@ -98,36 +138,6 @@
     <!-- Right -->
   </section>
   <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3 pt-1">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-sm-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4" >
-            <i class="fas fa-gem me-3 text-primary"></i>Institución
-          </h6>
-          <p >
-            Direccion de Nutrición y Alimentación Saludable, organismo perteneciente al Ministerio de Salud Pública de Salta.
-          </p>
-        </div>
-        
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-          <p><i class="fas fa-home me-3 text-secondary"></i> Belgrano 1349 -1º piso - Salta Capital - CP 4400</p>
-          <p><i class="fas fa-envelope me-3 text-secondary"></i>areaformulasnutricionales@gmail.com </p>
-          <p><i class="fas fa-phone me-3 text-secondary"></i> 0387-4370128/127 <br> &nbsp &nbsp &nbsp &nbsp  0387-152458570</p>
-          <p><i class="fas fa-print me-3 text-secondary"></i> 0387-4320695</p>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
   
 </footer>
 
