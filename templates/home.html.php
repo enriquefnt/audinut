@@ -47,6 +47,7 @@
           </div>
           <div class="card-footer text-muted">
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>6 meses</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Si no se renovó en término se debe iniciar <b> nuevo pedido </b></p>
   </div>
         </div>
       </div>
