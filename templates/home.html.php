@@ -16,7 +16,7 @@
           <div class="card-body d-flex flex-column">
             
             <ul class="list-group list-group-flush lh-1">
-   <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Prescripción médica</b>, cuya fecha no supere los 30 días, al momento del ingreso del expediente </li>
+   <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Prescripción médica con diagnóstico clínico</b>, cuya fecha no supere los 30 días, al momento del ingreso del expediente </li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Negativa de Anses</b> actualizada (no debe tener obra social).</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Incluir Salud</b> constancia de <u>no afiliación</u> actualizada.</li>
    <li class="list-group-item "><i class="fa-solid fa-check"></i><b> Fotocopia de DNI</b> del paciente y familiar a cargo (en caso de ser menor de edad)</li>
@@ -27,6 +27,7 @@
           </div>
             <div class="card-footer text-muted">
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Completar "todos" los datos solicitados en los formularios, el nº de telefono es necesario para contactar al paciente.</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> El diagnóstico es requisito indispensable. Diagnósticos genéricos como "bajo peso" o "desnutrición" no serán considerados.</p>
             </div>
         </div>
       </div>
@@ -46,7 +47,7 @@
     </ul>
           </div>
           <div class="card-footer text-muted">
-            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>6 meses</p>
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Para<b> Pacientes generales</b> renovación cada 2 meses y para<b> Pacientes crónicos </b>cada 6 meses</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Si no se renovó en término se debe iniciar <b> nuevo pedido </b></p>
   </div>
         </div>
