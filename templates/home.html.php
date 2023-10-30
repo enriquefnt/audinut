@@ -64,6 +64,7 @@
 </ul>
             </div>
             <div class="card-footer text-muted"> -->
+            <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> El programa gestiona la provisión de <b>fórmulas nutroterápicas</b>, los expedientes por pedidos de asistencia alimentaria deben gestionarse en los organismos que correspondan.</p>  
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Se confecciona con la documentación completa en el sistema SICE (Sistema Centralizado de Expedientes),generando un número para seguimiento</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Genere un solo expediente inicial por paciente con sus sucesivos CORRESPONDES (1, 2, 3, Etc.) en caso de continuación.</p>
             <p class="fs-6 lh-1"><i class="fa-solid fa-exclamation fa-beat"></i> Al cargar en SICE registre los Nombres y Apellidos completos en letra mayúscula, el DNI en número sin puntos e indique si es internado o ambulatorio.</p>
