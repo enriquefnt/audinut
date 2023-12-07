@@ -23,11 +23,11 @@ endif;
 	
 	<input type="hidden" name="Beneficiario[id_datos_benef]" value="<?=$datosCaso['id_datos_benef'] ?? ''?>">
 
-	<div class="col-sm-6">
+	<!-- <div class="col-sm-6">
 
 			<label class="form-label-sm" for="Nombres">Nombres</label>
 			<input class="form-control form-control-sm" type="text"  name="Beneficiario[Nombres]" id="Nombres" required="required" value="<?=$datosCaso['Nombres'] ?? ''?>">
-	</div>
+	</div> -->
 	<div class="col-sm-6">	
 			<label class="form-label-sm" for="Apellidos">Apellidos</label>
 			<input class="form-control form-control-sm" type="text" name="Beneficiario[Apellidos]" id="Apellidos" required="required" value="<?=$datosCaso['Apellidos'] ?? ''?>">

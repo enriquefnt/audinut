@@ -3,20 +3,20 @@ namespace ClassPart\Controllers;
 use \ClassGrl\DataTables;
 class Usuarios {
 private $userTable;
-private $instiTable;
+private $tablaInsti;
 
 
 public function __construct(\ClassGrl\DataTables $userTable,
-							\ClassGrl\DataTables $instiTable) {
+							\ClassGrl\DataTables $tablaInsti) {
 
         $this->userTable = $userTable;
-		$this->instiTable = $instiTable;
+		$this->tablaInsti = $tablaInsti;
     }
 
 
 public function user($id=null){
 
-	$instituciones = $this->instiTable->findAll();
+	$instituciones = $this->tablaInsti->findAll();
 
 
 	foreach($instituciones as $institucion)
@@ -52,7 +52,7 @@ $title = 'Carga Usuarios';
 
 public function userSubmit() {
 
-$instituciones = $this->instiTable->findAll();
+$instituciones = $this->tablaInsti->findAll();
 
 
 	foreach($instituciones as $institucion)

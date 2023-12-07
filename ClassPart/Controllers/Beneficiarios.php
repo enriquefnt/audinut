@@ -5,19 +5,19 @@ use \AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Beneficiarios {
 private $benefTable;
-private $locTable;
+private $tablaLoc;
 private $userTable;
 private $authentication;
 
 
 public function __construct(\ClassGrl\DataTables $benefTable,
-							\ClassGrl\DataTables $locTable,
+							\ClassGrl\DataTables $tablaLoc,
 							\ClassGrl\DataTables $userTable,
 							\ClassGrl\Authentication $authentication) 
 {
 
         $this->benefTable = $benefTable;
-		$this->locTable = $locTable;
+		$this->tablaLoc = $tablaLoc;
 		$this->userTable = $userTable;
 		$this->authentication = $authentication;
     }
@@ -26,7 +26,7 @@ public function __construct(\ClassGrl\DataTables $benefTable,
 
 public function edit($id=null) {
 	
-$localidades = $this->locTable->findAll();
+$localidades = $this->tablaLoc->findAll();
 foreach($localidades as $localidad)
 {
     $data[] = array(
@@ -37,9 +37,9 @@ foreach($localidades as $localidad)
 
 		if (isset($_GET['id'])) {
 				$datosCaso = $this->benefTable->findById($_GET['id']);
-									}
+									
 
-			$title = ' Beneficiario';
+			$title = 'Ver Caso';
 
 		
 
@@ -50,6 +50,19 @@ foreach($localidades as $localidad)
 					 'datosCaso' => $datosCaso  ?? ' '
 									 ]
 					];
+				}
+
+		else {
+					$title = 'Cargar Caso';
+					return ['template' => 'edita_benef.html.php',
+					     'title' => $title ,
+					 'variables' => [
+			           'data'  =>   $data,
+					 'datosCaso' => $datosCaso  ?? ' '
+									 ]
+					];
+
+				}
 			
 }
 
@@ -57,7 +70,7 @@ foreach($localidades as $localidad)
 
 public function editSubmit() {
 	
-$localidades = $this->locTable->findAll();
+$localidades = $this->tablaLoc->findAll();
 foreach($localidades as $localidad)
 {
     $data[] = array(
@@ -70,7 +83,7 @@ foreach($localidades as $localidad)
 
 	$Beneficiario = $_POST['Beneficiario'];
 
-	$Beneficiario['Nombres'] =ltrim(ucwords(strtolower($Beneficiario['Nombres'])));
+//	$Beneficiario['Nombres'] =ltrim(ucwords(strtolower($Beneficiario['Nombres'])));
 	$Beneficiario['Apellidos'] =ltrim(ucwords(strtolower($Beneficiario['Apellidos'])));
 	$Beneficiario['NombresResp'] =ltrim(ucwords(strtolower($Beneficiario['NombresResp'])));
 	$Beneficiario['ApellidosResp'] =ltrim(ucwords(strtolower($Beneficiario['ApellidosResp'])));
@@ -88,7 +101,7 @@ $errors[] = 'Un beneficiario con este DNI ya está registrado';
 }
 
 if  (empty($errors)) {
-
+// var_dump($Beneficiario);
 $this->benefTable->save($Beneficiario);
 if (empty($_GET['id'])){
 $datosBenef = $this->benefTable->ultimoReg();
